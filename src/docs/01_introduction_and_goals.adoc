@@ -9,7 +9,7 @@ Describes the relevant requirements and the driving forces that software archite
 * quality goals for the architecture
 * relevant stakeholders and their expectations
 ****
-The intention of this project is to create and develop a decentralized route management system based on SOLID specifications and using the React framework.The proyect called Viade. The proyect will be developed in a system with a decentralized architecture, where its users find the storage of separate application data. Other goals are also: that users can save the data of their routes in their corresponding PODs, users can view, on the map, their routes, the application will allow the user to share multimedia content or other files with their friends and also can obtain notifications when a friend wants to share a route with him.Another objective is that they can be formed groups of friends, with whom you can share a route. Besides, it should be possible to see the routes loaded by users of other different apps, which means that the application has to have interoperability with other route management systems.
+The intention of this project, Viade, is to create and develop a decentralized route management system based on SOLID specifications and using the React framework. The proyect will be developed in a system with a decentralized architecture, where its users find the storage of separate application data. Other goals are also: that users can save the data of their routes in their corresponding PODs, users can view, on the map, their routes, the application will allow the user to share multimedia content or other files with their friends and also can obtain notifications when a friend wants to share a route with him.Another objective is that they can be formed groups of friends, with whom you can share a route. Besides, it should be possible to see the routes loaded by users of other different apps, which means that the application has to have interoperability with other route management systems.
 
 Viade is an application to upload and share your trails, like Wikiloc, but with the difference that it's done in a decentralized way. This means that the app and data storage are independent so your data is only yours and you decid who you share it with. 
 
@@ -35,27 +35,28 @@ If requirements documents exist this overview should refer to these documents.
 Keep these excerpts as short as possible. Balance readability of this document with potential redundancy w.r.t to requirements documents.
 ****
 .Functional requirements
-* Users can store their routes in their own pods.
+* Users can view their routes on a map and store them in their own pods.
 
-* Users can view the routes stored on a map 
 * A user can get notifications when some friend shares a route with him.
 
-*  To register routes, users must log in and authenticate to SOLID
+* To register routes, users must have a POD, so they have to log in and authenticate in SOLID inrupt or community.
 
 * Users can have groups of friends with whom they may want to share a route
 
-* It should be possible to view routes loaded by users that are using a different app
+* View routes that had been loaded in other apps.
 
 .No functional requirements
 
-* Ease of use by everybody.
+* Ease of learning to interact whith te app by new users.
 
 * Small response and loading times
 
 * Security and privacy: no vulnerability points
 
 * Accessibility and usability level following the recommendations of W3C.
+
 * Not having a central database, which compromises the information of the users that use it.
+
 
 === Quality Goals
 
