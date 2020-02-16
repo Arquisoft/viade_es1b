@@ -10,6 +10,10 @@ Describes the relevant requirements and the driving forces that software archite
 * relevant stakeholders and their expectations
 ****
 
+Viade is an application to upload and share your trails, like Wikiloc, but with the difference that it's done in a decentralized way. This means that the app and data storage are independent so your data is only yours and you decid who you share it with. 
+
+
+
 === Requirements Overview
 
 [role="arc42help"]
