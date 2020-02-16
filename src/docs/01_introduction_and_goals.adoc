@@ -1,75 +1,54 @@
 [[section-introduction-and-goals]]
 == Introduction and Goals
 
-[role="arc42help"]
-****
-Describes the relevant requirements and the driving forces that software architects and development team must consider. These include
-
-* underlying business goals, essential features and functional requirements for the system
-* quality goals for the architecture
-* relevant stakeholders and their expectations
-****
+The intention of this project, Viade, is to create and develop a route management system, such as Wikiloc, but with the difference that it's done in a decentralized way, which means that the app and data storage are independent so your data is only yours and you decide who you share it with.
+To carry out this this app, we are using SOLID specifications and the React framework.
 
 === Requirements Overview
 
-[role="arc42help"]
-****
-.Contents
-Short description of the functional requirements, driving forces, extract (or abstract)
-of requirements. Link to (hopefully existing) requirements documents
-(with version number and information where to find it).
+.Functional requirements
+* Users can view their routes on a map and store them in their own pods.
 
-.Motivation
-From the point of view of the end users a system is created or modified to
-improve support of a business activity and/or improve the quality.
+* A user can get notifications when some friend shares a route with him.
 
-.Form
-Short textual description, probably in tabular use-case format.
-If requirements documents exist this overview should refer to these documents.
+* To register routes, users must have a POD, so they have to log in and authenticate in SOLID inrupt or community.
 
-Keep these excerpts as short as possible. Balance readability of this document with potential redundancy w.r.t to requirements documents.
-****
+* Users can have groups of friends with whom they may want to share a route
+
+* View routes that had been loaded in other apps.
+
+.No functional requirements
+
+* Ease of learning to interact whith te app by new users.
+
+* Small response and loading times
+
+* Security and privacy: no vulnerability points
+
+* Accessibility and usability level following the recommendations of W3C.
+
+* Not having a central database, which compromises the information of the users that use it.
+
 
 === Quality Goals
 
-[role="arc42help"]
-****
-.Contents
-The top three (max five) quality goals for the architecture whose fulfillment is of highest importance to the major stakeholders. We really mean quality goals for the architecture. Don't confuse them with project goals. They are not necessarily identical.
+|===
+| Priority | Quality goal | Scenario 
 
-.Motivation
-You should know the quality goals of your most important stakeholders, since they will influence fundamental architectural decisions. Make sure to be very concrete about these qualities, avoid buzzwords.
-If you as an architect do not know how the quality of your work will be judged …
-
-.Form
-A table with quality goals and concrete scenarios, ordered by priorities
-****
+| 1 | Security | A user doesn't want to share his information with another one unless he gives him permission.
+| 2 | Usability | There is a new user in our app and he wants to start using all its functionality as soon as possible.
+| 3 | Efficiency | When a user wants to load a route, it must be in a short time.
+| 4 | Mantainability | The developer team wants to add more functionality to the application.
+| 5 | Compatibility | Someone wants to share his route from other app with some user that is using Viade.
+|===
 
 === Stakeholders
-
-[role="arc42help"]
-****
-.Contents
-Explicit overview of stakeholders of the system, i.e. all person, roles or organizations that
-
-* should know the architecture
-* have to be convinced of the architecture
-* have to work with the architecture or with code
-* need the documentation of the architecture for their work
-* have to come up with decisions about the system or its development
-
-.Motivation
-You should know all parties involved in development of the system or affected by the system.
-Otherwise, you may get nasty surprises later in the development process.
-These stakeholders determine the extent and the level of detail of your work and its results.
-
-.Form
-Table with role names, person names, and their expectations with respect to the architecture and its documentation.
-****
 
 [options="header",cols="1,2,2"]
 |===
 |Role/Name|Contact|Expectations
-| _<Role-1>_ | _<Contact-1>_ | _<Expectation-1>_
-| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
+| Teachers | Teaching staff of ASW | Well developed app paying special attention to its architecture.
+| Inrupt | Startup behind SOLID | Well usage of their technology in decentralized apps.
+| Developers | Members of the team that create the app | Develop a functional and maintainable app.
+| Users | Users of this app | Efficient and usable app to share their routes.
 |===
