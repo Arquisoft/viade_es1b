@@ -27,13 +27,15 @@ Framework React +
 This is a framework focused on JavaScript that will help us developing our app, facilitating the communication between interfaces and services. + 
 See <<02_architecture_costraints.adoc>>
 
-Solid POD
-
-
 Asciidoctor +
+This is the text processor we are using to write the documentation of our app.
 
+Node.js +
+It's a runtime environment that allows us execute JavaScript outside a web browser and therefore it will help us to display the app.
 
-NPM +
+Solid POD +
+Solid pods are the way in which users will store their information in order to share and use it in the app.
 
-Solid authentication service +
+Solid-auth-service +
+This is a browser library that allows our app to connect securely to users pods and read and write data into them.
 
