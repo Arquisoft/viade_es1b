@@ -1,7 +1,6 @@
 [[section-system-scope-and-context]]
 == System Scope and Context
 
-
 [role="arc42help"]
 ****
 .Contents
@@ -37,11 +36,16 @@ All kinds of diagrams that show the system as a black box and specify the domain
 
 Alternatively (or additionally) you can use a table.
 The title of the table is the name of your system, the three columns contain the name of the communication partner, the inputs, and the outputs.
-****
 
 **<Diagram or Table>**
 
 **<optionally: Explanation of external domain interfaces>**
+
+****
+
+The project will be an application that allow users to share their routes with anyone. The client will be any of these users. The application will be done in a decentralized network using SOLID and made using the framework ReactJS.
+
+The users will be able to save any route in their PODS.
 
 === Technical Context
 
@@ -57,10 +61,12 @@ Many stakeholders make architectural decision based on the technical interfaces 
 E.g. UML deployment diagram describing channels to neighboring systems,
 together with a mapping table showing the relationships between channels and input/output.
 
-****
-
 **<Diagram or Table>**
 
 **<optionally: Explanation of technical interfaces>**
 
 **<Mapping Input/Output to Channels>**
+
+****
+
+TODO - Diagrama UML, Casos de uso
