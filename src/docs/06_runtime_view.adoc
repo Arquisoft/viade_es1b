@@ -48,7 +48,16 @@ Alice -> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 ----
 === <Runtime Scenario 2>
+[plantuml,"Runtime Scenario",png]
+----
+Inicio -> Login: Click login button
+Login --> Inicio: Confirm login button
 
+Inicio -> AddRoute: create route button
+AddRoute --> Inicio: confirma
+
+
+----
 === ...
 
 === <Runtime Scenario n>

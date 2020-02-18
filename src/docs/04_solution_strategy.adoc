@@ -28,3 +28,12 @@ This is a framework focused on JavaScript that will help us developing our app, 
 See <<02_architecture_costraints.adoc>>
 
 Solid POD
+
+
+Asciidoctor +
+
+
+NPM +
+
+Solid authentication service +
+
