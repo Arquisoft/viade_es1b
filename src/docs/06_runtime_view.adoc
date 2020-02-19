@@ -29,23 +29,46 @@ There are many notations for describing scenarios, e.g.
 * ...
 
 ****
+This part will be focused to see how the application is structured and iterated when users take a certain action. The scenarios will go in order in which the application runs
 
-=== <Runtime Scenario 1>
+=== How does the application login work?
 
 
-* _<insert runtime diagram or textual description of the scenario>_
+* Shows the login of the application and how the whole process works
 * _<insert description of the notable aspects of the interactions between the
 building block instances depicted in this diagram.>_
 
-It is possible to use a sequence diagram:
+This is the sequence to generate the uml:
 
 [plantuml,"Sequence diagram",png]
 ----
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+title How does the login in the application work?
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+
+
+actor USER #red
+participant UILogin #blue
+control Authentication #green
+database SOLID #purple
+database POD #pink
+participant UIApplication #blue
+
+
+USER -> UILogin: Set credentials
+UILogin -> Authentication: Login Request
+Authentication -> SOLID: Validate credentials
+
+alt Login Successful
+	SOLID -> Authentication: Correct login
+	Authentication --> UIApplication: Load Application
+    POD->UIApplication: Load your own routes
+
+else Login Failure
+	SOLID -> Authentication: Invalid login
+	Authentication --> UILogin: Load Login
+	end
+
+
 ----
 === <Runtime Scenario 2>
 
