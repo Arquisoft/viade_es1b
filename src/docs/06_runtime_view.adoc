@@ -42,8 +42,41 @@ else Login Failure
 
 
 ----
-=== <Runtime Scenario 2>
+=== Add route
 
-=== ...
+* Show how a route is added to the application.
+* The user wants to add a route. In the application there will be a button or something similar in which you can add a route. When everything requested to save the route has been added, there will be a service that validates that the route is correct. This service will try to save the route in your POD. From here, two situations can occur:
+** That the route is saved successfully and you receive a message that it was saved correctly.
+** Or that the route could not be saved and you receive an error message.
+
+image::./images/AddRoute.png[]
+
+This is the sequence to generate the uml:
+
+[plantuml,"Sequence diagram",png]
+----
+title How do you add a route?
+
+
+
+actor USER #red
+participant UIApplication #blue
+control AddRouteService #green
+database POD #pink
+
+
+USER -> UIApplication: ADD ROUTE
+UIApplication -> AddRouteService: AddRouteInYourPOD()
+AddRouteService -> POD: Save route in your POD
+
+alt correct
+	POD -> AddRouteService: Route saved
+	AddRouteService --> UIApplication: Successful message
+
+else incorrect
+	POD -> AddRouteService: Route could't be saved
+	AddRouteService --> UIApplication: Failure message
+	end
+----
 
 === <Runtime Scenario n>
