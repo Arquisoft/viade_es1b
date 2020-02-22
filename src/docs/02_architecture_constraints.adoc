@@ -30,20 +30,22 @@ perhaps to simplify the world in which they are working
 
 Some of the technical constraints that the project currently has are the following
 
-* The use of SOLID
-* The use of the ReactJS framework
-* Being able to make a functional project while maintaining the decentralized network system 
-* Make good use of the POD system and its advantages
-* Make sure that the files that store the routes are independent of the app
-* Implementation of a web interface
+* SOLID: The use of SOLID
+* ReactJS: The use of the ReactJS framework
+* Decentralized network system: Being able to make a functional project while maintaining the decentralized network system 
+* PODs: Make good use of the POD system and its advantages
+* Independentcy: Make sure that the files that store the routes are independent of the app
+* Web Interface: Implementation of a web interface
+* Tests: The need of implementing a variety of tests in order to maintain the funcionality of the application and find possible bugs
 
 .Business Constraints 
 Business constraints are unchangeable business decisions that in some way restrict the software architecture design.  
 Business constraints are similar to technical constraints in that they are decisions that cannot be changed, but rather than influencing structures directly through technology, the influence occurs indirectly through business decisions.
 
-* Using SOLID and the resources that provides us 
-* The usae of a GitHub repository in order to keep the development of the project in check and always available
-
-
+* SOLID: Using SOLID and the resources that provides us 
+* Version Control: The use of a GitHub repository in order to keep the development of the project in check and always available
+* Time schedule: We have limited time to deliver a final version in May/June
+* Geo file standard: The need of searching and choosing a file format to store the routes 
+* Code coverage: The use of certain tools in order to evaluate the quality of the code itself.
 ****
 
