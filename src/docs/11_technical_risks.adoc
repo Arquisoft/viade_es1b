@@ -28,4 +28,4 @@ This is also a framework that we are not familiarized with and, such as SOLID's 
 We are 5 people who have worked together rarely or none and, although we know that this is what our future probably deserves to us, the lack of communication or rapport between all of us is still a risk.
 
 * Short term reviews +
-We have very little time to develop the first version of our time and if we don't organize well it cam be a disaster.
+We have very little time to develop the first version of our application (3 weeks) and if we don't organize well it can be a disaster.
