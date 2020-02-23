@@ -1,5 +1,7 @@
 [[section-runtime-view]]
 == Runtime View
+This is not a definitive version. We will be adding more scenarios later
+
 === How does the application login work?
 
 * Shows the login of the application and how the whole process works. 
