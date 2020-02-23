@@ -25,7 +25,7 @@ SOLID's specification is something totally new to our team and it's something we
 This is also a framework that we are not familiarized with and, such as SOLID's specification, we must work with it. It means that we would have to do a research of information to form ourselves to programming the best way possible.
 
 * Adaptation between members of the team +
-We are 5 people who have worked together rarely or none and, although we know that this is what our future probably deserves to us, the lack of communication or rapport between all of us is still a risk.
+We are 5 people who have worked together rarely or none and, although we know that this is what our future probably holds to us, the lack of communication or rapport between all of us is still a risk.
 
 * Short term reviews +
 We have very little time to develop the first version of our application (3 weeks) and if we don't organize well it can be a disaster.
