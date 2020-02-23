@@ -17,3 +17,25 @@ If needed you can subdivide them into
 technical constraints, organizational and political constraints and
 conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
 ****
+
+=== Categories of Constraints
+
+[role="arc42help"]
+****
+.Technical Constraints
+Techincal constraints are fixed technical desing decisions that absolutely cannot be changed. 
+Most often these are provided by stakeholders at the outset of the project. 
+Sometimes a team may choose to create a constraint, 
+perhaps to simplify the world in which they are working
+
+Some of the technical constraints that the project currently has are the following
+
+* The use of SOLID
+* The use of the ReactJS framework
+* Being able to make a functional project while maintaining the decentralized network system 
+
+.Business Constraints 
+Business constraints are unchangeable business decisions that in some way restrict the software architecture design.  
+Business constraints are similar to technical constraints in that they are decisions that cannot be changed, but rather than influencing structures directly through technology, the influence occurs indirectly through business decisions.
+****
+

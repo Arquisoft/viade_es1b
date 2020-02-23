@@ -24,3 +24,7 @@ Various options:
 * more detailed in form of separate sections per decision
 * ADR (architecture decision record) for every important decision
 ****
+
+Routes sharing is unidirectional. +
+It means that a user doesn't have to share his routes to another one once the second one has shared his own routes.
+
