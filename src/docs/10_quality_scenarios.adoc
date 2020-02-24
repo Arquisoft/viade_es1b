@@ -1,6 +1,6 @@
 [[section-quality-scenarios]]
 == Quality Requirements
-
+:imagesdir: images
 
 [role="arc42help"]
 ****
@@ -23,7 +23,7 @@ concrete and measurable.
 ****
 The following file represents the quality tree in wich are defined quality attributes and scenarios 
 
-image::quality-tree.png[Quality tree]
+image::qtree.png[]
 ****
 
 === Quality Scenarios
