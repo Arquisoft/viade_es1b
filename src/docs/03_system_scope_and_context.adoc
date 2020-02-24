@@ -57,12 +57,12 @@ Representative diagram:
 
 [plantuml,"interface diagram",png]
 ---
-User --> (Login) --> (User PODS)
+User -> (Login) -> (User PODS)
 rectangle Application {
-(User PODS) --> (List of routes) : Save route
-(User PODS) --> (Share) : Files,Routes,Images,Videos
-(User PODS) --> (Friend Group) : Make
-(User PODS) --> User : Friend notification
+(User PODS) -> (List of routes) : Save route
+(User PODS) -> (Share) : Files,Routes,Images,Videos
+(User PODS) -> (Friend Group) : Make
+(User PODS) -> User : Friend notification
 }
 ---
 ****
