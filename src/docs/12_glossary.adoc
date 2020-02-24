@@ -29,4 +29,6 @@ Potentially more columns in case you need translations.
 | Solid    | a web decentralization project that aims to separate user’s data and applications, led by Tim Berners-Lee, the inventor of the World Wide Web. This is the project in which this project is based on. SOLID It stands for Social Linked Data
 | POD    | An Acronim for 'Personal Online Data', it refers to the personal decentralized storage used in SOLID aplications. Its stores the data from the user outside of the application, allowing the user to retain control and ownership of personal information.
 |Linked Data|It is the way SOLID connects different POD's resources. Those links are typed, this means that they contain additional information.
+|Distributed Network| A network that hasn't a central server, instead all of the clients can act like it.
+|ReactJS | A JavaScript framework to build user interface. It's based on Components items that render on screen.
 |===
