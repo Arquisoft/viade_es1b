@@ -52,7 +52,7 @@ The functionality planned for any user is:
 - Share files, images and videos with anyone.
 - Receive friend notification.
 - Make friends groups
-
+****
 Representative diagram:
 
 [plantuml,"interface diagram",png]
@@ -65,6 +65,7 @@ rectangle Application {
 (User PODS) --> User : Friend notification
 }
 ---
+****
 === Technical Context
 
 [role="arc42help"]
@@ -87,4 +88,4 @@ together with a mapping table showing the relationships between channels and inp
 
 ****
 
-TODO - Diagrama UML, Casos de uso
+TODO - Diagrama UML, correct usecase diagram
