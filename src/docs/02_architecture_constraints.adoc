@@ -43,5 +43,5 @@ perhaps to simplify the world in which they are working
 |Time schedule| We have limited time to deliver a final version in May/June
 |Code coverage| The use of certain tools in order to evaluate the quality of the code itself.
 |=======================
-****
+
 
