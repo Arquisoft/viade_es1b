@@ -1,6 +1,27 @@
 [[section-design-decisions]]
 == Design Decisions
 
+[%header,cols=2*] 
+|===
+|Section
+|Decision
+
+|Data allocation
+|SoLiD
+
+|Libraries used
+|React
+
+|Programming language
+|Javascript
+
+|Version Control
+|GitHub
+
+|Design Pattern
+|MVC (Model View Controller)
+|===
+
 
 [role="arc42help"]
 ****
