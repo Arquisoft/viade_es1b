@@ -1,6 +1,6 @@
 [[section-system-scope-and-context]]
 == System Scope and Context
-:imagedir: images
+:imagesdir: images
 ////
 [role="arc42help"]
 ****
