@@ -10,7 +10,7 @@ This is not a definitive version. We will be adding more scenarios later
 	** The second option is that the login is invalid, which causes the graphical interface of the login to be loaded again with an error message.
 * Notably,the SOLID server is different from the user's POD.
 
-image::./images/InicioApp.png[]
+
 
 This is the sequence to generate the uml:
 
