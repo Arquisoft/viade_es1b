@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [[section-technical-risks]]
 == Risks and Technical Debts
 
@@ -15,3 +16,36 @@ This should be your motto for systematic detection and evaluation of risks and t
 .Form
 List of risks and/or technical debts, probably including suggested measures to minimize, mitigate or avoid risks or reduce technical debts.
 ****
+=======
+[[section-technical-risks]]
+== Risks and Technical Debts
+
+////
+[role="arc42help"]
+****
+.Contents
+A list of identified technical risks or technical debts, ordered by priority
+
+.Motivation
+“Risk management is project management for grown-ups” (Tim Lister, Atlantic Systems Guild.) 
+
+This should be your motto for systematic detection and evaluation of risks and technical debts in the architecture, which will be needed by management stakeholders (e.g. project managers, product owners) as part of the overall risk analysis and measurement planning.
+
+.Form
+List of risks and/or technical debts, probably including suggested measures to minimize, mitigate or avoid risks or reduce technical debts.
+****
+////
+The main risks we have identified in the implmentation of this application are the following ones:
+
+* SOLID specification +
+SOLID's specification is something totally new to our team and it's something we must follow because of the restrictions we have (<<02_architecture_costraints.adoc>>), so we have to learn how to work and develop our application according to this.
+
+* ReactJS +
+This is also a framework that we are not familiarized with and, such as SOLID's specification, we must work with it. It means that we would have to do a research of information to form ourselves to programming the best way possible.
+
+* Adaptation between members of the team +
+We are 5 people who have worked together rarely or none and, although we know that this is what our future probably holds to us, the lack of communication or rapport between all of us is still a risk.
+
+* Short term reviews +
+We have very little time to develop the first version of our application (3 weeks) and if we don't organize well it can be a disaster.
+>>>>>>> dac078e83f06d9c603ee5e4406af797426c5cdb9
