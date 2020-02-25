@@ -18,15 +18,12 @@ This is the sequence to generate the uml:
 ----
 title How does the login in the application work?
 
-
-
 actor USER #red
 participant UILogin #blue
 control Authentication #green
 database SOLID #purple
 database POD #pink
 participant UIApplication #blue
-
 
 USER -> UILogin: Set credentials
 UILogin -> Authentication: Login Request
@@ -36,11 +33,12 @@ alt Login Successful
 	SOLID -> Authentication: Correct login
 	Authentication --> UIApplication: Load Application
     POD->UIApplication: Load your own routes
-
+	
 else Login Failure
 	SOLID -> Authentication: Invalid login
 	Authentication --> UILogin: Load Login
 	end
+
 
 
 ----
