@@ -66,15 +66,12 @@ This is not a definitive version. We will be adding more scenarios later
 	** The second option is that the login is invalid, which causes the graphical interface of the login to be loaded again with an error message.
 * Notably,the SOLID server is different from the user's POD.
 
-image::./images/InicioApp.png[]
 
 This is the sequence to generate the uml:
 
-[plantuml,"Sequence diagram",png]
+[plantuml,"Initial diagram",png]
 ----
 title How does the login in the application work?
-
-
 
 actor USER #red
 participant UILogin #blue
@@ -82,7 +79,6 @@ control Authentication #green
 database SOLID #purple
 database POD #pink
 participant UIApplication #blue
-
 
 USER -> UILogin: Set credentials
 UILogin -> Authentication: Login Request
@@ -92,11 +88,12 @@ alt Login Successful
 	SOLID -> Authentication: Correct login
 	Authentication --> UIApplication: Load Application
     POD->UIApplication: Load your own routes
-
+	
 else Login Failure
 	SOLID -> Authentication: Invalid login
 	Authentication --> UILogin: Load Login
 	end
+
 
 
 ----
@@ -106,8 +103,6 @@ else Login Failure
 * The user wants to add a route. In the application there will be a button or something similar in which you can add a route. When everything requested to save the route has been added, there will be a service that validates that the route is correct. This service will try to save the route in your POD. From here, two situations can occur:
 ** That the route is saved successfully and you receive a message that it was saved correctly.
 ** Or that the route could not be saved and you receive an error message.
-
-image::./images/AddRoute.png[]
 
 This is the sequence to generate the uml:
 

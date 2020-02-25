@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [[section-glossary]]
 == Glossary
 
@@ -57,4 +56,3 @@ The most important domain and technical terms that your stakeholders use when di
 |===
 
 TODO - complete glossary while we are developing 
->>>>>>> dac078e83f06d9c603ee5e4406af797426c5cdb9
