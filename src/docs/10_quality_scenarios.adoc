@@ -1,7 +1,7 @@
 [[section-quality-scenarios]]
 == Quality Requirements
 :imagesdir: images
-
+////
 [role="arc42help"]
 ****
 
@@ -16,10 +16,10 @@ Since quality requirements will have a lot of influence on architectural
 decisions you should know for every stakeholder what is really important to them,
 concrete and measurable.
 ****
-
+////
 === Quality Tree
 
-[role="arc42help"]
+
 ****
 The following file represents the quality tree in wich are defined quality attributes and scenarios 
 
@@ -28,8 +28,9 @@ image::qtree.png[]
 
 === Quality Scenarios
 
-[role="arc42help"]
+
 ****
+
 In this section we take a deeper look at some of the quality requirements mentioned in the quality tree:
 [options="header"]
 |=======================

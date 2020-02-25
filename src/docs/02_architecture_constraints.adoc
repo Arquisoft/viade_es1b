@@ -1,7 +1,7 @@
 [[section-architecture-constraints]]
 == Architecture Constraints
 
-
+////
 [role="arc42help"]
 ****
 .Contents
@@ -22,6 +22,7 @@ conventions (e.g. programming or versioning guidelines, documentation or naming 
 
 [role="arc42help"]
 ****
+////
 Constraints are fixed technical or bussiness-oriented desing decisions that absolutely cannot be changed (maybe negotiable).
 Most often these are provided by stakeholders at the outset of the project.
 Sometimes a team may choose to create a constraint,
