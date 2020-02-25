@@ -1,5 +1,6 @@
 [[section-system-scope-and-context]]
 == System Scope and Context
+:imagedir: images
 ////
 [role="arc42help"]
 ****
@@ -56,18 +57,10 @@ The users will be able to:
 ****
 Representative diagram:
 
-[plantuml,"interface diagram",png]
-----
-User -> (Login)
-rectangle Application {
-    (Login) --> (User PODS)
-    (User PODS) --> (List of routes) : Save route
-    (User PODS) --> (Share) : Files,Routes,Images,Videos
-    (User PODS) --> (Friend Group) : Make
-    (User PODS) --> User : Friend notification
-}
-----
+image::03-plantUML.png[]
+
 ****
+
 ////
 === Technical Context
 
@@ -91,4 +84,5 @@ together with a mapping table showing the relationships between channels and inp
 
 ****
 ////
+
 TODO - Diagrama UML, correct usecase diagram
