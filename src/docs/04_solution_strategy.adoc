@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-[[section-solution-strategy]]
-== Solution Strategy
-
-
-[role="arc42help"]
-****
-.Contents
-A short summary and explanation of the fundamental decisions and solution strategies, that shape the system's architecture. These include
-
-* technology decisions
-* decisions about the top-level decomposition of the system, e.g. usage of an architectural pattern or design pattern
-* decisions on how to achieve key quality goals
-* relevant organizational decisions, e.g. selecting a development process or delegating certain tasks to third parties.
-
-.Motivation
-These decisions form the cornerstones for your architecture. They are the basis for many other detailed decisions or implementation rules.
-
-.Form
-Keep the explanation of these key decisions short.
-
-Motivate what you have decided and why you decided that way,
-based upon your problem statement, the quality goals and key constraints.
-Refer to details in the following sections.
-****
-=======
 [[section-solution-strategy]]
 == Solution Strategy
 
@@ -66,4 +40,3 @@ Solid pods are the way in which users will store their information in order to s
 Solid-auth-service +
 This is a browser library that allows our app to connect securely to users pods and read and write data into them.
 
->>>>>>> dac078e83f06d9c603ee5e4406af797426c5cdb9
