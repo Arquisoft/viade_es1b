@@ -1,7 +1,7 @@
 [[section-concepts]]
 == Cross-cutting Concepts
-
-
+TODO - Write relevant concepts we want to highlight as we develop the app
+////
 [role="arc42help"]
 ****
 .Content
@@ -65,3 +65,4 @@ _<explanation>_
 === _<Concept n>_
 
 _<explanation>_
+////
