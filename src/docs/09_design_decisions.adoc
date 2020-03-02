@@ -1,7 +1,28 @@
 [[section-design-decisions]]
 == Design Decisions
 
+[%header,cols=2*] 
+|===
+|Section
+|Decision
 
+|Data allocation
+|SoLiD
+
+|Libraries used
+|React
+
+|Programming language
+|Javascript
+
+|Version Control
+|GitHub
+
+|Design Pattern
+|MVC (Model View Controller)
+|===
+
+////
 [role="arc42help"]
 ****
 .Contents
@@ -24,6 +45,7 @@ Various options:
 * more detailed in form of separate sections per decision
 * ADR (architecture decision record) for every important decision
 ****
+////
 
 Routes sharing is unidirectional. +
 It means that a user doesn't have to share his routes to another one once the second one has shared his own routes.

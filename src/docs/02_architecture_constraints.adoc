@@ -1,7 +1,7 @@
 [[section-architecture-constraints]]
 == Architecture Constraints
 
-
+////
 [role="arc42help"]
 ****
 .Contents
@@ -18,24 +18,29 @@ technical constraints, organizational and political constraints and
 conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
 ****
 
-=== Categories of Constraints
+=== System Constraints
 
 [role="arc42help"]
 ****
-.Technical Constraints
-Techincal constraints are fixed technical desing decisions that absolutely cannot be changed. 
-Most often these are provided by stakeholders at the outset of the project. 
-Sometimes a team may choose to create a constraint, 
+////
+Constraints are fixed technical or bussiness-oriented desing decisions that absolutely cannot be changed (maybe negotiable).
+Most often these are provided by stakeholders at the outset of the project.
+Sometimes a team may choose to create a constraint,
 perhaps to simplify the world in which they are working
 
-Some of the technical constraints that the project currently has are the following
-
-* The use of SOLID
-* The use of the ReactJS framework
-* Being able to make a functional project while maintaining the decentralized network system 
-
-.Business Constraints 
-Business constraints are unchangeable business decisions that in some way restrict the software architecture design.  
-Business constraints are similar to technical constraints in that they are decisions that cannot be changed, but rather than influencing structures directly through technology, the influence occurs indirectly through business decisions.
-****
-
+.The main constraints are the following
+[options="header"]
+|=======================
+|Constraint|Explanation
+|SOLID     | We are forced to use the SOLID framework and its features in order to develop our application   
+|ReactJS   | The use of the ReactJS framework
+|Decentralized network system    | Being able to develop a functional project while maintaining the decentralized network system having in consideration all the challenges it may bring to the team   
+|PODs      | Make good use of the POD system and its advantages in order to accomplish the goals and features that the application requieres
+|Independentcy| Make sure that the files that store the routes are independent of the application
+|Flexible Web Interface| Implementation of a web interface flexible enough to be used in a variety of devices
+|Tests	   | The need of implementing a variety of tests in order to maintain the funcionality of the application and find possible bugs
+|Version Control| The use of a GitHub repository in order to keep the development of the project in check and always available
+|Geo file standard| The need of searching and choosing a file format to store the routes
+|Time schedule| We have limited time to deliver a final version in May/June
+|Code coverage| The use of certain tools in order to evaluate the quality of the code itself.
+|=======================
