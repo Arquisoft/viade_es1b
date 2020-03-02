@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Login from "./components/Login/Login";
@@ -20,9 +19,6 @@ const App = (props) => {
         >
           Learn React. Developed using Docker.
         </a>
-
-       
-
       </header>
     </div>
   );*/
