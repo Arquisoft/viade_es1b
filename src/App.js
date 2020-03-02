@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import Login from "./components/Login/Login";
 
-function App() {
-  return (
+const App = (props) => {
+  /*return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -18,11 +20,22 @@ function App() {
         >
           Learn React. Developed using Docker.
         </a>
-        
+
+       
 
       </header>
     </div>
+  );*/
+
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" render={props => <Login {...props}/>}></Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default (App);
