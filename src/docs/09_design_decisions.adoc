@@ -48,5 +48,5 @@ Various options:
 ////
 
 Routes sharing is unidirectional. +
-It means that a user doesn't have to share his routes to another one once the second one has shared his own routes.
+It means that an user doesn't have to share his routes to another one once the second one has shared his own routes.
 
