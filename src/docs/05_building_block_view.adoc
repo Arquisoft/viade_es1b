@@ -2,7 +2,7 @@
 
 
 == Building Block View
-TODO - We don know how the system will be divided in blocks. We will complete it while we are developing.
+TODO - We don't know how the system will be divided in blocks. We will complete it while we are developing.
 ////
 [role="arc42help"]
 ****

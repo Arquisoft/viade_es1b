@@ -23,7 +23,7 @@ conventions (e.g. programming or versioning guidelines, documentation or naming 
 [role="arc42help"]
 ****
 ////
-Constraints are fixed technical or bussiness-oriented desing decisions that absolutely cannot be changed (maybe negotiable).
+Constraints are fixed technical or bussiness-oriented design decisions that absolutely cannot be changed (maybe negotiable).
 Most often these are provided by stakeholders at the outset of the project.
 Sometimes a team may choose to create a constraint,
 perhaps to simplify the world in which they are working
@@ -35,7 +35,7 @@ perhaps to simplify the world in which they are working
 |SOLID     | We are forced to use the SOLID framework and its features in order to develop our application   
 |ReactJS   | The use of the ReactJS framework
 |Decentralized network system    | Being able to develop a functional project while maintaining the decentralized network system having in consideration all the challenges it may bring to the team   
-|PODs      | Make good use of the POD system and its advantages in order to accomplish the goals and features that the application requieres
+|PODs      | Make good use of the POD system and its advantages in order to accomplish the goals and features that the application requires
 |Independentcy| Make sure that the files that store the routes are independent of the application
 |Flexible Web Interface| Implementation of a web interface flexible enough to be used in a variety of devices
 |Tests	   | The need of implementing a variety of tests in order to maintain the funcionality of the application and find possible bugs
