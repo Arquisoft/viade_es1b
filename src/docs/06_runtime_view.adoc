@@ -72,7 +72,7 @@ participant Legend
 
 note right of Legend: Hiker, is the users who will use the application.\nThe color that identifies the hikers is red
 note right of Legend:UIApplication is the GUI\n with which hikers can interact. All GUIs are yellow
-note right of Legend: The color that identifies the services is green.\n For example, authentication service.
+note right of Legend: The color that identifies the services is green.\n For example, addRouteService service.
 note right of Legend: Pink color identify your personal\n server (pink)
 
 
