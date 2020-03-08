@@ -17,14 +17,21 @@ This is the sequence to generate the uml:
 ----
 title How does the login in the application work?
 
-actor USER #red
-participant UILogin #blue
+actor HIKER #red
+participant UILogin #yellow
 control Authentication #green
 database SOLID #purple
 database POD #pink
-participant UIApplication #blue
+participant UIApplication #yellow
+participant Caption
 
-USER -> UILogin: Set credentials
+
+note right of Caption: Hiker, is the users who will use the application.\nThe color that identifies the hikers is red
+note right of Caption:UILogin and UIApplication They are the GUIs\n with which hikers can interact. All GUIs are yellow
+note right of Caption: The color that identifies the services is green.\n For example, authentication service.
+note right of Caption: Pink colors identify the use of SOLID.\n The different colors of roses are to specify that one is\n the SOLID server (purple) and another your personal\n server (pink)
+
+HIKER -> UILogin: Set credentials
 UILogin -> Authentication: Login Request
 Authentication -> SOLID: Validate credentials
 
@@ -40,6 +47,7 @@ else Login Failure
 
 
 
+
 ----
 === Add route
 
@@ -50,19 +58,25 @@ else Login Failure
 
 This is the sequence to generate the uml:
 
-[plantuml,"Sequence diagram",png]
+[plantuml,"Add route diagram",png]
 ----
 title How do you add a route?
 
 
 
-actor USER #red
-participant UIApplication #blue
+actor HIKER #red
+participant UIApplication #yellow
 control AddRouteService #green
 database POD #pink
+participant Legend
+
+note right of Legend: Hiker, is the users who will use the application.\nThe color that identifies the hikers is red
+note right of Legend:UIApplication is the GUI\n with which hikers can interact. All GUIs are yellow
+note right of Legend: The color that identifies the services is green.\n For example, authentication service.
+note right of Legend: Pink color identify your personal\n server (pink)
 
 
-USER -> UIApplication: ADD ROUTE
+HIKER -> UIApplication: ADD ROUTE
 UIApplication -> AddRouteService: AddRouteInYourPOD()
 AddRouteService -> POD: Save route in your POD
 
