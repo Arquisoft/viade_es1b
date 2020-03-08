@@ -1,0 +1,19 @@
+[[section-quality-scenarios]]
+== Quality Requirements
+
+=== Quality Tree
+
+.Quality tree diagram
+image::./images/QualityTree.png[diagram]
+
+=== Quality Scenarios
+
+[options="header"]
+|===
+| Reference |Quality attribute |Scenario  | Priority
+|  1  | Performance / efficiency | The user will view the routes on a map as fast as possible. | High, high
+|  2  | Usability | The system must be intuitive and easy to use for all types of users. | High, medium
+|  3  | Privacy and security | Users can have private data that nobody can see if it does not allow it and the data will be separated from the application. | High, medium
+|  4  | Testeability | The app should be testable, as automated as possible with the use of testing tools. | Medium, medium
+
+|===

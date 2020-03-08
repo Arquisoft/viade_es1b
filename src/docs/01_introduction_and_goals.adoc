@@ -1,0 +1,49 @@
+[[section-introduction-and-goals]]
+== Introduction and Goals
+
+
+This project is focused on developing an application to manage routes using SOLID specifications. The main objective is to ensure that users have control over their route data. For the realization of this application we will use the React framework.
+
+
+=== Requirements Overview
+
+
+Functional
+
+* Users can see the routes on a map.
+* Photos and videos may be shared through the application with other friends.
+* Users will be able to have the data stored in their own pod
+* Users may have groups of friends to share their routes.
+* The application must be able to load routes generated with a different application.
+
+No functional
+
+* The application must have a friendly interface.
+* Ease of use by non-technical people.
+* Responsiveness of the application must be good.
+
+
+=== Quality Goals
+
+
+|===
+| Priority | Goal | Description
+| 1 | Security | Give users ownership of their information and grant them control over access to it
+| 2 | Usability | Create a friendly interface that does not require prior knowledge
+| 3 | Reliability | A failure in the application cannot imply a filtering of the data.
+| 4 | Compatibility | Support different types of route formats and images.
+|===
+
+
+=== Stakeholders
+
+
+|===
+| Role / Name | Contact | Expectations
+| Users | Use the application to save and check your routes | They hope that the application is easy to use, functional and safe.
+| Teachers | Supervise and evaluate the project | Expect students to perform a functional extension complying with the requirements.
+| Team | Responsible for developing the app | They hope to make a good application and learn to use new technologies.
+| Inrupt | Company that will test and evaluate the app  | They expect to get an application that uses SOLID
+|===
+
+

@@ -1,0 +1,10 @@
+[[section-runtime-view]]
+== Runtime View
+
+On this section, we will be talking about different scenarios a final user can see on the application
+
+.See map information displayed on a map
+
+image::./images/06_Run_scenario1.png[diagram]
+
+

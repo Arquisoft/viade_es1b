@@ -76,8 +76,8 @@ export const WelcomePageContent = props => {
       </WelcomeCard>
       <WelcomeCard className="card">
         <WelcomeDetail data-testid="welcome-detail">
-          <Trans i18nKey="welcome.title">
-            <h3>
+        <Trans i18nKey="welcome.title">
+          <h3>
               title
               <a
                 href="https://github.com/inrupt/solid-react-sdk"

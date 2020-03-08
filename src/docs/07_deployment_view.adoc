@@ -1,0 +1,12 @@
+[[section-deployment-view]]
+
+
+== Deployment View
+
+The application can be executed in any of the main browsers. For this you need a computer
+with internet connection and a SOLID POD, where the route data is stored. In this way, you can access
+to the application from anywhere, as long as you have a computer and internet connection.
+Depending on the course in the development of the application, an attempt will be made to adapt the application for mobile devices.
+
+=== Infrastructure Level 1
+To do

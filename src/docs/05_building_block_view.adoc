@@ -1,0 +1,19 @@
+[[section-building-block-view]]
+
+
+== Building Block View
+
+[role="arc42help"]
+****
+.Level 1 white box class diagram
+image::./images/white box level 1 diagram.png[]
+At this early stage of the development process, this diagram contains as much detail as we can represent about the current view that we, the development team, have.
+
+.Composite structure diagram
+image::./images/composite structure diagram.jpg[]
+In this view, we have a representation of the components of the system from a standpoint of the technologies used to implement each module.
+
+
+.Motivation
+This separations of the system's parts was accomplished in order to give the development team a clearer view of how the information of the project's subject was going to be spread, and also to allow them to focus on single areas of software technology to ease the soon to come implementation task.
+
