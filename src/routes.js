@@ -45,6 +45,12 @@ const privateRoutes = [
     id: 'map',
     path: '/map',
     component: MapComponent
+  },
+
+  {
+    id: 'upload',
+    path: "/upload",
+    component: UploadComponent
   }
 ];
 
