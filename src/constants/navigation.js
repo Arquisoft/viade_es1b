@@ -28,8 +28,8 @@ export const NavigationItems = [
   },
   {
     id: 'map',
-    icon: '/img/icon/files.svg',
-    label: 'navBar.mapa',
+    icon: '/img/icon/map.svg',
+    label: 'navBar.map',
     to: '/map'
   }
 ];
