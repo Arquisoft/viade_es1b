@@ -1,6 +1,7 @@
 import React from "react";
-import {  TileLayer } from "react-leaflet";
+import { TileLayer, Marker, Popup } from "react-leaflet";
 import { MapStyle } from './map.style';
+import { Route } from '../../components';
 
 
 
@@ -19,9 +20,12 @@ class MapComponent extends React.Component {
     return (
       <MapStyle center = {position} zoom = {this.state.zoom} > 
         <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <Route></Route>
       </MapStyle>
     );
   }
+
+ 
 }
 
 export default MapComponent;
