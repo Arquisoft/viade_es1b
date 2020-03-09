@@ -29,7 +29,7 @@ export const NavigationItems = [
 
   {
     id: 'upload',
-    icon: '/img/icon/map.svg',
+    icon: '/img/icon/upload.svg',
     label: 'navBar.upload',
     to: '/upload'
   }
