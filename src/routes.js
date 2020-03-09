@@ -14,6 +14,7 @@ import {
   TextEditor,
   MapComponent
 } from './containers';
+import UploadComponent from "./containers/Upload";
 
 const privateRoutes = [
   {
