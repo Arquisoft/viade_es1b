@@ -25,7 +25,15 @@ export const NavigationItems = [
     icon: '/img/icon/map.svg',
     label: 'navBar.map',
     to: '/map'
+  },
+
+  {
+    id: 'upload',
+    icon: '/img/icon/map.svg',
+    label: 'navBar.upload',
+    to: '/upload'
   }
+
 ];
 
 export const ProfileOptions = [

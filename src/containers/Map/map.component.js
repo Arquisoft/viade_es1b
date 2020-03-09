@@ -10,14 +10,14 @@ class MapComponent extends React.Component {
     this.state = {
       lat: 43.354444,
       lng: -5.85166,
-      zoom: 12
+      zoom: 0
     }
   }
 
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
-      <MapStyle center = {position} zoom = {this.state.zoom} > 
+      <MapStyle center = {position} zoom = {this.state.zoom} >
         <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       </MapStyle>
     );
