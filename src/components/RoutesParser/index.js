@@ -1,3 +1,3 @@
-import Route from './routeParser.component';
+import Ruta from './routeParser.component';
 
-export default Route;
+export default Ruta;

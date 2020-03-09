@@ -6,7 +6,7 @@ import ImageProfile from './ImageProfile';
 import Footer from './Footer';
 import Notification from './Notifications';
 import AutoSaveSpinner from './AutoSaveSpinner';
-import Route from './RoutesParser';
+import Ruta from './RoutesParser';
 
 export {
   ErrorBoundary,
@@ -17,5 +17,5 @@ export {
   Footer,
   Notification,
   AutoSaveSpinner,
-  Route
+  Ruta
 };

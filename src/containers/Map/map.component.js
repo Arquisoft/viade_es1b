@@ -1,12 +1,11 @@
 import React from "react";
-import { TileLayer, Marker, Popup } from "react-leaflet";
-import { MapStyle } from './map.style';
-import { Route } from '../../components';
-
+import { MapStyle, MapSection } from './map.style';
+import { Ruta } from '@components';
+import { TileLayer} from "react-leaflet";
 
 
 class MapComponent extends React.Component {
-  constructor(){
+  constructor(props){
     super();
     this.state = {
       lat: 43.354444,
@@ -18,14 +17,27 @@ class MapComponent extends React.Component {
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
-      <MapStyle center = {position} zoom = {this.state.zoom} > 
-        <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <Route></Route>
+      <MapStyle center = {position} zoom = {12}> 
+      <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" 
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'/>
+        <Ruta></Ruta>
       </MapStyle>
-    );
-  }
 
- 
+      
+    );
+  } 
 }
 
-export default MapComponent;
+
+class Mapa extends React.Component {
+  render() {
+    return (
+    <MapSection>
+     <MapComponent></MapComponent>
+    </MapSection>
+
+    );
+  }
+}
+
+export default Mapa;

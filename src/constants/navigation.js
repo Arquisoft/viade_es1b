@@ -29,7 +29,7 @@ export const NavigationItems = [
   {
     id: 'map',
     icon: '/img/icon/files.svg',
-    label: 'navBar.mapa',
+    label: 'Mapa',
     to: '/map'
   }
 ];
