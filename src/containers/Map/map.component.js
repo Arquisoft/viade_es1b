@@ -1,8 +1,35 @@
 import React from "react";
 import {  TileLayer } from "react-leaflet";
 import { MapStyle } from './map.style';
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import { FixedSizeList } from 'react-window';
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: 300,
+    height: 500,
+    maxWidth: '100%',
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
 
+function renderRow(props) {
+  const { index, style } = props;
+
+  return (
+    <ListItem button style={style} key={index}>
+      <ListItemText primary={`Prueba ${index + 1}`} />
+    </ListItem>
+  );
+}
+
+renderRow.propTypes = {
+  index: PropTypes.number.isRequired,
+  style: PropTypes.object.isRequired,
+};
 
 class MapComponent extends React.Component {
   constructor(){
@@ -17,9 +44,14 @@ class MapComponent extends React.Component {
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
-      <MapStyle center = {position} zoom = {this.state.zoom} > 
+      <React.Fragment>
+        <FixedSizeList height={500} width={"25%"} itemSize={46} itemCount={200}>
+        {renderRow}
+        </FixedSizeList>
+        <MapStyle center = {position} zoom = {this.state.zoom} > 
         <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      </MapStyle>
+        </MapStyle>
+      </React.Fragment>
     );
   }
 }
