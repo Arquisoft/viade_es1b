@@ -1,80 +1,10 @@
 [[section-runtime-view]]
 == Runtime View
-This is not a definitive version. We will be adding more scenarios later
 
-=== How does the application login work?
+On this section, we will be talking about different scenarios a final user can see on the application
 
-* Shows the login of the application and how the whole process works. 
-* A user enters their credentials in the login interface. Then, that interface sends the request to the authenticator, which in turn validates the data on the SOLID server. From here, two situations can occur:
-	** The first is that the session is correct and then loads the new graphical interface (that of the application) and then loads its own routes from its own POD.
-	** The second option is that the login is invalid, which causes the graphical interface of the login to be loaded again with an error message.
-* Notably,the SOLID server is different from the user's POD.
+.See map information displayed on a map
+
+image::./images/06_Run_scenario1.png[diagram]
 
 
-This is the sequence to generate the uml:
-
-[plantuml,"Initial diagram",png]
-----
-title How does the login in the application work?
-
-actor USER #red
-participant UILogin #blue
-control Authentication #green
-database SOLID #purple
-database POD #pink
-participant UIApplication #blue
-
-USER -> UILogin: Set credentials
-UILogin -> Authentication: Login Request
-Authentication -> SOLID: Validate credentials
-
-alt Login Successful
-	SOLID -> Authentication: Correct login
-	Authentication --> UIApplication: Load Application
-    POD->UIApplication: Load your own routes
-	
-else Login Failure
-	SOLID -> Authentication: Invalid login
-	Authentication --> UILogin: Load Login
-	end
-
-
-
-----
-=== Add route
-
-* Show how a route is added to the application.
-* The user wants to add a route. In the application there will be a button or something similar in which you can add a route. When everything requested to save the route has been added, there will be a service that validates that the route is correct. This service will try to save the route in your POD. From here, two situations can occur:
-** That the route is saved successfully and you receive a message that it was saved correctly.
-** Or that the route could not be saved and you receive an error message.
-
-This is the sequence to generate the uml:
-
-[plantuml,"Sequence diagram",png]
-----
-title How do you add a route?
-
-
-
-actor USER #red
-participant UIApplication #blue
-control AddRouteService #green
-database POD #pink
-
-
-USER -> UIApplication: ADD ROUTE
-UIApplication -> AddRouteService: AddRouteInYourPOD()
-AddRouteService -> POD: Save route in your POD
-
-alt correct
-	POD -> AddRouteService: Route saved
-	AddRouteService --> UIApplication: Successful message
-
-else incorrect
-	POD -> AddRouteService: Route could't be saved
-	AddRouteService --> UIApplication: Failure message
-	end
-----
-
-
-=== <Runtime Scenario n>
