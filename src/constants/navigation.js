@@ -15,12 +15,6 @@ export const NavigationItems = [
     to: '/profile'
   },
   {
-    id: 'tictactoe',
-    icon: '/img/icon/tictactoe.svg',
-    label: 'navBar.tictactoe',
-    to: '/tictactoe'
-  },
-  {
     id: 'text-editor',
     icon: '/img/icon/files.svg',
     label: 'navBar.text-editor',
@@ -28,8 +22,8 @@ export const NavigationItems = [
   },
   {
     id: 'map',
-    icon: '/img/icon/files.svg',
-    label: 'Mapa',
+    icon: '/img/icon/map.svg',
+    label: 'navBar.map',
     to: '/map'
   }
 ];
@@ -39,14 +33,6 @@ export const ProfileOptions = [
     label: 'navBar.profile',
     onClick: 'profileRedirect',
     icon: 'cog'
-  },
-  {
-    label: 'navBar.formModelConvert',
-    onClick: 'formModelConvertRedirect'
-  },
-  {
-    label: 'navBar.formModelRender',
-    onClick: 'formModelRenderRedirect'
   },
   {
     label: 'navBar.logOut',
