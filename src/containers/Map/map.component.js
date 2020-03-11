@@ -52,14 +52,16 @@ class MapContainer extends React.Component {
         </FixedSizeList>
         <MapStyle center={position} zoom={12}>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' />
-          <Ruta></Ruta>
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' />            
+          <Ruta lat={43.354444} long={-5.85166} Popup={"ruta 1"}/>
+          <Ruta lat={39.124232} long={-3.55166} Popup={"ruta 2"}/>
         </MapStyle>
       </React.Fragment>
 
     );
   }
 }
+
 
 
 export default MapContainer;
