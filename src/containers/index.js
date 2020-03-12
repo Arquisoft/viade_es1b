@@ -4,7 +4,8 @@ import PageNotFound from './PageNotFound';
 import Welcome from './Welcome';
 import Profile from './Profile';
 import TextEditor from './TextEditor';
-import MapComponent from './Map';
+import Mapa from './Map';
+
 import { FormModelConverter, FormModelRenderer } from './FormModel';
 
 export {
@@ -17,5 +18,5 @@ export {
   FormModelConverter,
   FormModelRenderer,
   TextEditor,
-  MapComponent
+  Mapa
 };
