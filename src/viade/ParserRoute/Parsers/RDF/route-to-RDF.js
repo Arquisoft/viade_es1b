@@ -9,12 +9,9 @@ class RouteToRDF {
     parse() {
         str.append('{');
         str.append('"@context": "http://schema.org",');
-        str.append('"@type": "RouteViade",');
+        str.append('"@type": "Route",');
         str.append('"name": "');
         str.append(this.route.name);
-        str.append('",');
-        str.append('"description": "');
-        str.append(this.route.description);
         str.append('",');
         str.append('"itinerary": {');
 
@@ -36,23 +33,11 @@ class RouteToRDF {
         for (i = 0; i < this.route.items.length ; i++) {
 
             str.append('{');
-            str.append('"@type": "ItemViade",');
+            str.append('"@type": "PointRoute",');
 
             if (this.route.item[i].name != null) {
                 str.append('"name": "');
                 str.append(this.route.item[i].name);
-                str.append('",');
-            }
-
-            if (this.route.item[i].description != null) {
-                str.append('"description": "');
-                str.append(this.route.item[i].description);
-                str.append('",');
-            }
-
-            if (this.route.item[i].addres != null) {
-                str.append('"addres": "');
-                str.append(this.route.item[i].addres);
                 str.append('",');
             }
 
@@ -62,11 +47,7 @@ class RouteToRDF {
                 str.append('",');
             }
 
-            if (this.route.item[i].postalCode != null) {
-                str.append('"postalCode": "');
-                str.append(this.route.item[i].postalCode);
-                str.append('",');
-            }
+          
 
             str.append('"latitude": "');
             str.append(this.route.item[i].latitude);
