@@ -1,4 +1,4 @@
-import {RouteViade,ItemViade} from "../../Model";
+import {RouteViade,PointRoute} from "../../Model";
 
 class GeoJSONToRoute {
     constructor(file){
@@ -22,7 +22,7 @@ class GeoJSONToRoute {
 
     getItems(coordinates){
         return coordinates.map((coor)=>{
-          return new ItemViade(coor[0],coor[1]);
+          return new PointRoute(coor[0],coor[1]);
         })
     }
 }

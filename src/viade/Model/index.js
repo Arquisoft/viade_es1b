@@ -1,4 +1,4 @@
 import Route from "./route";
-import PointRoute from "./itemRoute";
+import PointRoute from "./point";
 
 export {Route,PointRoute};
