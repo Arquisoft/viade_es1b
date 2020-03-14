@@ -1,4 +1,4 @@
-import {RouteViade,PointRoute} from "../../Model";
+import {Route,PointRoute} from "../../Model";
 
 class GeoJSONToRoute {
     constructor(file){
