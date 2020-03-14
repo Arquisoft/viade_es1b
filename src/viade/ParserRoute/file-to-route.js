@@ -1,6 +1,6 @@
 import {GeoJSONToRoute} from"./Parsers";
 
-class ParserToRoute{
+class FileToRoute{
     constructor(file){
         this.file=file;
         this.selectParser(file);
@@ -27,3 +27,5 @@ class ParserToRoute{
         return this.parser.execute();
     }
 }
+
+export default FileToRoute;

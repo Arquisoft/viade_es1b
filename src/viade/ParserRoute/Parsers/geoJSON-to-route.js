@@ -22,7 +22,7 @@ class GeoJSONToRoute {
 
     getItems(coordinates){
         return coordinates.map((coor)=>{
-          return new PointRoute(coor[0],coor[1]);
+          return new PointRoute(coor[0],coor[1], coor[2]);
         })
     }
 }

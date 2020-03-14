@@ -1,3 +1,3 @@
-import GeoJSONToRoute from "./geoJSON-to-route";
+import RouteToJsonld from "./route-to-Jsonld";
 
-export {GeoJSONToRoute};
+export {RouteToJsonld};

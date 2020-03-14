@@ -8,11 +8,10 @@ import SolidAuth from 'solid-auth-client';
 import { successToaster, errorToaster } from '@utils';
 import ldflex from '@solid/query-ldflex';
 import { AccessControlList } from '@inrupt/solid-react-components';
-import {FilePicker} from 'react-file-picker';
+import MyFilePicker from './FilePicker';
 import {
   RouteLoaderWrapper,
   RouteLoaderContainer,
-  Header,
   Form,
   FullGridSize,
   Button,
@@ -23,16 +22,6 @@ import {
 } from './routes-loader.style';
 
 type Props = { webId: String };
-
-const MyFilePicker= ()=>{
-  return (
-      <FilePicker extensions={['json']} onError={console.log("Fichero no deseado")}>
-          <Button>
-              Upload routes
-  </Button>
-      </FilePicker>
-  );
-};
 
 function extractWacAllow(response) {
   // WAC-Allow: user="read write append control",public="read"
