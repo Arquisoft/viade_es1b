@@ -16,7 +16,7 @@ class GeoJSONToRoute {
     parse(content){
         const geoJSON=JSON.parse(content);
         const items=this.getItems(geoJSON.coordinates);
-        const route=new RouteViade(this.file.name,items);
+        const route=new Route(this.file.name,items);
         return route;
     }
 
