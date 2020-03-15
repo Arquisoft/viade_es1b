@@ -1,6 +1,6 @@
 import React from "react";
 import { MapStyle } from './map.style';
-import { Ruta } from '@components';
+import { Ruta,Download } from '@components';
 import { TileLayer } from "react-leaflet";
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -27,6 +27,35 @@ function renderRow(props) {
   );
 }
 
+function DataDownload() {
+  const $rdf = require('rdflib');
+
+  const store  = $rdf.graph();
+  const fetcher =new $rdf.Fetcher(store);
+  const me = store.sym('https://uo265135.inrupt.net/public');
+  const profile = me.doc()
+
+  const VCARD = new $rdf.Namespace('http://www.w3.org/2006/vcard/ns#');
+  const FOAF = $rdf.Namespace('http://xmlns.com/foaf/0.1/');
+  const LDP = $rdf.Namespace('http://www.w3.org/ns/ldp#');
+
+  store.add(me, VCARD('fn'),me, profile);
+  let name = store.any(me, VCARD('fn')) || store.any(me, FOAF('name'));
+  fetcher.load(profile).then(response => {
+   console.log(name || "wot no name?");
+ }, err => {
+    console.log('Load failed ' +  err);
+ });
+ 
+ fetcher.load(me).then(() => {
+   let file = store.any(me, LDP('contains'));
+   console.log(file);
+   console.log(me + ' contains ' + file);
+  
+ });
+  return (<div></div>)
+}
+
 renderRow.propTypes = {
   index: PropTypes.number.isRequired,
   style: PropTypes.object.isRequired,
@@ -43,9 +72,8 @@ class MapContainer extends React.Component {
   }
 
   render() {
-    const position = [this.state.lat, this.state.lng];
+    const position = [this.state.lat, this.state.lng];    
     return (
-
       <React.Fragment>
         <FixedSizeList height={500} width={"25%"} itemSize={46} itemCount={200}>
           {renderRow}
@@ -55,6 +83,7 @@ class MapContainer extends React.Component {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' />            
           <Ruta lat={43.354444} long={-5.85166} Popup={"ruta 1"}/>
           <Ruta lat={39.124232} long={-3.55166} Popup={"ruta 2"}/>
+          <DataDownload />
         </MapStyle>
       </React.Fragment>
 
