@@ -9,7 +9,7 @@ class FileToRoute{
 
     selectParser(file){
         switch (file.type) {
-            case "geojson.json":
+            case "application/geo+json":
                 this.parser=new GeoJSONToRoute(file);
                 break; 
             case "xml":
