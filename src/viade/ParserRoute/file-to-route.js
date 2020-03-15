@@ -12,7 +12,7 @@ class FileToRoute{
             case "application/geo+json":
                 this.parser=new GeoJSONToRoute(file);
                 break; 
-            case "xml":
+            case "application/xml":
                 this.parser=new XMLDocument(file);
                 break;
 
