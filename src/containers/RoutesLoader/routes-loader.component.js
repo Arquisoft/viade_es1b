@@ -196,7 +196,7 @@ export const Editor = ({ webId }: Props) => {
               )}
         </div>
       </FullGridSize>
-      <FullGridSize>
+      {/* <FullGridSize>
         <TextArea value={text} onChange={handleTextChange} cols={40} rows={10} />
       </FullGridSize>
       {sharable && (
@@ -208,8 +208,8 @@ export const Editor = ({ webId }: Props) => {
           <Button className="ids-link-stroke ids-link-stroke--primary button" onClick={handleShare}>
             {t('editor.grantAccess')}
           </Button>
-        </FullGridSize>
-      )}
+        </FullGridSize> 
+      )}*/}
       {loaded && !sharable && t('notifications.notSharable')}
     </Form>
   );

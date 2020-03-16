@@ -23,7 +23,8 @@ class MyFilePicker extends React.Component {
 
     parseFiles(acceptedFiles){
         var ftr= new FileToRoute(acceptedFiles[0]);
-        console.log(ftr);
+        //ftr.parse();
+        console.log(ftr.parse());
     }
     
 

@@ -1,8 +1,8 @@
 class Route{
-    constructor(name,points){
+    constructor(name, description, points){
         this.name=name;
         this.points=points;
-        this.description="";
+        this.description=description;
     }
 }
 

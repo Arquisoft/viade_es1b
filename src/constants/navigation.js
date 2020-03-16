@@ -28,7 +28,7 @@ export const NavigationItems = [
   },
   {
     id: 'routeLoader',
-    icon: '/img/icon/map.svg',
+    icon: '/img/icon/upload.svg',
     label: 'navBar.routeLoader',
     to: '/loadRoute'
   }
