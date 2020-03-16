@@ -54,8 +54,12 @@
     "formModelConvert": "Form Model Convert",
     "text-editor": "Editor de Textos",
     "changeLanguage": "Cambiar Lenguaje",
+<<<<<<< HEAD
+    "map" : "Mapa",
+=======
     "map":"Mapa",
     "routeLoader":"Cargar Rutas",
+>>>>>>> dev
     "languages": {
       "en": "English (Inglés)",
       "es": "Español (Español)"
