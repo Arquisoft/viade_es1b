@@ -1,15 +1,16 @@
 import React from "react";
 import { Marker, Popup } from "react-leaflet";
 
-const Ruta =()=> {
+const Ruta = props => {
       return (
         <div>
         
-        <Marker position={[43.354444, -5.85166 ]}>
+        <Marker position={[props.lat, props.long ]}>
            <Popup>
-            This is an example
+            {props.Popup}
            </Popup>
         </Marker>
+        
         </div>
       );
     
