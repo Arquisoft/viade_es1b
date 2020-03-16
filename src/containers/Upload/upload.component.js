@@ -5,13 +5,18 @@ import React from "react";
 class UploadComponent extends React.Component {
     constructor(){
         super();
+        //Instanciamos la variable, con let:
+        let files;
     }
 
+    fileSelectedHandler(){
+
+    }
 
     render() {
 
     return(
-        <p>"Ola k ase"</p>
+        <input type="file" onChange={fileSelectedHadler}/>
      );
     }
 }
