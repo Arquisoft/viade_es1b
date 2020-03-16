@@ -1,12 +1,17 @@
 {
     "@context": "http://schema.org",
     "@type": "Trip",
-    "name": "A route 2",
+    "name": "Demo2",
     "itinerary": {
         "@type": "ItemList",
         "numberOfItems": 4,
         "itemListOrder": "http://schema.org/ItemListOrderDescending",
         "itemListElement": [
+            {
+                "@type": "GeoCoordinates",
+                "latitude": 43.3551061,
+                "longitude": -5.8512792
+            },
             {
                 "@type": "GeoCoordinates",
                 "latitude": 43.368307,

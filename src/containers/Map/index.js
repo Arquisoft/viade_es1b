@@ -1,3 +1,3 @@
-import UpForm from './map.component';
+import Map from './map.component';
 
-export default UpForm;
+export default Map;
