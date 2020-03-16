@@ -4,12 +4,15 @@ class FileToRoute{
     constructor(file){
         this.file=file;
         this.selectParser(file);
-        this.parser=null;
+        //this.parser=null;
     }
 
     selectParser(file){
         switch (file.type) {
             case "application/geo+json":
+                this.parser=new GeoJSONToRoute(file);
+                break;
+            case "application/json":
                 this.parser=new GeoJSONToRoute(file);
                 break; 
             case "application/xml":
@@ -24,7 +27,7 @@ class FileToRoute{
     }
 
     parse(){
-        return this.parser.execute();
+        return this.parser.parse();
     }
 }
 

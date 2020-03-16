@@ -7,7 +7,7 @@ import Footer from './Footer';
 import Notification from './Notifications';
 import AutoSaveSpinner from './AutoSaveSpinner';
 import Ruta from './RoutesParser';
-import Download from './dataDownload';
+//import Download from './dataDownload';
 
 export {
   ErrorBoundary,
@@ -19,5 +19,5 @@ export {
   Notification,
   AutoSaveSpinner,
   Ruta,
-  Download
+  //Download
 };

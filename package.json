@@ -19,6 +19,7 @@
     "dotenv-expand": "4.2.0",
     "flag-icon-css": "^3.3.0",
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
+    "fs": "0.0.1-security",
     "fs-extra": "7.0.0",
     "husky": "^4.2.3",
     "i18next": "^15.0.4",
