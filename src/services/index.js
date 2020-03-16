@@ -1,7 +1,5 @@
 import Provider from './provider';
-import RouteExample from './exmple-routes';
-
+import * as routesHardCodeService from "./routesService";
 export {
-    Provider,
-    RouteExample
+    Provider,routesHardCodeService 
 };
