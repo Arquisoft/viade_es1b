@@ -3,6 +3,6 @@ import { Map } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
 
 export const MapStyle = styled(Map)`
-    width: 100%;
-    height: auto;
+    width: 100%; 
+    height: auto; 
   `;

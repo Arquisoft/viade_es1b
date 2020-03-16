@@ -1,59 +1,71 @@
-import React from "react";
-import {  TileLayer } from "react-leaflet";
-import { MapStyle } from './map.style';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import { FixedSizeList } from 'react-window';
+import React from 'react';
+import L from 'leaflet';
+import {TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
+import Rutas from './routes/rutas';
+import ReactDOM from 'react-dom';
+import {MapStyle} from './map.style';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: 300,
-    height: 500,
-    maxWidth: '100%',
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
+delete L.Icon.Default.prototype._getIconUrl;
 
-function renderRow(props) {
-  const { index, style } = props;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+});
 
-  return (
-    <ListItem button style={style} key={index}>
-      <ListItemText primary={`Prueba ${index + 1}`} />
-    </ListItem>
-  );
-}
+class UpForm extends React.Component {
 
-renderRow.propTypes = {
-  index: PropTypes.number.isRequired,
-  style: PropTypes.object.isRequired,
-};
-
-class MapComponent extends React.Component {
-  constructor(){
+  constructor() {
     super();
-    this.state = {
-      lat: 43.354444,
-      lng: -5.85166,
-      zoom: 12
-    }
+    this.name = Rutas.getNames()[0];
+    this.puntos = []
+    Rutas.getRutaByPosition(1).points.map(p => this.puntos.push(p.getCoordinates()));
+  }
+
+  changeName(id, e) {
+    var newRuta = Rutas.getRutaByName(id);
+    document.getElementById("name").textContent = newRuta.name;
+
+    this.puntos = newRuta.point;
+    const position = this.puntos[0];
+
+    var a = <MapStyle id="map" center={position} zoom={15} >
+      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <Polyline color={'blue'} positions={this.puntos}></Polyline>
+      <Marker position={this.puntos[0]}>
+        <Popup>Inicio</Popup>
+      </Marker>
+      <Marker position={this.puntos[this.puntos.length - 1]}>
+        <Popup>Fin</Popup>
+      </Marker>
+    </MapStyle>;
+
+    ReactDOM.render(a, document.getElementById('map'));
   }
 
   render() {
-    const position = [this.state.lat, this.state.lng];
+    const position = this.puntos[0];
     return (
-      <React.Fragment>
-        <FixedSizeList height={500} width={"25%"} itemSize={46} itemCount={200}>
-        {renderRow}
-        </FixedSizeList>
-        <MapStyle center = {position} zoom = {this.state.zoom} > 
-        <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        </MapStyle>
+      <React.Fragment >
+          <MapStyle  id="map" center={position} zoom={15}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <Polyline color={'blue'} positions={this.puntos}></Polyline>
+            <Marker position={this.puntos[0]}>
+              <Popup>Inicio</Popup>
+            </Marker>
+            <Marker position={this.puntos[this.puntos.length - 1]}>
+              <Popup>Fin</Popup>
+            </Marker>
+          </MapStyle>
+        <aside>
+        <h2 id="name">{this.name}</h2>
+        <p id="description">{this.description}</p>
+        <h3>Tus rutas</h3>
+        <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={(e) => this.changeName(n, e)}> {n} </li>)}</ul>
+      </aside>
       </React.Fragment>
     );
   }
 }
 
-export default MapComponent;
+export default UpForm;
