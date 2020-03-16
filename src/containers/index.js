@@ -5,6 +5,7 @@ import Welcome from './Welcome';
 import Profile from './Profile';
 import TextEditor from './TextEditor';
 import Mapa from './Map';
+import RouteLoader from './RoutesLoader';
 
 import { FormModelConverter, FormModelRenderer } from './FormModel';
 
@@ -18,5 +19,6 @@ export {
   FormModelConverter,
   FormModelRenderer,
   TextEditor,
-  Mapa
+  Mapa,
+  RouteLoader
 };
