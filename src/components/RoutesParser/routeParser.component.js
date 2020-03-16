@@ -1,9 +1,10 @@
 import React from "react";
 import { Marker, Popup } from "react-leaflet";
-
+import { TileLayer, Polyline } from "react-leaflet";
 
 class Ruta extends React.Component {
   constructor(route) {
+    super();
     this.route = route;
   }
   render() {
