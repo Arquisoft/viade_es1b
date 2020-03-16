@@ -7,10 +7,12 @@ class UploadComponent extends React.Component {
         //Instanciamos la variable, con let
         this.state = {
             //Estos son los ficheros, con file[0] accederíamos al primero, que es nuestro caso.
-            files: null
+            files: null,
+            direccion: "https://colourlesspawn.solid.community/public/"
         };
         //Bindeamos porque vamos a interactuar con files:
         this.itemHandler=this.itemHandler.bind(this);
+        this.subirFicheroAPod=this.subirFicheroAPod.bind(this);
     }
 
     //Esto es lo que hacemos cuando llamamos al método.
@@ -24,6 +26,13 @@ class UploadComponent extends React.Component {
         let session = await auth.currentSession();
         if (!session){
             alert("No estás loggeado");
+            if (this.files!=null){
+                //Si el fichero es nulo:
+                alert("No has seleccionado ningún fichero")
+            }
+            else{
+
+            }
         }
         else {
             alert("Estás loggeado");
