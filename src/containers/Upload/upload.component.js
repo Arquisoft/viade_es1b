@@ -22,15 +22,22 @@ class UploadComponent extends React.Component {
     };
 
     async subirFicheroAPod(){
+        //El archivo a subir será:
+        let archivo = this.state.files[0];
         //Analizamos si está loggeado:
         let session = await auth.currentSession();
         if (!session){
             alert("No estás loggeado");
-            if (this.files!=null){
+            if (this.state.files[0]!=null){
                 //Si el fichero es nulo:
                 alert("No has seleccionado ningún fichero")
-            }
+        }
             else{
+                //Vamos a mirar DONDE vamos a subir el archivo:
+                let link = this.state.direccion;
+                //Colocamos el nombre del archivo:
+                link.concat(archivo.name);
+                const res = await fc.createFile(url, strRoute, "text/turtle",{});
 
             }
         }
