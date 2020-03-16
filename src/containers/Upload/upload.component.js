@@ -1,30 +1,43 @@
 import React from "react";
-import  useWebId  from "@inrupt/solid-react-components";
+import auth from "solid-auth-client"
 
 class UploadComponent extends React.Component {
-
-
-
     constructor(){
         super();
         //Instanciamos la variable, con let
-        let files; //Estos son los ficheros, con file[0] accederíamos al primero, que es nuestro caso.
-        //Esto nos da la información del usuario:
-        const webId = useWebId(); //Si no está logeado da null
+        this.state = {
+            //Estos son los ficheros, con file[0] accederíamos al primero, que es nuestro caso.
+            files: null
+        };
+        //Bindeamos porque vamos a interactuar con files:
+        this.itemHandler=this.itemHandler.bind(this);
     }
-
 
     //Esto es lo que hacemos cuando llamamos al método.
     itemHandler(parameter){
         alert("Está funcionando");
-        this.files = parameter.target.files
+        this.setState({files: parameter.target.files});
     };
+
+    async subirFicheroAPod(){
+        //Analizamos si está loggeado:
+        let session = await auth.currentSession();
+        if (!session){
+            alert("No estás loggeado");
+        }
+        else {
+            alert("Estás loggeado");
+        }
+    }
 
     render() {
 
     return(
         //Tras coger el item funciona el botón:
-        <input type="file" onChange={this.itemHandler}/>
+        <div>
+            <input type="file" onChange={this.itemHandler}/>
+            <button onClick={this.subirFicheroAPod} > Click me </button>
+        </div>
 
      );
     }
