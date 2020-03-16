@@ -1,5 +1,5 @@
 import Provider from './provider';
-import * as routesHardCodeService from "./routesService";
+import * as JSONtoRoute from "./JSONtoRoute";
 export {
-    Provider,routesHardCodeService 
+    Provider,JSONtoRoute 
 };
