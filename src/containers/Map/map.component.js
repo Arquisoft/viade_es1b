@@ -2,7 +2,6 @@ import React from 'react';
 import L from 'leaflet';
 import {TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
 import Rutas from './routes/rutas';
-import { Button } from 'reactstrap';
 import ReactDOM from 'react-dom';
 import {MapStyle} from './map.style';
 
@@ -84,6 +83,7 @@ class Map extends React.Component {
         <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={(e) => this.changeName(n, e)}> {n} </li>)}</ul>
         </div>
       </React.Fragment>
+
     );
   }
 }

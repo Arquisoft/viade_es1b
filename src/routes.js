@@ -12,7 +12,8 @@ import {
   FormModelConverter,
   FormModelRenderer,
   TextEditor,
-  MapComponent
+  Mapa,
+  RouteLoader
 } from './containers';
 
 const privateRoutes = [
@@ -44,7 +45,12 @@ const privateRoutes = [
   {
     id: 'map',
     path: '/map',
-    component: MapComponent
+    component: Mapa
+  },
+  {
+    id: 'routeLoader',
+    path: '/loadRoute',
+    component: RouteLoader
   }
 ];
 

@@ -1,3 +1,5 @@
 import Provider from './provider';
-
-export { Provider };
+import * as JSONtoRoute from "./JSONtoRoute";
+export {
+    Provider,JSONtoRoute 
+};
