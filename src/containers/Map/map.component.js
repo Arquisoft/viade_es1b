@@ -1,12 +1,24 @@
 import React from "react";
+import L from 'leaflet';
 import { MapStyle } from './map.style';
-import { Ruta,Download } from '@components';
+import { Ruta, Download } from '@components';
 import { TileLayer } from "react-leaflet";
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { FixedSizeList } from 'react-window';
+import 'leaflet/dist/leaflet.css';
+import './leaflet.css';
+
+
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+});
 
 const useStyles = makeStyles(theme => ({
   root: {
