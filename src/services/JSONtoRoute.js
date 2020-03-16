@@ -1,4 +1,4 @@
-import {Route,PointRoute} from "../../Model";
+import {Route,PointRoute} from "../viade/Model";
 import FC from 'solid-file-client';
 import auth from 'solid-auth-client';
 
