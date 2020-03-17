@@ -1,6 +1,10 @@
 import React from 'react';
 import Dropzone from 'react-dropzone'
 import {FileToRoute} from "../../../viade";
+<<<<<<< HEAD
+=======
+//import { types } from 'babel-core';
+>>>>>>> 422f5fcfdc1a7bac586bb9cc12650db34258d526
 
 
 class MyFilePicker extends React.Component {
