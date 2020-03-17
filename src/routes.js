@@ -15,6 +15,7 @@ import {
   Mapa,
   RouteLoader
 } from './containers';
+import UploadComponent from "./containers/Upload";
 
 const privateRoutes = [
   {
@@ -45,12 +46,13 @@ const privateRoutes = [
   {
     id: 'map',
     path: '/map',
-    component: Mapa
+    component: MapComponent
   },
+
   {
-    id: 'routeLoader',
-    path: '/loadRoute',
-    component: RouteLoader
+    id: 'upload',
+    path: "/upload",
+    component: UploadComponent
   }
 ];
 

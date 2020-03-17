@@ -17,6 +17,7 @@ class Map extends React.Component {
 
   constructor() {
     super();
+
     this.name = Rutas.getNames()[0];
     this.puntos = []
     Rutas.getRutaByPosition(1).points.map(p => this.puntos.push(p.getCoordinates()));

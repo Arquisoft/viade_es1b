@@ -26,12 +26,15 @@ export const NavigationItems = [
     label: 'navBar.map',
     to: '/map'
   },
+
   {
-    id: 'routeLoader',
+    id: 'upload',
     icon: '/img/icon/upload.svg',
-    label: 'navBar.routeLoader',
-    to: '/loadRoute'
+    label: 'navBar.upload',
+    to: '/upload'
+
   }
+
 ];
 
 export const ProfileOptions = [
