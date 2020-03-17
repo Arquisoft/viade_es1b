@@ -1,49 +1,57 @@
+
 [[section-introduction-and-goals]]
 == Introduction and Goals
 
-
-This project is focused on developing an application to manage routes using SOLID specifications. The main objective is to ensure that users have control over their route data. For the realization of this application we will use the React framework.
-
+The intention of this project, Viade, is to create and develop a route management system, such as Wikiloc, but with the difference that it's done in a decentralized way, which means that the app and data storage are independent so your data is only yours and you decide who you share it with.
+To carry out this this app, we are using SOLID specifications and the React framework.
 
 === Requirements Overview
 
+.Functional requirements
+* Users can view their routes on a map and store them in their own pods.
 
-Functional
+* An user can get notifications when some friend shares a route with him.
 
-* Users can see the routes on a map.
-* Photos and videos may be shared through the application with other friends.
-* Users will be able to have the data stored in their own pod
-* Users may have groups of friends to share their routes.
-* The application must be able to load routes generated with a different application.
+* To register routes, users must have a POD, so they have to log in and authenticate in SOLID inrupt or community.
 
-No functional
+* Users can have groups of friends with whom they may want to share a route.
 
-* The application must have a friendly interface.
-* Ease of use by non-technical people.
-* Responsiveness of the application must be good.
+* View routes that had been loaded in other apps.
+
+.Non functional requirements
+
+* Ease of learning to interact whith the app by new users.
+
+* Small response and loading times.
+
+* Security and privacy: no vulnerability points.
+
+* Accessibility and usability level following the recommendations of W3C.
+
+* Not having a central database, which compromises the information of the users that use it.
 
 
 === Quality Goals
 
-
 |===
-| Priority | Goal | Description
-| 1 | Security | Give users ownership of their information and grant them control over access to it
-| 2 | Usability | Create a friendly interface that does not require prior knowledge
-| 3 | Reliability | A failure in the application cannot imply a filtering of the data.
-| 4 | Compatibility | Support different types of route formats and images.
-|===
+| Priority | Quality goal | Scenario 
 
+| 1 | Security | An user doesn't want to share his information with another one unless he gives him permission.
+| 2 | Usability | There is a new user in our app and he wants to start to use all its functionality as soon as possible.
+| 3 | Efficiency | When an user wants to load a route, it must be in a short time.
+| 4 | Mantainability | The developer team wants to add more functionality to the application.
+| 5 | Compatibility | Someone wants to share his route from other app with some user that is using Viade.
+|===
 
 === Stakeholders
 
-
+[options="header",cols="1,2,2"]
 |===
-| Role / Name | Contact | Expectations
-| Users | Use the application to save and check your routes | They hope that the application is easy to use, functional and safe.
-| Teachers | Supervise and evaluate the project | Expect students to perform a functional extension complying with the requirements.
-| Team | Responsible for developing the app | They hope to make a good application and learn to use new technologies.
-| Inrupt | Company that will test and evaluate the app  | They expect to get an application that uses SOLID
+|Role/Name|Contact|Expectations
+| Teachers | Teaching staff of ASW | Well developed app paying special attention to its architecture.
+| Inrupt | Startup behind SOLID | Well usage of their technology in decentralized apps.
+| Developers | Members of the team that create the app | Develop a functional and maintainable app.
+| Users | Users of this app | Efficient and usable app to share their routes.
 |===
 
 

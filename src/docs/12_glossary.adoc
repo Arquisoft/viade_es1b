@@ -25,7 +25,14 @@ Potentially more columns in case you need translations.
 
 [options="header"]
 |===
-| Term         | Definition
-| <Term-1>     | <definition-1>
-| <Term-2>     | <definition-2>
+|Term| Definition
+|Solid| A web decentralization project that aims to separate user’s data and applications, led by Tim Berners-Lee, the inventor of the World Wide Web. This is the project in which this project is based on. SOLID It stands for Social Linked Data
+|POD| An Acronim for 'Personal Online Data', it refers to the personal decentralized storage used in SOLID applications. Its stores the data from the user outside of the application, allowing the user to retain control and ownership of personal information.
+|Linked Data|It is the way SOLID connects different POD's resources. Those links are typed, this means that they contain additional information.
+|Distributed Network| A network that hasn't a central server, instead all of the clients can act like it.
+|ReactJS| A JavaScript framework to build user interface. It's based on Components items that render on screen.
+|Stakeholder| Individual or entity that shows any kind of interest in the product and that has a certain power of decision in it.
+|Git| Distributed version-control system used to track changes in code during software development that allows teams to work together.
+|Codacy| Software tool for automatic identification of security issues, code duplication, code complexity and code analysis.
+|Decentralized Web|New vision for the web that is build around blockchain technology where users own their own data. Data is portable, resources are provided by end-users within distributed networks, apps run locally on end-user devices and platforms are decentralized and autonomous. This project aims to help to contribute to said vision.
 |===

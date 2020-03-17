@@ -3,8 +3,90 @@
 
 On this section, we will be talking about different scenarios a final user can see on the application
 
-.See map information displayed on a map
+* Shows the login of the application and how the whole process works. 
+* An user enters their credentials in the login interface. Then, that interface sends the request to the authenticator, which in turn validates the data on the SOLID server. From here, two situations can occur:
+	** The first is that the session is correct and then loads the new graphical interface (that of the application) and then loads its own routes from its own POD.
+	** The second option is that the login is invalid, which causes the graphical interface of the login to be loaded again with an error message.
+* Notably,the SOLID server is different from the user's POD.
 
 image::./images/06_Run_scenario1.png[diagram]
 
+[plantuml,"Initial diagram",png]
+----
+title How does the login in the application work?
 
+actor HIKER #red
+participant UILogin #yellow
+control Authentication #green
+database SOLID #purple
+database POD #pink
+participant UIApplication #yellow
+participant Caption
+
+
+note right of Caption: Hiker, is the users who will use the application.\nThe color that identifies the hikers is red
+note right of Caption:UILogin and UIApplication They are the GUIs\n with which hikers can interact. All GUIs are yellow
+note right of Caption: The color that identifies the services is green.\n For example, authentication service.
+note right of Caption: Pink colors identify the use of SOLID.\n The different colors of roses are to specify that one is\n the SOLID server (purple) and another your personal\n server (pink)
+
+HIKER -> UILogin: Set credentials
+UILogin -> Authentication: Login Request
+Authentication -> SOLID: Validate credentials
+
+alt Login Successful
+	SOLID -> Authentication: Correct login
+	Authentication --> UIApplication: Load Application
+    POD->UIApplication: Load your own routes
+	
+else Login Failure
+	SOLID -> Authentication: Invalid login
+	Authentication --> UILogin: Load Login
+	end
+
+
+
+
+----
+=== Add route
+
+* Show how a route is added to the application.
+* The user wants to add a route. In the application there will be a button or something similar in which you can add a route. When everything requested to save the route has been added, there will be a service that validates that the route is correct. This service will try to save the route in your POD. From here, two situations can occur:
+** That the route is saved successfully and you receive a message that it was saved correctly.
+** Or that the route could not be saved and you receive an error message.
+
+This is the sequence to generate the uml:
+
+[plantuml,"Add route diagram",png]
+----
+title How do you add a route?
+
+
+
+actor HIKER #red
+participant UIApplication #yellow
+control AddRouteService #green
+database POD #pink
+participant Legend
+
+note right of Legend: Hiker, is the users who will use the application.\nThe color that identifies the hikers is red
+note right of Legend:UIApplication is the GUI\n with which hikers can interact. All GUIs are yellow
+note right of Legend: The color that identifies the services is green.\n For example, addRouteService service.
+note right of Legend: Pink color identify your personal\n server (pink)
+
+
+HIKER -> UIApplication: ADD ROUTE
+UIApplication -> AddRouteService: AddRouteInYourPOD()
+AddRouteService -> POD: Save route in your POD
+
+alt correct
+	POD -> AddRouteService: Route saved
+	AddRouteService --> UIApplication: Successful message
+
+else incorrect
+	POD -> AddRouteService: Route could't be saved
+	AddRouteService --> UIApplication: Failure message
+	end
+----
+
+
+=== <Runtime Scenario n>

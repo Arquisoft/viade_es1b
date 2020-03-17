@@ -27,6 +27,7 @@ image::./images/BussinessContextDiagram.png[]
 |======================
 
 
+image::03-context_diagram.png[]
 
 
 === Technical Context
@@ -46,5 +47,6 @@ image::./images/TechnicalContextDiagram.png[align="center"]
 |======================
 
 
+****
 
 
