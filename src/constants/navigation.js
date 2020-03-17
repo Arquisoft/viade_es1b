@@ -32,6 +32,7 @@ export const NavigationItems = [
     icon: '/img/icon/upload.svg',
     label: 'navBar.upload',
     to: '/upload'
+
   }
 
 ];

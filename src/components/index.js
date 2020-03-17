@@ -6,6 +6,8 @@ import ImageProfile from './ImageProfile';
 import Footer from './Footer';
 import Notification from './Notifications';
 import AutoSaveSpinner from './AutoSaveSpinner';
+import Ruta from './RoutesParser';
+//import Download from './dataDownload';
 
 export {
   ErrorBoundary,
@@ -15,5 +17,7 @@ export {
   ImageProfile,
   Footer,
   Notification,
-  AutoSaveSpinner
+  AutoSaveSpinner,
+  Ruta,
+  //Download
 };
