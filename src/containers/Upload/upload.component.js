@@ -10,7 +10,7 @@ class UploadComponent extends React.Component {
         this.state = {
             //Estos son los ficheros, con file[0] accederíamos al primero, que es nuestro caso.
             files: null,
-            direccion:"https://colourlesspawn.solid.community/public/",
+            direccion:"https://marshall6399.solid.community/public/",
             //Creamos el file solid client:
             //Hay que hacer los 4 pasos que dice el githun de SolidFileClient
             sfc: new SolidFileClient(auth)
@@ -23,7 +23,6 @@ class UploadComponent extends React.Component {
 
     //Esto es lo que hacemos cuando llamamos al método.
     itemHandler(parameter){
-        alert("Está funcionando");
         this.setState({files: parameter.target.files});
     };
 
@@ -46,7 +45,7 @@ class UploadComponent extends React.Component {
                     //await this.state.sfc.createFile(this.state.link, archivo, archivo.type);
                     const res = await this.state.sfc.putFile(this.state.direccion+archivo.name, archivo, archivo.type);
 
-                    alert("Fin del try");
+                    alert("Archivo subido");
                 }
 
                 catch(error) {
