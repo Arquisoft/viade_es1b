@@ -12,8 +12,7 @@ import {
   FormModelConverter,
   FormModelRenderer,
   TextEditor,
-  Mapa,
-  RouteLoader
+  Mapa
 } from './containers';
 import UploadComponent from "./containers/Upload";
 

@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import SolidAuth from 'solid-auth-client';
 import { successToaster, errorToaster } from '@utils';
 import ldflex from '@solid/query-ldflex';
-import { AccessControlList } from '@inrupt/solid-react-components';
+//import { AccessControlList } from '@inrupt/solid-react-components';
 import MyFilePicker from './FilePicker';
 import {
   RouteLoaderWrapper,
@@ -17,7 +17,6 @@ import {
   Button,
   Label,
   Input,
-  TextArea,
   WebId
 } from './routes-loader.style';
 
@@ -67,7 +66,7 @@ function extractWacAllow(response) {
 export const Editor = ({ webId }: Props) => {
   const { t } = useTranslation();
   const [url, setUrl] = useState('');
-  const [friend, setFriend] = useState('https://example-friend.com/profile/card#me');
+  //const [friend, setFriends] = useState('https://example-friend.com/profile/card#me');
   const [text, setText] = useState('');
   const [loaded, setLoaded] = useState(false);
   const [editable, setEditable] = useState(false);
@@ -92,15 +91,6 @@ export const Editor = ({ webId }: Props) => {
     setUrl(event.target.value);
   }
 
-  function handleFriendChange(event) {
-    event.preventDefault();
-    setFriend(event.target.value);
-  }
-
-  function handleTextChange(event) {
-    event.preventDefault();
-    setText(event.target.value);
-  }
 
   function handleLoad(event) {
     event.preventDefault();
@@ -125,22 +115,7 @@ export const Editor = ({ webId }: Props) => {
       });
   } // assuming the logged in user doesn't change without a page refresh
 
-  async function handleShare(event) {
-    event.preventDefault();
-    try {
-      const permissions = [
-        {
-          agents: [friend],
-          modes: [AccessControlList.MODES.READ, AccessControlList.MODES.WRITE]
-        }
-      ];
-      const ACLFile = new AccessControlList(webId, url);
-      await ACLFile.createACL(permissions);
-      successToaster(t('notifications.accessGranted'));
-    } catch (e) {
-      errorToaster(t('notifications.errorGrantingAccess'));
-    }
-  }
+  
 
   async function handleSave(event) {
     event.preventDefault();
@@ -220,7 +195,7 @@ export const Editor = ({ webId }: Props) => {
  * to get back to the home/welcome page.
  */
 const RouteLoader = ({ webId }: Props) => {
-  const { t } = useTranslation();
+  //const { t } = useTranslation();
   console.log(webId);
   return (
     <RouteLoaderWrapper>
