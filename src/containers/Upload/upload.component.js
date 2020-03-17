@@ -1,17 +1,20 @@
 import React from "react";
-import auth from "solid-auth-client"
+import auth from "solid-auth-client";
+import SolidFileClient from "solid-file-client";
 
 class UploadComponent extends React.Component {
+
     constructor(){
         super();
         //Instanciamos la variable, con let
         this.state = {
             //Estos son los ficheros, con file[0] accederíamos al primero, que es nuestro caso.
             files: null,
-            direccion: "https://colourlesspawn.solid.community/public/",
+            direccion:"https://colourlesspawn.solid.community/public/",
             //Creamos el file solid client:
             //Hay que hacer los 4 pasos que dice el githun de SolidFileClient
             sfc: new SolidFileClient(auth)
+
         };
         //Bindeamos porque vamos a interactuar con files:
         this.itemHandler=this.itemHandler.bind(this);
@@ -32,20 +35,20 @@ class UploadComponent extends React.Component {
 
         if (session){
             alert("Estás loggeado");
-            if (this.state.files[0]!=null){
+            if (this.state.files[0]==null){
                 //Si el fichero es nulo:
                 alert("No has seleccionado ningún fichero")
-        }
+             }
 
             else{
-                //Vamos a mirar DONDE vamos a subir el archivo:
-                let link = this.state.direccion;
-                //Colocamos el nombre del archivo:
-                link.concat(archivo.name);
-
                 try{
-                const res = await this.state.sfc.putFile(link, archivo, archivo.type);
+                    alert(this.state.direccion+archivo.name);
+                    //await this.state.sfc.createFile(this.state.link, archivo, archivo.type);
+                    const res = await this.state.sfc.putFile(this.state.direccion+archivo.name, archivo, archivo.type);
+
+                    alert("Fin del try");
                 }
+
                 catch(error) {
                     console.error(error);
                 }
