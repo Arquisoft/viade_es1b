@@ -1,52 +1,19 @@
 [[section-quality-scenarios]]
 == Quality Requirements
-:imagesdir: images
-////
-[role="arc42help"]
-****
 
-.Content
-This section contains all quality requirements as quality tree with scenarios. The most important ones have already been described in section 1.2. (quality goals)
-
-Here you can also capture quality requirements with lesser priority,
-which will not create high risks when they are not fully achieved.
-
-.Motivation
-Since quality requirements will have a lot of influence on architectural
-decisions you should know for every stakeholder what is really important to them,
-concrete and measurable.
-****
-////
 === Quality Tree
 
-
-****
-The following file represents the quality tree in wich are defined quality attributes and scenarios 
-
-image::qtree.png[]
-****
+.Quality tree diagram
+image::./images/QualityTree.png[diagram]
 
 === Quality Scenarios
 
-
-****
-
-In this section we take a deeper look at some of the quality requirements mentioned in the quality tree:
 [options="header"]
-|=======================
-|Type|Explanation
-|Responsiveness| The application should use the minimum amount of system resources in order to work smoothly in most current devices
-|Response Time| The notifications, storage, share features and POD management should take the least amount of time as possible (less than 2s).
-|Error Handling| Lighter errors should take no next to no hit on system performance and fatal errors must be notified in detail to the user
-|Multi-device support| The application must work across a wide range of devices with different sizes and different platforms 
-|Data portability| Routes are stored in a format that allows the use of said files in other  route-oriented applications 
-|Share Features| Users are the only entities capable of allow sharing of their routes to other users
-|Permissions| The application must ask permission to the user in order to gain access to funcionality of the device such as GPS signal, wireless communication and such others
-|Accessibility| The app must meet at least the minimum accessibility standards in order to guarantee a wide user base
-|Offline access| Routes stored in local storage must be access at any point by the user, even if the device is offline
-|Look and Feel| The app should be good looking and the interface needs to be desgined in a way that allows a coherent aesthetic between all the options and accessible at the same time
-|Social Features| All social features such as share routes or send files to other users are blocked unless the user is authenticated. Otherwise the user cannot use said options
-|Data Storage| Users have the choice of storing their routes locally in the device while maintaining a copy in their POD 
-|=======================
+|===
+| Reference |Quality attribute |Scenario  | Priority
+|  1  | Performance / efficiency | The user will view the routes on a map as fast as possible. | High, high
+|  2  | Usability | The system must be intuitive and easy to use for all types of users. | High, medium
+|  3  | Privacy and security | Users can have private data that nobody can see if it does not allow it and the data will be separated from the application. | High, medium
+|  4  | Testeability | The app should be testable, as automated as possible with the use of testing tools. | Medium, medium
 
-****
+|===
