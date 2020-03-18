@@ -14,17 +14,16 @@ class DownloadComponent extends React.Component {
     }
 
     async bajarRutaDePod(){
-        //Dandole al boton se baja el fichero        
-        
-        const ejemplo = await this.state.sfc.fetch( "https://uo265135.inrupt.net/public/index.html");
-        alert("Fichero obtenido");
+        //Dandole al boton se obtendria los contenidos del fichero               
+        const ejemplo = await this.state.sfc.readFile( "https://uo265135.inrupt.net/public/index.html");
+        alert("Fichero obtenido en consola");
         console.log(ejemplo);
     }
 
     render() {
 
     return(
-        //Tras coger el item funciona el botón:
+        // La parte visible de la interfaz
         <div>
             <button onClick={this.bajarRutaDePod} > Bajar Ruta </button>
         </div>
