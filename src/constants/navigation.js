@@ -26,7 +26,13 @@ export const NavigationItems = [
     icon: '/img/icon/upload.svg',
     label: 'navBar.upload',
     to: '/upload'
+  },
 
+  {
+    id: 'download',
+    icon: '/img/icon/download.svg',
+    label: 'navBar.download',
+    to: '/download'
   }
 
 ];

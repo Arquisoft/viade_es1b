@@ -16,6 +16,7 @@ import {
   RouteLoader
 } from './containers';
 import UploadComponent from "./containers/Upload";
+import DownloadComponent from "./containers/DownloadRoutes";
 
 const privateRoutes = [
   {
@@ -53,6 +54,12 @@ const privateRoutes = [
     id: 'upload',
     path: "/upload",
     component: UploadComponent
+  },
+
+  {
+    id: 'download',
+    path: "/download",
+    component: DownloadComponent
   }
 ];
 
