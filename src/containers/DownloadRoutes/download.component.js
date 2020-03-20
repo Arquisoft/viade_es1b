@@ -7,17 +7,41 @@ class DownloadComponent extends React.Component {
     constructor(){
         super();
         this.state = {
-         sfc: new SolidFileClient(auth)
+         sfc: new SolidFileClient(auth),
+         direccion: ""
         };
         // Bind es necesario para usar el this
-        this.bajarRutaDePod=this.bajarRutaDePod.bind(this);
+        this.bajarRutasDePod=this.bajarRutasDePod.bind(this);
+        this.obtenerCarpetaPod=this.obtenerCarpetaPod.bind(this);
     }
 
-    async bajarRutaDePod(){
-        //Dandole al boton se obtendria los contenidos del fichero               
-        const ejemplo = await this.state.sfc.readFile( "https://uo265135.inrupt.net/public/index.html");
-        alert("Fichero obtenido en consola");
-        console.log(ejemplo);
+    obtenerCarpetaPod(parameter) {
+        this.setState({direccion: parameter.target.value});
+    };
+
+    async bajarRutasDePod(){
+        //Dandole al boton se obtendria los contenidos del fichero   
+        if(this.state.direccion === "")            
+            alert("No ha escrito nada")
+            else {
+        // Leemos toda la carpeta
+        const folder = await this.state.sfc.readFolder( this.state.direccion);
+        console.log(folder);
+        // Leemos los ficheros
+        const files = folder.files;
+        console.log(files);
+        // Para cada fichero que sea json (o el formato que vaya a ser), lo muestra
+        var ficherosJson = [];
+        files.forEach(file => {
+            if(file.type==="application/json") {
+                ficherosJson.push(file.url);
+            console.log(ficherosJson[0]);
+        }        
+        });
+        if(ficherosJson.length==0) {
+            alert("No hay ficheros de rutas");
+        }
+        }
     }
 
     render() {
@@ -25,9 +49,9 @@ class DownloadComponent extends React.Component {
     return(
         // La parte visible de la interfaz
         <div>
-            <button onClick={this.bajarRutaDePod} > Bajar Ruta </button>
+            <input type="text" onChange={this.obtenerCarpetaPod} placeholder="Escribe la direccion de su carpeta..."/>
+            <button onClick={this.bajarRutasDePod} > Bajar Ruta </button>            
         </div>
-
      );
     }
 }
