@@ -8,7 +8,8 @@ class DownloadComponent extends React.Component {
         super();
         this.state = {
          sfc: new SolidFileClient(auth),
-         direccion: ""
+         direccion: "",
+         rutas: []
         };
         // Bind es necesario para usar el this
         this.bajarRutasDePod=this.bajarRutasDePod.bind(this);
@@ -31,14 +32,13 @@ class DownloadComponent extends React.Component {
         const files = folder.files;
         console.log(files);
         // Para cada fichero que sea json (o el formato que vaya a ser), lo muestra
-        var ficherosJson = [];
         files.forEach(file => {
             if(file.type==="application/json") {
-                ficherosJson.push(file.url);
-            console.log(ficherosJson[0]);
+                this.state.rutas.push(file.url);
+            console.log(this.state.rutas);
         }        
         });
-        if(ficherosJson.length==0) {
+        if(this.state.rutas.length==0) {
             alert("No hay ficheros de rutas");
         }
         }
