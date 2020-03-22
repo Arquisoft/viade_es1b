@@ -1,7 +1,7 @@
 import ruta1 from './route1.json';
 import ruta2 from './route2.json';
 import Ruta from './ruta.js';
-import arrayRutas from '../../DownloadRoutes';
+import bajarRutas from '../../DownloadRoutes/bajarRutas';
 
 class Rutas{
 
@@ -10,6 +10,13 @@ class Rutas{
     }
 
     getNames(){
+        if(bajarRutas.rutas.length > 0)  {
+        console.log("ruta1: "+bajarRutas.rutas[0]);
+        var rutatmp = JSON.parse(bajarRutas.rutas[0]);
+        console.log(rutatmp);
+        this.rutas = [new Ruta(rutatmp)];
+    }
+    console.log(ruta1);
         let rutasName = [];
         this.rutas.map(r => rutasName.push(r.name));
         return rutasName;

@@ -1,6 +1,7 @@
 import React from "react";
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
+import bajarRutas from "./bajarRutas";
 
 class DownloadComponent extends React.Component {
 
@@ -12,7 +13,6 @@ class DownloadComponent extends React.Component {
          rutas: []
         };
         // Bind es necesario para usar el this
-        this.bajarRutasDePod=this.bajarRutasDePod.bind(this);
         this.obtenerCarpetaPod=this.obtenerCarpetaPod.bind(this);
     }
 
@@ -20,37 +20,14 @@ class DownloadComponent extends React.Component {
         this.setState({direccion: parameter.target.value});
     };
 
-    async bajarRutasDePod(){
-        //Dandole al boton se obtendria los contenidos del fichero   
-        if(this.state.direccion === "")            
-            alert("No ha escrito nada")
-            else {
-        // Leemos toda la carpeta
-        const folder = await this.state.sfc.readFolder( this.state.direccion);
-        console.log(folder);
-        // Leemos los ficheros
-        const files = folder.files;
-        console.log(files);
-        // Para cada fichero que sea json (o el formato que vaya a ser), lo muestra
-        files.forEach(file => {
-            if(file.type==="application/json") {
-                this.state.rutas.push(file.url);
-            console.log(this.state.rutas);
-        }        
-        });
-        if(this.state.rutas.length==0) {
-            alert("No hay ficheros de rutas");
-        }
-        }
-    }
-
     render() {
 
     return(
         // La parte visible de la interfaz
+        // El () => es para que no salte automaticamente cada vez que cargue la pagina
         <div>
             <input type="text" onChange={this.obtenerCarpetaPod} placeholder="Escribe la direccion de su carpeta..."/>
-            <button onClick={this.bajarRutasDePod} > Bajar Ruta </button>            
+            <button onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > Bajar Rutas </button>                   
         </div>
      );
     }
