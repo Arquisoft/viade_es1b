@@ -9,9 +9,6 @@ import {
   Welcome,
   RegistrationSuccess,
   Profile,
-  FormModelConverter,
-  FormModelRenderer,
-  TextEditor,
   Mapa
 } from './containers';
 import UploadComponent from "./containers/Upload";
@@ -26,21 +23,6 @@ const privateRoutes = [
     id: 'profile',
     path: '/profile',
     component: Profile
-  },
-  {
-    id: 'text-editor',
-    path: '/text-editor',
-    component: TextEditor
-  },
-  {
-    id: 'formmodelconverter',
-    path: '/formmodel/converter',
-    component: FormModelConverter
-  },
-  {
-    id: 'formmodelrenderer',
-    path: '/formmodel/renderer',
-    component: FormModelRenderer
   },
   {
     id: 'map',

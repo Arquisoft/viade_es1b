@@ -140,8 +140,9 @@
       ]
     ]
   },
-  "name": "solid-app",
+  "name": "viade_es1b",
   "version": "0.1.0",
+  "homepage": "https://arquisoft.github.io/viade_es1b/",
   "private": false,
   "devDependencies": {
     "@babel/core": "7.1.6",
