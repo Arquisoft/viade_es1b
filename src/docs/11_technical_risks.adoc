@@ -9,3 +9,9 @@ In this part of the documentation we will write about some risks and technical d
 |Teamates |Working with so much people in a team without knowing each others is a risk in the development of the application.
 |Time |We have to do other subjects this semester, and this can become a problem for the development of this application. 
 |Language | Using another lenguage in the applicaton is hard when you are not used to use it.
+|===
+
+|===
+|Technical Debt | Explanation
+|Use of a SOLID template | We have decided to use a standard template with SOLID and React but it has a lot of classes and code we don't know, the options are to start from scratch reusing the useful components or clean all the code possible from the template.
+|===

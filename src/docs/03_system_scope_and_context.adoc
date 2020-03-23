@@ -27,12 +27,12 @@ image::./images/BussinessContextDiagram.png[]
 |======================
 
 
-image::03-context_diagram.png[]
+image::./images/03-context_diagram.png[]
 
 
 === Technical Context
 
-
+****
 
 In this part we have to specify the same we had in previous point but with a technical view.
 
@@ -46,7 +46,4 @@ image::./images/TechnicalContextDiagram.png[align="center"]
 |SOLID | Is the server in which the Solid pods are stored
 |======================
 
-
 ****
-
-
