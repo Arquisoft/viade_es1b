@@ -59,13 +59,45 @@ class UploadComponent extends React.Component {
         }
     }
 
+
+
     render() {
+
+        const divStyle= {
+            backgroundImage: "url('/img/concentric-hex-pattern_2x.png')",
+            backgroundRepeat: 'repeat',
+            padding: '20px',
+            width: '100%',
+            height: 'auto',
+            zIndex: '1',
+        }
+
+        const buttonStyle= {
+            width: 'auto',
+            height: 'auto',
+            marginLeft:'50%',
+            marginRight:'50%',
+            marginTop: '2%',
+            zIndex: '99',
+        }
+
+        const inputStyle= {
+            borderRadius: '25px',
+            backgroundColor: '#FFFFFF',
+            border: '2px solid #000000',
+            padding: '20px',
+            width: 'auto',
+            height: 'auto',
+            marginTop: '1%',
+            marginLeft:'40%',
+            zIndex: '99',
+        }
 
     return(
         //Tras coger el item funciona el botón:
-        <div>
-            <input type="file" onChange={this.itemHandler}/>
-            <button onClick={this.subirFicheroAPod} > Click me </button>
+        <div style ={divStyle}>
+            <input style={inputStyle} type="file" onChange={this.itemHandler}/>
+            <button style={buttonStyle} onClick={this.subirFicheroAPod} > Upload </button>
         </div>
 
      );

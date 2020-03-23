@@ -4,5 +4,5 @@ import 'leaflet/dist/leaflet.css';
 
 export const MapStyle = styled(Map)`
     width: 100%; 
-    height: 80vh; 
+    height: 88vh; 
   `;

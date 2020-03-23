@@ -23,7 +23,7 @@ class Map extends React.Component {
     Rutas.getRutaByPosition(1).points.map(p => this.puntos.push(p.getCoordinates()));
   }
 
-  changeName(id, e) {
+  getRoutes(id, e) {
     var newRuta = Rutas.getRutaByName(id);
     document.getElementById("name").textContent = newRuta.name;
 
@@ -47,27 +47,33 @@ class Map extends React.Component {
   render() {
     const position = this.puntos[0];
 
-    const divStyle = {
+    const mapStyle = {
       position: 'absolute',
       width: '100%',
-      height: '100%',
+      height: '50%',
       zIndex: '1',
     };
 
-    const divStyle2 = {
+    const divStyle = {
+      borderRadius: '25px',
       backgroundColor: '#FFFFFF',
-      marginRight: '10%',
-      width: '50%',
+      border: '2px solid #000000',
+      padding: '20px',
+      width: 'auto',
       height: 'auto',
-      position: 'absolute',
-      left: '75%',
+      marginTop: '1%',
+      marginBottom: '5%',
+      marginLeft: '90%',
       zIndex: '99',
-      
     }
 
     return (
       <React.Fragment id = "map" >
-        <div id="map" style={divStyle}>
+        <div style={divStyle}>
+          <h2 id="name">{this.name}</h2>
+          <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={(e) => this.getRoutes(n, e)}> {n} </li>)}</ul>
+        </div>
+        <div id="map" style={mapStyle}>
           <MapStyle  id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Polyline color={'red'} positions={this.puntos}></Polyline>
@@ -79,10 +85,7 @@ class Map extends React.Component {
             </Marker>
           </MapStyle>
         </div>
-        <div style={divStyle2}>
-        <h2 id="name">{this.name}</h2>
-        <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={(e) => this.changeName(n, e)}> {n} </li>)}</ul>
-        </div>
+        
       </React.Fragment>
 
     );

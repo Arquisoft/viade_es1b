@@ -11,7 +11,6 @@ import {
   Profile,
   FormModelConverter,
   FormModelRenderer,
-  TextEditor,
   Mapa,
   RouteLoader
 } from './containers';
@@ -29,11 +28,6 @@ const privateRoutes = [
     component: Profile
   },
   {
-    id: 'text-editor',
-    path: '/text-editor',
-    component: TextEditor
-  },
-  {
     id: 'formmodelconverter',
     path: '/formmodel/converter',
     component: FormModelConverter
@@ -48,7 +42,6 @@ const privateRoutes = [
     path: '/map',
     component: Mapa
   },
-
   {
     id: 'upload',
     path: "/upload",
