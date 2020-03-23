@@ -10,23 +10,22 @@ class bajarRutas {
     }
 
 async bajarRutasDePod(direccion){
+    this.rutas = [];
     //Dandole al boton se obtendria los contenidos del fichero   
     if(direccion === "")            
         alert("No ha escrito nada")
         else {
     // Leemos toda la carpeta
     const folder = await this.sfc.readFolder( direccion);
-    console.log(folder);
+    // console.log(folder);
     // Leemos los ficheros
     const files = folder.files;
-    console.log(files);
-    var ficherosRuta = [];
+    // console.log(files);
     // Para cada fichero que sea json (o el formato que vaya a ser), lo muestra
     files.forEach(file => {
         if(file.type==="application/json") {
-            this.rutas.push(file.url);
-            ficherosRuta.push(file.url);
-        console.log(this.rutas);
+            var jsonObj = JSON.parse(this.loadJSon(file.url));
+            this.rutas.push(jsonObj);
     }        
     });
     if(this.rutas.length==0) {
@@ -34,10 +33,19 @@ async bajarRutasDePod(direccion){
     }
     else {
         alert("Rutas bajadas");
-        return ficherosRuta;
+        return this.rutas;
     }
     }
 }
+
+// Metodo auxiliar para obtener el objeto json
+loadJSon(url){
+    var Httpreq = new XMLHttpRequest(); // Solicitud
+    Httpreq.open("GET",url,false);
+    Httpreq.send(null);
+    return Httpreq.responseText;          
+}
+
 }
 
 export default bajarRutas = new bajarRutas();

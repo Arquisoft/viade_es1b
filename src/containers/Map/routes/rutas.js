@@ -9,14 +9,15 @@ class Rutas{
         this.rutas = [new Ruta(ruta1),new Ruta(ruta2)];
     }
 
-    getNames(){
+    actualizarRutasConPod() {
         if(bajarRutas.rutas.length > 0)  {
-        console.log("ruta1: "+bajarRutas.rutas[0]);
-        var rutatmp = JSON.parse(bajarRutas.rutas[0]);
-        console.log(rutatmp);
-        this.rutas = [new Ruta(rutatmp)];
+            console.log(this.rutas);
+            console.log(bajarRutas.rutas.pop());
+            //this.rutas.push(bajarRutas.rutas.pop());
     }
-    console.log(ruta1);
+}   
+
+    getNames(){
         let rutasName = [];
         this.rutas.map(r => rutasName.push(r.name));
         return rutasName;
@@ -32,6 +33,7 @@ class Rutas{
     getRutaByPosition(p){
         return this.rutas[p];
     }
+
 }
 
 
