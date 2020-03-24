@@ -1,0 +1,43 @@
+{
+	"@context": "http://schema.org",
+	"@type": "Trip",
+	"name": "Ruta1",
+	"description": "Ruta tercera a mano, con dos elementos",
+	"itinerary": {
+		"@type": "itemList",
+		"numberOfItems": 3,
+		"itemListOrder": "ItemListOrderDescending",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"item": {
+					"@type": "GeoCoordinates",
+					"latitude": 44.54435,
+					"longitude": -5.661797,
+					"elevation": "5 m"
+				}
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"item": {
+					"@type": "GeoCoordinates",
+					"latitude": 43.640167,
+					"longitude": -5.645139,
+					"elevation": "5 m"
+				}
+            },
+            {
+				"@type": "ListItem",
+				"position": 3,
+				"item": {
+					"@type": "GeoCoordinates",
+					"latitude": 43.740167,
+					"longitude": -5.645139,
+					"elevation": "5 m"
+				}
+			}
+		]
+	}
+}
