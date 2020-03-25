@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { LoggedOut, LoggedIn, LoginButton } from '@solid/react';
-import { LoginWrapper, LoginPanel, PanelBody, LoginTitle } from './login.style';
+import { LoginWrapper, LoginPanel, PanelBody } from './login.style';
 import { CenterContainer } from '../../components/Utils';
 import { Redirect } from 'react-router-dom';
 

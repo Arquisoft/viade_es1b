@@ -45,7 +45,7 @@ class UploadComponent extends React.Component {
                 try {
                     alert(this.state.direccion + archivo.name);
                     //await this.state.sfc.createFile(this.state.link, archivo, archivo.type);
-                    const res = await this.state.sfc.putFile(this.state.direccion + archivo.name, archivo, archivo.type);
+
 
                     alert("Archivo subido");
                 }

@@ -2,26 +2,26 @@ import ruta1 from './route1.json';
 import ruta2 from './route2.json';
 import Ruta from './ruta.js';
 
-class Rutas{
+class Rutas {
 
-    constructor(){
-        this.rutas = [new Ruta(ruta1),new Ruta(ruta2)];
+    constructor() {
+        this.rutas = [new Ruta(ruta1), new Ruta(ruta2)];
     }
 
-    getNames(){
+    getNames() {
         let rutasName = [];
         this.rutas.map(r => rutasName.push(r.name));
         return rutasName;
     }
 
-    getRutaByName(newName){
+    getRutaByName(newName) {
         var exit;
-        this.getRutaByPosition( this.rutas.forEach((r)=> {if(r.name == newName){exit=r}}));
-        return exit; 
-        
+        this.getRutaByPosition(this.rutas.forEach((r) => { if (r.name === newName) { exit = r } }));
+        return exit;
+
     }
 
-    getRutaByPosition(p){
+    getRutaByPosition(p) {
         return this.rutas[p];
     }
 }

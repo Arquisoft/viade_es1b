@@ -17,7 +17,6 @@ import {
  */
 export const WelcomePageContent = props => {
   const { t } = useTranslation();
-  const limit = 2100000; 
   const name = useWebId();
   return (
     <WelcomeWrapper data-testid="welcome-wrapper">
