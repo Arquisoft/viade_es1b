@@ -10,9 +10,8 @@ before_install:
   - sudo apt-get install graphviz
   - sudo apt-get -y install ruby openjdk-8-jre
   - sudo gem install asciidoctor asciidoctor-diagram
-  - npm install
 script:
-  - npm run build
+  - CI=false npm run build
   - npm run docs
 deploy:
   provider: pages
