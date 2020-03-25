@@ -66,7 +66,7 @@ class UploadComponent extends React.Component {
     render() {
 
         const divStyle = {
-            backgroundImage: "url('/img/concentric-hex-pattern_2x.png')",
+            backgroundImage: 'url(' + process.env.PUBLIC_URL + `/img/concentric-hex-pattern_2x.png` + ')',
             backgroundRepeat: 'repeat',
             padding: '20px',
             width: '100%',
