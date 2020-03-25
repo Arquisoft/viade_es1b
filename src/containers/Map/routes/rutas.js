@@ -3,34 +3,26 @@ import ruta2 from './route2.json';
 import Ruta from './ruta.js';
 import bajarRutas from '../../DownloadRoutes/bajarRutas';
 
-class Rutas{
+class Rutas {
 
-    constructor(){
-        this.rutas = [new Ruta(ruta1),new Ruta(ruta2)];
+    constructor() {
+        this.rutas = [new Ruta(ruta1), new Ruta(ruta2)];
     }
 
-    actualizarRutasConPod() {
-        if(bajarRutas.rutas.length > 0)  {
-            console.log(this.rutas);
-            console.log(bajarRutas.rutas.pop());
-            //this.rutas.push(bajarRutas.rutas.pop());
-    }
-}   
-
-    getNames(){
+    getNames() {
         let rutasName = [];
         this.rutas.map(r => rutasName.push(r.name));
         return rutasName;
     }
 
-    getRutaByName(newName){
+    getRutaByName(newName) {
         var exit;
-        this.getRutaByPosition( this.rutas.forEach((r)=> {if(r.name == newName){exit=r}}));
-        return exit; 
-        
+        this.getRutaByPosition(this.rutas.forEach((r) => { if (r.name === newName) { exit = r } }));
+        return exit;
+
     }
 
-    getRutaByPosition(p){
+    getRutaByPosition(p) {
         return this.rutas[p];
     }
 

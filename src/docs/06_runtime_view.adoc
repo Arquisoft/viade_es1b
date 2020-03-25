@@ -1,7 +1,8 @@
 [[section-runtime-view]]
 == Runtime View
+This is not a definitive version. We will be adding more scenarios later
 
-On this section, we will be talking about different scenarios a final user can see on the application
+=== How does the application login work?
 
 * Shows the login of the application and how the whole process works. 
 * An user enters their credentials in the login interface. Then, that interface sends the request to the authenticator, which in turn validates the data on the SOLID server. From here, two situations can occur:
@@ -9,7 +10,8 @@ On this section, we will be talking about different scenarios a final user can s
 	** The second option is that the login is invalid, which causes the graphical interface of the login to be loaded again with an error message.
 * Notably,the SOLID server is different from the user's POD.
 
-image::./images/06_Run_scenario1.png[diagram]
+
+This is the sequence to generate the uml:
 
 [plantuml,"Initial diagram",png]
 ----

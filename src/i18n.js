@@ -14,13 +14,14 @@ i18n
   // Alternative use the I18nextProvider: https://react.i18next.com/components/i18nextprovider
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en-US',
+    fallbackLng: 'en',
     debug: false,
-    whitelist: ['en-US', 'en', 'es'],
+    whitelist: ['en', 'es'],
     // special options for react-i18next
     // learn more: https://react.i18next.com/components/i18next-instance
     react: {
-      wait: true
+      wait: true,
+      useSuspense: false
     }
   });
 

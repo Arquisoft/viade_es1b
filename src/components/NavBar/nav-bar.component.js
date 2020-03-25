@@ -1,92 +1,33 @@
-import React, { useEffect, useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { Navigation, Toolbar, HamburgerButton, MobileNavigation } from './children';
+import React from "react";
+import { Navbar } from "react-bootstrap";
+import LoggedIn from "@solid/react/module/components/LoggedIn";
+import { useWebId } from '@solid/react';
+import { LogoutButton } from "@solid/react";
 
-type Props = {
-  t: Function,
-  navigation: Array<Object>,
-  toolbar: Array<React.Node>,
-  sticky?: boolean
-};
 
-const NavBar = (props: Props) => {
-  const { navigation, toolbar, sticky, t } = props;
-  const [isOpenMobile, setOpenMobile] = useState(false);
-  const [profileOptions, setProfileOption] = useState([]);
-  const componentElement = React.createRef();
+const NavBar = props => {
+    const name = useWebId();
+    return (
 
-  const setNavFixed = () => {
-    if (componentElement) {
-      const navHeight = componentElement.clientHeight;
-      const content = document.getElementsByClassName('contentApp');
-      if (content.length > 0) {
-        content[0].style['padding-top'] = `${navHeight}px`;
-      }
-    }
-  };
+        <section>
+            <LoggedIn>
+                <Navbar>
+                    <a href="#/">
+                        <img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} width="200" height="50" alt="" />
+                    </a>
+                    <a href="#/map">
+                        <img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="40" height="40" alt="" /> Map     </a>
+                    <a href="#/upload">
+                        <img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="40" height="40" alt="" /> Upload
+                        </a>
+                    <a href={name}>
+                        <img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="40" height="40" alt="" /> Profile
+                        </a>
+                    <LogoutButton></LogoutButton>
 
-  const onComponentResize = () => {
-    setNavFixed();
-    window.addEventListener('resize', () => {
-      setNavFixed();
-
-      if (window.innerWidth >= 1024 && isOpenMobile) {
-        setOpenMobile(false);
-      }
-    });
-  };
-
-  const getUserProfileOptions = () => {
-    const profile = toolbar ? toolbar.filter(bar => bar.id !== 'language') : [];
-    setProfileOption(profile);
-  };
-
-  useEffect(() => {
-    if (sticky) {
-      onComponentResize();
-    }
-
-    getUserProfileOptions();
-  }, [props, isOpenMobile]);
-
-  const toggleMobileMenu = () => {
-    setOpenMobile(!isOpenMobile);
-  };
-
-  return (
-    <header role="navigation" className="header header__desktop fixed" ref={componentElement}>
-      <section className="header-wrap">
-        <div className="logo-block">
-          <Link to="/welcome">
-            <img src="/img/inrupt.svg" alt="inrupt" />
-          </Link>
-        </div>
-
-        {isOpenMobile ? (
-          <MobileNavigation
-            navigation={navigation}
-            toolbar={toolbar}
-            isOpenMobile={isOpenMobile}
-            toggleMobileMenu={toggleMobileMenu}
-            t={t}
-          >
-            <Navigation navigation={navigation} />
-            <Toolbar toolbar={profileOptions} open customClass="profile-list" />
-          </MobileNavigation>
-        ) : (
-          <Fragment>
-            {navigation && <Navigation navigation={navigation} />}
-            {toolbar && <Toolbar toolbar={toolbar} />}
-          </Fragment>
-        )}
-        <HamburgerButton toggleMobileMenu={toggleMobileMenu} />
-      </section>
-    </header>
-  );
-};
-
-NavBar.defaultProps = {
-  sticky: true
-};
-
+                </Navbar>
+            </LoggedIn>
+        </section>
+    );
+}
 export default NavBar;
