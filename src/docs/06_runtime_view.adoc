@@ -88,6 +88,12 @@ else incorrect
 	POD -> AddRouteService: Route could't be saved
 	AddRouteService --> UIApplication: Failure message
 	end
+legend
+|= |= Type |
+|<back:#FF0000>   </back>| Type A class |
+|<back:#00FF00>   </back>| Type B class |
+|<back:blue>   </back>| Type C class |
+endlegend
 ----
 
 
