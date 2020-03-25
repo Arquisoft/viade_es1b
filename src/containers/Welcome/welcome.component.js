@@ -23,7 +23,7 @@ export const WelcomePageContent = props => {
        <LoggedIn>
       <WelcomeCard className="card">
         <WelcomeLogo data-testid="welcome-logo">
-          <img src="/img/inrupt.svg" alt="Inrupt" />
+            <img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} alt="Inrupt" />
         </WelcomeLogo>
         <WelcomeProfile data-testid="welcome-profile">
           <h3>
