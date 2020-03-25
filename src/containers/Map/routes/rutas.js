@@ -11,9 +11,12 @@ class Rutas {
     
     actualizarRutasConPod() {
         if(bajarRutas.rutas.length > 0)  {
-            console.log(this.rutas);
-            console.log(bajarRutas.rutas.pop());
-            //this.rutas.push(bajarRutas.rutas.pop());
+            console.log(this.rutas);                      
+            bajarRutas.rutas.forEach(ruta => {
+                this.rutas.push(new Ruta(ruta));
+                bajarRutas.rutas.pop();
+            });
+            
     }
 }   
 

@@ -16,11 +16,11 @@ async bajarRutasDePod(direccion){
         alert("No ha escrito nada")
         else {
     // Leemos toda la carpeta
-    const folder = await this.sfc.readFolder( direccion);
+    const folder = await this.sfc.readFolder(direccion);
     // console.log(folder);
     // Leemos los ficheros
     const files = folder.files;
-    // console.log(files);
+    console.log(files);
     // Para cada fichero que sea json (o el formato que vaya a ser), lo muestra
     files.forEach(file => {
         if(file.type==="application/json") {

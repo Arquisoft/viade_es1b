@@ -26,7 +26,7 @@ class Map extends React.Component {
 
   getRoutes(id, e) {
 
-    Rutas.actualizarRutasConPod();
+    
     var newRuta = Rutas.getRutaByName(id);
     document.getElementById("name").textContent = newRuta.name;
 
@@ -48,6 +48,7 @@ class Map extends React.Component {
   }
 
   render() {
+    Rutas.actualizarRutasConPod();
     const position = this.puntos[0];
 
     const mapStyle = {
