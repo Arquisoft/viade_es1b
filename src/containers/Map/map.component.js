@@ -25,6 +25,8 @@ class Map extends React.Component {
   }
 
   getRoutes(id, e) {
+
+    Rutas.actualizarRutasConPod();
     var newRuta = Rutas.getRutaByName(id);
     document.getElementById("name").textContent = newRuta.name;
 
