@@ -1,4 +1,3 @@
-
 [[section-introduction-and-goals]]
 == Introduction and Goals
 
@@ -53,5 +52,4 @@ To carry out this this app, we are using SOLID specifications and the React fram
 | Developers | Members of the team that create the app | Develop a functional and maintainable app.
 | Users | Users of this app | Efficient and usable app to share their routes.
 |===
-
 

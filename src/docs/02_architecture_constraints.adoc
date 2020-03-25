@@ -1,27 +1,28 @@
 [[section-architecture-constraints]]
 == Architecture Constraints
 
+////
+[role="arc42help"]
 ****
-.Software Constraints
-|===
-|Constraint |Explanation
-|React |This year, teachers told us that React must be used in our project
-|SOLID Specifications |None of us have knowledge about SOLID, so we have to invest our time learning how to use it
-|===
+.Contents
+Any requirement that constrains software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies.
+
+.Motivation
+Architects should know exactly where they are free in their design decisions and where they must adhere to constraints.
+Constraints must always be dealt with; they may be negotiable, though.
+
+.Form
+Simple tables of constraints with explanations.
+If needed you can subdivide them into
+technical constraints, organizational and political constraints and
+conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
 ****
 
-****
-.Organizational Constraints
-|===
-|Constraint |Explanation
-|Time |We only have one semester to develop the application. Assuming we haven't knowledge about technologies involved and having the deadline on 4th May, we may have problems completing all the checkpoints required.
-|Team |We are 6 persons in the team and we had never worked together before.
-|===
-****
+=== System Constraints
 
+[role="arc42help"]
 ****
-
-
+////
 Constraints are fixed technical or bussiness-oriented design decisions that absolutely cannot be changed (maybe negotiable).
 Most often these are provided by stakeholders at the outset of the project.
 Sometimes a team may choose to create a constraint,
@@ -43,4 +44,3 @@ perhaps to simplify the world in which they are working
 |Time schedule| We have limited time to deliver a final version in May/June
 |Code coverage| The use of certain tools in order to evaluate the quality of the code itself.
 |=======================
-****

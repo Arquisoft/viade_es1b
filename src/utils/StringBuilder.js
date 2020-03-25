@@ -1,5 +1,5 @@
 function StringBuilder(value) {
-    this.strings = [];
+    this.strings = new Array();
     this.append(value);
 }
 

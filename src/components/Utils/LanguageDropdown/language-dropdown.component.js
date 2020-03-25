@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dropdown } from '@util-components';
+import { Dropdown } from '../../Utils';
 import { toast } from 'react-toastify';
 
 const languages = {
