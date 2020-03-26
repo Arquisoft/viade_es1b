@@ -20,9 +20,12 @@ const NavBar = props => {
                     <a href="#/upload">
                         <img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="40" height="40" alt="" /> Upload
                         </a>
+                    <a href="#/download">
+                        <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="40" height="40" alt="" /> Download
+                        </a>
                     <a href={name}>
                         <img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="40" height="40" alt="" /> Profile
-                        </a>
+                        </a>                        
                     <LogoutButton></LogoutButton>
 
                 </Navbar>
