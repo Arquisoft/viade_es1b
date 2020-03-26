@@ -18,12 +18,18 @@ import {
 export const WelcomePageContent = props => {
   const { t } = useTranslation();
   const name = useWebId();
+  const style = {
+    width: '100%',
+    backgroundImage: 'url(' + process.env.PUBLIC_URL +`/img/concentric-hex-pattern_2x.png` + ')',
+    backgroundRepeat: 'repeat',
+    padding: '50px 0',
+  };
   return (
-    <WelcomeWrapper data-testid="welcome-wrapper">
+    <section data-testid="welcome-wrapper" style={style}>
        <LoggedIn>
       <WelcomeCard className="card">
         <WelcomeLogo data-testid="welcome-logo">
-          <img src="/img/inrupt.svg" alt="Inrupt" />
+            <img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} alt="Inrupt" />
         </WelcomeLogo>
         <WelcomeProfile data-testid="welcome-profile">
           <h3>
@@ -54,6 +60,6 @@ export const WelcomePageContent = props => {
       <LoggedOut>
         <Redirect to='/login'></Redirect>
       </LoggedOut> 
-    </WelcomeWrapper>
+    </section>
   );
 };

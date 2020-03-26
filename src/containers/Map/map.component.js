@@ -19,13 +19,14 @@ class Map extends React.Component {
 
   constructor() {
     super();
-
     this.name = Rutas.getNames()[0];
     this.puntos = []
     Rutas.getRutaByPosition(1).points.map(p => this.puntos.push(p.getCoordinates()));
   }
 
   getRoutes(id, e) {
+
+    
     var newRuta = Rutas.getRutaByName(id);
     document.getElementById("name").textContent = newRuta.name;
 
@@ -47,6 +48,7 @@ class Map extends React.Component {
   }
 
   render() {
+    Rutas.actualizarRutasConPod();
     const position = this.puntos[0];
 
     const mapStyle = {

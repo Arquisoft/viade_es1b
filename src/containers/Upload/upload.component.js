@@ -12,7 +12,7 @@ class UploadComponent extends React.Component {
         this.state = {
             //Estos son los ficheros, con file[0] accederíamos al primero, que es nuestro caso.
             files: null,
-            direccion: "https://marshall6399.solid.community/public/",
+            direccion: "https://uo265135.inrupt.net/public/",
             //Creamos el file solid client:
             //Hay que hacer los 4 pasos que dice el githun de SolidFileClient
             sfc: new SolidFileClient(auth)
@@ -66,7 +66,7 @@ class UploadComponent extends React.Component {
     render() {
 
         const divStyle = {
-            backgroundImage: "url('/img/concentric-hex-pattern_2x.png')",
+            backgroundImage: 'url(' + process.env.PUBLIC_URL + `/img/concentric-hex-pattern_2x.png` + ')',
             backgroundRepeat: 'repeat',
             padding: '20px',
             width: '100%',
