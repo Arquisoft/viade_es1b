@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const DivStyle = styled.div`
-    background-image: url(img/concentric-hex-pattern_2x.png);
+    background-image: linear-gradient(to right, white, lightblue);
     background-repeat: repeat;
     padding: 20px;
     width: 100%;

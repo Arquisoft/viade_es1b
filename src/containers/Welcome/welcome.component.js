@@ -19,7 +19,8 @@ export const WelcomePageContent = props => {
   const name = useWebId();
   const style = {
     width: '100%',
-    backgroundImage: 'url(' + process.env.PUBLIC_URL +'/img/concentric-hex-pattern_2x.png' + ')',
+    height: '92vh',
+    backgroundImage: 'linear-gradient(to right, white, lightblue)',
     backgroundRepeat: 'repeat',
     padding: '50px 0',
   };

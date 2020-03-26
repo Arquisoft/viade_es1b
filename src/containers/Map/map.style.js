@@ -11,9 +11,8 @@ export const MapStyle = styled(Map)`
 
 export const DivStyle = styled.div`
     position: absolute;
-    border-radius: 25px;
     background-color: #FFFFFF;
-    border: 2px solid #000000;
+    border: 1px solid lightgray;
     padding: 20px;
     width: auto;
     height: auto;
