@@ -6,23 +6,23 @@ export const DivStyle = styled.div`
     padding: 20px;
     width: 100%;
     height: 92vh;
-    zIndex: 1;
+    z-index: 1;
     `;
 
 export const ButtonStyle = styled.button`
     width: auto;
     height: auto;
-    marginTop: 2%;
-    zIndex: 99;
+    z-index: 99;
     `;
 
 export const InputStyle = styled.input`
     margin: auto;
-    border-radius: 25px;
+    border-radius: 5px;
     background-color: #FFFFFF;
-    border: 2px solid #000000;
+    border: 1px solid lightgray;
     padding: 20px;
     width: auto;
     height: auto;
-    zIndex: 99;
+    z-index: 99;
+    
     `

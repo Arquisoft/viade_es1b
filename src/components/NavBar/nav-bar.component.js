@@ -15,10 +15,10 @@ const NavBar = props => {
         <LoggedIn>
             <NavStyle>
                 <a href="#/"><img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} width="200" height="50" alt="" /></a>
-                <DivStyle><Astyle href="#/map"><img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="20" height="20" alt="" /> Map</Astyle></DivStyle>
-                <DivStyle><Astyle href="#/upload"><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> Upload</Astyle></DivStyle>
-                <DivStyle><Astyle href="#/download"><img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="20" height="20" alt="" /> Download</Astyle></DivStyle>
-                <DivStyle><Astyle href={name}><img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="20" height="20" alt="" /> Profile</Astyle></DivStyle>
+                <DivStyle><Astyle href="#/map"><img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="20" height="20" alt="" />{t('navBar.map')}</Astyle></DivStyle>
+                <DivStyle><Astyle href="#/upload"><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> {t('navBar.upload')}</Astyle></DivStyle>
+                <DivStyle><Astyle href="#/download"><img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="20" height="20" alt="" /> {t('navBar.download')}</Astyle></DivStyle>
+                <DivStyle><Astyle href={name}><img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="20" height="20" alt="" /> {t('navBar.profile')}</Astyle></DivStyle>
                 <DivStyle>
                     <DropdownButton variant="white" title={""}>
                         <DropdownItem>
