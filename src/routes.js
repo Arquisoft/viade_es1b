@@ -1,14 +1,13 @@
 import React from 'react';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
-
 import {
   Login,
   Welcome,
-  Map
+  Map,
+  Upload,
+  Download
 } from './containers';
-import UploadComponent from "./containers/Upload";
 import NavBar from './components/NavBar';
-import DownloadComponent from "./containers/Download";
 
 const Routes = () => (
   <HashRouter>
@@ -17,9 +16,9 @@ const Routes = () => (
       <Switch>
         <Route exact path="/welcome" component={Welcome} />
         <Route exact path="/map" component={Map} />
-        <Route exact path="/upload" component={UploadComponent} />
+        <Route exact path="/upload" component={Upload} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/download" component={DownloadComponent} />
+        <Route exact path="/download" component={Download} />
         <Route exact path="/" component={Login} />
         <Redirect to="/"></Redirect>
       </Switch>

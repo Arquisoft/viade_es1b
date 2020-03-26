@@ -1,11 +1,11 @@
 import React from 'react';
 import L from 'leaflet';
 import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
-import Rutas from './routes/rutas';
+import { Rutas } from '../../viade/Model';
 import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import { MapStyle } from './map.style';
+import { MapStyle, DivStyle } from './map.style';
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -24,9 +24,9 @@ class Map extends React.Component {
     Rutas.getRutaByPosition(1).points.map(p => this.puntos.push(p.getCoordinates()));
   }
 
-  getRoutes(id, e) {
+  getRoutes(id) {
 
-    
+
     var newRuta = Rutas.getRutaByName(id);
     document.getElementById("name").textContent = newRuta.name;
 
@@ -51,47 +51,28 @@ class Map extends React.Component {
     Rutas.actualizarRutasConPod();
     const position = this.puntos[0];
 
-    const mapStyle = {
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
-      zIndex: '1',
-    };
 
-    const divStyle = {
-      position: 'absolute',
-      borderRadius: '25px',
-      backgroundColor: '#FFFFFF',
-      border: '2px solid #000000',
-      padding: '20px',
-      width: 'auto',
-      height: 'auto',
-      marginTop: '1%',
-      marginBottom: '5%',
-      marginLeft: '90%',
-      zIndex: '99',
-    }
+
+
 
     return (
 
       <React.Fragment id="map" >
         <LoggedIn>
-          <div style={divStyle}>
+          <DivStyle>
             <h2 id="name">{this.name}</h2>
-            <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={(e) => this.getRoutes(n, e)}> {n} </li>)}</ul>
-          </div>
-          <div id="map" style={mapStyle}>
-            <MapStyle id="map" center={position} zoom={15}>
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              <Polyline color={'red'} positions={this.puntos}></Polyline>
-              <Marker position={this.puntos[0]}>
-                <Popup>Inicio</Popup>
-              </Marker>
-              <Marker position={this.puntos[this.puntos.length - 1]}>
-                <Popup>Fin</Popup>
-              </Marker>
-            </MapStyle>
-          </div>
+            <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
+          </DivStyle>
+          <MapStyle id="map" center={position} zoom={15}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <Polyline color={'red'} positions={this.puntos}></Polyline>
+            <Marker position={this.puntos[0]}>
+              <Popup>Inicio</Popup>
+            </Marker>
+            <Marker position={this.puntos[this.puntos.length - 1]}>
+              <Popup>Fin</Popup>
+            </Marker>
+          </MapStyle>
         </LoggedIn>
         <LoggedOut>
           <Redirect to='/login'></Redirect>

@@ -1,9 +1,13 @@
-class PointRoute{
-    constructor(longitude,latitude, elevation){
-        this.longitude=longitude;
-        this.latitude=latitude;
-        this.elevation=elevation;
+export default class Point {
+    constructor(latitude, longitude, altitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.altitude = altitude;
     }
-}
 
-export default PointRoute;
+    getCoordinates() {
+        return [this.latitude, this.longitude];
+    }
+
+
+}
