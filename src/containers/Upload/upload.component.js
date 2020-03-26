@@ -1,7 +1,7 @@
 import React from "react";
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
-import { LoggedOut, LoggedIn, useWebId } from '@solid/react';
+import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { DivStyle, ButtonStyle, InputStyle } from './upload.style';
 

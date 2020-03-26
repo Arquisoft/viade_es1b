@@ -5,7 +5,7 @@ export const DivStyle = styled.div`
     background-repeat: repeat;
     padding: 20px;
     width: 100%;
-    height: 87vh;
+    height: 92vh;
     zIndex: 1;
     `;
 

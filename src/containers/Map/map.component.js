@@ -24,7 +24,7 @@ class Map extends React.Component {
     Rutas.getRutaByPosition(1).points.map(p => this.puntos.push(p.getCoordinates()));
   }
 
-  getRoutes(id, e) {
+  getRoutes(id) {
 
 
     var newRuta = Rutas.getRutaByName(id);
@@ -61,7 +61,7 @@ class Map extends React.Component {
         <LoggedIn>
           <DivStyle>
             <h2 id="name">{this.name}</h2>
-            <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={(e) => this.getRoutes(n, e)}> {n} </li>)}</ul>
+            <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
           </DivStyle>
           <MapStyle id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
