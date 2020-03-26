@@ -9,7 +9,7 @@ export const DivStyle = styled.div`
     text-align: left;
     padding: 10px;
     width: auto;
-    height: 5vh;
+    height: 5%;
   `;
 
 export const NavStyle = styled(Navbar)`

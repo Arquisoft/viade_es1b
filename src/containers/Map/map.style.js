@@ -3,9 +3,9 @@ import { Map } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
 
 export const MapStyle = styled(Map)`
-    position: relative;
+    position: absolute;
     width: 100%;
-    height: 92vh;
+    height: 100%;
     z-Index: 1;
   `;
 

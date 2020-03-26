@@ -18,8 +18,9 @@ export const WelcomePageContent = props => {
   const { t } = useTranslation();
   const name = useWebId();
   const style = {
+    position: 'absolute',
     width: '100%',
-    height: '92vh',
+    height: '100%',
     backgroundImage: 'linear-gradient(to right, white, lightblue)',
     backgroundRepeat: 'repeat',
     padding: '50px 0',
