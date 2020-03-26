@@ -1,7 +1,7 @@
 import React from 'react';
 import L from 'leaflet';
 import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
-import Rutas from './routes/rutas';
+import { Rutas } from '../../viade/Model';
 import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
