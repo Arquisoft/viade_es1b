@@ -3,6 +3,7 @@ import Welcome from './Welcome';
 import Upload from './Upload';
 import Map from './Map';
 import Download from './Download';
+import PageNotFound from './PageNotFound';
 
 export {
   Login,
@@ -10,4 +11,5 @@ export {
   Upload,
   Map,
   Download,
+  PageNotFound
 };

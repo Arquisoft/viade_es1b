@@ -1,36 +1,32 @@
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
+import { render, cleanup, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from './nav-bar.component';
+import '@testing-library/jest-dom'
 
 afterAll(cleanup);
 
 describe.only('Nav Bar', () => {
-  const { container, rerender } = render(
-    <Router>
+  const { container, debug } = render(
+    
       <NavBar />
-    </Router>
+      
   );
+  //debug()
 
   it('renders without crashing', () => {
     expect(container).toBeTruthy();
   });
-
-  it('renders with Navigation', () => {
-    rerender(
-      <Router>
-        <NavBar navigation={[]} />
-      </Router>
-    );
-    expect(document.querySelector('.nav__primary')).toBeTruthy();
+  debug();
+  it('renders with all available links', () => {
+    
+    expect(container.querySelector('.navigation')).toBeDefined();
+    expect(screen.queryByText('Map')).toBeDefined();
+    expect(screen.queryByText('Upload')).toBeDefined();
+    expect(screen.queryByText('Download')).toBeDefined();
+    expect(screen.queryByText('Profile')).toBeDefined();
+    
   });
 
-  it('renders with Toolbar', () => {
-    rerender(
-      <Router>
-        <NavBar toolbar={[]} />
-      </Router>
-    );
-    expect(document.querySelector('.nav__toolbar')).toBeTruthy();
-  });
+  
 });
