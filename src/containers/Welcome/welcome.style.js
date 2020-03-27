@@ -1,22 +1,6 @@
 import styled from 'styled-components';
 import { media } from '../../utils';
 
-export const WelcomeWrapper = styled.section`
-  width: 100%;
-  background-image: url('/img/concentric-hex-pattern_2x.png');
-  background-repeat: repeat;
-  padding: 50px 0;
-
-  h3 {
-    color: #666666;
-    span {
-      font-weight: bold;
-    }
-    a {
-      font-size: 1.9rem;
-    }
-  }
-`;
 
 export const WelcomeCard = styled.div`
   background-color: #fff;
@@ -28,6 +12,7 @@ export const WelcomeCard = styled.div`
   padding: 50px 0 !important; //temporary fix to a style guide bug
 
   align-items: center;
+  text-align: center;
 
   a {
     text-decoration: none;
@@ -104,7 +89,8 @@ export const ImageContainer = styled.div`
 
 export const WelcomeDetail = styled.div`
   padding: 1rem 3.5rem;
-
+  text-align: center;
+  align-items: center;
   p,
   li {
     color: #666666;

@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const DivStyle = styled.div`
-    position: absolute;
     background-image: linear-gradient(to right, white, lightblue);
     background-repeat: repeat;
     padding: 20px;
     width: 100%;
-    height: 100%;
+    height: 92vh;
     z-index: 1;
     `;
 
@@ -25,5 +24,4 @@ export const InputStyle = styled.input`
     width: auto;
     height: auto;
     z-index: 99;
-    
-    `
+    `;
