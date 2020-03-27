@@ -1,7 +1,42 @@
-import * as fs from 'browserify-fs';
+import auth from "solid-auth-client";
+import SolidFileClient from "solid-file-client";
 
 class createJson {
 
+    constructor() {
+
+        //Instanciamos la variable, con let
+        this.state = {
+            //Estos son los ficheros, con file[0] accederíamos al primero, que es nuestro caso.
+            direccion: "https://marshall6399.solid.community/public/",
+            //Creamos el file solid client:
+            //Hay que hacer los 4 pasos que dice el githun de SolidFileClient
+            sfc: new SolidFileClient(auth)
+
+        };
+        this.subirFicheroAPod = this.subirFicheroAPod.bind(this);
+    }
+
+    async subirFicheroAPod(name, sdict) {
+        //El archivo a subir será:
+        let archivo = sdict;
+        //Analizamos si está loggeado:
+        let session = await auth.currentSession();
+        if (session) {
+            alert("Estás loggeado");
+            try {
+                alert(this.state.direccion + name + ".json");
+                await this.state.sfc.putFile("https://marshall6399.solid.community/public/" + name + ".json", archivo, archivo.type);
+                alert("Archivo subido");
+            }
+            catch (error) {
+                console.error(error);
+            }
+
+        }
+        else
+            alert("No estás loggeado");
+    }
 
     async createJson(name, markers) {
         var tot = '{ "@context": "http://schema.org",  "@type": "Trip", "name":' + '"' + name + '"' + ', "itinerary": { "@type": "ItemList", "numberOfItems":' + markers.length + ', "itemListOrder": "http://schema.org/ItemListOrderDescending","itemListElement": [';
@@ -12,9 +47,9 @@ class createJson {
                 tot = tot + '{ "@type": "GeoCoordinates", "latitude":' + markers[i].lat + ', "longitude":' + markers[i].lng + '}'
         }
         tot = tot + '] } } ';
-        console.log(tot);
         var sdict = JSON.parse(tot);
-        console.log(sdict);
+        var save = JSON.stringify(sdict);
+        this.subirFicheroAPod(name, save);
     }
 }
 

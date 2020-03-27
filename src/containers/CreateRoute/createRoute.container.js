@@ -72,7 +72,7 @@ class createRoute extends React.Component {
           <DivStyle>
             <h2>Crear Ruta</h2>
             <InputStyle id="name" type="text" placeholder="Write routes name..." ref={this.name} onChange={this.updateValue} />
-            <ButtonStyle onClick={this.sendData} > Print </ButtonStyle>
+            <ButtonStyle onClick={this.sendData} > Upload </ButtonStyle>
             <ButtonStyle2 onClick={this.clear}> Clear </ButtonStyle2>
           </DivStyle>
           <MapStyle id="map" center={[43.3551061, -5.85]} zoom={15} onClick={this.mapClick}>
