@@ -11,7 +11,7 @@ import { PageNotFoundWrapper, PageNotFoundContent } from './page-not-found.style
 const PageNotFound = () => {
   const { t } = useTranslation();
   return (
-    <PageNotFoundWrapper>
+    <PageNotFoundWrapper data-testid='page-not-found-container'>
       <PageNotFoundContent>
         <img src="/img/404.svg" alt="404" />
         <h3>{t('notFound.title')}</h3>
