@@ -4,6 +4,7 @@ import Upload from './Upload';
 import Map from './Map';
 import Download from './Download';
 import createRoute from './CreateRoute';
+import PageNotFound from './PageNotFound';
 
 export {
   Login,
@@ -12,4 +13,5 @@ export {
   Map,
   Download,
   createRoute,
+  PageNotFound
 };

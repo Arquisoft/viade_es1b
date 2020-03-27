@@ -1,18 +1,20 @@
 import React from "react";
-import LoggedIn from "@solid/react/module/components/LoggedIn";
+//import LoggedIn from "@solid/react/module/components/LoggedIn";
 import { useWebId } from '@solid/react';
 import { DivStyle, NavStyle, ButtonStyle, Astyle } from './nav-bar.style';
 import { DropdownButton, DropdownItem } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import i18n from 'i18next';
 
+
 const NavBar = props => {
 
     const name = useWebId();
     const { t } = useTranslation();
 
+
     return (
-        <LoggedIn>
+        // <LoggedIn>
             <NavStyle>
                 <a href="#/"><img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} width="200" height="50" alt="" /></a>
                 <DivStyle><Astyle href="#/map"><img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="20" height="20" alt="" />{t('navBar.map')}</Astyle></DivStyle>
@@ -34,7 +36,8 @@ const NavBar = props => {
 
 
             </NavStyle>
-        </LoggedIn>
+        // </LoggedIn>
+
     );
 }
 export default NavBar;
