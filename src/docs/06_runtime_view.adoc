@@ -23,13 +23,6 @@ control Authentication #green
 database SOLID #purple
 database POD #pink
 participant UIApplication #yellow
-participant Caption
-
-
-note right of Caption: Hiker, is the users who will use the application.\nThe color that identifies the hikers is red
-note right of Caption:UILogin and UIApplication They are the GUIs\n with which hikers can interact. All GUIs are yellow
-note right of Caption: The color that identifies the services is green.\n For example, authentication service.
-note right of Caption: Pink colors identify the use of SOLID.\n The different colors of roses are to specify that one is\n the SOLID server (purple) and another your personal\n server (pink)
 
 HIKER -> UILogin: Set credentials
 UILogin -> Authentication: Login Request
@@ -45,6 +38,13 @@ else Login Failure
 	Authentication --> UILogin: Load Login
 	end
 
+legend
+|= Object |= Explain | = Color |
+|HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>   </back> |
+|UIAplication and UILogin| They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>   </back> |
+|Authentication service | It's a service.The color that identifies the services is green. |<back:green>   </back> |
+|SOLID|The different colors of roses are to specify that one is\n the SOLID server (purple) and another your personal\n server (pink)|<back:pink>   </back> |
+endlegend
 
 
 
@@ -68,12 +68,8 @@ actor HIKER #red
 participant UIApplication #yellow
 control AddRouteService #green
 database POD #pink
-participant Legend
 
-note right of Legend: Hiker, is the users who will use the application.\nThe color that identifies the hikers is red
-note right of Legend:UIApplication is the GUI\n with which hikers can interact. All GUIs are yellow
-note right of Legend: The color that identifies the services is green.\n For example, addRouteService service.
-note right of Legend: Pink color identify your personal\n server (pink)
+note right of Legend: 
 
 
 HIKER -> UIApplication: ADD ROUTE
@@ -88,6 +84,14 @@ else incorrect
 	POD -> AddRouteService: Route could't be saved
 	AddRouteService --> UIApplication: Failure message
 	end
+
+legend
+|= Object |= Explain | = Color |
+|HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>   </back> |
+|UIAplication | They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>   </back> |
+|AddRoute service | It's a service that allows you to upload routes to your pod.The color that identifies the services is green. |<back:green>   </back> |
+|SOLID|Pink color identify your personal\n server (pink)|<back:pink>   </back> |
+endlegend
 ----
 
 
