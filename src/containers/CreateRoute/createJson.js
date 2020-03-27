@@ -2,18 +2,19 @@ import * as fs from 'browserify-fs';
 
 class createJson {
 
-    createJson(name, markers) {
-        var dict = {
-            "one": [15, 4.5],
-            "two": [34, 3.3],
-            "three": [67, 5.0],
-            "four": [32, 4.1]
-        };
-        fs.writeFile('./hello-world.txt', 'Hello world!\n', function () {
-            fs.readFile('./hello-world.txt', 'utf-8', function (err, data) {
-                console.log(data);
-            });
-        });
+
+    async createJson(name, markers) {
+        var tot = '{ "@context": "http://schema.org",  "@type": "Trip", "name":' + '"' + name + '"' + ', "itinerary": { "@type": "ItemList", "numberOfItems":' + markers.length + ', "itemListOrder": "http://schema.org/ItemListOrderDescending","itemListElement": [';
+        for (let i = 0; i < markers.length; i++) {
+            if (i < markers.length - 1)
+                tot = tot + '{ "@type": "GeoCoordinates", "latitude":' + markers[i].lat + ', "longitude":' + markers[i].lng + '},'
+            else
+                tot = tot + '{ "@type": "GeoCoordinates", "latitude":' + markers[i].lat + ', "longitude":' + markers[i].lng + '}'
+        }
+        tot = tot + '] } } ';
+        console.log(tot);
+        var sdict = JSON.parse(tot);
+        console.log(sdict);
     }
 }
 
