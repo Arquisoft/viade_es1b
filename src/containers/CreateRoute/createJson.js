@@ -8,7 +8,6 @@ class createJson {
         //Instanciamos la variable, con let
         this.state = {
             //Estos son los ficheros, con file[0] accederíamos al primero, que es nuestro caso.
-            direccion: "https://marshall6399.solid.community/public/",
             //Creamos el file solid client:
             //Hay que hacer los 4 pasos que dice el githun de SolidFileClient
             sfc: new SolidFileClient(auth)
@@ -22,11 +21,14 @@ class createJson {
         let archivo = sdict;
         //Analizamos si está loggeado:
         let session = await auth.currentSession();
+        var id = `${session.webId}`;
+        id = id.replace('/profile/card#me', '/public/');
         if (session) {
             alert("Estás loggeado");
+            alert(id);
             try {
-                alert(this.state.direccion + name + ".json");
-                await this.state.sfc.putFile("https://marshall6399.solid.community/public/" + name + ".json", archivo, archivo.type);
+                alert(id + name + ".json");
+                await this.state.sfc.putFile(id + name + ".json", archivo, archivo.type);
                 alert("Archivo subido");
             }
             catch (error) {
