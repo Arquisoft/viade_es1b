@@ -10,7 +10,7 @@ export const MapStyle = styled(Map)`
   `;
 
 export const DivStyle = styled.div`
-    position: absolute;
+    position: fixed;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
     padding: 20px;

@@ -3,6 +3,7 @@ import Welcome from './Welcome';
 import Upload from './Upload';
 import Map from './Map';
 import Download from './Download';
+import createRoute from './CreateRoute';
 import PageNotFound from './PageNotFound';
 
 export {
@@ -11,5 +12,6 @@ export {
   Upload,
   Map,
   Download,
+  createRoute,
   PageNotFound
 };

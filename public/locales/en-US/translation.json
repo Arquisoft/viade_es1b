@@ -55,6 +55,7 @@
     "text-editor": "Text Editor",
     "changeLanguage": "Change Language",
     "map":"Map",
+    "createRoute":"New Route",
     "routeLoader":"Load Routes",
     "languages": {
       "en": "English (English)",

@@ -50,14 +50,8 @@ class Map extends React.Component {
   render() {
     Rutas.actualizarRutasConPod();
     const position = this.puntos[0];
-
-
-
-
-
     return (
-
-      <React.Fragment id="map" >
+      <React.Fragment>
         <LoggedIn>
           <DivStyle>
             <h2 id="name">{this.name}</h2>

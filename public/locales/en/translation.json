@@ -56,6 +56,7 @@
     "download": "Download routes",
     "changeLanguage": "Change Language",
     "map":"Map",
+    "createRoute":"New Route",
     "routeLoader":"Load Routes",
     "languages": {
       "en": "English (English)",

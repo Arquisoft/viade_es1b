@@ -57,6 +57,7 @@
     "download": "Bajar rutas",
     "changeLanguage": "Cambiar Lenguaje",
     "map":"Mapa",
+    "createRoute":"Nueva Ruta",
     "routeLoader":"Cargar Rutas",
     "languages": {
       "en": "English (Inglés)",
