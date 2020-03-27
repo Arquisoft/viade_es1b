@@ -1,11 +1,9 @@
 import React from 'react';
 import L from 'leaflet';
 import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
-import { Rutas } from '../../viade/Model';
 import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
-import { MapStyle } from './map.style';
-
+import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2 } from './createRoute.style';
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
@@ -14,20 +12,23 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
+
 class createRoute extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      markers: []
+      markers: [],
+      name: "",
     };
   }
 
   mapClick = (e) => {
-    const { markers } = this.state
+    const { markers } = this.state;
     markers.push({ lat: e.latlng.lat, lng: e.latlng.lng })
     this.setState({ markers })
     this.draw();
+
   }
 
   draw() {
@@ -38,12 +39,41 @@ class createRoute extends React.Component {
     return points;
   };
 
-  render() {
-    Rutas.actualizarRutasConPod();
-    return (
+  updateValue = (n) => {
+    var { name } = this.state;
+    name = document.getElementById('name').value;
+    this.setState({ name });
+    console.log(name);
+  }
 
-      <React.Fragment id="map" >
+  sendData = () => {
+    var { name } = this.state;
+    const { markers } = this.state;
+    if (name.length === 0)
+      alert("La ruta tiene que tener un nombre");
+    if (markers.length <= 1)
+      alert("La ruta tiene que tener al menos 2 puntos");
+    if (name.length !== 0 && markers.length > 1) {
+      alert("Ruta guardada correctamente");
+      //Insertar Aqui metodo para agregar ruta
+    }
+
+  }
+
+  clear() {
+    window.location.reload();
+  }
+
+  render() {
+    return (
+      <React.Fragment>
         <LoggedIn>
+          <DivStyle>
+            <h2>Crear Ruta</h2>
+            <InputStyle id="name" type="text" placeholder="Write routes name..." ref={this.name} onChange={this.updateValue} />
+          </DivStyle>
+          <ButtonStyle onClick={this.sendData} > Print </ButtonStyle>
+          <ButtonStyle2 onClick={this.clear}> Clear </ButtonStyle2>
           <MapStyle id="map" center={[43.3551061, -5.85]} zoom={15} onClick={this.mapClick}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {this.state.markers.map((position, idx) =>
