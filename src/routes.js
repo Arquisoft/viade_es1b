@@ -9,7 +9,7 @@ import {
   Map,
   Upload,
   Download,
-  createRoute
+  createRoute,
   PageNotFound
 } from './containers';
 import NavBar from './components/NavBar';
