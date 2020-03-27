@@ -86,11 +86,11 @@ else incorrect
 	end
 
 legend
-|= Object |= Explain | = Color |
-|HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>   </back> |
-|UIAplication | They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>   </back> |
-|AddRoute service | It's a service that allows you to upload routes to your pod.The color that identifies the services is green. |<back:green>   </back> |
-|SOLID|Pink color identify your personal\n server (pink)|<back:pink>   </back> |
+|= Object |= Explain |= Color |
+|HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000></back> |
+|UIAplication | They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow></back> |
+|AddRoute service | It's a service that allows you to upload routes to your pod.The color that identifies the services is green. |<back:green></back> |
+|SOLID|Pink color identify your personal\n server (pink)|<back:pink></back> |
 endlegend
 ----
 
