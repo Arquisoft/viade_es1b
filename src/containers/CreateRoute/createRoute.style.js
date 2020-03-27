@@ -10,7 +10,6 @@ export const MapStyle = styled(Map)`
   `;
 
 export const ButtonStyle = styled.button`
-    position: absolute;
     width: auto;
     height: auto;
     z-index: 99;
@@ -22,7 +21,6 @@ export const ButtonStyle = styled.button`
     padding: 10px;
   `;
 export const ButtonStyle2 = styled.button`
-    position: absolute;
     width: auto;
     height: auto;
     z-index: 99;

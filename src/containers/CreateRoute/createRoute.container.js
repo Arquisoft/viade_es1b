@@ -4,6 +4,7 @@ import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
 import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2 } from './createRoute.style';
+import createJson from './createJson';
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
@@ -55,7 +56,7 @@ class createRoute extends React.Component {
       alert("La ruta tiene que tener al menos 2 puntos");
     if (name.length !== 0 && markers.length > 1) {
       alert("Ruta guardada correctamente");
-      //Insertar Aqui metodo para agregar ruta
+      createJson.createJson(name, markers);
     }
 
   }
@@ -71,9 +72,9 @@ class createRoute extends React.Component {
           <DivStyle>
             <h2>Crear Ruta</h2>
             <InputStyle id="name" type="text" placeholder="Write routes name..." ref={this.name} onChange={this.updateValue} />
+            <ButtonStyle onClick={this.sendData} > Print </ButtonStyle>
+            <ButtonStyle2 onClick={this.clear}> Clear </ButtonStyle2>
           </DivStyle>
-          <ButtonStyle onClick={this.sendData} > Print </ButtonStyle>
-          <ButtonStyle2 onClick={this.clear}> Clear </ButtonStyle2>
           <MapStyle id="map" center={[43.3551061, -5.85]} zoom={15} onClick={this.mapClick}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {this.state.markers.map((position, idx) =>
