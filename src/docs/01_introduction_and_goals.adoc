@@ -31,7 +31,7 @@ To carry out this this app, we are using SOLID specifications and the React fram
 
 
 === Quality Goals
-
+The priority will go in decreasing order. The number one will be the most priority and will decrease the priority
 |===
 | Priority | Quality goal | Scenario 
 
