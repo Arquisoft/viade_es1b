@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const DivStyle = styled.div`
+    position: absolute;
     background-image: linear-gradient(to right, white, lightblue);
     background-repeat: repeat;
     padding: 20px;
     width: 100%;
-    height: 92vh;
+    height: 100%;
     z-index: 1;
     `;
 
