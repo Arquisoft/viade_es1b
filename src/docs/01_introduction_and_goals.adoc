@@ -50,6 +50,6 @@ The priority will go in decreasing order. The number one will be the most priori
 | Teachers | Teaching staff of ASW | Well developed app paying special attention to its architecture.
 | Inrupt | Startup behind SOLID | Well usage of their technology in decentralized apps.
 | Developers | Members of the team that create the app | Develop a functional and maintainable app.
-| Users | Users of this app | Efficient and usable app to share their routes.
+| Hiker, Cyclist, Runner, Mountaineer,...  | Users of this app| Efficient and usable app to share their routes.
 |===
 
