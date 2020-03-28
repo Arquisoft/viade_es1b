@@ -28,7 +28,7 @@ class createJson {
             alert(id);
             try {
                 alert(id + name + ".json");
-                await this.state.sfc.putFile(id + name + ".json", archivo, archivo.type);
+                await this.state.sfc.createFile(id + name + ".json", archivo, archivo.type);
                 alert("Archivo subido");
             }
             catch (error) {
