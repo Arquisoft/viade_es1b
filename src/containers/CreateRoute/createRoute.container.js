@@ -35,7 +35,7 @@ class createRoute extends React.Component {
         })
       },
         (error) => {
-          if (error.code == error.PERMISSION_DENIED) {
+          if (error.code === error.PERMISSION_DENIED) {
             this.setState({
               center: {
                 lat: 43.3551061,
