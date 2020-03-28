@@ -34,10 +34,9 @@ export const ButtonStyle2 = styled.button`
 
 export const InputStyle = styled.input`
     margin: auto;
-    border-radius: 5px;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
-    padding: 20px;
+    padding: 10px;
     width: auto;
     height: auto;
     z-index: 99;
@@ -45,15 +44,15 @@ export const InputStyle = styled.input`
     `;
 
 export const DivStyle = styled.div`
-    position: fixed;
+    position: absolute;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
     padding: 20px;
     width: auto;
     height: auto;
-    margin-top: 1%;
-    margin-bottom: 5%;
-    left: 86%;
+    margin-top: initial;
+    margin-bottom: 95%;
+    right:auto;
     z-Index: 99;
   `;
 

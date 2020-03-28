@@ -1,7 +1,6 @@
 /* eslint-disable constructor-super */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { PageNotFoundWrapper, PageNotFoundContent } from './page-not-found.style';
 
 /**
@@ -18,7 +17,7 @@ const PageNotFound = () => {
         <p>{t('notFound.content')}</p>
         <div>
           <a href="/" id="linkToHomepage" className="ids-link">
-          {t('notFound.redirectButton')}
+            {t('notFound.redirectButton')}
           </a>
         </div>
       </PageNotFoundContent>

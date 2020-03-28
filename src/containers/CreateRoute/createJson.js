@@ -27,8 +27,8 @@ class createJson {
             alert("Estás loggeado");
             alert(id);
             try {
-                alert(id + name + ".json");
-                await this.state.sfc.putFile(id + name + ".json", archivo, archivo.type);
+                alert(id + "ROUTE_" + name + ".json");
+                await this.state.sfc.putFile(id + "ROUTE_" + name + ".json", archivo, archivo.type);
                 alert("Archivo subido");
             }
             catch (error) {

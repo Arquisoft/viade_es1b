@@ -16,9 +16,9 @@ export const DivStyle = styled.div`
     padding: 20px;
     width: auto;
     height: auto;
-    margin-top: 1%;
+    margin-top: 0;
     margin-bottom: 5%;
-    left: 90%;
+    left: initial;
     z-Index: 99;
   `;
 

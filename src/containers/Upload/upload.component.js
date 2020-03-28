@@ -5,8 +5,6 @@ import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { DivStyle, ButtonStyle, InputStyle } from './upload.style';
 
-
-
 class UploadComponent extends React.Component {
     constructor() {
         super();
@@ -43,7 +41,7 @@ class UploadComponent extends React.Component {
             else {
                 try {
                     alert(this.state.direccion + archivo.name);
-                    await this.state.sfc.putFile(this.state.direccion + archivo.name, archivo, archivo.type);
+                    await this.state.sfc.createFile(this.state.direccion + archivo.name, archivo, archivo.type);
                     alert("Archivo subido");
                 }
                 catch (error) {

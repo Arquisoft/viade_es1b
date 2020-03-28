@@ -1,7 +1,7 @@
 import React from "react";
 //import LoggedIn from "@solid/react/module/components/LoggedIn";
 import { useWebId } from '@solid/react';
-import { DivStyle, NavStyle, ButtonStyle, Astyle } from './nav-bar.style';
+import { DivStyle, NavStyle, ButtonStyle, Astyle, DivStyle2, DivStyle3 } from './nav-bar.style';
 import { DropdownButton, DropdownItem } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import i18n from 'i18next';
@@ -15,27 +15,25 @@ const NavBar = props => {
 
     return (
         // <LoggedIn>
-            <NavStyle>
-                <a href="#/"><img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} width="200" height="50" alt="" /></a>
-                <DivStyle><Astyle href="#/map"><img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="20" height="20" alt="" />{t('navBar.map')}</Astyle></DivStyle>
-                <DivStyle><Astyle href="#/createRoute"><img src={process.env.PUBLIC_URL + "/img/icon/newRoute.svg"} width="20" height="20" alt="" /> {t('navBar.createRoute')}</Astyle></DivStyle>
-                <DivStyle><Astyle href="#/upload"><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> {t('navBar.upload')}</Astyle></DivStyle>
-                <DivStyle><Astyle href="#/download"><img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="20" height="20" alt="" /> {t('navBar.download')}</Astyle></DivStyle>
-                <DivStyle><Astyle href={name}><img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="20" height="20" alt="" /> {t('navBar.profile')}</Astyle></DivStyle>
-                <DivStyle><ButtonStyle></ButtonStyle></DivStyle>
-                <DivStyle>
-                    <DropdownButton variant="white" title={""}>
-                        <DropdownItem>
-                            <div onClick={() => i18n.changeLanguage("en")}> ENG </div>
-                        </DropdownItem>
-                        <DropdownItem>
-                            <div onClick={() => i18n.changeLanguage("es")}> ESP </div>
-                        </DropdownItem>
-                    </DropdownButton>
-                </DivStyle>
-
-
-            </NavStyle>
+        <NavStyle>
+            <a href="#/"><img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} width="200" height="50" alt="" /></a>
+            <DivStyle><Astyle href="#/map"><img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="20" height="20" alt="" />{t('navBar.map')}</Astyle></DivStyle>
+            <DivStyle><Astyle href="#/createRoute"><img src={process.env.PUBLIC_URL + "/img/icon/newRoute.svg"} width="20" height="20" alt="" /> {t('navBar.createRoute')}</Astyle></DivStyle>
+            <DivStyle><Astyle href="#/upload"><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> {t('navBar.upload')}</Astyle></DivStyle>
+            <DivStyle><Astyle href="#/download"><img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="20" height="20" alt="" /> {t('navBar.download')}</Astyle></DivStyle>
+            <DivStyle><Astyle href={name}><img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="20" height="20" alt="" /> {t('navBar.profile')}</Astyle></DivStyle>
+            <DivStyle3>
+                <DropdownButton variant="white" title={t('navBar.changeLanguage')}>
+                    <DropdownItem>
+                        <div onClick={() => i18n.changeLanguage("en")}> ENG </div>
+                    </DropdownItem>
+                    <DropdownItem>
+                        <div onClick={() => i18n.changeLanguage("es")}> ESP </div>
+                    </DropdownItem>
+                </DropdownButton>
+            </DivStyle3>
+            <DivStyle2><ButtonStyle></ButtonStyle></DivStyle2>
+        </NavStyle>
         // </LoggedIn>
 
     );
