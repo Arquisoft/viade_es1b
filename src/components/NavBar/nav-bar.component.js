@@ -23,7 +23,7 @@ const NavBar = props => {
             <DivStyle><Astyle href="#/download"><img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="20" height="20" alt="" /> {t('navBar.download')}</Astyle></DivStyle>
             <DivStyle><Astyle href={name}><img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="20" height="20" alt="" /> {t('navBar.profile')}</Astyle></DivStyle>
             <DivStyle3>
-                <DropdownButton variant="white" title={t('navBar.changeLanguage')}>
+                <DropdownButton variant="white" title={<img src={process.env.PUBLIC_URL + "/img/icon/subject.svg"} width="20" height="20" alt="" />}>
                     <DropdownItem>
                         <div onClick={() => i18n.changeLanguage("en")}> ENG </div>
                     </DropdownItem>
@@ -32,7 +32,7 @@ const NavBar = props => {
                     </DropdownItem>
                 </DropdownButton>
             </DivStyle3>
-            <DivStyle2><ButtonStyle></ButtonStyle></DivStyle2>
+            <DivStyle2><ButtonStyle><img src={process.env.PUBLIC_URL + "/img/icon/logout.svg"} width="20" height="20" alt="Logout" /></ButtonStyle></DivStyle2>
         </NavStyle>
         // </LoggedIn>
 

@@ -47,7 +47,7 @@ export const DivStyle = styled.div`
     position: absolute;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
-    padding: 20px;
+    padding: 10px;
     width: auto;
     height: auto;
     margin-top: initial;
