@@ -17,7 +17,7 @@ const PageNotFound = () => {
         <h3>{t('notFound.title')}</h3>
         <p>{t('notFound.content')}</p>
         <div>
-          <a href="/" id="linkToHomepage" className="ids-link">
+          <a href="/" id="linkToHomepage" className="ids-link" data-testid='page-not-found-homepage'>
           {t('notFound.redirectButton')}
           </a>
         </div>
