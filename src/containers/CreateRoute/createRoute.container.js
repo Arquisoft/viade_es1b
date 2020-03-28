@@ -1,10 +1,11 @@
 import React from 'react';
 import L from 'leaflet';
-import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
+import { TileLayer, Marker, Polyline } from 'react-leaflet';
 import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2 } from './createRoute.style';
 import createJson from './createJson';
+
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
@@ -13,15 +14,40 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
-
 class createRoute extends React.Component {
 
   constructor() {
+    alert("If you have blocked access to geolocation the map will not render. Please allow access to your location");
     super();
     this.state = {
       markers: [],
       name: "",
     };
+  }
+
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.setState({
+          center: {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          }
+        })
+      },
+        (error) => {
+          if (error.code == error.PERMISSION_DENIED) {
+            this.setState({
+              center: {
+                lat: 43.3551061,
+                lng: -5.8512792,
+              }
+            })
+          }
+        });
+    }
+
+
   }
 
   mapClick = (e) => {
@@ -66,6 +92,8 @@ class createRoute extends React.Component {
   }
 
   render() {
+    this.getLocation();
+
     return (
       <React.Fragment>
         <LoggedIn>
@@ -74,7 +102,7 @@ class createRoute extends React.Component {
             <ButtonStyle onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> </ButtonStyle>
             <ButtonStyle2 onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
           </DivStyle>
-          <MapStyle id="map" center={[43.3551061, -5.85]} zoom={15} onClick={this.mapClick}>
+          <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {this.state.markers.map((position, idx) =>
               <Marker key={`marker-${idx}`} position={position}>
