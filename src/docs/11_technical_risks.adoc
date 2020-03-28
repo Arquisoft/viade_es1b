@@ -17,15 +17,20 @@ List of risks and/or technical debts, probably including suggested measures to m
 ****
 ////
 The main risks we have identified in the implmentation of this application are the following ones:
+[%header,cols=2*]
+|===
+|Risk
+|Solution
 
-* SOLID specification +
-SOLID's specification is something totally new to our team and it's something we must follow because of the restrictions we have (<<02_architecture_costraints.adoc>>), so we have to learn how to work and develop our application according to this.
+|SOLID specification
+|SOLID's specification is something totally new to our team and it's something we must follow because of the restrictions we have (<<02_architecture_costraints.adoc>>), so we have to learn how to work and develop our application according to this.
 
-* ReactJS +
-This is also a framework that we are not familiarized with and, such as SOLID's specification, we must work with it. It means that we would have to do a research of information to form ourselves to programming the best way possible.
+|ReactJS
+|This is also a framework that we are not familiarized with and, such as SOLID's specification, we must work with it. It means that we would have to do a research of information to form ourselves to programming the best way possible.
 
-* Adaptation between members of the team +
-We are 5 people who have worked together rarely or none and, although we know that this is what our future probably holds to us, the lack of communication or rapport between all of us is still a risk.
+|Adaptation between members of the team
+|We are 5 people who have worked together rarely or none and, although we know that this is what our future probably holds to us, the lack of communication or rapport between all of us is still a risk.
 
-* Short term reviews +
-We have very little time to develop the first version of our application (3 weeks) and if we don't organize well it can be a disaster.
+|Short term reviews
+|We have very little time to develop the first version of our application (3 weeks) and if we don't organize well it can be a disaster.
+| ===
