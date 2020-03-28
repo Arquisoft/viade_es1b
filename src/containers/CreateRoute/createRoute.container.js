@@ -17,7 +17,6 @@ L.Icon.Default.mergeOptions({
 class createRoute extends React.Component {
 
   constructor() {
-    alert("If you have blocked access to geolocation the map will not render. Please allow access to your location");
     super();
     this.state = {
       markers: [],
