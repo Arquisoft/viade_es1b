@@ -57,13 +57,13 @@ class Map extends React.Component {
 
     return (
 
-      <React.Fragment id="map" >
+      <React.Fragment >
         <LoggedIn>
           <DivStyle>
-            <h2 id="name">{this.name}</h2>
-            <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
+            <h2 data-testid="map-title" id="name">{this.name}</h2>
+            <ul data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
           </DivStyle>
-          <MapStyle id="map" center={position} zoom={15}>
+          <MapStyle data-testid="map-map" id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Polyline color={'red'} positions={this.puntos}></Polyline>
             <Marker position={this.puntos[0]}>

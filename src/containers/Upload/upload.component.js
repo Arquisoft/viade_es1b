@@ -62,8 +62,8 @@ class UploadComponent extends React.Component {
             //Tras coger el item funciona el botón:
             <DivStyle>
                 <LoggedIn>
-                    <InputStyle type="file" onChange={this.itemHandler} />
-                    <ButtonStyle onClick={this.subirFicheroAPod} > Upload </ButtonStyle>
+                    <InputStyle data-testid="upload-input" type="file" onChange={this.itemHandler} />
+                    <ButtonStyle data-testid="upload-button" onClick={this.subirFicheroAPod} > Upload </ButtonStyle>
                 </LoggedIn>
                 <LoggedOut>
                     <Redirect to='/login'></Redirect>

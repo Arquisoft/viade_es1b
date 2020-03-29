@@ -25,9 +25,10 @@ export const WelcomePageContent = props => {
     backgroundRepeat: 'repeat',
     padding: '50px 0',
   };
+
   return (
     <section data-testid="welcome-wrapper" style={style}>
-       <LoggedIn>
+      <LoggedIn>
       <WelcomeCard className="card">
         <WelcomeLogo data-testid="welcome-logo">
             <img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} alt="Inrupt" />

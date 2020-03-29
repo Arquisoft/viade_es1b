@@ -9,7 +9,7 @@ const defaultProfilePhoto = '/img/icon/empty-profile.svg';
 /**
  * Container component for the Welcome Page, containing example of how to fetch data from a POD
  */
-export class WelcomeComponent extends Component<Props> {
+export class WelcomeComponent extends React.Component<Props> {
   constructor(props) {
     super(props);
 
