@@ -19,8 +19,14 @@ class DownloadComponent extends React.Component {
         this.obtenerCarpetaPod = this.obtenerCarpetaPod.bind(this);
     }
 
-    obtenerCarpetaPod(parameter) {
-        this.setState({ direccion: parameter.target.value });
+    async obtenerCarpetaPod(parameter) {
+        parameter.persist();
+        let session = await auth.currentSession();
+        var id = `${session.webId}`;
+        id = id.replace('/profile/card#me', '/'+parameter.target.value);
+        if(session) {
+        this.setState({ direccion: id });
+    }
     };
 
     render() {
@@ -30,7 +36,7 @@ class DownloadComponent extends React.Component {
             // El () => es para que no salte automaticamente cada vez que cargue la pagina
             <DivStyle>
                 <LoggedIn>
-                    <InputStyle type="text" onChange={this.obtenerCarpetaPod} placeholder="Write routes address..." />
+                    <InputStyle type="text" onChange={this.obtenerCarpetaPod} placeholder="Write routes folder..." />
                     <ButtonStyle onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > Bajar Rutas </ButtonStyle>
                 </LoggedIn>
                 <LoggedOut>
