@@ -24,8 +24,6 @@ class createJson {
         var id = `${session.webId}`;
         id = id.replace('/profile/card#me', '/public/');
         if (session) {
-            alert("Estás loggeado");
-            alert(id);
             try {
                 alert(id + "ROUTE_" + name + ".json");
                 await this.state.sfc.putFile(id + "ROUTE_" + name + ".json", archivo, archivo.type);

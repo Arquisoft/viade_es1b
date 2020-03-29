@@ -4,7 +4,7 @@ import { TileLayer, Marker, Polyline } from 'react-leaflet';
 import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2 } from './createRoute.style';
-import createJson from './createJson';
+import createJson from '../../viade/ParserRoute/Parsers/RDF/route-to-JSON';
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -35,14 +35,13 @@ class createRoute extends React.Component {
         })
       },
         (error) => {
-          if (error.code === error.PERMISSION_DENIED) {
-            this.setState({
-              center: {
-                lat: 43.3551061,
-                lng: -5.8512792,
-              }
-            })
-          }
+          this.setState({
+            center: {
+              lat: 43.3551061,
+              lng: -5.8512792,
+            }
+          })
+
         });
     }
 
@@ -92,12 +91,11 @@ class createRoute extends React.Component {
 
   render() {
     this.getLocation();
-
     return (
       <React.Fragment>
         <LoggedIn>
           <DivStyle>
-            <InputStyle id="name" type="text" placeholder="Write routes name..." ref={this.name} onChange={this.updateValue} />
+            <InputStyle id="name" type="text" placeholder="Write route name..." ref={this.name} onChange={this.updateValue} />
             <ButtonStyle onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> </ButtonStyle>
             <ButtonStyle2 onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
           </DivStyle>

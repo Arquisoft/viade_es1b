@@ -17,13 +17,12 @@ const NavBar = props => {
         // <LoggedIn>
         <NavStyle>
             <a href="#/"><img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} width="200" height="50" alt="" /></a>
-            <DivStyle><Astyle href="#/map"><img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="20" height="20" alt="" />{t('navBar.map')}</Astyle></DivStyle>
-            <DivStyle><Astyle href="#/createRoute"><img src={process.env.PUBLIC_URL + "/img/icon/newRoute.svg"} width="20" height="20" alt="" /> {t('navBar.createRoute')}</Astyle></DivStyle>
-            <DivStyle><Astyle href="#/upload"><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> {t('navBar.upload')}</Astyle></DivStyle>
-            <DivStyle><Astyle href="#/download"><img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="20" height="20" alt="" /> {t('navBar.download')}</Astyle></DivStyle>
-            <DivStyle><Astyle href={name}><img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="20" height="20" alt="" /> {t('navBar.profile')}</Astyle></DivStyle>
+            <DivStyle><Astyle href="#/map"><img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="25" height="25" alt="" />{t('navBar.map')}</Astyle></DivStyle>
+            <DivStyle><Astyle href="#/createRoute"><img src={process.env.PUBLIC_URL + "/img/icon/newRoute.svg"} width="25" height="25" alt="" /> {t('navBar.createRoute')}</Astyle></DivStyle>
+            <DivStyle><Astyle href="#/download"><img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="25" height="25" alt="" /> {t('navBar.download')}</Astyle></DivStyle>
+            <DivStyle><Astyle href={name}><img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="25" height="25" alt="" /> {t('navBar.profile')}</Astyle></DivStyle>
             <DivStyle3>
-                <DropdownButton variant="white" title={<img src={process.env.PUBLIC_URL + "/img/icon/subject.svg"} width="20" height="20" alt="" />}>
+                <DropdownButton variant="white" title={<img src={process.env.PUBLIC_URL + "/img/icon/subject.svg"} width="25" height="25" alt="" />}>
                     <DropdownItem>
                         <div onClick={() => i18n.changeLanguage("en")}> ENG </div>
                     </DropdownItem>
@@ -32,7 +31,7 @@ const NavBar = props => {
                     </DropdownItem>
                 </DropdownButton>
             </DivStyle3>
-            <DivStyle2><ButtonStyle><img src={process.env.PUBLIC_URL + "/img/icon/logout.svg"} width="20" height="20" alt="Logout" /></ButtonStyle></DivStyle2>
+            <DivStyle2><ButtonStyle><img src={process.env.PUBLIC_URL + "/img/icon/logout.svg"} width="25" height="25" alt="Logout" /></ButtonStyle></DivStyle2>
         </NavStyle>
         // </LoggedIn>
 

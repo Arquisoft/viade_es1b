@@ -22,7 +22,7 @@ export const WelcomePageContent = props => {
   const style = {
     position: 'absolute',
     width: '100%',
-    height: '100%',
+    height: '92.4%',
     backgroundImage: 'linear-gradient(to right, white, lightblue)',
     backgroundRepeat: 'repeat',
     padding: '50px 0',
