@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 export const MapStyle = styled(Map)`
     position: absolute;
     width: 100%;
-    height: 92.4%;
+    height: 100%;
     z-Index: 1;
   `;
 
