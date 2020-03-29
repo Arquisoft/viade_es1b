@@ -8,7 +8,6 @@ import ReactDOM from 'react-dom';
 import { MapStyle, DivStyle } from './map.style';
 
 delete L.Icon.Default.prototype._getIconUrl;
-
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),

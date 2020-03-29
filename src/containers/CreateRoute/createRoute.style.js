@@ -6,7 +6,7 @@ export const MapStyle = styled(Map)`
     position: absolute;
     width: 100%;
     height: 100%;
-    z-Index: 1;
+    z-index: 1;
   `;
 
 export const ButtonStyle = styled.button`
@@ -34,10 +34,9 @@ export const ButtonStyle2 = styled.button`
 
 export const InputStyle = styled.input`
     margin: auto;
-    border-radius: 5px;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
-    padding: 20px;
+    padding: 10px;
     width: auto;
     height: auto;
     z-index: 99;
@@ -45,15 +44,13 @@ export const InputStyle = styled.input`
     `;
 
 export const DivStyle = styled.div`
-    position: fixed;
+    position: absolute;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
-    padding: 20px;
+    padding: 10px;
     width: auto;
-    height: auto;
-    margin-top: 1%;
-    margin-bottom: 5%;
-    left: 86%;
+    height: 11%;
+    right:auto;
     z-Index: 99;
   `;
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import L from 'leaflet';
-import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
+import { TileLayer, Marker, Polyline } from 'react-leaflet';
 import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2 } from './createRoute.style';
-import createJson from './createJson';
+import createJson from '../../viade/ParserRoute/Parsers/RDF/route-to-JSON';
+
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
@@ -12,7 +13,6 @@ L.Icon.Default.mergeOptions({
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
-
 
 class createRoute extends React.Component {
 
@@ -22,6 +22,30 @@ class createRoute extends React.Component {
       markers: [],
       name: "",
     };
+  }
+
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.setState({
+          center: {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          }
+        })
+      },
+        (error) => {
+          this.setState({
+            center: {
+              lat: 43.3551061,
+              lng: -5.8512792,
+            }
+          })
+
+        });
+    }
+
+
   }
 
   mapClick = (e) => {
@@ -66,22 +90,19 @@ class createRoute extends React.Component {
   }
 
   render() {
+    this.getLocation();
     return (
       <React.Fragment>
         <LoggedIn>
           <DivStyle>
-            <h2>Crear Ruta</h2>
-            <InputStyle id="name" type="text" placeholder="Write routes name..." ref={this.name} onChange={this.updateValue} />
-            <ButtonStyle onClick={this.sendData} > Upload </ButtonStyle>
-            <ButtonStyle2 onClick={this.clear}> Clear </ButtonStyle2>
+            <InputStyle id="name" type="text" placeholder="Write route name..." ref={this.name} onChange={this.updateValue} />
+            <ButtonStyle onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> </ButtonStyle>
+            <ButtonStyle2 onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
           </DivStyle>
-          <MapStyle id="map" center={[43.3551061, -5.85]} zoom={15} onClick={this.mapClick}>
+          <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {this.state.markers.map((position, idx) =>
               <Marker key={`marker-${idx}`} position={position}>
-                <Popup>
-                  <span>Popup</span>
-                </Popup>
               </Marker>
             )}
             <Polyline
