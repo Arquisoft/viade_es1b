@@ -1,47 +1,68 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import create from 'react-test-renderer';
 import { render, cleanup, queryByTestId } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
 import Welcome from '../Welcome';
 import { act } from 'react-dom/test-utils';
 
-let wrapper;
+let wrapper=null;
+
 
 beforeEach(() => {
-  wrapper = document.createElement('section');
-  document.body.appendChild(wrapper);
-  console.log(wrapper);
+  // const { container, debug } = render(
+  //   <Router>
+  //     <Welcome />
+  //   </Router>
+  // );
+  // wrapper = renderContainer();
+  //debug();
 });
 
-
-// beforeEach(() => {
-//   const { container, debug } = render(
-//     <Router>
-//       <Welcome />
-//     </Router>
-//   );
-//   wrapper = container;
-//   debug();
-// });
+function renderContainer(){
+  let {container, debug}= render(
+    <Router>
+      <Welcome />
+    </Router>
+  );
+  debug();
+  return container;
+}
 
 describe('Welcome', () => {
 
-  act(() => {    
-    ReactDOM.render(
-        <Router>
-          <Welcome /> 
-        </Router>, wrapper)
+  // act(() => {    
+  //   ReactDOM.render(
+  //       <Router>
+  //         <Welcome /> 
+  //       </Router>, wrapper)
     
-  });
+  // });
+
 
   test('App renders without crashing', () => {
-    expect(wrapper).toBeTruthy();
+    const e1 = document.createElement("div");
+    act( ()=>{
+      ReactDOM.render(
+      <Router>
+        <Welcome/>
+      </Router>, e1);
+    });
+    console.log(e1.innerHTML);
+    expect(e1.innerHTML).toBeTruthy();
   });
 
   
   test('includes app logo', () => {
-
-    expect(queryByTestId(wrapper, "welcome-logo")).not.toBeNull();
+    const e1 = document.createElement("div");
+    act(()=>{
+      ReactDOM.render(
+      <Router>
+        <Welcome/>
+      </Router>, e1);
+    });
+    console.log(e1.innerHTML);
+    expect(queryByTestId(e1, "welcome-logo")).not.toBeNull();
     
   });
 
