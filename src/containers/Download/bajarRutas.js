@@ -13,10 +13,11 @@ class bajarRutas {
         this.rutas = [];
         //Dandole al boton se obtendria los contenidos del fichero   
         if (direccion === "")
-            alert("No ha escrito nada")
+            alert("Escriba la carpeta donde almacena las rutas");
         else {
             // Leemos toda la carpeta
-            const folder = await this.sfc.readFolder(direccion);
+            try {
+            let folder = await this.sfc.readFolder(direccion);
             // console.log(folder);
             // Leemos los ficheros
             const files = folder.files;
@@ -33,11 +34,11 @@ class bajarRutas {
             }
             else {
                 alert("Rutas bajadas");
-                for (let i = 0; i < this.rutas.length; i++) {
-                    alert(this.rutas[i]);
-                }
                 return this.rutas;
             }
+            } catch(error) {
+                alert("No se ha podido encontrar la carpeta en su POD");
+            }            
         }
     }
 

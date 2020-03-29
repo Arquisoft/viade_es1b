@@ -26,7 +26,7 @@ class createJson {
         if (session) {
             try {
                 alert(id + "ROUTE_" + name + ".json");
-                await this.state.sfc.putFile(id + "ROUTE_" + name + ".json", archivo, archivo.type);
+                await this.state.sfc.postItem(id + "ROUTE_" + name + ".json", archivo, "application/json",archivo.type);
                 alert("Archivo subido");
             }
             catch (error) {

@@ -37,7 +37,7 @@ class DownloadComponent extends React.Component {
             <DivStyle>
                 <LoggedIn>
                     <InputStyle type="text" onChange={this.obtenerCarpetaPod} placeholder="Write routes folder..." />
-                    <ButtonStyle onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > Bajar Rutas </ButtonStyle>
+                    <ButtonStyle onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="40" height="40" alt="" /> </ButtonStyle>
                 </LoggedIn>
                 <LoggedOut>
                     <Redirect to='/login'></Redirect>
