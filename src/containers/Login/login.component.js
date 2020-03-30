@@ -12,7 +12,7 @@ const LoginComponent = () => {
     <LoginWrapper data-testid="login-wrapper">
       <LoggedOut>
         <CenterContainer>
-          <h1 data-testid="login-title">{t('login.title')}</h1>
+          <h1 id="login-title"data-testid="login-title">{t('login.title')}</h1>
           <LoginPanel className="login-panel">
             <PanelBody className="panel-body">
               <LoginButton data-testid="login-button" popup="https://solid.github.io/solid-auth-client/dist/popup.html">
