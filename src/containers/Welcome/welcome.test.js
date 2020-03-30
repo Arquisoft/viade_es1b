@@ -1,67 +1,41 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import create from 'react-test-renderer';
-import { render, cleanup, queryByTestId } from '@testing-library/react';
+import { render, cleanup, queryByTestId, wait } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
-import Welcome from '../Welcome';
-import { act } from 'react-dom/test-utils';
+import WelcomeComponent from '../Welcome';
+import TestRenderer from 'react-test-renderer';
 
-let wrapper=null;
-
+let wrapper;
+const props = {
+  webId: 'https://exmaple.com/#me',
+  image: 'test.png',
+  updatePhoto: 'updated.png',
+  name: 'example'
+};
 
 beforeEach(() => {
-  // const { container, debug } = render(
-  //   <Router>
-  //     <Welcome />
-  //   </Router>
-  // );
-  // wrapper = renderContainer();
-  //debug();
-});
+    //FUNCIONA PERO NO CARGA LA PARTE DE LOGGEDIN
+    TestRenderer.act(()=> {
+      wrapper = TestRenderer.create(<Router><WelcomeComponent {...{...props}}/></Router>);
+    });
 
-function renderContainer(){
-  let {container, debug}= render(
-    <Router>
-      <Welcome />
-    </Router>
-  );
-  debug();
-  return container;
-}
+    //No funciona por el await... Sigo sin saber por que
+    // await TestRenderer.act(async ()=> {
+    //   wrapper = TestRenderer.create(<Router><WelcomeComponent {...{...props}}/></Router>);
+    // });
+});
 
 describe('Welcome', () => {
 
-  // act(() => {    
-  //   ReactDOM.render(
-  //       <Router>
-  //         <Welcome /> 
-  //       </Router>, wrapper)
-    
-  // });
-
 
   test('App renders without crashing', () => {
-    const e1 = document.createElement("div");
-    act( ()=>{
-      ReactDOM.render(
-      <Router>
-        <Welcome/>
-      </Router>, e1);
-    });
-    console.log(e1.innerHTML);
-    expect(e1.innerHTML).toBeTruthy();
+    
+    expect(wrapper).toBeTruthy();
+    
   });
 
   
   test('includes app logo', () => {
-    const e1 = document.createElement("div");
-    act(()=>{
-      ReactDOM.render(
-      <Router>
-        <Welcome/>
-      </Router>, e1);
-    });
-    console.log(e1.innerHTML);
+    
     expect(queryByTestId(e1, "welcome-logo")).not.toBeNull();
     
   });
