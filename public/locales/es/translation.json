@@ -43,6 +43,11 @@
       "es": "Español (Español)"
     }
   },
+  "friends":{
+    "myFriends": "Mis amigos",
+    "sentRequest": "Peticiones enviadas",
+    "recievedRequest": "Peticiones recibidas"
+  },
   "notFound": {
     "title": "Página no encontrada",
     "content": "Puede existir un problema con la dirección buscada. Por favor verifiquela e intente de nuevo. O la página que buscaste ha sido movida o eliminada",

@@ -1,27 +1,26 @@
 import React from 'react';
-import { LoggedOut, LoggedIn, useWebId } from '@solid/react';
+import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
-import { MisAmigosDiv, PeticionesDiv, MisPeticionesPendientesDiv } from './friends.style';
+import { MisAmigosDiv, PeticionesDiv, MisPeticionesPendientesDiv, ContainerDiv } from './friends.style';
 
 const Friends = props => {
     const { t } = useTranslation();
-    const name = useWebId();
     return (
         <div>
             <LoggedIn>
-                <div>
+                <ContainerDiv>
                     <PeticionesDiv>
-                        <h3>PETICIONES DE AMISTAD PENDIENTES</h3>
+                        <h3>{t('friends.sentRequest')}</h3>
                     </PeticionesDiv>
                     <MisAmigosDiv>
-                        <h3>MIS AMIGOS</h3>
+                        <h3>{t('friends.myFriends')}</h3>
                     </MisAmigosDiv>
                     <MisPeticionesPendientesDiv>
-                        <h3>MIS PETICIONES PENDIENTES</h3>
+                        <h3>{t('friends.recievedRequest')}</h3>
                     </MisPeticionesPendientesDiv>
 
-                </div>
+                </ContainerDiv>
             </LoggedIn>
             <LoggedOut>
                 <Redirect to='/login'></Redirect>
