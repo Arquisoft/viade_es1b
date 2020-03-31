@@ -9,7 +9,8 @@ import {
   Map,
   Download,
   createRoute,
-  PageNotFound
+  PageNotFound,
+  Friends
 } from './containers';
 import NavBar from './components/NavBar';
 
@@ -25,6 +26,7 @@ const Routes = () => (
         <Route exact path="/createRoute" component={createRoute} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/download" component={Download} />
+        <Route exact path="/friends" component={Friends} />
         <Route exact path="/" component={Login} />
         <Route exact path="/*" component={PageNotFound} />
         <Redirect to="/"></Redirect>
