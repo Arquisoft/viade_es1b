@@ -22,11 +22,13 @@ class createJson {
         //Analizamos si está loggeado:
         let session = await auth.currentSession();
         var id = `${session.webId}`;
+        var date = new Date();
+        var n = Math.round(date.getTime() / (1000));
         id = id.replace('/profile/card#me', '/public/');
         if (session) {
             try {
-                alert(id + "ROUTE_" + name + ".json");
-                await this.state.sfc.putFile(id + "ROUTE_" + name + ".json", archivo, archivo.type);
+                alert(id + n + "_" + name + ".json");
+                await this.state.sfc.putFile(id + n + "_" + name + ".json", archivo, archivo.type);
                 alert("Archivo subido");
             }
             catch (error) {
