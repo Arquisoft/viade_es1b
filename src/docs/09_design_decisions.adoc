@@ -1,25 +1,52 @@
 [[section-design-decisions]]
 == Design Decisions
-
-[%header,cols=2*] 
+Some design decisions are also involved in point 4. +
+See <<04_solution_strategy.adoc>>. Here are some of the most important:
+[%header,cols=5*] 
 |===
 |Section
 |Decision
+|Date
+|Pros
+|Cons
 
-|Data allocation
-|SoLiD
 
 |Libraries used
 |React
+|11-02-2020
+|App skeleton
+|Learn JavaScript,learn app skeleton operation
 
 |Programming language
 |Javascript
-
-|Version Control
-|GitHub
+|11-02-2020
+|Async task
+|Better handling of language
 
 |Design Pattern
 |MVC (Model View Controller)
+|18-02-2020
+|Easy to implement and efficient
+|Simple
+
+|IDE
+|Visual Studio Code
+|20-02-2020
+|Easy to use and very complete.Ability to add extensions
+|Some cons are solved with extensions
+
+|Testing
+|React Tests
+|16-03-2020
+|Tests incorporated into the React skeleton
+|Does not perform exhaustive tests
+
+|Map
+|Leaflet
+|10-03-2020
+|Javascript library that shows us the map and allows us to put points. It's free.
+|Other competitive libraries
+
 |===
 
 ////
@@ -40,7 +67,7 @@ Stakeholders of your system should be able to comprehend and retrace your decisi
 
 .Form
 Various options:
-
+-
 * List or table, ordered by importance and consequences or:
 * more detailed in form of separate sections per decision
 * ADR (architecture decision record) for every important decision
@@ -49,4 +76,5 @@ Various options:
 
 Routes sharing is unidirectional. +
 It means that an user doesn't have to share his routes to another one once the second one has shared his own routes.
+
 
