@@ -19,11 +19,9 @@ List of risks and/or technical debts, probably including suggested measures to m
 The main risks we have identified in the implmentation of this application are the following ones:
 [%header,cols=2*]
 |===
-|Risk
-|Solution
+| Risk | Solution
 
-|SOLID specification
-|SOLID's specification is something totally new to our team and it's something we must follow because of the restrictions we have (<<02_architecture_costraints.adoc>>), so we have to learn how to work and develop our application according to this.
+| SOLID specification | SOLID's specification is something totally new to our team and it's something we must follow because of the restrictions we have (<<02_architecture_costraints.adoc>>), so we have to learn how to work and develop our application according to this.
 
 |ReactJS
 |This is also a framework that we are not familiarized with and, such as SOLID's specification, we must work with it. It means that we would have to do a research of information to form ourselves to programming the best way possible.
@@ -36,4 +34,4 @@ The main risks we have identified in the implmentation of this application are t
 
 |Support more route file formats
 |In the absence of a decision to allow interoperability. The decision was to format one of the most widely used in the world for data transfer, JSON. We leave as a possibility to expand some parsers to allow more types of files
-| ===
+|===
