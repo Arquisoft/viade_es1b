@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-import LoggedIn from "@solid/react/module/components/LoggedIn";
+import {LoggedIn, LoggedOut} from "@solid/react";
 
 import {
   Login,
@@ -19,17 +19,21 @@ const Routes = () => (
     <div>
       <LoggedIn>
         <NavBar />
-      </LoggedIn>
       <Switch>
         <Route exact path="/welcome" component={Welcome} />
         <Route exact path="/map" component={Map} />
         <Route exact path="/upload" component={Upload} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/login" component={Welcome} />
         <Route exact path="/download" component={Download} />
-        <Route exact path="/" component={Login} />
+        <Route exact path="/" component={Welcome} />
         <Route exact path="/*" component={PageNotFound} />
         <Redirect to="/"></Redirect>
       </Switch>
+      </LoggedIn>
+      <LoggedOut>
+      <Route exact path="/*" component={Login} />
+      {/* <Redirect to="/login"></Redirect> */}
+      </LoggedOut>
     </div>
   </HashRouter>
 );

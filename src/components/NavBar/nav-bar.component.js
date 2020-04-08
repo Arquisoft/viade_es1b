@@ -14,7 +14,7 @@ const NavBar = props => {
 
 
     return (
-        // <LoggedIn>
+        //<LoggedIn>
             <NavStyle>
                 <a href="#/"><img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} width="200" height="50" alt="" /></a>
                 <DivStyle><Astyle href="#/map"><img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="20" height="20" alt="" />{t('navBar.map')}</Astyle></DivStyle>
@@ -34,7 +34,7 @@ const NavBar = props => {
                 <DivStyle><ButtonStyle></ButtonStyle></DivStyle>
 
             </NavStyle>
-        // </LoggedIn>
+        //</LoggedIn>
 
     );
 }

@@ -1,14 +1,13 @@
 import React from 'react';
-import { render, queryByTestId, queryByText } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { render, queryByTestId } from '@testing-library/react';
 import Map from './map.component';
 
 let wrapper;
 beforeEach(() => {
   const { container, debug } = render(
-    <Router>
+    
       <Map />
-    </Router>
+    
   );
   wrapper = container;
   debug();

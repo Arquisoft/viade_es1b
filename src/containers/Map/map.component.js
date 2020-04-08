@@ -58,7 +58,7 @@ class Map extends React.Component {
     return (
 
       <React.Fragment >
-        <LoggedIn>
+        {/* <LoggedIn> */}
           <DivStyle>
             <h2 data-testid="map-title" id="name">{this.name}</h2>
             <ul data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
@@ -73,10 +73,10 @@ class Map extends React.Component {
               <Popup>Fin</Popup>
             </Marker>
           </MapStyle>
-        </LoggedIn>
-        <LoggedOut>
+        {/* </LoggedIn> */}
+        {/* <LoggedOut>
           <Redirect to='/login'></Redirect>
-        </LoggedOut>
+        </LoggedOut> */}
       </React.Fragment>
 
     );

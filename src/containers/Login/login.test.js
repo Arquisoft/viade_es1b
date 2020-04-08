@@ -1,22 +1,20 @@
 import React from 'react';
-import { render, queryByTestId, queryByText } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import LoginComponent from './login.component';
+import { cleanup, render, queryByTestId, queryByText, act } from '@testing-library/react';
+import Login from './login.component';
 
 let wrapper;
-beforeEach(() => {
+beforeEach(() => act(() => {
   const { container, debug } = render(
-    <Router>
-      <LoginComponent t={key => key} />
-    </Router>
+    <Login />
   );
   wrapper = container;
   debug();
-});
+}
+));
 
 describe('Login', () => {
+  afterAll(cleanup);
   
-
   test('renders without crashing', () => {
     expect(wrapper).toBeTruthy();
   });

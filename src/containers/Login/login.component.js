@@ -1,16 +1,16 @@
 /* eslint-disable constructor-super */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { LoggedOut, LoggedIn, LoginButton } from '@solid/react';
+import { LoginButton } from '@solid/react';
 import { LoginWrapper, LoginPanel, PanelBody } from './login.style';
 import { CenterContainer } from '../../components/Utils';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 const LoginComponent = () => {
   const { t } = useTranslation();
   return (
     <LoginWrapper data-testid="login-wrapper">
-      <LoggedOut>
+      {/* <LoggedOut> */}
         <CenterContainer>
           <h1 id="login-title"data-testid="login-title">{t('login.title')}</h1>
           <LoginPanel className="login-panel">
@@ -29,10 +29,10 @@ const LoginComponent = () => {
             </PanelBody>
           </LoginPanel>
         </CenterContainer>
-      </LoggedOut>
+      {/* </LoggedOut>
       <LoggedIn>
         <Redirect to="/welcome"></Redirect>
-      </LoggedIn>
+      </LoggedIn> */}
     </LoginWrapper>
   );
 };

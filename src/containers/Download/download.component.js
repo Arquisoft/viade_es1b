@@ -3,8 +3,8 @@ import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 import bajarRutas from "./bajarRutas";
 import { DivStyle, ButtonStyle, InputStyle } from './download.style';
-import { LoggedOut, LoggedIn } from '@solid/react';
-import { Redirect } from 'react-router-dom';
+// import { LoggedOut, LoggedIn } from '@solid/react';
+// import { Redirect } from 'react-router-dom';
 
 class DownloadComponent extends React.Component {
 
@@ -29,13 +29,13 @@ class DownloadComponent extends React.Component {
             // La parte visible de la interfaz
             // El () => es para que no salte automaticamente cada vez que cargue la pagina
             <DivStyle>
-                <LoggedIn>
-                    <InputStyle type="text" onChange={this.obtenerCarpetaPod} placeholder="Write routes address..." />
-                    <ButtonStyle onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > Bajar Rutas </ButtonStyle>
-                </LoggedIn>
+                {/* <LoggedIn> */}
+                    <InputStyle data-testid="download-input" type="text" onChange={this.obtenerCarpetaPod} placeholder="Write routes address..." />
+                    <ButtonStyle data-testid="download-button" onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > Bajar Rutas </ButtonStyle>
+                {/* </LoggedIn>
                 <LoggedOut>
                     <Redirect to='/login'></Redirect>
-                </LoggedOut>
+                </LoggedOut> */}
             </DivStyle>
         );
     }

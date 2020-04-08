@@ -1,49 +1,28 @@
 import React from 'react';
-import { render, cleanup, queryByTestId, wait } from '@testing-library/react';
-import { MemoryRouter as Router } from 'react-router-dom';
-import WelcomeComponent from '../Welcome';
-import TestRenderer from 'react-test-renderer';
+import { render, queryByTestId, act } from '@testing-library/react';
+import Welcome from '../Welcome';
 
 let wrapper;
-const props = {
-  webId: 'https://exmaple.com/#me',
-  image: 'test.png',
-  updatePhoto: 'updated.png',
-  name: 'example'
-};
+beforeEach(() => act(() => {
+  const { container, debug } = render(
+    <Welcome />
+  );
+  wrapper = container;
+  debug();
+}
 
-beforeEach(() => {
-    //FUNCIONA PERO NO CARGA LA PARTE DE LOGGEDIN
-    TestRenderer.act(()=> {
-      wrapper = TestRenderer.create(<Router><WelcomeComponent {...{...props}}/></Router>);
-    });
+));
 
-    //No funciona por el await... Sigo sin saber por que
-    // await TestRenderer.act(async ()=> {
-    //   wrapper = TestRenderer.create(<Router><WelcomeComponent {...{...props}}/></Router>);
-    // });
-});
+describe('Welcome Page Render', () => {
 
-describe('Welcome', () => {
-
-
-  test('App renders without crashing', () => {
-    
+  test('renders without crashing', () => {
     expect(wrapper).toBeTruthy();
-    
   });
 
-  
-  test('includes app logo', () => {
-    
-    expect(queryByTestId(e1, "welcome-logo")).not.toBeNull();
-    
-  });
-
-  test('includes app details', () => {
-
-    expect(queryByTestId(wrapper, "welcome-detail")).not.toBeNull();
-    
+  test('renders all components', () => {
+    expect(queryByTestId(wrapper, "welcome-logo")).not.toBeNull();
+    expect(queryByTestId(wrapper, "welcome-wrapper")).not.toBeNull();
+    expect(queryByTestId(wrapper, "welcome-profile")).not.toBeNull();
   });
 
 

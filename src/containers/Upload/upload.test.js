@@ -1,31 +1,29 @@
 import React from 'react';
-import { render, queryByTestId } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { cleanup, render, queryByTestId, act } from '@testing-library/react';
 import Upload from './upload.component';
 
 let wrapper;
-beforeEach(() => {
+beforeEach(() => act(() => {
   const { container, debug } = render(
-    <Router>
-      <Upload />
-    </Router>
+    <Upload />
   );
   wrapper = container;
   debug();
-});
+}
+));
 
-describe('Upload', () => {
-  
+describe('Upload Page Render', () => {
+  afterAll(cleanup);
 
-  test('renders without crashing', () => {
+  test('App renders without crashing', () => {
     expect(wrapper).toBeTruthy();
   });
+  
+  test('includes components to upload', () => {
 
-  test('renders all components', () => {
     expect(queryByTestId(wrapper, "upload-input")).not.toBeNull();
     expect(queryByTestId(wrapper, "upload-button")).not.toBeNull();
+    
   });
 
-  
 });
-
