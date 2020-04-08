@@ -77,6 +77,6 @@ Routes sharing is unidirectional. +
 It means that an user doesn't have to share his routes to another one once the second one has shared his own routes.
 
 Syntax of the storage. +
-Choosing the language in which to write the routes is a very difficult decision. A chat was enabled to discuss it, but there was no consensus. So we have decided to support JSON and different parsers for other types of files.
+Choosing the language in which to write the routes is a very difficult decision. A chat was enabled to discuss it (https://github.com/Arquisoft/viadeSpec[viadeSpec]), but there was no consensus. So we have decided to support JSON and different parsers for other types of files.
 
 
