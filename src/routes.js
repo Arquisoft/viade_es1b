@@ -7,10 +7,9 @@ import {
   Login,
   Welcome,
   Map,
-  Upload,
   Download,
+  createRoute,
   PageNotFound
-
 } from './containers';
 import NavBar from './components/NavBar';
 
@@ -22,8 +21,10 @@ const Routes = () => (
       <Switch>
         <Route exact path="/welcome" component={Welcome} />
         <Route exact path="/map" component={Map} />
-        <Route exact path="/upload" component={Upload} />
+        {/* <Route exact path="/upload" component={Upload} /> */}
         <Route exact path="/login" component={Welcome} />
+        <Route exact path="/createRoute" component={createRoute} />
+        {/* <Route exact path="/login" component={Login} /> */}
         <Route exact path="/download" component={Download} />
         <Route exact path="/" component={Welcome} />
         <Route exact path="/*" component={PageNotFound} />
