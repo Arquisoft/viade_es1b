@@ -21,6 +21,6 @@ The most important domain and technical terms that your stakeholders use when di
 |Git| Distributed version-control system used to track changes in code during software development that allows teams to work together.
 |Codacy| Software tool for automatic identification of security issues, code duplication, code complexity and code analysis.
 |Decentralized Web|New vision for the web that is build around blockchain technology where users own their own data. Data is portable, resources are provided by end-users within distributed networks, apps run locally on end-user devices and platforms are decentralized and autonomous. This project aims to help to contribute to said vision.
+|Leaflet|an open-source JavaScript library
+for mobile-friendly interactive maps|
 |===
-
-TODO - complete glossary while we are developing 
