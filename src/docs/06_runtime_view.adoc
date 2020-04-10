@@ -137,3 +137,59 @@ legend
 |SOLID|Pink color identify your personal\n server (pink)|<back:pink>    </back> |
 endlegend
 ----
+=== Share routes ===
+
+* The user clicks on the "View map" button and then clicks on the route of his pod that he wants to see on the map.
+* Then the service will take care of asking the POD for that route and show it on the map, which here is divided into two options:
+** You have chosen a route and it has been possible to download the POD, which will be shown on the map
+** You have chosen a route and it could not be downloaded from the POD, which will show an error message
+
+This is the sequence to generate the uml:
+
+[plantuml,"View Map",png]
+----
+title View a map with routes
+
+
+
+actor USER #red
+participant UI #yellow
+control DataService #green
+database POD #pink
+participant FRIEND_UI #yellow
+database FRIEND_POD #pink
+
+USER -> UI: SHARE Route
+UI -> DataService: shareRoute(friend)
+DataService -> POD: Get Route
+DataService -> FRIEND_POD: Send Route
+
+alt successful
+	POD -> DataService: Route sended
+	DataService --> UI: Successful notification
+
+else failure
+	POD -> DataService: Route not sended
+	DataService --> UI: Failure notification
+	end
+
+
+
+alt successful
+	FRIEND_POD -> DataService: Route received
+	DataService --> FRIEND_UI: Successful notification
+
+else failure
+	FRIEND_POD -> DataService: Route not received
+	DataService --> FRIEND_UI: Failure notification
+	end
+
+legend
+|= Object |= Explain |
+|HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>    </back> |
+|UIAplication | They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>     </back> |
+|AddRoute service | It's a service that allows you to view routes in the map.The color that identifies the services is green. |<back:green>    </back> |
+|SOLID|Pink color identify your personal\n server (pink)|<back:pink>    </back> |
+endlegend
+----
+
