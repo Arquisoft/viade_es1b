@@ -2,8 +2,6 @@ import React from 'react';
 import L from 'leaflet';
 import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
 import { Rutas } from '../../viade/Model';
-import { LoggedOut, LoggedIn } from '@solid/react';
-import { Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { MapStyle, DivStyle } from './map.style';
 
@@ -52,7 +50,6 @@ class Map extends React.Component {
     return (
 
       <React.Fragment >
-        {/* <LoggedIn> */}
           <DivStyle>
             <h2 data-testid="map-title" id="name">{this.name}</h2>
             <ul data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
@@ -67,10 +64,6 @@ class Map extends React.Component {
               <Popup>Fin</Popup>
             </Marker>
           </MapStyle>
-        {/* </LoggedIn> */}
-        {/* <LoggedOut>
-          <Redirect to='/login'></Redirect>
-        </LoggedOut> */}
       </React.Fragment>
 
     );

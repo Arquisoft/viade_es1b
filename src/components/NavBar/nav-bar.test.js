@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, cleanup, screen } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from './nav-bar.component';
 import '@testing-library/jest-dom'
 
