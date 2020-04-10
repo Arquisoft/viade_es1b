@@ -38,7 +38,7 @@ image::WhiteboxOverallSystem.png[]
 | Block          | Description 
 | Components    | In this block we find the presentation of the web. It is also divided into five blocks that covers the whole application: Profile, Map, Friends, Login and Settings. All the elements that form these blocks have a css, js and html files  
 | Services | This block manages the logic of the application and the communication between the presentation and the model
-| Model   | The model covers all the entities that are managed by the application
+| Model   | The model covers all the entities that are managed by the application. The routes have attributes such as longitude, latitude and height
 |===
 
 ////
