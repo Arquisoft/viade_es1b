@@ -79,10 +79,6 @@ Thus it contains the white box description of selected building blocks of level 
 ****
 Here you describe the decomposition of the overall system using the following white box template. It contains
 
- * an overview diagram
- * a motivation for the decomposition
- * black box descriptions of the contained building blocks. For these we offer you alternatives:
-
    ** use _one_ table for a short and pragmatic overview of all contained building blocks and their interfaces
    ** use a list of black box descriptions of the building blocks according to the black box template (see below).
    Depending on your choice of tool this list could be sub-chapters (in text files), sub-pages (in a Wiki) or nested elements (in a modeling tool).
