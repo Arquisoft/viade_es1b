@@ -43,7 +43,7 @@ In this section we take a deeper look at some of the quality requirements mentio
 |Share Features| Users are the only entities capable of allow sharing of their routes to other users
 |Permissions| The application must ask permission to the user in order to gain access to funcionality of the device such as GPS signal, wireless communication and such others
 |Accessibility| The app must meet at least the minimum accessibility standards in order to guarantee a wide user base
-|Offline access| Routes stored in local storage must be access at any point by the user, even if the device is offline
+//|Offline access| Routes stored in local storage must be access at any point by the user, even if the device is offline
 |Look and Feel| The app should be good looking and the interface needs to be desgined in a way that allows a coherent aesthetic between all the options and accessible at the same time
 |Social Features| All social features such as share routes or send files to other users are blocked unless the user is authenticated. Otherwise the user cannot use said options
 |Data Storage| Users have the choice of storing their routes locally in the device while maintaining a copy in their POD 
