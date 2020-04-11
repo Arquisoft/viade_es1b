@@ -23,7 +23,6 @@ based upon your problem statement, the quality goals and key constraints.
 Refer to details in the following sections.
 ****
 ////
-
 Framework React +
 This is a framework focused on JavaScript that will help us developing our app, facilitating the communication between interfaces and services. + 
 See <<02_architecture_costraints.adoc>>
@@ -37,6 +36,9 @@ It's a runtime environment that allows us execute JavaScript outside of a web br
 Solid POD +
 Solid pods are the way in which users will store their information in order to share and use it in the app.
 
-Solid-auth-service +
-This is a browser library that allows our app to connect securely to users pods and read and write data into them.
+// Solid-auth-service +
+// This is a browser library that allows our app to connect securely to users pods and read and write data into them.
+
+Github +
+It is a repository in which we upload the code with the documentation
 

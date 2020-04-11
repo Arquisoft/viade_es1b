@@ -30,20 +30,20 @@ describe('Download Page Render', () => {
 
 });
 
-describe('Download Routes Function', () => {
+// describe('Download Routes Function', () => {
   
-  afterAll(cleanup);
+//   afterAll(cleanup);
 
-  test('Input without URL', () => {
+//   test('Input without URL', () => {
     
-  });
+//   });
 
-  test('URL without routes', () => {
+//   test('URL without routes', () => {
 
-  });
+//   });
 
-  test('Given a correct file, it is downloaded correctly', () => {
+//   test('Given a correct file, it is downloaded correctly', () => {
     
-  });
+//   });
 
-});
+// });

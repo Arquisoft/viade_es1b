@@ -14,6 +14,7 @@ class createJson {
 
         };
         this.subirFicheroAPod = this.subirFicheroAPod.bind(this);
+        this.fileToUpload = null;
     }
 
     async subirFicheroAPod(name, sdict) {
@@ -21,11 +22,12 @@ class createJson {
         let archivo = sdict;
         //Analizamos si está loggeado:
         let session = await auth.currentSession();
-        var id = `${session.webId}`;
-        var date = new Date();
-        var n = Math.round(date.getTime() / (1000));
-        id = id.replace('/profile/card#me', '/public/');
+
         if (session) {
+            var id = `${session.webId}`;
+            var date = new Date();
+            var n = Math.round(date.getTime() / (1000));
+            id = id.replace('/profile/card#me', '/public/');
             try {
                 alert(id + n + "_" + name + ".json");
                 await this.state.sfc.putFile(id + n + "_" + name + ".json", archivo, archivo.type);
@@ -51,6 +53,7 @@ class createJson {
         tot = tot + '] } } ';
         var sdict = JSON.parse(tot);
         var save = JSON.stringify(sdict);
+        this.fileToUpload = save;
         this.subirFicheroAPod(name, save);
     }
 }
