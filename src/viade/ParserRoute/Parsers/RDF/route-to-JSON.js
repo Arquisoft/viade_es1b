@@ -38,8 +38,10 @@ class createJson {
             }
 
         }
-        else
+        else{
+            console.log("No estás loggeado");
             alert("No estás loggeado");
+        }
     }
 
     async createJson(name, markers) {
