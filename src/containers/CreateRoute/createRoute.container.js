@@ -1,9 +1,7 @@
 import React from 'react';
 import L from 'leaflet';
 import { TileLayer, Marker, Polyline } from 'react-leaflet';
-import { LoggedOut, LoggedIn } from '@solid/react';
-import { Redirect } from 'react-router-dom';
-import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2 } from './createRoute.style';
+import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2, ChooseButton } from './createRoute.style';
 import createJson from '../../viade/ParserRoute/Parsers/RDF/route-to-JSON';
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -21,7 +19,9 @@ class createRoute extends React.Component {
     this.state = {
       markers: [],
       name: "",
+      images: []
     };
+    
   }
 
   getLocation() {
@@ -89,15 +89,28 @@ class createRoute extends React.Component {
     window.location.reload();
   }
 
+  addImage(image){
+    this.state.images.push(image);
+    console.log(image);
+  }
+
   render() {
     this.getLocation();
     return (
       <React.Fragment>
-        <LoggedIn>
+        
           <DivStyle>
             <InputStyle id="name" type="text" placeholder="Write route name..." ref={this.name} onChange={this.updateValue} />
             <ButtonStyle onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> </ButtonStyle>
             <ButtonStyle2 onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
+            <ChooseButton>
+              <center>
+                <input type="file" id="photo" name="image" accept=".png" multiple={true} onChange={(e) => this.addImage(e.target.files)}/>
+									<label id="label-input" htmlFor="photo">
+										<span>Elegir fotos</span>
+									</label>
+              </center>
+            </ChooseButton>
           </DivStyle>
           <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -109,10 +122,7 @@ class createRoute extends React.Component {
               positions={this.draw()}
             />
           </MapStyle>
-        </LoggedIn>
-        <LoggedOut>
-          <Redirect to='/login'></Redirect>
-        </LoggedOut>
+        
       </React.Fragment>
 
     );

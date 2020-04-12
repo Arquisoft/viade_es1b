@@ -54,5 +54,34 @@ export const DivStyle = styled.div`
     z-Index: 99;
   `;
 
-
+export const ChooseButton = styled.div`
+  input{
+    width: 0.1px;
+    height:0.1x;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    }
+  label {
+    border: 1px solid #DAE0E6;
+    border-radius: 4px;
+    font-size: 12.8px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #51cae2;
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 6.4px 12.8px;
+    width: fit-content;
+    text-align: center;
+    }
+    
+    label:hover {
+      color: #000;
+      background: #a4d1d1;
+      border-color: #449DF5;
+      transition: 0.25s all ease-in-out;
+    }
+`;
 
