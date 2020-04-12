@@ -2,7 +2,9 @@ import React from 'react';
 import L from 'leaflet';
 import { TileLayer, Marker, Polyline } from 'react-leaflet';
 import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2, ChooseButton } from './createRoute.style';
-import createJson from '../../viade/ParserRoute/Parsers/RDF/route-to-JSON';
+//import createJson from '../../viade/ParserRoute/Parsers/RDF/route-to-JSON';
+import CreateRouteService from '../../services/CreateRouteService';
+
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -80,7 +82,8 @@ class createRoute extends React.Component {
       alert("La ruta tiene que tener al menos 2 puntos");
     if (name.length !== 0 && markers.length > 1) {
       alert("Ruta guardada correctamente");
-      createJson.createJson(name, markers);
+      CreateRouteService.createRoute(name, markers, this.state.images);
+      //createJson.createJson(name, markers);
     }
 
   }
@@ -89,9 +92,12 @@ class createRoute extends React.Component {
     window.location.reload();
   }
 
-  addImage(image){
-    this.state.images.push(image);
-    console.log(image);
+  addImage(imageList){
+    for (let i =0; i<imageList.length; i++){
+      this.state.images.push(imageList[i]);
+    }
+    console.log(imageList);
+    console.log(this.state.images);
   }
 
   render() {

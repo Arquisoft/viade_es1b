@@ -56,7 +56,7 @@ class createJson {
         var sdict = JSON.parse(tot);
         var save = JSON.stringify(sdict);
         this.fileToUpload = save;
-        this.subirFicheroAPod(name, save);
+        //this.subirFicheroAPod(name, save);
     }
 }
 
