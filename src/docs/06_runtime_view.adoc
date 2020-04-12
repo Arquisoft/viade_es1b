@@ -130,7 +130,7 @@ else failure
 	end
 
 legend
-|= Object |= Explain |
+|= Object |= Explain |= Color |
 |HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>    </back> |
 |UIAplication | They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>     </back> |
 |AddRoute service | It's a service that allows you to view routes in the map.The color that identifies the services is green. |<back:green>    </back> |
@@ -139,16 +139,20 @@ endlegend
 ----
 === Share routes ===
 
-* The user clicks on the "View map" button and then clicks on the route of his pod that he wants to see on the map.
-* Then the service will take care of asking the POD for that route and show it on the map, which here is divided into two options:
-** You have chosen a route and it has been possible to download the POD, which will be shown on the map
-** You have chosen a route and it could not be downloaded from the POD, which will show an error message
+* The user clicks on the "Share routes" button and And you can click on the route you want to share.
+* Then you can select the friend with whom you want to share that route and the service will take care of getting that route from your POD and send the route to your friend's POD:
+** You have chosen a route and it has been possible to download the POD and it has been successfully sent to your friend
+** You have chosen a route and it could not be sended to your friend's POD, which will show an error message
+
+** If the route has been received correctly notify your friend that they have a new shared route
+
+**  If the route could not be received, a notification will be sent to your friend that the route could not be received.
 
 This is the sequence to generate the uml:
 
-[plantuml,"View Map",png]
+[plantuml,"Share routes",png]
 ----
-title View a map with routes
+title Share routes with your friends
 
 
 
@@ -185,7 +189,7 @@ else failure
 	end
 
 legend
-|= Object |= Explain |
+|= Object |= Explain |= Color |
 |HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>    </back> |
 |UIAplication | They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>     </back> |
 |AddRoute service | It's a service that allows you to view routes in the map.The color that identifies the services is green. |<back:green>    </back> |

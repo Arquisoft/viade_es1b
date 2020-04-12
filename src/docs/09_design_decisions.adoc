@@ -29,10 +29,10 @@ See <<04_solution_strategy.adoc>>. Here are some of the most important:
 |Some cons are solved with extensions
 
 |Testing
-|React Tests
+|Unit Tests
 |16-03-2020
 |Tests incorporated into the React skeleton
-|Does not perform exhaustive tests
+|Does not perform exhaustive tests, you have to do them
 
 |Map
 |Leaflet
