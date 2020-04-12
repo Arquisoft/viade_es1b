@@ -35,5 +35,5 @@ The main risks we have identified in the implmentation of this application are t
 |Support more route file formats
 |In the absence of a decision to allow interoperability. The decision was to format one of the most widely used in the world for data transfer, JSON. We leave as a possibility to expand some parsers to allow more types of files
 |Add photos of the routes
-|
+|We decided to postpone it due to various problems it gave us, to be solved soon.
 |===
