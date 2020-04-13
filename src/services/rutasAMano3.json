@@ -1,43 +1,122 @@
 {
-	"@context": "http://schema.org",
-	"@type": "Trip",
-	"name": "Ruta1",
-	"description": "Ruta tercera a mano, con dos elementos",
-	"itinerary": {
-		"@type": "itemList",
-		"numberOfItems": 3,
-		"itemListOrder": "ItemListOrderDescending",
-		"itemListElement": [
-			{
-				"@type": "ListItem",
-				"position": 1,
-				"item": {
-					"@type": "GeoCoordinates",
-					"latitude": 44.54435,
-					"longitude": -5.661797,
-					"elevation": "5 m"
-				}
-			},
-			{
-				"@type": "ListItem",
-				"position": 2,
-				"item": {
-					"@type": "GeoCoordinates",
-					"latitude": 43.640167,
-					"longitude": -5.645139,
-					"elevation": "5 m"
-				}
-            },
-            {
-				"@type": "ListItem",
-				"position": 3,
-				"item": {
-					"@type": "GeoCoordinates",
-					"latitude": 43.740167,
-					"longitude": -5.645139,
-					"elevation": "5 m"
-				}
-			}
-		]
-	}
+    "@context": {
+        "@version": 1.1,
+        "comments": {
+            "@id": "viade:comments",
+            "@type": "@id"
+        },
+        "description": {
+            "@id": "schema:description",
+            "@type": "xs:string"
+        },
+        "media": {
+            "@container": "@list",
+            "@id": "viade:media"
+        },
+        "name": {
+            "@id": "schema:name",
+            "@type": "xsd:string"
+        },
+        "points": {
+            "@container": "@list",
+            "@id": "viade:points"
+        },
+        "latitude": {
+            "@id": "schema:latitude",
+            "@type": "xsd:double"
+        },
+        "longitude": {
+            "@id": "schema:longitude",
+            "@type": "xsd:double"
+        },
+        "elevation": {
+            "@id": "schema:elevation",
+            "@type": "xsd:decimal"
+        },
+        "author": {
+            "@id": "schema:author",
+            "@type": "@id"
+        },
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "viade": "http://arquisoft.github.io/viadeSpec/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "name": "Route test 6",
+    "description": "This is a test to see the output of the JsonLDConversor",
+    "waypoints" : [
+        {
+            "name": "Name for the waypoint",
+            "description": "Description of the waypoint",
+            "latitude": 45.123,
+            "longitude": 34.121,
+            "elevation": 34
+        },
+        {
+            "name": "Computer Science School",
+            "description": "Become a good engineer with us",
+            "latitude": 45.123,
+            "longitude": 34.121,
+            "elevation": 34
+        }
+
+    ],
+    "points": [
+        {
+            "latitude": 45.123,
+            "longitude": 34.121,
+			"elevation": 50
+        },
+        {
+            "latitude": 46.123,
+            "longitude": 34.121,
+			"elevation": 100
+        },
+        {
+            "latitude": 47.123,
+            "longitude": 34.121,
+			"elevation": 150
+        },
+        {
+            "latitude": 48.123,
+            "longitude": 32.121,
+			"elevation": 200
+        },
+        {
+            "latitude": 49.123,
+            "longitude": 34.121,
+			"elevation": 250
+        },
+        {
+            "latitude": 40.123,
+            "longitude": 32.121,
+			"elevation": 300
+        },
+        {
+            "latitude": 50.123,
+            "longitude": 33.121,
+			"elevation": 350
+        },
+        {
+            "latitude": 53.123,
+            "longitude": 34.121,
+			"elevation": 400
+        },
+        {
+            "latitude": 54.123,
+            "longitude": 34.121,
+			"elevation": 450
+        },
+        {
+            "latitude": 55.123,
+            "longitude": 35.121,
+			"elevation": 500
+        },
+        {
+            "latitude": 55.123,
+            "longitude": 34.121,
+			"elevation": 550
+        }
+    ]
 }
