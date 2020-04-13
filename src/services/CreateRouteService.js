@@ -7,29 +7,31 @@ class CreateRouteService {
     constructor() {
         //super();
         this.state = {
-            fileName: "",
-            routeJson: null,
-            sfc: new SolidFileClient(auth)
+            fileName: "",            
         };
+
+        this.routeJson=null;
+        this.imagesRoutes =[];
+        this.videosRoutes =[];
     }
 
     async createRoute(name, markers, images, videos) {
 
         let session = await auth.currentSession();
-
+        
+        //Analizamos si está loggeado:
         if (session) {
-            let imagesRoutes =[];
-            let videosRoutes =[];
+            
 
             var webId = `${session.webId}`;
 
             
-            let id = webId.replace('/profile/card#me', '/public/');
+            let id = webId.replace('/profile/card#me', '/viade/');
 
             for (let i = 0; i < images.length; i++) {
                 let imageRoute = id + "resources/" + images[i].name;
                 if (fc.createFile(imageRoute, images[i], images[i].type)) {
-                    imagesRoutes.push(imageRoute);
+                    this.imagesRoutes.push(imageRoute);
                     alert("Foto " + images[i].name + " subida ");
                 } else {
                     alert("Error al subir la foto " + images[i].name);
@@ -39,7 +41,7 @@ class CreateRouteService {
             for (let i = 0; i < videos.length; i++) {
                 let videoRoute = id + "resources/" + videos[i].name;
                 if (fc.createFile(videoRoute, videos[i], videos[i].type)) {
-                    videosRoutes.push(videoRoute);
+                    this.videosRoutes.push(videoRoute);
                     alert("Foto " + videos[i].name + " subida ");
                 } else {
                     alert("Error al subir la foto " + videos[i].name);
@@ -48,14 +50,14 @@ class CreateRouteService {
 
             this.fileName = name;
 
-            createJson.createJson(name, markers, imagesRoutes, videosRoutes, webId);
-            this.state.routeJson = JSON.parse(createJson.fileToUpload);
-            this.state.routeJson = JSON.stringify(this.state.routeJson);
+            createJson.createJson(name, markers, this.imagesRoutes, this.videosRoutes, webId);
+            this.routeJson = JSON.parse(createJson.fileToUpload);
+            this.routeJson = JSON.stringify(this.routeJson);
             //console.log(this.state);
             console.log(images);
 
-
-            this.subirFicheroAPod(name, this.state.routeJson, id);
+            
+            this.subirFicheroAPod(name, this.routeJson, id);
         }
         else {
             console.log("No estás loggeado");
@@ -68,11 +70,11 @@ class CreateRouteService {
         let archivo = sdict;
         var date = new Date();
         var n = Math.round(date.getTime() / (1000));
-        //Analizamos si está loggeado:
+        id.concat("routes/");
 
         try {
             alert(id + n + "_" + name + ".json");
-            await this.state.sfc.postItem(id + n + "_" + name + ".json", archivo, "application/json", archivo.type);
+            await fc.postItem(id + n + "_" + name + ".json", archivo, "application/json", archivo.type);
             alert("Archivo subido");
         }
         catch (error) {
