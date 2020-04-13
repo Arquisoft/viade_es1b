@@ -2,10 +2,8 @@ import React from 'react';
 import { LoggedOut, LoggedIn, useWebId } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { MisAmigosDiv, ContainerDiv, PeticionesDiv, InputStyle } from './friends.style';
+import { MisAmigosDiv, ContainerDiv, ListaDiv, InputStyle, AmigosDiv } from './friends.style';
 import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import addFriend from '../../viade/Friends/addFriend';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,8 +19,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-
-
 const Friends = props => {
     const { t } = useTranslation();
     const name = useWebId();
@@ -30,25 +26,25 @@ const Friends = props => {
     var friends = [];
     (async () => {
         friends = await addFriend.friends
-        var str = '<ul>'
+        var str = '<List>'
         friends.forEach(function (friend) {
             str += '<li>' + friend + '</li>';
         });
-        str += '</ul>';
-        document.getElementById("lista").innerHTML = str;
+        str += '</List>';
+        try {
+            document.getElementById("lista").innerHTML = str;
+        }
+        catch (e) {
 
+        }
     })()
-
-
-
-
 
     return (
         <div>
             <LoggedIn>
                 <ContainerDiv>
                     <MisAmigosDiv>
-                        <h3>{t('friends.myFriends')}</h3>
+                        <h3>{t('friends.addFriend')}</h3>
                         <form className="modal-body">
                             <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input" />
                             <button onClick={(event) => addFriend.addFriend(event, document.getElementById('input').value, name)} className="send">
@@ -57,16 +53,12 @@ const Friends = props => {
                                 </span>
                             </button>
                         </form>
-                        <List className={classes.root} subheader={<li />}>
-
-                        </List>
                     </MisAmigosDiv>
-                    <PeticionesDiv>
+                    <ListaDiv>
                         <h3>{t('friends.myFriends')}</h3>
-                        <div id="lista">
-
-                        </div>
-                    </PeticionesDiv>
+                        <AmigosDiv id="lista">
+                        </AmigosDiv>
+                    </ListaDiv>
                 </ContainerDiv>
             </LoggedIn>
             <LoggedOut>

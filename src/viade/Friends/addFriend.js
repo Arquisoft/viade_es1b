@@ -1,6 +1,6 @@
-import ldflex from "@solid/query-ldflex";
 import auth from "solid-auth-client";
 import data from '@solid/query-ldflex';
+import FC from 'solid-file-client';
 
 class AddFriend {
 
@@ -11,51 +11,47 @@ class AddFriend {
 
     async addFriend(event, id, webId) {
         event.preventDefault();
-        try {
-            const user = data[webId];
-            if (this.isFriend(id) && id.localeCompare("") !== 0) {
-                if (await this.friendAlreadyAdded(id, webId)) {
-                    alert('WebId ya pertenece a tus amigos');
-                } else {
+
+        const user = data[webId];
+        if (await this.checkID(id)) {
+            if (id.localeCompare("") !== 0) {
+                if (await this.friendAlreadyAdded(id, webId))
+                    alert('¡Ya sois amigos!');
+                else {
                     await user.knows.add(data[id]);
                     await window.location.reload();
                 }
-            } else {
-                alert('WebId no válido');
-            }
-        } catch (e) {
-            alert(e.message, 'Error');
-        }
+            } else
+                alert('Este campo no puede estar vacío');
+        } else
+            alert("WebId no existe")
     };
 
-    async friendAlreadyAdded(friendWebId, webId) {
+    async checkID(id) {
+        const fc = new FC(auth);
+        let session = await auth.currentSession();
+        if (!session)
+            session = await auth.login();
+        try {
+            let op = async client => await client.itemExists(id);
+            return await op(fc);
+        } catch (e) {
+        }
+    }
+
+    async friendAlreadyAdded(id, webId) {
         const user = data[webId];
         for await (const friend of user.friends)
-            if (String(friend).localeCompare(String(friendWebId)) === 0) {
-                console.log(friend.toString());
-                return true;
-            }
-        return false;
-    };
-
-    async isFriend(id) {
-        const auth = require("solid-auth-client");
-        await auth.trackSession(session => {
-            if (!session)
-                return;
-            else
-                this.webId = session.webId;
-        });
-        for await (const friend of ldflex[this.webId].friends)
             if (String(friend).localeCompare(String(id)) === 0)
-                return await true;
-        return await false;
+                return true;
+        return false;
     };
 
     async getFriends() {
         const friends = [];
         let session = await auth.currentSession();
         var id = `${session.webId}`;
+        console.log(id);
         const user = data[id];
         for await (const friend of user.friends)
             friends.push(friend.toString());

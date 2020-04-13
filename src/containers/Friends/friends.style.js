@@ -9,9 +9,9 @@ export const ContainerDiv = styled.div`
     padding: 5px 0;
 `;
 
-export const PeticionesDiv = styled.div`
+export const ListaDiv = styled.div`
     float:left;
-    width: 50%%;
+    width: 99%;
     height: auto;
     border: 1px solid lightgrey;
     background-image: linear-gradient(to right, white, white);
@@ -19,9 +19,13 @@ export const PeticionesDiv = styled.div`
 
 `;
 
+export const AmigosDiv = styled.div`
+   text-align: left;
+`;
+
 export const MisAmigosDiv = styled.div`
     float:left;
-    width: 50%;
+    width: 99%;
     height: auto;
     border: 1px solid lightgrey;
     background-image: linear-gradient(to right, white, white);
