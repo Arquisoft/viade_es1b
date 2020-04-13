@@ -1,10 +1,10 @@
-import React from 'react';
-import { LoggedOut, LoggedIn, useWebId } from '@solid/react';
-import { Redirect } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { MisAmigosDiv, ContainerDiv, ListaDiv, InputStyle, AmigosDiv } from './friends.style';
-import { makeStyles } from '@material-ui/core/styles';
-import addFriend from '../../viade/Friends/addFriend';
+import React from "react";
+import { LoggedOut, LoggedIn, useWebId } from "@solid/react";
+import { Redirect } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { MisAmigosDiv, ContainerDiv, ListaDiv, InputStyle, AmigosDiv } from "./friends.style";
+import { makeStyles } from "@material-ui/core/styles";
+import addFriend from "../../viade/Friends/addFriend";
 
 const useStyles = makeStyles((theme) => ({
     root: {

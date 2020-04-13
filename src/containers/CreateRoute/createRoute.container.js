@@ -1,7 +1,7 @@
 import React from 'react';
 import L from 'leaflet';
-import { TileLayer, Marker, Polyline } from 'react-leaflet';
-import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2, ChooseButton } from './createRoute.style';
+import { TileLayer, Marker, Polyline } from "react-leaflet";
+import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2, ChooseButton } from "./createRoute.style";
 //import createJson from '../../viade/ParserRoute/Parsers/RDF/route-to-JSON';
 import CreateRouteService from '../../services/CreateRouteService';
 
@@ -9,7 +9,7 @@ import CreateRouteService from '../../services/CreateRouteService';
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
@@ -53,8 +53,8 @@ class createRoute extends React.Component {
 
   mapClick = (e) => {
     const { markers } = this.state;
-    markers.push({ lat: e.latlng.lat, lng: e.latlng.lng })
-    this.setState({ markers })
+    markers.push({ lat: e.latlng.lat, lng: e.latlng.lng });
+    this.setState({ markers });
     this.draw();
 
   }
@@ -71,7 +71,7 @@ class createRoute extends React.Component {
     var { name } = this.state;
     name = document.getElementById('name').value;
     this.setState({ name });
-    console.log(name);
+    //console.log(name);
   }
 
   sendData = () => {

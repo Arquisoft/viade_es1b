@@ -43,7 +43,7 @@ export const createDocument = async (documentUri, body = '') => {
 export const createDocumentWithTurtle = async (documentUri, body = '') => {
   try {
     return createDoc(documentUri, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
         'Content-Type': 'text/turtle'
       },

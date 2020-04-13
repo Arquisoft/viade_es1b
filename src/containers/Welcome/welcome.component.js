@@ -37,7 +37,7 @@ export const WelcomePageContent = props => {
           </WelcomeLogo>
           <WelcomeProfile data-testid="welcome-profile">
             <h3>
-              {t('welcome.welcome')}, <a href={name}>{name}</a>
+              {t("welcome.welcome")}, <a href={name}>{name}</a>
             </h3>
           </WelcomeProfile>
         </WelcomeCard>

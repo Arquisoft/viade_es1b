@@ -20,8 +20,8 @@ describe('Login', () => {
   });
 
   test('renders with styled components', () => {
-    expect(document.querySelector('.login-panel')).toBeTruthy();
-    expect(document.querySelector('.panel-body')).toBeTruthy();
+    expect(document.querySelector(".login-panel")).toBeTruthy();
+    expect(document.querySelector(".panel-body")).toBeTruthy();
     
   });
   test('renders title properly', () => {

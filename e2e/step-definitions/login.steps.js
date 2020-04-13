@@ -27,7 +27,7 @@ defineFeature(feature, test => {
     });
 
     then('I expect to see a popup to log in', () => {
-        expect(popup.title()).resolves.toMatch('Select your Identity Provider');
+        expect(popup.title()).resolves.toMatch("Select your Identity Provider");
       
         expect(popup).toMatch("Solid Community", { timeout: 1000 });
         expect(popup).toMatch("Inrupt", { timeout: 1000 });

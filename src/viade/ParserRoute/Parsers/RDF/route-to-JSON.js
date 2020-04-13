@@ -16,7 +16,7 @@ class createJson {
         };
         //this.subirFicheroAPod = this.subirFicheroAPod.bind(this);
         this.fileToUpload = null;
-        this.header = '{'
+        this.header = "{"
             +'"@context": {'
                 +'"@version": 1.1,'
                 +'"comments": {'

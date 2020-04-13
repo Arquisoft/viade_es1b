@@ -8,7 +8,7 @@ export const sendNotification = async (opponent, content, createNotification, to
     /**
      * If the opponent doesn't have an inbox, show an error
      */
-    throw new Error('Error: The opponent does not have an available inbox');
+    throw new Error("Error: The opponent does not have an available inbox");
   } catch (error) {
     throw new Error(error);
   }

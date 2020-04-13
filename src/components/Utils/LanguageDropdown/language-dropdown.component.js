@@ -4,16 +4,16 @@ import { toast } from 'react-toastify';
 
 const languages = {
   en: {
-    id: 'en',
-    icon: 'us'
+    id: "en",
+    icon: "us"
   },
   es: {
-    id: 'es',
-    icon: 'es'
+    id: "es",
+    icon: "es"
   },
-  'en-US': {
-    id: 'en-US',
-    icon: 'us'
+  "en-US": {
+    id: "en-US",
+    icon: "us"
   }
 };
 

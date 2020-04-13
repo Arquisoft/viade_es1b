@@ -1,6 +1,6 @@
 import auth from "solid-auth-client";
-import data from '@solid/query-ldflex';
-import FC from 'solid-file-client';
+import data from "@solid/query-ldflex";
+import FC from "solid-file-client";
 
 class AddFriend {
 
@@ -16,7 +16,9 @@ class AddFriend {
         if (await this.checkID(id)) {
             if (id.localeCompare("") !== 0) {
                 if (await this.friendAlreadyAdded(id, webId))
-                    alert('¡Ya sois amigos!');
+                {
+                    alert("¡Ya sois amigos!");
+                }
                 else {
                     await user.knows.add(data[id]);
                     await window.location.reload();
