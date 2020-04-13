@@ -1,4 +1,4 @@
-import Route from "./route";
-import PointRoute from "./point";
+import Rutas from "./rutas";
+import Point from "./point";
 
-export {Route,PointRoute};
+export { Rutas, Point };

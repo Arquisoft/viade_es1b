@@ -1,28 +1,6 @@
 [[section-glossary]]
 == Glossary
 
-
-
-[role="arc42help"]
-****
-.Contents
-The most important domain and technical terms that your stakeholders use when discussing the system.
-
-You can also see the glossary as source for translations if you work in multi-language teams.
-
-.Motivation
-You should clearly define your terms, so that all stakeholders
-
-* have an identical understanding of these terms
-* do not use synonyms and homonyms
-
-.Form
-A table with columns <Term> and <Definition>.
-
-Potentially more columns in case you need translations.
-
-****
-
 [options="header"]
 |===
 |Term| Definition
@@ -35,4 +13,6 @@ Potentially more columns in case you need translations.
 |Git| Distributed version-control system used to track changes in code during software development that allows teams to work together.
 |Codacy| Software tool for automatic identification of security issues, code duplication, code complexity and code analysis.
 |Decentralized Web|New vision for the web that is build around blockchain technology where users own their own data. Data is portable, resources are provided by end-users within distributed networks, apps run locally on end-user devices and platforms are decentralized and autonomous. This project aims to help to contribute to said vision.
+|Leaflet|an open-source JavaScript library for mobile-friendly interactive maps
+|WhiteBox|Machine or system whose internal structure or processing is known in addition to the knowledge about its inputs, outputs, and the relationship between them.
 |===

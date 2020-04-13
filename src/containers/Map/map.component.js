@@ -1,9 +1,11 @@
 import React from 'react';
 import L from 'leaflet';
-import {TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
-import Rutas from './routes/rutas';
+import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
+import { Rutas } from '../../viade/Model';
+import { LoggedOut, LoggedIn } from '@solid/react';
+import { Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import {MapStyle} from './map.style';
+import { MapStyle, DivStyle } from './map.style';
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -17,13 +19,14 @@ class Map extends React.Component {
 
   constructor() {
     super();
-
     this.name = Rutas.getNames()[0];
     this.puntos = []
     Rutas.getRutaByPosition(1).points.map(p => this.puntos.push(p.getCoordinates()));
   }
 
-  changeName(id, e) {
+  getRoutes(id) {
+
+
     var newRuta = Rutas.getRutaByName(id);
     document.getElementById("name").textContent = newRuta.name;
 
@@ -45,30 +48,22 @@ class Map extends React.Component {
   }
 
   render() {
+    Rutas.actualizarRutasConPod();
     const position = this.puntos[0];
 
-    const divStyle = {
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
-      zIndex: '1',
-    };
 
-    const divStyle2 = {
-      backgroundColor: '#FFFFFF',
-      marginRight: '10%',
-      width: '50%',
-      height: 'auto',
-      position: 'absolute',
-      left: '75%',
-      zIndex: '99',
-      
-    }
+
+
 
     return (
-      <React.Fragment id = "map" >
-        <div id="map" style={divStyle}>
-          <MapStyle  id="map" center={position} zoom={15}>
+
+      <React.Fragment id="map" >
+        <LoggedIn>
+          <DivStyle>
+            <h2 id="name">{this.name}</h2>
+            <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
+          </DivStyle>
+          <MapStyle id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Polyline color={'red'} positions={this.puntos}></Polyline>
             <Marker position={this.puntos[0]}>
@@ -78,11 +73,10 @@ class Map extends React.Component {
               <Popup>Fin</Popup>
             </Marker>
           </MapStyle>
-        </div>
-        <div style={divStyle2}>
-        <h2 id="name">{this.name}</h2>
-        <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={(e) => this.changeName(n, e)}> {n} </li>)}</ul>
-        </div>
+        </LoggedIn>
+        <LoggedOut>
+          <Redirect to='/login'></Redirect>
+        </LoggedOut>
       </React.Fragment>
 
     );

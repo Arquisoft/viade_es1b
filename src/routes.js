@@ -1,56 +1,29 @@
-import React, { Fragment } from 'react';
-import { PrivateLayout, PublicLayout, NotLoggedInLayout } from '@layouts';
-import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
-
+import React from 'react';
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 import {
   Login,
-  Register,
-  PageNotFound,
   Welcome,
-  RegistrationSuccess,
-  Profile,
-  Mapa
+  Map,
+  Upload,
+  Download
 } from './containers';
-import UploadComponent from "./containers/Upload";
-
-const privateRoutes = [
-  {
-    id: 'welcome',
-    path: '/welcome',
-    component: Welcome
-  },
-  {
-    id: 'profile',
-    path: '/profile',
-    component: Profile
-  },
-  {
-    id: 'map',
-    path: '/map',
-    component: Mapa
-  },
-
-  {
-    id: 'upload',
-    path: "/upload",
-    component: UploadComponent
-  }
-];
+import NavBar from './components/NavBar';
 
 const Routes = () => (
-  <Router>
-    <Fragment>
+  <HashRouter>
+    <div>
+      <NavBar />
       <Switch>
-        <NotLoggedInLayout component={Login} path="/login" exact />
-        <NotLoggedInLayout component={Register} path="/register" exact />
-        <NotLoggedInLayout path="/register/success" component={RegistrationSuccess} exact />
-        <PublicLayout path="/404" component={PageNotFound} exact />
-        <Redirect from="/" to="/welcome" exact />
-        <PrivateLayout path="/" routes={privateRoutes} />
-        <Redirect to="/404" />
+        <Route exact path="/welcome" component={Welcome} />
+        <Route exact path="/map" component={Map} />
+        <Route exact path="/upload" component={Upload} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/download" component={Download} />
+        <Route exact path="/" component={Login} />
+        <Redirect to="/"></Redirect>
       </Switch>
-    </Fragment>
-  </Router>
+    </div>
+  </HashRouter>
 );
 
 export default Routes;

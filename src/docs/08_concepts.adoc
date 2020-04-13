@@ -1,7 +1,42 @@
 [[section-concepts]]
 == Cross-cutting Concepts
+This section is intended to describe the general ideas, regulations and concepts that apply, either to the whole system, or to several parts of it.
+[role="arc42help"]
+=== Domain concepts ===
+* A route contains a unique name and consists of a series of points, which must be at least two.
+* Map points contain longitude and latitude
+* Pod: user repository, following the SOLID specification. It can be located anywhere, not on a single platform.
+* Client: the viade program running on the user’s browser. Its responsability is to give the functionality, not to store the data.
 
+=== User Experience ===
+For us the user experience is a high priority in our application. So we made a commitment to make an application in which the maps and all the functionality were iterative.
 
+=== Architecture and design patterns ===
+Up until know, the viade is an React system, therefore following the Model View Controller architectural pattern. However, all our application would not store any of the user’s data. It will access it via SOLID pods.
+
+=== Persistency ===
+Persistence has been achieved using JSON and multiple converters to different types. It has also been achieved using an RDF standard. Persistence in Viade will be achieved following the SOLID specification.
+
+=== Testing ===
+Two types of testing are currently in place:
+
+* Unit testing: in charge of testing the low level features of the system.
+
+* End to end: in charge of testing the general behavior of the system by mocking a real user.
+
+=== Building ===
+
+The building of the project, considering that it is an React application, is done via the Node.js package manages, npm. It is expected to be built using the docker platform, in order to avoid dependencies and enviorment issues.
+
+=== Security ===
+The application will use secure communication channels. We will use the protocol https://introbay.com/es/blog/2016/07/05/https-que-es-y-para-que-sirve[HTTPS] and the https://dvcs.w3.org/hg/WebID/raw-file/tip/spec/tls-respec.html[WebID-TLS]. With them we ensure te authenticity and integrity of the data sended and received from the pods.
+
+All files uploaded will also be checked as a security measure. It should be noted that all data will be saved in persistence with RDF
+
+=== Internacionalization ===
+The application will be internationalized to the two most spoken languages ​​in the world, Spanish and English. We believe it is a good way to reach a higher number of users.
+
+////
 [role="arc42help"]
 ****
 .Content
@@ -65,3 +100,4 @@ _<explanation>_
 === _<Concept n>_
 
 _<explanation>_
+////

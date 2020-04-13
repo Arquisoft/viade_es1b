@@ -21,7 +21,7 @@
     "notSharable": "(log in and load a doc on your own pod to give others access)"
   },
   "login": {
-    "title": "Hi! Welcome to Solid.",
+    "title": "Hi! Welcome to Viade_es1b.",
     "loginTitle": "Log in",
     "register": "Register for a solid identity",
     "solidHelp": "What is a Solid Identity?",
@@ -53,6 +53,7 @@
     "formModelConvert": "Form Model Convert",
     "text-editor": "Text Editor",
     "upload": "Upload file",
+    "download": "Download routes",
     "changeLanguage": "Change Language",
     "map":"Map",
     "routeLoader":"Load Routes",

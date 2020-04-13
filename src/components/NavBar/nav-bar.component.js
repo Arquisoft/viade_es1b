@@ -1,92 +1,38 @@
-import React, { useEffect, useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { Navigation, Toolbar, HamburgerButton, MobileNavigation } from './children';
+import React from "react";
+import LoggedIn from "@solid/react/module/components/LoggedIn";
+import { useWebId } from '@solid/react';
+import { DivStyle, NavStyle, ButtonStyle, Astyle } from './nav-bar.style';
+import { DropdownButton, DropdownItem } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import i18n from 'i18next';
 
-type Props = {
-  t: Function,
-  navigation: Array<Object>,
-  toolbar: Array<React.Node>,
-  sticky?: boolean
-};
+const NavBar = props => {
 
-const NavBar = (props: Props) => {
-  const { navigation, toolbar, sticky, t } = props;
-  const [isOpenMobile, setOpenMobile] = useState(false);
-  const [profileOptions, setProfileOption] = useState([]);
-  const componentElement = React.createRef();
+    const name = useWebId();
+    const { t } = useTranslation();
 
-  const setNavFixed = () => {
-    if (componentElement) {
-      const navHeight = componentElement.clientHeight;
-      const content = document.getElementsByClassName('contentApp');
-      if (content.length > 0) {
-        content[0].style['padding-top'] = `${navHeight}px`;
-      }
-    }
-  };
+    return (
+        <LoggedIn>
+            <NavStyle>
+                <a href="#/"><img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} width="200" height="50" alt="" /></a>
+                <DivStyle><Astyle href="#/map"><img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="20" height="20" alt="" />{t('navBar.map')}</Astyle></DivStyle>
+                <DivStyle><Astyle href="#/upload"><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> {t('navBar.upload')}</Astyle></DivStyle>
+                <DivStyle><Astyle href="#/download"><img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="20" height="20" alt="" /> {t('navBar.download')}</Astyle></DivStyle>
+                <DivStyle><Astyle href={name}><img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="20" height="20" alt="" /> {t('navBar.profile')}</Astyle></DivStyle>
+                <DivStyle>
+                    <DropdownButton variant="white" title={""}>
+                        <DropdownItem>
+                            <div onClick={() => i18n.changeLanguage("en")}> ENG </div>
+                        </DropdownItem>
+                        <DropdownItem>
+                            <div onClick={() => i18n.changeLanguage("es")}> ESP </div>
+                        </DropdownItem>
+                    </DropdownButton>
+                </DivStyle>
+                <DivStyle><ButtonStyle></ButtonStyle></DivStyle>
 
-  const onComponentResize = () => {
-    setNavFixed();
-    window.addEventListener('resize', () => {
-      setNavFixed();
-
-      if (window.innerWidth >= 1024 && isOpenMobile) {
-        setOpenMobile(false);
-      }
-    });
-  };
-
-  const getUserProfileOptions = () => {
-    const profile = toolbar ? toolbar.filter(bar => bar.id !== 'language') : [];
-    setProfileOption(profile);
-  };
-
-  useEffect(() => {
-    if (sticky) {
-      onComponentResize();
-    }
-
-    getUserProfileOptions();
-  }, [props, isOpenMobile]);
-
-  const toggleMobileMenu = () => {
-    setOpenMobile(!isOpenMobile);
-  };
-
-  return (
-    <header role="navigation" className="header header__desktop fixed" ref={componentElement}>
-      <section className="header-wrap">
-        <div className="logo-block">
-          <Link to="/welcome">
-            <img src="/img/inrupt.svg" alt="inrupt" />
-          </Link>
-        </div>
-
-        {isOpenMobile ? (
-          <MobileNavigation
-            navigation={navigation}
-            toolbar={toolbar}
-            isOpenMobile={isOpenMobile}
-            toggleMobileMenu={toggleMobileMenu}
-            t={t}
-          >
-            <Navigation navigation={navigation} />
-            <Toolbar toolbar={profileOptions} open customClass="profile-list" />
-          </MobileNavigation>
-        ) : (
-          <Fragment>
-            {navigation && <Navigation navigation={navigation} />}
-            {toolbar && <Toolbar toolbar={toolbar} />}
-          </Fragment>
-        )}
-        <HamburgerButton toggleMobileMenu={toggleMobileMenu} />
-      </section>
-    </header>
-  );
-};
-
-NavBar.defaultProps = {
-  sticky: true
-};
-
+            </NavStyle>
+        </LoggedIn>
+    );
+}
 export default NavBar;

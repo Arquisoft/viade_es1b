@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import data from '@solid/query-ldflex';
 import { namedNode } from '@rdfjs/data-model';
 import { WelcomePageContent } from './welcome.component';
-import { successToaster, errorToaster } from '@utils';
+import { successToaster, errorToaster } from './../../utils';
 
 const defaultProfilePhoto = '/img/icon/empty-profile.svg';
 
