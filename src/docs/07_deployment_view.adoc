@@ -2,6 +2,7 @@
 
 
 == Deployment View
+:imagesdir: images
 ////
 [role="arc42help"]
 ****
@@ -33,57 +34,33 @@ zoom into this black box using additional deployment diagrams:
 when your infrastructure is more complex.
 * When your (hardware) stakeholders prefer other kinds of diagrams rather than the deployment diagram, let them use any kind that is able to show nodes and channels of the infrastructure.
 ****
-////
-TODO - Write all deployment view in a future stage of the proyect
+
 ////
 === Infrastructure Level 1
 
 [role="arc42help"]
-****
-Describe (usually in a combination of diagrams, tables, and text):
+Users must have a device with an Internet connection and a web browser, preferably Firefox or Chrome, which are the web browsers with which we have developed the Viade application. It is also more recommended computer than mobile device since it is not optimized for the latter. The Viade application is hosted and working on GitHubPages. In order to access the web application it is necessary to have acquired a Solid POD, it can be obtained from the Solid Inrupt page or from the Solid Community. The POD will be on a Solid server.
 
-*  the distribution of your system to multiple locations, environments, computers, processors, .. as well as the physical connections between them
-*  important justification or motivation for this deployment structure
-* Quality and/or performance features of the infrastructure
-*  the mapping of software artifacts to elements of the infrastructure
-
-For multiple environments or alternative deployments please copy that section of arc42 for all relevant environments.
-****
-
-_**<Overview Diagram>**_
+image::07_deployment-view.png[]
 
 Motivation::
 
-_<explanation in text form>_
+The motivation is that users can transparently use the PODs and be able to see their routes and save them.
 
 Quality and/or Performance Features::
 
-_<explanation in text form>_
+Performance can be affected by three factors:
+* Internet connection of the user. Uncontrollable from us
+* POD server. Also uncontrollable by us
+* Code performance. This if uncontrollable on our part. From which we are committed to using the best code that provides the best performance
 
 Mapping of Building Blocks to Infrastructure::
-_<description of the mapping>_
+It looks good in the diagram but the main components of the application are:
+* the user's device (PC, tablets, mobile, ...)
+* the web browser (Firefoz, Chrome, ...)
+* the web server (GitHub pages)
+* the user's POD (Inrupt or Comunnity)
+* the POD's server 
+* the app itselft
 
 
-=== Infrastructure Level 2
-
-[role="arc42help"]
-****
-Here you can include the internal structure of (some) infrastructure elements from level 1.
-
-Please copy the structure from level 1 for each selected element.
-****
-
-==== _<Infrastructure Element 1>_
-
-_<diagram + explanation>_
-
-==== _<Infrastructure Element 2>_
-
-_<diagram + explanation>_
-
-...
-
-==== _<Infrastructure Element n>_
-
-_<diagram + explanation>_
-////

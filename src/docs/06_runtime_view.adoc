@@ -23,13 +23,6 @@ control Authentication #green
 database SOLID #purple
 database POD #pink
 participant UIApplication #yellow
-participant Caption
-
-
-note right of Caption: Hiker, is the users who will use the application.\nThe color that identifies the hikers is red
-note right of Caption:UILogin and UIApplication They are the GUIs\n with which hikers can interact. All GUIs are yellow
-note right of Caption: The color that identifies the services is green.\n For example, authentication service.
-note right of Caption: Pink colors identify the use of SOLID.\n The different colors of roses are to specify that one is\n the SOLID server (purple) and another your personal\n server (pink)
 
 HIKER -> UILogin: Set credentials
 UILogin -> Authentication: Login Request
@@ -45,6 +38,13 @@ else Login Failure
 	Authentication --> UILogin: Load Login
 	end
 
+legend
+|= Object |= Explain |= Color |
+|HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>   </back> |
+|UIAplication and UILogin| They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>   </back> |
+|Authentication service | It's a service.The color that identifies the services is green. |<back:green>   </back> |
+|SOLID|The different colors of roses are to specify that one is\n the SOLID server (purple) and another your personal\n server (pink)|<back:pink>   </back> |
+endlegend
 
 
 
@@ -68,12 +68,8 @@ actor HIKER #red
 participant UIApplication #yellow
 control AddRouteService #green
 database POD #pink
-participant Legend
 
-note right of Legend: Hiker, is the users who will use the application.\nThe color that identifies the hikers is red
-note right of Legend:UIApplication is the GUI\n with which hikers can interact. All GUIs are yellow
-note right of Legend: The color that identifies the services is green.\n For example, addRouteService service.
-note right of Legend: Pink color identify your personal\n server (pink)
+note right of Legend: 
 
 
 HIKER -> UIApplication: ADD ROUTE
@@ -88,7 +84,116 @@ else incorrect
 	POD -> AddRouteService: Route could't be saved
 	AddRouteService --> UIApplication: Failure message
 	end
+
+legend
+|= Object |= Explain |= Color |
+|HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>    </back> |
+|UIAplication | They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>     </back> |
+|AddRoute service | It's a service that allows you to upload routes to your pod.The color that identifies the services is green. |<back:green>    </back> |
+|SOLID|Pink color identify your personal\n server (pink)|<back:pink>    </back> |
+endlegend
 ----
 
 
-=== <Runtime Scenario n>
+=== Map view with routes ===
+
+* The user clicks on the "View map" button and then clicks on the route of his pod that he wants to see on the map.
+* Then the service will take care of asking the POD for that route and show it on the map, which here is divided into two options:
+** You have chosen a route and it has been possible to download the POD, which will be shown on the map
+** You have chosen a route and it could not be downloaded from the POD, which will show an error message
+
+This is the sequence to generate the uml:
+
+[plantuml,"View Map",png]
+----
+title View a map with routes
+
+
+
+actor USER #red
+participant UI #yellow
+control DataService #green
+database POD #pink
+
+USER-> UI : Click button "Ver Mapa"
+USER -> UI: Select route
+UI -> DataService: getRoute()
+DataService -> POD: Get Route of POD
+
+alt successful
+	POD -> DataService: Route
+	DataService --> UI: Successful notification
+
+else failure
+	POD -> DataService: No Route
+	DataService --> UI: Error notification
+	end
+
+legend
+|= Object |= Explain |= Color |
+|HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>    </back> |
+|UIAplication | They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>     </back> |
+|AddRoute service | It's a service that allows you to view routes in the map.The color that identifies the services is green. |<back:green>    </back> |
+|SOLID|Pink color identify your personal\n server (pink)|<back:pink>    </back> |
+endlegend
+----
+=== Share routes ===
+
+* The user clicks on the "Share routes" button and And you can click on the route you want to share.
+* Then you can select the friend with whom you want to share that route and the service will take care of getting that route from your POD and send the route to your friend's POD:
+** You have chosen a route and it has been possible to download the POD and it has been successfully sent to your friend
+** You have chosen a route and it could not be sended to your friend's POD, which will show an error message
+
+** If the route has been received correctly notify your friend that they have a new shared route
+
+**  If the route could not be received, a notification will be sent to your friend that the route could not be received.
+
+This is the sequence to generate the uml:
+
+[plantuml,"Share routes",png]
+----
+title Share routes with your friends
+
+
+
+actor USER #red
+participant UI #yellow
+control DataService #green
+database POD #pink
+participant FRIEND_UI #yellow
+database FRIEND_POD #pink
+
+USER -> UI: SHARE Route
+UI -> DataService: shareRoute(friend)
+DataService -> POD: Get Route
+DataService -> FRIEND_POD: Send Route
+
+alt successful
+	POD -> DataService: Route sended
+	DataService --> UI: Successful notification
+
+else failure
+	POD -> DataService: Route not sended
+	DataService --> UI: Failure notification
+	end
+
+
+
+alt successful
+	FRIEND_POD -> DataService: Route received
+	DataService --> FRIEND_UI: Successful notification
+
+else failure
+	FRIEND_POD -> DataService: Route not received
+	DataService --> FRIEND_UI: Failure notification
+	end
+
+legend
+|= Object |= Explain |= Color |
+|HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>    </back> |
+|UIAplication | They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>     </back> |
+|AddRoute service | It's a service that allows you to view routes in the map.The color that identifies the services is green. |<back:green>    </back> |
+|SOLID|Pink color identify your personal\n server (pink)|<back:pink>    </back> |
+endlegend
+----
+

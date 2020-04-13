@@ -31,15 +31,15 @@ To carry out this this app, we are using SOLID specifications and the React fram
 
 
 === Quality Goals
-
+The priority will go in decreasing order. The number one will be the most priority and will decrease the priority
 |===
 | Priority | Quality goal | Scenario 
 
-| 1 | Security | An user doesn't want to share his information with another one unless he gives him permission.
-| 2 | Usability | There is a new user in our app and he wants to start to use all its functionality as soon as possible.
-| 3 | Efficiency | When an user wants to load a route, it must be in a short time.
-| 4 | Mantainability | The developer team wants to add more functionality to the application.
-| 5 | Compatibility | Someone wants to share his route from other app with some user that is using Viade.
+| 1 | Usability | There is a new user in our app and he wants to start to use all its functionality as soon as possible.
+| 2 | Security | An user doesn't want to share his information with another one unless he gives him permission.
+| 3 | Mantainability | The developer team wants to add more functionality to the application.
+| 4 | Compatibility | Someone wants to share his route from other app with some user that is using Viade.
+| 5 | Efficiency | When an user wants to load a route, it must be in a short time.
 |===
 
 === Stakeholders
@@ -50,6 +50,6 @@ To carry out this this app, we are using SOLID specifications and the React fram
 | Teachers | Teaching staff of ASW | Well developed app paying special attention to its architecture.
 | Inrupt | Startup behind SOLID | Well usage of their technology in decentralized apps.
 | Developers | Members of the team that create the app | Develop a functional and maintainable app.
-| Users | Users of this app | Efficient and usable app to share their routes.
+| Hiker, Cyclist, Runner, Mountaineer,...  | Users of this app| Efficient and usable app to share their routes.
 |===
 

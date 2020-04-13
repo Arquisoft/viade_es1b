@@ -1,9 +1,9 @@
 [[section-quality-scenarios]]
 == Quality Requirements
 :imagesdir: images
+
 ////
-[role="arc42help"]
-****
+*
 
 .Content
 This section contains all quality requirements as quality tree with scenarios. The most important ones have already been described in section 1.2. (quality goals)
@@ -15,7 +15,7 @@ which will not create high risks when they are not fully achieved.
 Since quality requirements will have a lot of influence on architectural
 decisions you should know for every stakeholder what is really important to them,
 concrete and measurable.
-****
+*
 ////
 === Quality Tree
 
@@ -43,10 +43,12 @@ In this section we take a deeper look at some of the quality requirements mentio
 |Share Features| Users are the only entities capable of allow sharing of their routes to other users
 |Permissions| The application must ask permission to the user in order to gain access to funcionality of the device such as GPS signal, wireless communication and such others
 |Accessibility| The app must meet at least the minimum accessibility standards in order to guarantee a wide user base
-|Offline access| Routes stored in local storage must be access at any point by the user, even if the device is offline
+//|Offline access| Routes stored in local storage must be access at any point by the user, even if the device is offline
 |Look and Feel| The app should be good looking and the interface needs to be desgined in a way that allows a coherent aesthetic between all the options and accessible at the same time
 |Social Features| All social features such as share routes or send files to other users are blocked unless the user is authenticated. Otherwise the user cannot use said options
 |Data Storage| Users have the choice of storing their routes locally in the device while maintaining a copy in their POD 
+|Map|Regarding the design of the map, it has been decided that the map is shown in the center and on the side, in the case of seeing routes, showing the name of the route and the other routes of the user. In the case of wanting to upload your route, a dialog will be displayed in which you can write the name and save it through a button
+
 |=======================
 
 ****
