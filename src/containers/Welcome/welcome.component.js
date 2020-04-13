@@ -1,5 +1,5 @@
 import React from 'react';
-import {useWebId } from '@solid/react';
+import { useWebId } from '@solid/react';
 import { Trans, useTranslation } from 'react-i18next';
 import {
   WelcomeCard,
@@ -16,7 +16,6 @@ import {
 export const WelcomePageContent = props => {
   const { t } = useTranslation();
   const name = useWebId();
-  console.log(name);
 
   const style = {
     position: 'absolute',
@@ -26,41 +25,41 @@ export const WelcomePageContent = props => {
     backgroundRepeat: 'repeat',
     padding: '50px 0',
   };
-  
+
 
   return (
-    
+
     <section data-testid="welcome-wrapper" style={style}>
       <WelcomeCard className="card">
         <WelcomeLogo data-testid="welcome-logo">
-            <img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} alt="Inrupt" />
-          </WelcomeLogo>
-          <WelcomeProfile data-testid="welcome-profile">
+          <img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} alt="Inrupt" />
+        </WelcomeLogo>
+        <WelcomeProfile data-testid="welcome-profile">
+          <h3>
+            {t('welcome.welcome')}, <a href={name}>{name}</a>
+          </h3>
+        </WelcomeProfile>
+      </WelcomeCard>
+      <WelcomeCard className="card">
+        <WelcomeDetail data-testid="welcome-detail">
+          <Trans i18nKey="welcome.title">
             <h3>
-              {t('welcome.welcome')}, <a href={name}>{name}</a>
+              title
             </h3>
-          </WelcomeProfile>
-        </WelcomeCard>
-        <WelcomeCard className="card">
-          <WelcomeDetail data-testid="welcome-detail">
-            <Trans i18nKey="welcome.title">
-              <h3>
-                title
-            </h3>
-            </Trans>
+          </Trans>
 
-            <p>{t('welcome.summary')}</p>
-            <h3>{t('welcome.contactUsTitle')}</h3>
-            <Trans i18nKey="welcome.contactUsText">
-              <p>
-                If you have additional questions about the use of the Application, you can go to our
+          <p>{t('welcome.summary')}</p>
+          <h3>{t('welcome.contactUsTitle')}</h3>
+          <Trans i18nKey="welcome.contactUsText">
+            <p>
+              If you have additional questions about the use of the Application, you can go to our
               <a href="https://github.com/Arquisoft/viade_es1b">GitHub site</a>.
             </p>
           </Trans>
         </WelcomeDetail>
       </WelcomeCard>
-      
+
     </section>
-    
+
   );
 };
