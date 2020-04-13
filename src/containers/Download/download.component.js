@@ -3,8 +3,6 @@ import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 import bajarRutas from "./bajarRutas";
 import { DivStyle, ButtonStyle, InputStyle } from './download.style';
-import { LoggedOut, LoggedIn } from '@solid/react';
-import { Redirect } from 'react-router-dom';
 
 class DownloadComponent extends React.Component {
 
@@ -35,7 +33,6 @@ class DownloadComponent extends React.Component {
             <DivStyle>
                 <InputStyle data-testid="download-input" type="text" onChange={this.obtenerCarpetaPod} placeholder="Write routes address..." />
                 <ButtonStyle data-testid="download-button" onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="40" height="40" alt="" /> </ButtonStyle>
-                
             </DivStyle>
         );
     }

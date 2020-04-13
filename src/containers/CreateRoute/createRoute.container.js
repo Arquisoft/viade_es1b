@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import L from 'leaflet';
 import { TileLayer, Marker, Polyline } from 'react-leaflet';
 import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2, ChooseButton } from './createRoute.style';
@@ -13,7 +14,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
-class createRoute extends React.Component {
+class CreateRoute extends React.Component {
 
   constructor() {
     super();
@@ -51,6 +52,22 @@ class createRoute extends React.Component {
     markers.push({ lat: e.latlng.lat, lng: e.latlng.lng })
     this.setState({ markers })
     this.draw();
+
+  //   var update = <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
+  //   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+  //   {this.state.markers.map((position, idx) =>
+  //     <Marker key={`marker-${idx}`} position={position}>
+  //     </Marker>
+      
+  //   )}
+  //   <Polyline
+  //     positions={this.draw()}
+  //   />
+    
+  // </MapStyle>
+
+  //   ReactDOM.render(update, document.getElementById('map'));
+
   }
 
   draw() {
@@ -104,17 +121,17 @@ class createRoute extends React.Component {
     return (
       <React.Fragment>
         <DivStyle>
-          <InputStyle id="name" type="text" placeholder="Write route name..." ref={this.name} onChange={this.updateValue} />
-          <ButtonStyle onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> </ButtonStyle>
-          <ButtonStyle2 onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
-          <ChooseButton>
+          <InputStyle data-testid="name-input" id="name" type="text" placeholder="Write route name..." ref={this.name} onChange={this.updateValue} />
+          <ButtonStyle data-testid="upload-button" onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> </ButtonStyle>
+          <ButtonStyle2 data-testid="clear-button" onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
+          <ChooseButton data-testid="upload-images-button">
             <input type="file" id="photo" name="image" accept="image/*" multiple={true} onChange={(e) => this.addImage(e.target.files)} />
             <label id="label-input" htmlFor="photo">
               <span>Elegir fotos</span>
               <img src={process.env.PUBLIC_URL + "/img/icon/photo.svg"} width="50" height="30" alt="" />
             </label>
           </ChooseButton>
-          <ChooseButton>
+          <ChooseButton data-testid="upload-videos-button">
             <input type="file" id="video" name="video" accept="video/*" multiple={true} onChange={(e) => this.addVideo(e.target.files)} />
             <label id="label-input" htmlFor="video">
               <span>Elegir vídeos</span>
@@ -123,18 +140,21 @@ class createRoute extends React.Component {
           </ChooseButton>
         </DivStyle>
         <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {this.state.markers.map((position, idx) =>
             <Marker key={`marker-${idx}`} position={position}>
             </Marker>
+            
           )}
           <Polyline
             positions={this.draw()}
           />
+          
         </MapStyle>
       </React.Fragment>
     );
   }
 }
 
-export default createRoute;
+export default CreateRoute;

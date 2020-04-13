@@ -1,0 +1,27 @@
+{
+    "@context": "http://schema.org",
+    "@type": "Trip",
+    "name": "test1",
+    "itinerary": {
+        "@type": "ItemList",
+        "numberOfItems": 3,
+        "itemListOrder": "http://schema.org/ItemListOrderDescending",
+        "itemListElement": [
+            {
+                "@type": "GeoCoordinates",
+                "latitude": 43.3621617376737,
+                "longitude": -5.859274864196778
+            },
+            {
+                "@type": "GeoCoordinates",
+                "latitude": 43.356451746690055,
+                "longitude": -5.856657028198243
+            },
+            {
+                "@type": "GeoCoordinates",
+                "latitude": 43.35854235219082,
+                "longitude": -5.851593017578125
+            }
+        ]
+    }
+}
