@@ -2,7 +2,6 @@ import React from 'react';
 import L from 'leaflet';
 import { TileLayer, Marker, Polyline } from 'react-leaflet';
 import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2, ChooseButton } from './createRoute.style';
-//import createJson from '../../viade/ParserRoute/Parsers/RDF/route-to-JSON';
 import CreateRouteService from '../../services/CreateRouteService';
 
 
@@ -22,9 +21,8 @@ class createRoute extends React.Component {
       markers: [],
       name: "",
       images: [],
-      videos:[]
+      videos: []
     };
-    
   }
 
   getLocation() {
@@ -44,11 +42,8 @@ class createRoute extends React.Component {
               lng: -5.8512792,
             }
           })
-
         });
     }
-
-
   }
 
   mapClick = (e) => {
@@ -56,14 +51,12 @@ class createRoute extends React.Component {
     markers.push({ lat: e.latlng.lat, lng: e.latlng.lng })
     this.setState({ markers })
     this.draw();
-
   }
 
   draw() {
     let points = [];
-    for (let i = 0; i < this.state.markers.length; i++) {
+    for (let i = 0; i < this.state.markers.length; i++)
       points.push({ lat: this.state.markers[i].lat, lng: this.state.markers[i].lng })
-    }
     return points;
   };
 
@@ -86,25 +79,22 @@ class createRoute extends React.Component {
       CreateRouteService.createRoute(name, markers, this.state.images, this.state.videos);
       //createJson.createJson(name, markers);
     }
-
   }
 
   clear() {
     window.location.reload();
   }
 
-  addImage(imageList){
-    for (let i =0; i<imageList.length; i++){
+  addImage(imageList) {
+    for (let i = 0; i < imageList.length; i++)
       this.state.images.push(imageList[i]);
-    }
     console.log(imageList);
     console.log(this.state.images);
   }
 
-  addVideo(videoList){
-    for (let i =0; i<videoList.length; i++){
+  addVideo(videoList) {
+    for (let i = 0; i < videoList.length; i++)
       this.state.videos.push(videoList[i]);
-    }
     console.log(videoList);
     console.log(this.state.videos);
   }
@@ -113,41 +103,36 @@ class createRoute extends React.Component {
     this.getLocation();
     return (
       <React.Fragment>
-        
-          <DivStyle>
-            <InputStyle id="name" type="text" placeholder="Write route name..." ref={this.name} onChange={this.updateValue} />
-            <ButtonStyle onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> </ButtonStyle>
-            <ButtonStyle2 onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
-            <ChooseButton>
-              <center>
-                <input type="file" id="photo" name="image" accept="image/*" multiple={true} onChange={(e) => this.addImage(e.target.files)}/>
-									<label id="label-input" htmlFor="photo">
-										<span>Elegir fotos</span>
-									</label>
-              </center>
-            </ChooseButton>
-            <ChooseButton>
-              <center>
-                <input type="file" id="video" name="video" accept="video/*" multiple={true} onChange={(e) => this.addVideo(e.target.files)}/>
-									<label id="label-input" htmlFor="video">
-										<span>Elegir videos</span>
-									</label>
-              </center>
-            </ChooseButton>
-          </DivStyle>
-          <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            {this.state.markers.map((position, idx) =>
-              <Marker key={`marker-${idx}`} position={position}>
-              </Marker>
-            )}
-            <Polyline
-              positions={this.draw()}
-            />
-          </MapStyle>
-        
+        <DivStyle>
+          <InputStyle id="name" type="text" placeholder="Write route name..." ref={this.name} onChange={this.updateValue} />
+          <ButtonStyle onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> </ButtonStyle>
+          <ButtonStyle2 onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
+          <ChooseButton>
+            <input type="file" id="photo" name="image" accept="image/*" multiple={true} onChange={(e) => this.addImage(e.target.files)} />
+            <label id="label-input" htmlFor="photo">
+              <span>Elegir fotos</span>
+              <img src={process.env.PUBLIC_URL + "/img/icon/photo.svg"} width="50" height="30" alt="" />
+            </label>
+          </ChooseButton>
+          <ChooseButton>
+            <input type="file" id="video" name="video" accept="video/*" multiple={true} onChange={(e) => this.addVideo(e.target.files)} />
+            <label id="label-input" htmlFor="video">
+              <span>Elegir vídeos</span>
+              <img src={process.env.PUBLIC_URL + "/img/icon/videocamera.svg"} width="50" height="30" alt="" />
+            </label>
+          </ChooseButton>
+        </DivStyle>
+        <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          {this.state.markers.map((position, idx) =>
+            <Marker key={`marker-${idx}`} position={position}>
+            </Marker>
+          )}
+          <Polyline
+            positions={this.draw()}
+          />
+        </MapStyle>
       </React.Fragment>
-
     );
   }
 }

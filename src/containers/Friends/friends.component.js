@@ -3,26 +3,11 @@ import { LoggedOut, LoggedIn, useWebId } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MisAmigosDiv, ContainerDiv, ListaDiv, InputStyle, AmigosDiv } from './friends.style';
-import { makeStyles } from '@material-ui/core/styles';
 import addFriend from '../../viade/Friends/addFriend';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        width: '100%',
-        height: '90%',
-        backgroundColor: theme.palette.background.paper,
-        position: 'relative',
-        overflow: 'auto',
-    },
-    listSection: {
-        backgroundColor: 'inherit',
-    },
-}));
 
 const Friends = props => {
     const { t } = useTranslation();
     const name = useWebId();
-    const classes = useStyles();
     var friends = [];
     (async () => {
         friends = await addFriend.friends
