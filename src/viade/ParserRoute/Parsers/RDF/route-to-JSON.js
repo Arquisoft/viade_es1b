@@ -30,7 +30,7 @@ class createJson {
             id = id.replace('/profile/card#me', '/public/');
             try {
                 alert(id + n + "_" + name + ".json");
-                await this.state.sfc.putFile(id + n + "_" + name + ".json", archivo, archivo.type);
+                await this.state.sfc.postItem(id + n + "_" + name + ".json", archivo, "application/json",archivo.type);
                 alert("Archivo subido");
             }
             catch (error) {
