@@ -13,32 +13,49 @@ class CreateRouteService {
         };
     }
 
-    async createRoute(name, markers, images) {
-        this.fileName = name;
-
-        createJson.createJson(name, markers);
-        this.state.routeJson = JSON.parse(createJson.fileToUpload);
-        this.state.routeJson = JSON.stringify(this.state.routeJson);
-        //console.log(this.state);
-        console.log(images);
-
+    async createRoute(name, markers, images, videos) {
 
         let session = await auth.currentSession();
 
         if (session) {
+            let imagesRoutes =[];
+            let videosRoutes =[];
 
-            var id = `${session.webId}`;
-            id = id.replace('/profile/card#me', '/public/');
+            var webId = `${session.webId}`;
 
-            this.subirFicheroAPod(name, this.state.routeJson, id);
+            
+            let id = webId.replace('/profile/card#me', '/public/');
 
             for (let i = 0; i < images.length; i++) {
-                if (fc.createFile(id + "resources/" + images[i].name, images[i], "image/png")) {
+                let imageRoute = id + "resources/" + images[i].name;
+                if (fc.createFile(imageRoute, images[i], images[i].type)) {
+                    imagesRoutes.push(imageRoute);
                     alert("Foto " + images[i].name + " subida ");
                 } else {
                     alert("Error al subir la foto " + images[i].name);
                 }
             }
+
+            for (let i = 0; i < videos.length; i++) {
+                let videoRoute = id + "resources/" + videos[i].name;
+                if (fc.createFile(videoRoute, videos[i], videos[i].type)) {
+                    videosRoutes.push(videoRoute);
+                    alert("Foto " + videos[i].name + " subida ");
+                } else {
+                    alert("Error al subir la foto " + videos[i].name);
+                }
+            }
+
+            this.fileName = name;
+
+            createJson.createJson(name, markers, imagesRoutes, videosRoutes, webId);
+            this.state.routeJson = JSON.parse(createJson.fileToUpload);
+            this.state.routeJson = JSON.stringify(this.state.routeJson);
+            //console.log(this.state);
+            console.log(images);
+
+
+            this.subirFicheroAPod(name, this.state.routeJson, id);
         }
         else {
             console.log("No estás loggeado");
@@ -64,43 +81,6 @@ class CreateRouteService {
 
     }
 
-    //   async createFolder (folder, file, photo, video, setFile, setImage, setVideo) {
-    //     let existe = await fc.itemExists(folder);
-    //     if (!existe) {
-    //       await fc.createFolder(folder);
-    //     }
-    //     let i = 0;
-
-
-    //     await fc.createFile(folder + "/routes/" + file.name, file, file.type);
-    //     await fc.createFile(folder + "/comments/routeComments/" + file.name.split('.json')[0] + "Comments.json", getJson(), file.type);
-
-    //     for (i = 0; photo != null && i < photo.length; i++) {
-    //       if(fc.createFile(folder + "/resources/" + photo[i].name, photo[i], "image/png")){
-    //         showSuccessUploadFile("La photo "+ photo[i].name);
-    //       }else{
-    //         showErrorUploadFile("La photo"+ photo[i].name);
-    //       }
-    //     }
-
-    //     for (i = 0; video != null && i < video.length; i++) {
-    //       if(fc.createFile(folder + "/resources/" + video[i].name, video[i], "video/mp4")){
-    //         showSuccessUploadFile("El video"+ video[i].name);
-    //       }else{
-    //         showErrorUploadFile("El video"+ video[i].name);
-    //       }
-    //     }
-
-    //     showSuccessUploadFile("Ruta " + file.name);
-
-    //     setFile(null);
-    //     setImage(null);
-    //     setVideo(null);
-
-    //     document.getElementById('photo').value = null;
-    //     document.getElementById('video').value = null;
-    //     document.getElementById('route').value = null;
-    //   }
 }
 
 export default CreateRouteService = new CreateRouteService();

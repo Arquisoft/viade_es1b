@@ -21,7 +21,8 @@ class createRoute extends React.Component {
     this.state = {
       markers: [],
       name: "",
-      images: []
+      images: [],
+      videos:[]
     };
     
   }
@@ -82,7 +83,7 @@ class createRoute extends React.Component {
       alert("La ruta tiene que tener al menos 2 puntos");
     if (name.length !== 0 && markers.length > 1) {
       alert("Ruta guardada correctamente");
-      CreateRouteService.createRoute(name, markers, this.state.images);
+      CreateRouteService.createRoute(name, markers, this.state.images, this.state.videos);
       //createJson.createJson(name, markers);
     }
 
@@ -100,6 +101,14 @@ class createRoute extends React.Component {
     console.log(this.state.images);
   }
 
+  addVideo(videoList){
+    for (let i =0; i<videoList.length; i++){
+      this.state.videos.push(videoList[i]);
+    }
+    console.log(videoList);
+    console.log(this.state.videos);
+  }
+
   render() {
     this.getLocation();
     return (
@@ -111,9 +120,17 @@ class createRoute extends React.Component {
             <ButtonStyle2 onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
             <ChooseButton>
               <center>
-                <input type="file" id="photo" name="image" accept=".png" multiple={true} onChange={(e) => this.addImage(e.target.files)}/>
+                <input type="file" id="photo" name="image" accept="image/*" multiple={true} onChange={(e) => this.addImage(e.target.files)}/>
 									<label id="label-input" htmlFor="photo">
 										<span>Elegir fotos</span>
+									</label>
+              </center>
+            </ChooseButton>
+            <ChooseButton>
+              <center>
+                <input type="file" id="video" name="video" accept="video/*" multiple={true} onChange={(e) => this.addVideo(e.target.files)}/>
+									<label id="label-input" htmlFor="video">
+										<span>Elegir videos</span>
 									</label>
               </center>
             </ChooseButton>
