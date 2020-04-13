@@ -1,4 +1,4 @@
-import createJson from '../viade/ParserRoute/Parsers/RDF/route-to-JSON';
+import createJson from '../viade/ParserRoute/route-to-JSON';
 import auth from 'solid-auth-client';
 import SolidFileClient from 'solid-file-client';
 const fc = new SolidFileClient(auth, { enableLogging: true });

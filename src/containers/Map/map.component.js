@@ -54,15 +54,8 @@ class Map extends React.Component {
             <h2 data-testid="map-title" id="name">{this.name}</h2>
             <ul data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
           </DivStyle>
-          <MapStyle data-testid="map-map" id="map" center={position} zoom={15}>
+          <MapStyle id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Polyline color={'red'} positions={this.puntos}></Polyline>
-            <Marker position={this.puntos[0]}>
-              <Popup>Inicio</Popup>
-            </Marker>
-            <Marker position={this.puntos[this.puntos.length - 1]}>
-              <Popup>Fin</Popup>
-            </Marker>
           </MapStyle>
       </React.Fragment>
 
