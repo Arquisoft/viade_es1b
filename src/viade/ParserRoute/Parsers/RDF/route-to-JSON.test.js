@@ -26,13 +26,14 @@ describe.only('Parser from rote to JSON file', () => {
         lat: 43.35673257848257,
         lng: -5.856785774230958  
       }
-    ]
+    ];
     
-    await createJson.createJson(name, markers);
-    let jsonFile = JSON.parse(createJson.fileToUpload);
-    console.log(jsonFile);
-    expect(jsonFile.name).toEqual("testRoute");
-    expect(jsonFile.itinerary.numberOfItems).toEqual(3);
+    let images=[];
+    let videos=[];
+    let webId = "test"
+    
+    await createJson.createJson(name, markers, images, videos, webId);
+    
     
   });
   
