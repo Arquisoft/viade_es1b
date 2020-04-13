@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render, queryByTestId, act } from '@testing-library/react';
+import { cleanup, render, queryByTestId, act } from "@testing-library/react";
 import Download from './download.component';
 
 let wrapper;
