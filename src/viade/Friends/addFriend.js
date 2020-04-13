@@ -51,7 +51,6 @@ class AddFriend {
         const friends = [];
         let session = await auth.currentSession();
         var id = `${session.webId}`;
-        console.log(id);
         const user = data[id];
         for await (const friend of user.friends)
             friends.push(friend.toString());
