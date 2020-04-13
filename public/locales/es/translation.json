@@ -37,10 +37,16 @@
     "map":"Mapa",
     "createRoute":"Nueva Ruta",
     "routeLoader":"Cargar Rutas",
+    "friends":"Amigos",
     "languages": {
       "en": "English (Inglés)",
       "es": "Español (Español)"
     }
+  },
+  "friends":{
+    "myFriends": "Mis amigos",
+    "addFriend": "Añadir Amigo",
+    "recievedRequest": "Peticiones recibidas"
   },
   "notFound": {
     "title": "Página no encontrada",
