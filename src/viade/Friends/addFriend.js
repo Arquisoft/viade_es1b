@@ -2,13 +2,11 @@ import ldflex from "@solid/query-ldflex";
 import auth from "solid-auth-client";
 import data from '@solid/query-ldflex';
 
-const reload = () => {
-    window.location.reload();
-};
 class AddFriend {
 
     constructor() {
         this.webId = "";
+        this.friends = this.getFriends();
     }
 
     async addFriend(event, id, webId) {
@@ -20,7 +18,7 @@ class AddFriend {
                     alert('WebId ya pertenece a tus amigos');
                 } else {
                     await user.knows.add(data[id]);
-                    await reload();
+                    await window.location.reload();
                 }
             } else {
                 alert('WebId no válido');
@@ -32,13 +30,11 @@ class AddFriend {
 
     async friendAlreadyAdded(friendWebId, webId) {
         const user = data[webId];
-
-        for await (const friend of user.friends) {
+        for await (const friend of user.friends)
             if (String(friend).localeCompare(String(friendWebId)) === 0) {
                 console.log(friend.toString());
                 return true;
             }
-        }
         return false;
     };
 
@@ -49,7 +45,6 @@ class AddFriend {
                 return;
             else
                 this.webId = session.webId;
-
         });
         for await (const friend of ldflex[this.webId].friends)
             if (String(friend).localeCompare(String(id)) === 0)
@@ -62,11 +57,8 @@ class AddFriend {
         let session = await auth.currentSession();
         var id = `${session.webId}`;
         const user = data[id];
-        for await (const friend of user.friends) {
+        for await (const friend of user.friends)
             friends.push(friend.toString());
-
-
-        }
         const users = await Promise.all(friends);
         return users;
     };

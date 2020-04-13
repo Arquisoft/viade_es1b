@@ -28,8 +28,19 @@ const Friends = props => {
     const name = useWebId();
     const classes = useStyles();
     var friends = [];
-    friends = addFriend.getFriends(name);
-    //console.log(friends);
+    (async () => {
+        friends = await addFriend.friends
+        var str = '<ul>'
+        friends.forEach(function (friend) {
+            str += '<li>' + friend + '</li>';
+        });
+        str += '</ul>';
+        document.getElementById("lista").innerHTML = str;
+
+    })()
+
+
+
 
 
     return (
@@ -52,13 +63,9 @@ const Friends = props => {
                     </MisAmigosDiv>
                     <PeticionesDiv>
                         <h3>{t('friends.myFriends')}</h3>
-                        <List className={classes.root} subheader={<li />}>
-                            {Array(friends).map((i) => (
-                                <ListItem key={i} className={classes.listSection}>
-                                    <button>{console.log(friends)}</button>
-                                </ListItem>
-                            ))}
-                        </List>
+                        <div id="lista">
+
+                        </div>
                     </PeticionesDiv>
                 </ContainerDiv>
             </LoggedIn>
