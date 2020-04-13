@@ -2,13 +2,10 @@ import React from 'react';
 import L from 'leaflet';
 import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
 import { Rutas } from '../../viade/Model';
-import { LoggedOut, LoggedIn } from '@solid/react';
-import { Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { MapStyle, DivStyle } from './map.style';
 
 delete L.Icon.Default.prototype._getIconUrl;
-
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
@@ -50,20 +47,14 @@ class Map extends React.Component {
   render() {
     Rutas.actualizarRutasConPod();
     const position = this.puntos[0];
-
-
-
-
-
     return (
 
-      <React.Fragment id="map" >
-        <LoggedIn>
+      <React.Fragment >
           <DivStyle>
-            <h2 id="name">{this.name}</h2>
-            <ul>{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
+            <h2 data-testid="map-title" id="name">{this.name}</h2>
+            <ul data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
           </DivStyle>
-          <MapStyle id="map" center={position} zoom={15}>
+          <MapStyle data-testid="map-map" id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Polyline color={'red'} positions={this.puntos}></Polyline>
             <Marker position={this.puntos[0]}>
@@ -73,10 +64,6 @@ class Map extends React.Component {
               <Popup>Fin</Popup>
             </Marker>
           </MapStyle>
-        </LoggedIn>
-        <LoggedOut>
-          <Redirect to='/login'></Redirect>
-        </LoggedOut>
       </React.Fragment>
 
     );

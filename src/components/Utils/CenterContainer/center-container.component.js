@@ -7,7 +7,7 @@ type Props = {
 };
 
 const CenterContainer = ({ children, className }: Props) => (
-  <CenterContainerWrapper className={className}>
+  <CenterContainerWrapper data-testid="centerContainer-wrapper" className={className}>
     <div className="wrapper">{children}</div>
   </CenterContainerWrapper>
 );

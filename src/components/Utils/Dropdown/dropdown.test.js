@@ -1,18 +1,25 @@
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
+import { render, cleanup, getByTestId } from '@testing-library/react';
 import Dropdown from './dropdown.component';
 
-afterAll(cleanup);
+//afterAll(cleanup);
+let wrapper;
+beforeEach(() => {
+  const { container, debug } = render(<Dropdown className="dropDownContainer" />);
+  wrapper = container;
+  debug();
+});
+
 
 describe.only('Dropdown', () => {
-  const { container, getByTestId } = render(<Dropdown className="dropDownContainer" />);
+  
 
   test('renders without crashing', () => {
-    expect(container).toBeTruthy();
+    expect(wrapper).toBeTruthy();
   });
 
   test('renders styled components', () => {
-    expect(document.querySelector('.dropDownContainer')).toBeTruthy();
-    expect(getByTestId('dropdownMain')).toBeTruthy();
+    expect(getByTestId(wrapper, 'dropdown-container')).toBeTruthy();
+    expect(getByTestId(wrapper, 'dropdownMain')).toBeTruthy();
   });
 });

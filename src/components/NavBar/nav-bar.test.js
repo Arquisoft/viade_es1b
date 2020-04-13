@@ -1,36 +1,38 @@
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { render, cleanup, act, queryByTestId } from '@testing-library/react';
 import NavBar from './nav-bar.component';
+import '@testing-library/jest-dom'
 
-afterAll(cleanup);
+
+let wrapper;
+beforeEach(() => act(() => {
+  const { container, debug } = render(
+    <NavBar />
+  );
+  wrapper = container;
+  debug();
+}
+
+));
 
 describe.only('Nav Bar', () => {
-  const { container, rerender } = render(
-    <Router>
-      <NavBar />
-    </Router>
-  );
+  afterAll(cleanup);
 
   it('renders without crashing', () => {
-    expect(container).toBeTruthy();
+    expect(wrapper).toBeTruthy();
   });
 
-  it('renders with Navigation', () => {
-    rerender(
-      <Router>
-        <NavBar navigation={[]} />
-      </Router>
-    );
-    expect(document.querySelector('.nav__primary')).toBeTruthy();
+  it('renders with all available links', async() => {
+    
+    await expect(queryByTestId(wrapper, "nav-bar-home")).not.toBeNull();
+    await expect(queryByTestId(wrapper, "nav-bar-map")).not.toBeNull();
+    await expect(queryByTestId(wrapper, "nav-bar-createRoute")).not.toBeNull();
+    await expect(queryByTestId(wrapper, "nav-bar-download")).not.toBeNull();
+    await expect(queryByTestId(wrapper, "nav-bar-profile")).not.toBeNull();
+    await expect(queryByTestId(wrapper, "nav-bar-language")).not.toBeNull();
+    await expect(queryByTestId(wrapper, "nav-bar-logout")).not.toBeNull();
+    
   });
 
-  it('renders with Toolbar', () => {
-    rerender(
-      <Router>
-        <NavBar toolbar={[]} />
-      </Router>
-    );
-    expect(document.querySelector('.nav__toolbar')).toBeTruthy();
-  });
+  
 });

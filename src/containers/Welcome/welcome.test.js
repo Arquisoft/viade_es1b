@@ -1,36 +1,29 @@
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { WelcomeComponent } from './welcome.container';
+import { render, queryByTestId, act } from '@testing-library/react';
+import Welcome from '../Welcome';
 
-library.add(fas);
-
-const props = {
-  webId: 'https://exmaple.com/#me',
-  image: 'test.png',
-  updatePhoto: 'updated.png',
-  name: 'example'
-};
-
-describe.only('Welcome', () => {
-  afterAll(cleanup);
-  const { container, getByTestId } = render(
-    <Router>
-      <WelcomeComponent {...{ ...props }} />
-    </Router>
+let wrapper;
+beforeEach(() => act(() => {
+  const { container, debug } = render(
+    <Welcome />
   );
+  wrapper = container;
+  debug();
+}
+
+));
+
+describe('Welcome Page Render', () => {
 
   test('renders without crashing', () => {
-    expect(container).toBeTruthy();
+    expect(wrapper).toBeTruthy();
   });
 
-  test('renders with styled components', () => {
-    expect(getByTestId('welcome-wrapper')).toBeTruthy();
-    expect(getByTestId('welcome-logo')).toBeTruthy();
-    expect(getByTestId('welcome-profile')).toBeTruthy();
-    expect(getByTestId('welcome-detail')).toBeTruthy();
-    expect(document.querySelector('.card')).toBeTruthy();
+  test('renders all components', () => {
+    expect(queryByTestId(wrapper, "welcome-logo")).not.toBeNull();
+    expect(queryByTestId(wrapper, "welcome-wrapper")).not.toBeNull();
+    expect(queryByTestId(wrapper, "welcome-profile")).not.toBeNull();
   });
+
+
 });

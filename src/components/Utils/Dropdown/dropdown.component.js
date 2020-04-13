@@ -41,6 +41,7 @@ class Dropdown extends Component<Props, State> {
 
     return (
       <DropdownContainer
+        data-testid="dropdown-container"
         className={className}
         onClick={this.toggleOpen}
         onMouseEnter={hover ? this.toggleOpen : null}

@@ -1,6 +1,5 @@
 import React from 'react';
-import {LoggedOut, LoggedIn, useWebId } from '@solid/react';
-import { Redirect } from 'react-router-dom';
+import { useWebId } from '@solid/react';
 import { Trans, useTranslation } from 'react-i18next';
 import {
   WelcomeCard,
@@ -17,36 +16,38 @@ import {
 export const WelcomePageContent = props => {
   const { t } = useTranslation();
   const name = useWebId();
+
   const style = {
     position: 'absolute',
     width: '100%',
-    height: '100%',
+    height: '92.4%',
     backgroundImage: 'linear-gradient(to right, white, lightblue)',
     backgroundRepeat: 'repeat',
     padding: '50px 0',
   };
+
+
   return (
+
     <section data-testid="welcome-wrapper" style={style}>
-       <LoggedIn>
       <WelcomeCard className="card">
         <WelcomeLogo data-testid="welcome-logo">
-            <img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} alt="Inrupt" />
+          <img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} alt="Inrupt" />
         </WelcomeLogo>
         <WelcomeProfile data-testid="welcome-profile">
           <h3>
-              {t('welcome.welcome')}, <a href={name}>{name}</a>
+            {t('welcome.welcome')}, <a href={name}>{name}</a>
           </h3>
         </WelcomeProfile>
       </WelcomeCard>
       <WelcomeCard className="card">
         <WelcomeDetail data-testid="welcome-detail">
-        <Trans i18nKey="welcome.title">
-          <h3>
+          <Trans i18nKey="welcome.title">
+            <h3>
               title
-              
             </h3>
           </Trans>
-          
+
           <p>{t('welcome.summary')}</p>
           <h3>{t('welcome.contactUsTitle')}</h3>
           <Trans i18nKey="welcome.contactUsText">
@@ -57,10 +58,8 @@ export const WelcomePageContent = props => {
           </Trans>
         </WelcomeDetail>
       </WelcomeCard>
-      </LoggedIn>
-      <LoggedOut>
-        <Redirect to='/login'></Redirect>
-      </LoggedOut> 
+
     </section>
+
   );
 };

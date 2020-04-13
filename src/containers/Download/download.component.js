@@ -19,23 +19,23 @@ class DownloadComponent extends React.Component {
         this.obtenerCarpetaPod = this.obtenerCarpetaPod.bind(this);
     }
 
-    obtenerCarpetaPod(parameter) {
-        this.setState({ direccion: parameter.target.value });
+    async obtenerCarpetaPod(parameter) {
+        parameter.persist();
+        let session = await auth.currentSession();
+        var id = `${session.webId}`;
+        id = id.replace('/profile/card#me', '/'+parameter.target.value);
+        if(session) {
+        this.setState({ direccion: id });
+    }
     };
 
     render() {
 
         return (
-            // La parte visible de la interfaz
-            // El () => es para que no salte automaticamente cada vez que cargue la pagina
             <DivStyle>
-                <LoggedIn>
-                    <InputStyle type="text" onChange={this.obtenerCarpetaPod} placeholder="Write routes address..." />
-                    <ButtonStyle onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > Bajar Rutas </ButtonStyle>
-                </LoggedIn>
-                <LoggedOut>
-                    <Redirect to='/login'></Redirect>
-                </LoggedOut>
+                <InputStyle data-testid="download-input" type="text" onChange={this.obtenerCarpetaPod} placeholder="Write routes address..." />
+                <ButtonStyle data-testid="download-button" onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="40" height="40" alt="" /> </ButtonStyle>
+                
             </DivStyle>
         );
     }

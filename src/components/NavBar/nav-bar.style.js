@@ -12,6 +12,23 @@ export const DivStyle = styled.div`
     height: 5%;
   `;
 
+export const DivStyle2 = styled.div`
+    background-color: #FFFFFF;
+    border: 1px solid lightgray;
+    text-align: left;
+    padding: 9px;
+    width: auto;
+    height: 5%;
+  `;
+export const DivStyle3 = styled.div`
+    background-color: #FFFFFF;
+    border: 1px solid lightgray;
+    text-align: left;
+    padding: 3px;
+    width: auto;
+    height: 5%;
+  `;
+
 export const NavStyle = styled(Navbar)`
     background-image: linear-gradient(to right, white, lightgrey);
     border: 1px solid lightgray;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import data from '@solid/query-ldflex';
 import { namedNode } from '@rdfjs/data-model';
 import { WelcomePageContent } from './welcome.component';
@@ -9,7 +9,7 @@ const defaultProfilePhoto = '/img/icon/empty-profile.svg';
 /**
  * Container component for the Welcome Page, containing example of how to fetch data from a POD
  */
-export class WelcomeComponent extends Component<Props> {
+export class WelcomeComponent extends React.Component<Props> {
   constructor(props) {
     super(props);
 

@@ -1,9 +1,9 @@
 import React from "react";
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
-import { LoggedOut, LoggedIn } from '@solid/react';
-import { Redirect } from 'react-router-dom';
-import { DivStyle, ButtonStyle, InputStyle } from './upload.style';
+// import { LoggedOut, LoggedIn } from '@solid/react';
+// import { Redirect } from 'react-router-dom';
+//import { DivStyle, ButtonStyle, InputStyle } from './upload.style';
 
 
 
@@ -61,13 +61,13 @@ class UploadComponent extends React.Component {
         return (
             //Tras coger el item funciona el botón:
             <DivStyle>
-                <LoggedIn>
-                    <InputStyle type="file" onChange={this.itemHandler} />
-                    <ButtonStyle onClick={this.subirFicheroAPod} > Upload </ButtonStyle>
-                </LoggedIn>
+                {/* <LoggedIn> */}
+                    {/* <InputStyle data-testid="upload-input" type="file" onChange={this.itemHandler} />
+                    <ButtonStyle data-testid="upload-button" onClick={this.subirFicheroAPod} > Upload </ButtonStyle> */}
+                {/* </LoggedIn>
                 <LoggedOut>
                     <Redirect to='/login'></Redirect>
-                </LoggedOut>
+                </LoggedOut> */}
             </DivStyle>
 
         );
