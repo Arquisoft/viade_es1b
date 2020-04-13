@@ -9,6 +9,16 @@ export const ContainerDiv = styled.div`
     padding: 5px 0;
 `;
 
+export const PeticionesDiv = styled.div`
+    float:left;
+    width: 50%%;
+    height: auto;
+    border: 1px solid lightgrey;
+    background-image: linear-gradient(to right, white, white);
+    margin: 5px;
+
+`;
+
 export const MisAmigosDiv = styled.div`
     float:left;
     width: 50%;
@@ -16,4 +26,9 @@ export const MisAmigosDiv = styled.div`
     border: 1px solid lightgrey;
     background-image: linear-gradient(to right, white, white);
     margin: 5px;
+`;
+export const InputStyle = styled.input`
+    width: 80%;
+    height: auto;
+   
 `;

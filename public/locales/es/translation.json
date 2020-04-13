@@ -45,7 +45,7 @@
   },
   "friends":{
     "myFriends": "Mis amigos",
-    "sentRequest": "Peticiones enviadas",
+    "addFriend": "Añadir Amigo",
     "recievedRequest": "Peticiones recibidas"
   },
   "notFound": {

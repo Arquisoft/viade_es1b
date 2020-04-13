@@ -45,7 +45,7 @@
   },
   "friends":{
     "myFriends": "My friends",
-    "sentRequest": "Sent requests",
+    "addFriend": "Add Friend",
     "recievedRequest": "Recieved requests"
   },
   "notFound": {

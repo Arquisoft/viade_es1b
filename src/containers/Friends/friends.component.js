@@ -1,11 +1,12 @@
 import React from 'react';
-import { LoggedOut, LoggedIn } from '@solid/react';
+import { LoggedOut, LoggedIn, useWebId } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { MisAmigosDiv, ContainerDiv } from './friends.style';
+import { MisAmigosDiv, ContainerDiv, PeticionesDiv, InputStyle } from './friends.style';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import addFriend from '../../viade/Friends/addFriend';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,11 +22,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+
 const Friends = props => {
     const { t } = useTranslation();
+    const name = useWebId();
     const classes = useStyles();
-    var arrayAmigos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2, 3,]; //deberia llamarse a una funcion que obtenga el listado de amigos 
-    //en la funcion onClick de los botones hay que anañir las funciones relativas a la accion que se quiere realizar
+    var friends = [];
+    friends = addFriend.getFriends(name);
+    //console.log(friends);
+
 
     return (
         <div>
@@ -33,16 +38,28 @@ const Friends = props => {
                 <ContainerDiv>
                     <MisAmigosDiv>
                         <h3>{t('friends.myFriends')}</h3>
+                        <form className="modal-body">
+                            <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input" />
+                            <button onClick={(event) => addFriend.addFriend(event, document.getElementById('input').value, name)} className="send">
+                                <span className="icon">
+                                    <img src={process.env.PUBLIC_URL + "/img/icon/arrow.svg"} width="25" height="20" alt="" />
+                                </span>
+                            </button>
+                        </form>
                         <List className={classes.root} subheader={<li />}>
-                            {arrayAmigos.map((sectionId) => (
-                                <li key={`section-${sectionId}`} className={classes.listSection}>
-                                    <ListItem key={`prueba`}>
-                                        <button>prueba</button>
-                                    </ListItem>
-                                </li>
-                            ))}
+
                         </List>
                     </MisAmigosDiv>
+                    <PeticionesDiv>
+                        <h3>{t('friends.myFriends')}</h3>
+                        <List className={classes.root} subheader={<li />}>
+                            {Array(friends).map((i) => (
+                                <ListItem key={i} className={classes.listSection}>
+                                    <button>{console.log(friends)}</button>
+                                </ListItem>
+                            ))}
+                        </List>
+                    </PeticionesDiv>
                 </ContainerDiv>
             </LoggedIn>
             <LoggedOut>
