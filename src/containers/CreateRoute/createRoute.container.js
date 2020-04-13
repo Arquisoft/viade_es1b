@@ -61,11 +61,12 @@ class createRoute extends React.Component {
 
   draw() {
     let points = [];
-    for (let i = 0; i < this.state.markers.length; i++) {
+    for (let i = 0; i < this.state.markers.length; i++)
+    {
       points.push({ lat: this.state.markers[i].lat, lng: this.state.markers[i].lng })
     }
     return points;
-  };
+  }
 
   updateValue = (n) => {
     var { name } = this.state;

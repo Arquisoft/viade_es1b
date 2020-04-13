@@ -4,7 +4,7 @@ const feature = loadFeature('./e2e/features/login.feature');
 defineFeature(feature, test => {
   
   beforeEach(async () => {
-    await page.goto('http://localhost:3000');
+    await page.goto("http://localhost:3000");
     if(await expect(page).toMatchElement('a', { href: '#/map' })){
         await expect(page).toClick('button', {text: 'Log out'});
     }
