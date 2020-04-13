@@ -1,30 +1,37 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import LoginComponent from './login.component';
+import { cleanup, render, queryByTestId, queryByText, act } from '@testing-library/react';
+import Login from './login.component';
+
+let wrapper;
+beforeEach(() => act(() => {
+  const { container, debug } = render(
+    <Login />
+  );
+  wrapper = container;
+  debug();
+}
+));
 
 describe('Login', () => {
-  const { container, getByTestId } = render(
-    <Router>
-      <LoginComponent t={key => key} />
-    </Router>
-  );
-
+  afterAll(cleanup);
+  
   test('renders without crashing', () => {
-    expect(container).toBeTruthy();
+    expect(wrapper).toBeTruthy();
   });
 
   test('renders with styled components', () => {
     expect(document.querySelector('.login-panel')).toBeTruthy();
     expect(document.querySelector('.panel-body')).toBeTruthy();
-    expect(getByTestId('login-title')).toBeTruthy();
+    
   });
   test('renders title properly', () => {
-    expect(getByTestId('title')).toBeTruthy();
+    
+    expect(queryByTestId(wrapper, "login-title")).not.toBeNull();
   });
 
-  test('renders ProviderLogin', () => {
-    const providerLogin = document.querySelector('.solid-provider-login-component');
-    expect(providerLogin).toBeTruthy();
+  test('renders login button properly ', () => {
+    expect(queryByText(wrapper, "login.formButtonText")).toBeTruthy();
+    
   });
 });
+

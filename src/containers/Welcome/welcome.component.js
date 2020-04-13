@@ -1,6 +1,5 @@
 import React from 'react';
-import { LoggedOut, LoggedIn, useWebId } from '@solid/react';
-import { Redirect } from 'react-router-dom';
+import {useWebId } from '@solid/react';
 import { Trans, useTranslation } from 'react-i18next';
 import {
   WelcomeCard,
@@ -27,11 +26,13 @@ export const WelcomePageContent = props => {
     backgroundRepeat: 'repeat',
     padding: '50px 0',
   };
+  
+
   return (
+    
     <section data-testid="welcome-wrapper" style={style}>
-      <LoggedIn>
-        <WelcomeCard className="card">
-          <WelcomeLogo data-testid="welcome-logo">
+      <WelcomeCard className="card">
+        <WelcomeLogo data-testid="welcome-logo">
             <img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} alt="Inrupt" />
           </WelcomeLogo>
           <WelcomeProfile data-testid="welcome-profile">
@@ -55,13 +56,11 @@ export const WelcomePageContent = props => {
                 If you have additional questions about the use of the Application, you can go to our
               <a href="https://github.com/Arquisoft/viade_es1b">GitHub site</a>.
             </p>
-            </Trans>
-          </WelcomeDetail>
-        </WelcomeCard>
-      </LoggedIn>
-      <LoggedOut>
-        <Redirect to='/login'></Redirect>
-      </LoggedOut>
+          </Trans>
+        </WelcomeDetail>
+      </WelcomeCard>
+      
     </section>
+    
   );
 };

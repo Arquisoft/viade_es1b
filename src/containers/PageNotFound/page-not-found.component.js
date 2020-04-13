@@ -10,14 +10,14 @@ import { PageNotFoundWrapper, PageNotFoundContent } from './page-not-found.style
 const PageNotFound = () => {
   const { t } = useTranslation();
   return (
-    <PageNotFoundWrapper>
+    <PageNotFoundWrapper data-testid='page-not-found-container'>
       <PageNotFoundContent>
         <img src="/img/404.svg" alt="404" />
         <h3>{t('notFound.title')}</h3>
         <p>{t('notFound.content')}</p>
         <div>
-          <a href="/" id="linkToHomepage" className="ids-link">
-            {t('notFound.redirectButton')}
+          <a href="/" id="linkToHomepage" className="ids-link" data-testid='page-not-found-homepage'>
+          {t('notFound.redirectButton')}
           </a>
         </div>
       </PageNotFoundContent>

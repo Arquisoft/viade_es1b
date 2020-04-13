@@ -1,24 +1,28 @@
 import React from 'react';
-import { render, cleanup, screen } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { cleanup, render, queryByTestId, act } from '@testing-library/react';
 import PageNotFound from './page-not-found.component';
 
-describe('Page Not Found', () => {
+let wrapper;
+beforeEach(() => act(() => {
+  const { container, debug } = render(
+    <PageNotFound />
+  );
+  wrapper = container;
+  debug();
+}
+));
+
+describe('Page Not Found Page Render', () => {
   afterAll(cleanup);
 
-  const { container, debug } = render(
-    <Router>
-      <PageNotFound />
-    </Router>
-  );
-
   test('App renders without crashing', () => {
-    expect(container).toBeTruthy();
+    expect(wrapper).toBeTruthy();
   });
-debug();
+  
   test('includes link to homepage', () => {
-    const idsLink = document.querySelector('.ids-link');
 
-    expect(idsLink).toBeDefined();
+    expect(queryByTestId(wrapper, "page-not-found-homepage")).not.toBeNull();
+    
   });
+
 });
