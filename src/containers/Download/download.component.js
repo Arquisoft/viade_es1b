@@ -2,7 +2,7 @@ import React from "react";
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 import bajarRutas from "./bajarRutas";
-import { DivStyle, ButtonStyle, InputStyle } from './download.style';
+import { DivStyle, ButtonStyle, InputStyle } from "./download.style";
 import { LoggedOut, LoggedIn } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 

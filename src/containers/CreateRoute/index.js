@@ -1,3 +1,3 @@
-import createRoute from './createRoute.container';
+import createRoute from "./createRoute.container";
 
 export default createRoute;

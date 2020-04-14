@@ -1,3 +1,3 @@
-import DownloadComponent from './download.component';
+import DownloadComponent from "./download.component";
 
 export default DownloadComponent;

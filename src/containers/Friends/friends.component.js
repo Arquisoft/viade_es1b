@@ -44,7 +44,7 @@ const Friends = props => {
             <LoggedIn>
                 <ContainerDiv>
                     <MisAmigosDiv>
-                        <h3>{t('friends.addFriend')}</h3>
+                        <h3>{t("friends.addFriend")}</h3>
                         <form className="modal-body">
                             <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input" />
                             <button onClick={(event) => addFriend.addFriend(event, document.getElementById('input').value, name)} className="send">
@@ -55,7 +55,7 @@ const Friends = props => {
                         </form>
                     </MisAmigosDiv>
                     <ListaDiv>
-                        <h3>{t('friends.myFriends')}</h3>
+                        <h3>{t("friends.myFriends")}</h3>
                         <AmigosDiv id="lista">
                         </AmigosDiv>
                     </ListaDiv>
