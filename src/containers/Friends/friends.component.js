@@ -13,7 +13,7 @@ const Friends = props => {
         friends = await addFriend.friends
         var str = '<List>'
         friends.forEach(function (friend) {
-            str += '<li style="list-style-type: none;"><input name="food" type="radio" value="dairy">' + friend + '</li>';
+            str += '<li style="list-style-type: none;"><input name="food" type="radio" value=' + friend + ' id = "radio">' + friend + '</li>';
         });
         str += '</List>';
         try {
@@ -32,7 +32,7 @@ const Friends = props => {
                         <h3>{t('friends.myFriends')}</h3>
                         <AmigosDiv id="lista">
                         </AmigosDiv>
-                        <button>
+                        <button onClick={(event) => addFriend.removeFriend(event, name)}>
                             <img src={process.env.PUBLIC_URL + "/img/icon/eraser.svg"} width="40" height="40" alt="" />
                         </button>
                         <button>
@@ -55,7 +55,7 @@ const Friends = props => {
             <LoggedOut>
                 <Redirect to='/login'></Redirect>
             </LoggedOut>
-        </div>
+        </div >
     );
 };
 

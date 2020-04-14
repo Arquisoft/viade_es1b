@@ -27,20 +27,16 @@ class AddFriend {
             alert("WebId no existe")
     };
 
-    async removeFriend(id, webId) {
+    async removeFriend(event, webId) {
+        var selectedOption = document.querySelector('input[name = food]:checked').value;
+        event.preventDefault();
+        console.log(selectedOption);
         const user = data[webId];
-        if (await this.checkID(id)) {
-            if (id.localeCompare("") !== 0) {
-                if (await this.friendAlreadyAdded(id, webId)) {
-                    await user.knows.removeFriend(data[id]);
-                    await window.location.reload();
-                    alert('Amigo eliminado');
-                }
-                else
-                    alert('no sois amigos');
-            }
-        } else
-            alert("WebId no existe")
+        if (selectedOption.localeCompare("") !== 0) {
+            await user.knows.delete(data[selectedOption]);
+            await window.location.reload();
+            alert('Amigo eliminado');
+        }
     };
 
     async checkID(id) {
