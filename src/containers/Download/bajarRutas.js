@@ -20,24 +20,23 @@ class bajarRutas {
                 let folder = await this.sfc.readFolder(direccion);
                 // Leemos los ficheros
                 const files = folder.files;
-                console.log(files);
                 var rutas = false;
                 // Para cada fichero que sea json (o el formato que vaya a ser), lo muestra
                 files.forEach(file => {
                     if (file.type === "application/json") {
-                        this.loadJSon(file.url);
-                        //var jsonRuta = JSON.parse(this.loadJSon(file.url));
-                        //this.rutas.push(jsonRuta);
+                        this.loadJSon(file.url, files);
                         if (!rutas)
                             rutas = true;
                     }
                 });
                 if (rutas) {
                     alert("Rutas bajandose")
+
                 }
-                else {
+                else
                     alert("No hay rutas");
-                }
+
+
             } catch (error) {
                 console.log(error);
                 alert("No se ha podido encontrar la carpeta en su POD");
@@ -46,7 +45,7 @@ class bajarRutas {
     }
 
     // Metodo auxiliar para obtener el objeto json
-    async loadJSon(url) {
+    async loadJSon(url, files) {
         let fileGet = await this.sfc.get(url);
         if (fileGet) {
             let jsonObj = await fetch(fileGet.url)
@@ -58,6 +57,10 @@ class bajarRutas {
                 var jsonRuta = JSON.parse(Httpreq.responseText);
                 this.rutas.push(jsonRuta);
             }
+            if (this.rutas.length === files.length)
+                alert("Descarga Finalizada")
+            console.log(files.length);
+            console.log(this.rutas.length);
         }
     }
 

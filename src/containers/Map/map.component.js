@@ -3,7 +3,8 @@ import L from 'leaflet';
 import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
 import { Rutas } from '../../viade/Model';
 import ReactDOM from 'react-dom';
-import { MapStyle, DivStyle } from './map.style';
+import { MapStyle, DivStyle, LiStyle, H3Style, LiStyle2 } from './map.style';
+
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -18,18 +19,14 @@ class Map extends React.Component {
     super();
     this.name = Rutas.getNames()[0];
     this.puntos = []
-    Rutas.getRutaByPosition(1).points.map(p => this.puntos.push(p.getCoordinates()));
+    Rutas.getRutaByPosition(0).points.map(p => this.puntos.push(p.getCoordinates()));
   }
 
   getRoutes(id) {
-
-
     var newRuta = Rutas.getRutaByName(id);
     document.getElementById("name").textContent = newRuta.name;
-
     this.puntos = newRuta.point;
     const position = this.puntos[0];
-
     var update = <MapStyle id="map" center={position} zoom={15} >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Polyline color={'red'} positions={this.puntos}></Polyline>
@@ -40,7 +37,6 @@ class Map extends React.Component {
         <Popup>Fin</Popup>
       </Marker>
     </MapStyle>;
-
     ReactDOM.render(update, document.getElementById('map'));
   }
 
@@ -48,17 +44,15 @@ class Map extends React.Component {
     Rutas.actualizarRutasConPod();
     const position = this.puntos[0];
     return (
-
       <React.Fragment >
         <DivStyle>
-          <h2 data-testid="map-title" id="name">{this.name}</h2>
-          <ul data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
+          <H3Style data-testid="map-title" id="name">{this.name}</H3Style>
+          <LiStyle2 data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <LiStyle key={i} onClick={() => this.getRoutes(n)}>{n}</LiStyle>)}</LiStyle2>
         </DivStyle>
         <MapStyle id="map" center={position} zoom={15}>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         </MapStyle>
       </React.Fragment>
-
     );
   }
 }

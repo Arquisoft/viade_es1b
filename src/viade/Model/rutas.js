@@ -1,19 +1,18 @@
 import ruta1 from './route1.json';
-import ruta2 from './route2.json';
 import Ruta from './ruta.js';
 import bajarRutas from '../../containers/Download/bajarRutas';
 
 class Rutas {
 
     constructor() {
-        this.rutas = [new Ruta(ruta1), new Ruta(ruta2)];
+        this.rutas = [new Ruta(ruta1)];
     }
 
     actualizarRutasConPod() {
         if (bajarRutas.rutas.length > 0) {
             //console.log(bajarRutas.rutas);
             //console.log(bajarRutas.rutas.length);
-            while (this.rutas.length > 2) {
+            while (this.rutas.length > 0) {
                 this.rutas.pop();
             }
             while (bajarRutas.rutas.length !== 0) {
@@ -21,8 +20,6 @@ class Rutas {
             }
         }
     }
-
-
 
     getNames() {
         let rutasName = [];
