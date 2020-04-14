@@ -28,7 +28,7 @@ class UploadComponent extends React.Component {
     //Esto es lo que hacemos cuando llamamos al método.
     itemHandler(parameter) {
         this.setState({ files: parameter.target.files });
-    };
+    }
 
     async subirFicheroAPod() {
         //El archivo a subir será:
@@ -36,10 +36,12 @@ class UploadComponent extends React.Component {
         //Analizamos si está loggeado:
         let session = await auth.currentSession();
         if (session) {
-            alert("Estás loggeado");
-            if (this.state.files[0] == null)
+            {
+                alert("Estás loggeado");
+            }
+            if (this.state.files[0] === null)
                 //Si el fichero es nulo:
-                alert("No has seleccionado ningún fichero")
+                alert("No has seleccionado ningún fichero");
             else {
                 try {
                     alert(this.state.direccion + archivo.name);
@@ -47,12 +49,15 @@ class UploadComponent extends React.Component {
                     alert("Archivo subido");
                 }
                 catch (error) {
-                    console.error(error);
+                    //En release no debería haber errores por consola!
+                    //console.error(error);
                 }
             }
         }
-        else
+        else{
             alert("No estás loggeado");
+        }
+
     }
 
 
