@@ -7,9 +7,9 @@ import { MapStyle, DivStyle } from "./map.style";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+  iconUrl: require("leaflet/dist/images/marker-icon.png"),
+  shadowUrl: require("leaflet/dist/images/marker-shadow.png")
 });
 
 class Map extends React.Component {
@@ -17,8 +17,8 @@ class Map extends React.Component {
   constructor() {
     super();
     this.name = Rutas.getNames()[0];
-    this.puntos = []
-    Rutas.getRutaByPosition(1).points.map(p => this.puntos.push(p.getCoordinates()));
+    this.puntos = [];
+    Rutas.getRutaByPosition(1).points.map( (p) => this.puntos.push(p.getCoordinates()));
   }
 
   getRoutes(id) {
@@ -41,7 +41,7 @@ class Map extends React.Component {
       </Marker>
     </MapStyle>;
 
-    ReactDOM.render(update, document.getElementById('map'));
+    ReactDOM.render(update, document.getElementById("map"));
   }
 
   render() {
@@ -56,7 +56,7 @@ class Map extends React.Component {
           </DivStyle>
           <MapStyle data-testid="map-map" id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Polyline color={'red'} positions={this.puntos}></Polyline>
+            <Polyline color={"red"} positions={this.puntos}></Polyline>
             <Marker position={this.puntos[0]}>
               <Popup>Inicio</Popup>
             </Marker>
