@@ -1,6 +1,6 @@
-import auth from 'solid-auth-client';
-import ldflex from '@solid/query-ldflex';
-import { errorToaster } from './toaster';
+import auth from "solid-auth-client";
+import ldflex from "@solid/query-ldflex";
+import { errorToaster } from "./toaster";
 
 export const documentExists = async documentUri =>
   auth.fetch(documentUri, {
