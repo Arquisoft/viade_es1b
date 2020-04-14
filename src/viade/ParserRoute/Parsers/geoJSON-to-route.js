@@ -19,10 +19,9 @@ class GeoJSONToRoute {
         var data = reader.readAsText(this.file);
         //Linea comentada. (Depuracion de code Quality)
         //console.log(data);
-        var route = new Route(this.file.name, this.file.description, this.getPoints());
         // const items=this.getItems(geoJSON.coordinates);
         // const route=new Route(this.file.name,items);
-        return route;
+        return new Route(this.file.name, this.file.description, this.getPoints());
     }
 
     getPoints(){
