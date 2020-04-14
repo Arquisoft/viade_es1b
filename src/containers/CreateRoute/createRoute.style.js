@@ -51,6 +51,7 @@ export const DivStyle = styled.div`
     width: auto;
     height: auto;
     right:auto;
+    background-image: linear-gradient( white, lightgrey);
     z-Index: 99;
   `;
 

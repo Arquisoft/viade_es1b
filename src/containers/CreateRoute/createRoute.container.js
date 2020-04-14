@@ -52,22 +52,6 @@ class CreateRoute extends React.Component {
     markers.push({ lat: e.latlng.lat, lng: e.latlng.lng })
     this.setState({ markers })
     this.draw();
-
-  //   var update = <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
-  //   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-  //   {this.state.markers.map((position, idx) =>
-  //     <Marker key={`marker-${idx}`} position={position}>
-  //     </Marker>
-      
-  //   )}
-  //   <Polyline
-  //     positions={this.draw()}
-  //   />
-    
-  // </MapStyle>
-
-  //   ReactDOM.render(update, document.getElementById('map'));
-
   }
 
   draw() {
@@ -94,7 +78,6 @@ class CreateRoute extends React.Component {
     if (name.length !== 0 && markers.length > 1) {
       alert("Ruta guardada correctamente");
       CreateRouteService.createRoute(name, markers, this.state.images, this.state.videos);
-      //createJson.createJson(name, markers);
     }
   }
 
@@ -140,17 +123,17 @@ class CreateRoute extends React.Component {
           </ChooseButton>
         </DivStyle>
         <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {this.state.markers.map((position, idx) =>
             <Marker key={`marker-${idx}`} position={position}>
             </Marker>
-            
+
           )}
           <Polyline
             positions={this.draw()}
           />
-          
+
         </MapStyle>
       </React.Fragment>
     );

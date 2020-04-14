@@ -14,7 +14,7 @@ export const DivStyle = styled.div`
     background-image: linear-gradient( white, lightgrey);
     border: 1px solid lightgray;
     padding: 20px;
-    width: auto;
+    width: 20%;
     height: 35%;
     z-Index: 99;
     overflow: auto;
@@ -23,8 +23,8 @@ export const DivStyle = styled.div`
 
 export const LiStyle = styled.li`
     list-style: none;
-    width : auto;
-    border: 1px solid black;
+    width : 100%;
+    border: 1px solid gray;
     background-color: white;
     text-align:left;
     padding: 5px;
@@ -37,8 +37,8 @@ export const H3Style = styled.h3`
 
 export const LiStyle2 = styled.div`
   list-style: none;
-  width : 90px;
-  text-align:left;
+  width : 95%;
+  text-align:center;
   padding: 5px;
 `;
 

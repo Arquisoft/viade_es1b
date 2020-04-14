@@ -10,20 +10,31 @@ export const DivStyle = styled.div`
     z-index: 1;
     `;
 
+export const DivStyle2 = styled.div`
+    float: left;
+    background-color: white;
+    background-repeat: repeat;
+    border: 1px solid lightgrey;
+    padding: 20px;
+    width: 50%;
+    height: auto;
+    z-index: 1;
+    `;
+
 export const ButtonStyle = styled.button`
     width: auto;
-    height: auto;
+    height: 42px;
     z-index: 99;
     `;
 
 export const InputStyle = styled.input`
     margin: auto;
-    border-radius: 5px;
+   
     background-color: #FFFFFF;
     border: 1px solid lightgray;
     padding: 20px;
-    width: auto;
-    height: auto;
+    width: 35%;
+    height: 20px;
     z-index: 99;
     
     `;

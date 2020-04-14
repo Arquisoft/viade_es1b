@@ -47,7 +47,7 @@ class Map extends React.Component {
       <React.Fragment >
         <DivStyle>
           <H3Style data-testid="map-title" id="name">{this.name}</H3Style>
-          <LiStyle2 data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <LiStyle key={i} onClick={() => this.getRoutes(n)}>{n}</LiStyle>)}</LiStyle2>
+          <LiStyle2 data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <LiStyle key={i} onClick={() => this.getRoutes(n)}> <img src={process.env.PUBLIC_URL + "/img/icon/start.svg"} width="25" height="25" alt="" /> {n}</LiStyle>)}</LiStyle2>
         </DivStyle>
         <MapStyle id="map" center={position} zoom={15}>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
