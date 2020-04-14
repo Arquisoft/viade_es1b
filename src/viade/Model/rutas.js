@@ -1,6 +1,6 @@
-import ruta1 from './route1.json';
-import ruta2 from './route2.json';
-import Ruta from './ruta.js';
+import ruta1 from "./route1.json";
+import ruta2 from "./route2.json";
+import Ruta from "./ruta.js";
 import bajarRutas from '../../containers/Download/bajarRutas';
 
 class Rutas {

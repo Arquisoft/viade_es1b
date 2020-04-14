@@ -1,4 +1,4 @@
-import RouteToJsonld from './route-to-Jsonld';
+import RouteToJsonld from "./route-to-Jsonld";
 
 class RouteToRDF {
     constructor(route, webId) {
