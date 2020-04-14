@@ -1,7 +1,7 @@
-import React from 'react';
-import { render, cleanup, act, queryByTestId } from '@testing-library/react';
-import NavBar from './nav-bar.component';
-import '@testing-library/jest-dom'
+import React from "react";
+import { render, cleanup, act, queryByTestId } from "@testing-library/react";
+import NavBar from "./nav-bar.component";
+import "@testing-library/jest-dom"
 
 
 let wrapper;

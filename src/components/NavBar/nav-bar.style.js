@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Navbar } from "react-bootstrap";
 import { LogoutButton } from "@solid/react";
-import 'leaflet/dist/leaflet.css';
+import "leaflet/dist/leaflet.css";
 
 export const DivStyle = styled.div`
     background-color: #FFFFFF;
