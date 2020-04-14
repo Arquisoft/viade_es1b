@@ -7,25 +7,25 @@ class CreateRouteService {
     constructor() {
         //super();
         this.state = {
-            fileName: "",            
+            fileName: "",
         };
 
-        this.routeJson=null;
-        this.imagesRoutes =[];
-        this.videosRoutes =[];
+        this.routeJson = null;
+        this.imagesRoutes = [];
+        this.videosRoutes = [];
     }
 
     async createRoute(name, markers, images, videos) {
 
         let session = await auth.currentSession();
-        
+
         //Analizamos si está loggeado:
         if (session) {
-            
+
 
             var webId = `${session.webId}`;
 
-            
+
             let id = webId.replace('/profile/card#me', '/viade/');
 
             for (let i = 0; i < images.length; i++) {
@@ -56,7 +56,7 @@ class CreateRouteService {
             //console.log(this.state);
             console.log(images);
 
-            id = webId.replace('/profile/card#me', '/viade/routes/');
+            id = webId.replace('/profile/card#me', '/public/');
             this.subirFicheroAPod(name, this.routeJson, id);
         }
         else {
@@ -70,7 +70,7 @@ class CreateRouteService {
         let archivo = sdict;
         var date = new Date();
         var n = Math.round(date.getTime() / (1000));
-        
+
 
         try {
             alert(id + n + "_" + name + ".json");
