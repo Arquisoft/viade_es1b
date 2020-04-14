@@ -1,7 +1,7 @@
 /* eslint-disable constructor-super */
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { PageNotFoundWrapper, PageNotFoundContent } from './page-not-found.style';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { PageNotFoundWrapper, PageNotFoundContent } from "./page-not-found.style";
 
 /**
  * A React component page that is displayed when there's no valid route. Users can click the button

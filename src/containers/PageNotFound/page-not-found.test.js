@@ -1,6 +1,6 @@
-import React from 'react';
-import { cleanup, render, queryByTestId, act } from '@testing-library/react';
-import PageNotFound from './page-not-found.component';
+import React from "react";
+import { cleanup, render, queryByTestId, act } from "@testing-library/react";
+import PageNotFound from "./page-not-found.component";
 
 let wrapper;
 beforeEach(() => act(() => {

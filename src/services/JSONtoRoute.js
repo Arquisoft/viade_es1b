@@ -1,6 +1,6 @@
 import {Route,PointRoute} from "../viade/Model";
-import FC from 'solid-file-client';
-import auth from 'solid-auth-client';
+import FC from "solid-file-client";
+import auth from "solid-auth-client";
 
 export const getRoute = (urlRoute) => {
 

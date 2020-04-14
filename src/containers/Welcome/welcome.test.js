@@ -1,6 +1,6 @@
-import React from 'react';
-import { render, queryByTestId, act } from '@testing-library/react';
-import Welcome from '../Welcome';
+import React from "react";
+import { render, queryByTestId, act } from "@testing-library/react";
+import Welcome from "../Welcome";
 
 let wrapper;
 beforeEach(() => act(() => {

@@ -1,12 +1,12 @@
-import React from 'react';
-import {useWebId } from '@solid/react';
-import { Trans, useTranslation } from 'react-i18next';
+import React from "react";
+import {useWebId } from "@solid/react";
+import { Trans, useTranslation } from "react-i18next";
 import {
   WelcomeCard,
   WelcomeLogo,
   WelcomeProfile,
   WelcomeDetail
-} from './welcome.style';
+} from "./welcome.style";
 
 /**
  * Welcome Page UI component, containing the styled components for the Welcome Page
