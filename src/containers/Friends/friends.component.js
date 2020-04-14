@@ -13,7 +13,7 @@ const Friends = props => {
         friends = await addFriend.friends
         var str = '<List>'
         friends.forEach(function (friend) {
-            str += '<li>' + friend + '</li>';
+            str += '<li style="list-style-type: none;"><input name="food" type="radio" value="dairy">' + friend + '</li>';
         });
         str += '</List>';
         try {
@@ -28,6 +28,17 @@ const Friends = props => {
         <div>
             <LoggedIn>
                 <ContainerDiv>
+                    <ListaDiv>
+                        <h3>{t('friends.myFriends')}</h3>
+                        <AmigosDiv id="lista">
+                        </AmigosDiv>
+                        <button>
+                            <img src={process.env.PUBLIC_URL + "/img/icon/eraser.svg"} width="40" height="40" alt="" />
+                        </button>
+                        <button>
+                            <img src={process.env.PUBLIC_URL + "/img/icon/share.svg"} width="40" height="40" alt="" />
+                        </button>
+                    </ListaDiv>
                     <MisAmigosDiv>
                         <h3>{t('friends.addFriend')}</h3>
                         <form className="modal-body">
@@ -39,11 +50,6 @@ const Friends = props => {
                             </button>
                         </form>
                     </MisAmigosDiv>
-                    <ListaDiv>
-                        <h3>{t('friends.myFriends')}</h3>
-                        <AmigosDiv id="lista">
-                        </AmigosDiv>
-                    </ListaDiv>
                 </ContainerDiv>
             </LoggedIn>
             <LoggedOut>

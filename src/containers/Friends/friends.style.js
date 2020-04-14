@@ -11,21 +11,24 @@ export const ContainerDiv = styled.div`
 
 export const ListaDiv = styled.div`
     float:left;
-    width: 99%;
-    height: auto;
+    width: 50%;
+    height:50%;
     border: 1px solid lightgrey;
     background-image: linear-gradient(to right, white, white);
+    overflow: auto;
     margin: 5px;
-
 `;
 
 export const AmigosDiv = styled.div`
    text-align: left;
+   height: 60%;
+   overflow: auto;
+   padding: 10px;
 `;
 
 export const MisAmigosDiv = styled.div`
     float:left;
-    width: 99%;
+    width: 40%;
     height: auto;
     border: 1px solid lightgrey;
     background-image: linear-gradient(to right, white, white);
@@ -36,3 +39,4 @@ export const InputStyle = styled.input`
     height: auto;
    
 `;
+
