@@ -1,5 +1,5 @@
-import React from 'react';
-import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
+import React from "react";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import {LoggedIn, LoggedOut} from "@solid/react";
 
@@ -11,8 +11,8 @@ import {
   createRoute,
   PageNotFound,
   Friends
-} from './containers';
-import NavBar from './components/NavBar';
+} from "./containers";
+import NavBar from "./components/NavBar";
 
 const Routes = () => (
   <HashRouter>
