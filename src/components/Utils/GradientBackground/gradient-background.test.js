@@ -1,6 +1,6 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import GradientBackground from './gradient-background.component';
+import React from "react";
+import { render, cleanup } from "@testing-library/react";
+import GradientBackground from "./gradient-background.component";
 
 afterAll(cleanup);
 

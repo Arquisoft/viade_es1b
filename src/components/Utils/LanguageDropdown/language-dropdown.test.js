@@ -1,6 +1,6 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import Language from './language-dropdown.component';
+import React from "react";
+import { render, cleanup } from "@testing-library/react";
+import Language from "./language-dropdown.component";
 
 afterAll(cleanup);
 

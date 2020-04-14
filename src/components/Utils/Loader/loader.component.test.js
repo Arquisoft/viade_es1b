@@ -1,6 +1,6 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import Loader from './loader.component';
+import React from "react";
+import { render, cleanup } from "@testing-library/react";
+import Loader from "./loader.component";
 
 afterAll(cleanup);
 
