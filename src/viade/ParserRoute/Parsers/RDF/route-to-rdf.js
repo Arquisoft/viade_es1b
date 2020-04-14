@@ -10,7 +10,7 @@ class RouteToRDF {
 
     
     parse(){
-        const {default:data} = require('@solid/query-ldflex');
+        const {default:data} = require("@solid/query-ldflex");
         const jsonParser = new RouteToJsonld(this.route);
         const fileToUpload = jsonParser.parse();
         
