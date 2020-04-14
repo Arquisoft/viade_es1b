@@ -13,8 +13,10 @@ class Rutas {
         if (bajarRutas.rutas.length > 0) {
             //console.log(bajarRutas.rutas);
             //console.log(bajarRutas.rutas.length);
-            while (bajarRutas.rutas.length !== 0) {
-                this.rutas.push(new Ruta(bajarRutas.rutas.pop()));
+            while (bajarRutas.rutas.length !== 0 ) {
+                let ruta =new Ruta(bajarRutas.rutas.pop());
+                if(!ruta.notShow)
+                    this.rutas.push(ruta);
             }
         }
     }
