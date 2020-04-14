@@ -21,10 +21,10 @@ class DownloadComponent extends React.Component {
         parameter.persist();
         let session = await auth.currentSession();
         var id = `${session.webId}`;
-        id = id.replace('/profile/card#me', '/'+parameter.target.value);
-        if(session) {
-        this.setState({ direccion: id });
-    }
+        id = id.replace('/profile/card#me', '/' + parameter.target.value);
+        if (session) {
+            this.setState({ direccion: id });
+        }
     };
 
     render() {

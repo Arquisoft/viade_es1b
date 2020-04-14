@@ -50,13 +50,13 @@ class Map extends React.Component {
     return (
 
       <React.Fragment >
-          <DivStyle>
-            <h2 data-testid="map-title" id="name">{this.name}</h2>
-            <ul data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
-          </DivStyle>
-          <MapStyle id="map" center={position} zoom={15}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          </MapStyle>
+        <DivStyle>
+          <h2 data-testid="map-title" id="name">{this.name}</h2>
+          <ul data-testid="map-routes-list">{Rutas.getNames().map((n, i) => <li key={i} onClick={() => this.getRoutes(n)}> {n} </li>)}</ul>
+        </DivStyle>
+        <MapStyle id="map" center={position} zoom={15}>
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        </MapStyle>
       </React.Fragment>
 
     );
