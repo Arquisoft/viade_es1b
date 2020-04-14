@@ -1,6 +1,6 @@
-import React from 'react';
-import { render, cleanup, queryByTestId } from '@testing-library/react';
-import CenterContainer from './center-container.component';
+import React from "react";
+import { render, cleanup, queryByTestId } from "@testing-library/react";
+import CenterContainer from "./center-container.component";
 
 afterAll(cleanup);
 

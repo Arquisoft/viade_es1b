@@ -1,6 +1,6 @@
-import React from 'react';
-import { render, cleanup, getByTestId } from '@testing-library/react';
-import Dropdown from './dropdown.component';
+import React from "react";
+import { render, cleanup, getByTestId } from "@testing-library/react";
+import Dropdown from "./dropdown.component";
 
 //afterAll(cleanup);
 let wrapper;
