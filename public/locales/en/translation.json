@@ -44,12 +44,13 @@
     }
   },
   "friends":{
-    "myFriends": "My friends",
+    "myFriends": "My Friends",
     "addFriend": "Add Friend",
     "recievedRequest": "Recieved requests",
     "share":"Share",
-    "remove":"Remove friend",
-    "add":"Add to group"
+    "remove":"Remove Friend",
+    "add":"Add to Group",
+    "group":"Mis Grupos"
   },
   "notFound": {
     "title": "Page not found",

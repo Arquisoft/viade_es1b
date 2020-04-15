@@ -1,6 +1,7 @@
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 
+
 class bajarRutas {
 
     constructor() {
@@ -30,7 +31,6 @@ class bajarRutas {
                     }
                 });
             } catch (error) {
-                console.log(error);
                 alert("No se ha podido encontrar la carpeta en su POD");
             }
         }
@@ -41,11 +41,11 @@ class bajarRutas {
         var Httpreq = new XMLHttpRequest(); // Solicitud
         Httpreq.open("GET", url, false);
         Httpreq.send(null);
-        console.log(Httpreq.responseText);
         var jsonRuta = JSON.parse(Httpreq.responseText);
         this.rutas.push(jsonRuta);
-        if (this.rutas.length === files.length)
+        if (this.rutas.length === files.length) {
             alert("Descarga Finalizada");
+        }
         if (files.length === 0)
             alert("No hay rutas disponibles");
     }

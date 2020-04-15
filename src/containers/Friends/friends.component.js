@@ -40,10 +40,6 @@ const Friends = props => {
                             <img src={process.env.PUBLIC_URL + "/img/icon/share.svg"} width="35" height="35" alt="" />
                             {t('friends.share')}
                         </ButtonStyle>
-                        <ButtonStyle>
-                            <img src={process.env.PUBLIC_URL + "/img/icon/network.svg"} width="35" height="35" alt="" />
-                            {t('friends.add')}
-                        </ButtonStyle>
                     </ListaDiv>
                     <MisAmigosDiv>
                         <h3>{t('friends.addFriend')}</h3>
@@ -56,6 +52,15 @@ const Friends = props => {
                             </button>
                         </form>
                     </MisAmigosDiv>
+                    <ListaDiv>
+                        <h3>{t('friends.group')}</h3>
+                        <AmigosDiv id="groups">
+                        </AmigosDiv>
+                        <ButtonStyle>
+                            <img src={process.env.PUBLIC_URL + "/img/icon/network.svg"} width="35" height="35" alt="" />
+                            {t('friends.add')}
+                        </ButtonStyle>
+                    </ListaDiv>
                 </ContainerDiv>
             </LoggedIn>
             <LoggedOut>

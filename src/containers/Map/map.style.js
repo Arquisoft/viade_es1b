@@ -36,11 +36,18 @@ export const H3Style = styled.h3`
   `;
 
 export const LiStyle2 = styled.div`
+  border: 1px solid gray;
   list-style: none;
   width : 95%;
   text-align:center;
   padding: 5px;
+  margin: 10px;
 `;
+
+export const InputStyle = styled.input`
+    width: auto;
+    height: auto;
+    `;
 
 
 
