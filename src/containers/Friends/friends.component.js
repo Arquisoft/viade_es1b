@@ -2,7 +2,7 @@ import React from 'react';
 import { LoggedOut, LoggedIn, useWebId } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { MisAmigosDiv, ContainerDiv, ListaDiv, InputStyle, AmigosDiv } from './friends.style';
+import { MisAmigosDiv, ContainerDiv, ListaDiv, InputStyle, AmigosDiv, ButtonStyle } from './friends.style';
 import addFriend from '../../viade/Friends/addFriend';
 
 const Friends = props => {
@@ -32,14 +32,18 @@ const Friends = props => {
                         <h3>{t('friends.myFriends')}</h3>
                         <AmigosDiv id="lista">
                         </AmigosDiv>
-                        <button onClick={(event) => addFriend.removeFriend(event, name)}>
-                            <img src={process.env.PUBLIC_URL + "/img/icon/rubbish.svg"} width="40" height="40" alt="" />
+                        <ButtonStyle onClick={(event) => addFriend.removeFriend(event, name)}>
+                            <img src={process.env.PUBLIC_URL + "/img/icon/rubbish.svg"} width="35" height="35" alt="" />
                             {t('friends.remove')}
-                        </button>
-                        <button>
-                            <img src={process.env.PUBLIC_URL + "/img/icon/share.svg"} width="40" height="40" alt="" />
+                        </ButtonStyle>
+                        <ButtonStyle>
+                            <img src={process.env.PUBLIC_URL + "/img/icon/share.svg"} width="35" height="35" alt="" />
                             {t('friends.share')}
-                        </button>
+                        </ButtonStyle>
+                        <ButtonStyle>
+                            <img src={process.env.PUBLIC_URL + "/img/icon/network.svg"} width="35" height="35" alt="" />
+                            {t('friends.add')}
+                        </ButtonStyle>
                     </ListaDiv>
                     <MisAmigosDiv>
                         <h3>{t('friends.addFriend')}</h3>

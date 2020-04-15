@@ -16,7 +16,7 @@ export const ListaDiv = styled.div`
     border: 1px solid lightgrey;
     background-image: linear-gradient(to right, white, white);
     overflow: auto;
-    margin: 5px;
+    margin: 10px;
     padding: 10px;
 `;
 
@@ -34,11 +34,15 @@ export const MisAmigosDiv = styled.div`
     height: auto;
     border: 1px solid lightgrey;
     background-image: linear-gradient(to right, white, white);
-    margin: 5px;
+    margin: 10px;
 `;
 export const InputStyle = styled.input`
     width: 80%;
     height: auto;
    
+`;
+
+export const ButtonStyle = styled.button`
+    margin: 5px;
 `;
 
