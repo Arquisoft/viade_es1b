@@ -34,6 +34,7 @@ class AddFriend {
             const user = data[webId];
             if (selectedOption.localeCompare("") !== 0) {
                 await user.knows.delete(data[selectedOption]);
+                await window.location.reload();
                 alert('Amigo eliminado');
             }
         } catch (e) {

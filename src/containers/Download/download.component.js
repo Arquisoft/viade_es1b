@@ -2,7 +2,7 @@ import React from "react";
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 import bajarRutas from "./bajarRutas";
-import { DivStyle, ButtonStyle, InputStyle, DivStyle2 } from './download.style';
+import { DivStyle, InputStyle, DivStyle2, DivStyle3 } from './download.style';
 
 class DownloadComponent extends React.Component {
 
@@ -34,8 +34,11 @@ class DownloadComponent extends React.Component {
                 <DivStyle2>
                     <a>In order to download your routes, write the name of the folder ("Ex: public/routes"). Before going back to the map wait for the notification upscreen in order to verify the download.</a>
                 </DivStyle2>
-                <InputStyle data-testid="download-input" type="text" onChange={this.obtenerCarpetaPod} placeholder="Write routes address..." />
-                <ButtonStyle data-testid="download-button" onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="40" height="40" alt="" /> </ButtonStyle>
+                <DivStyle3>
+                    <h3>How to</h3>
+                    <InputStyle data-testid="download-input" type="text" onChange={this.obtenerCarpetaPod} placeholder="Write routes address..." />
+                    <button data-testid="download-button" onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} > <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="25" height="20" alt="" /> </button>
+                </DivStyle3>
             </DivStyle>
 
         );

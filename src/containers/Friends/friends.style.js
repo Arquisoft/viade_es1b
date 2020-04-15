@@ -6,16 +6,14 @@ export const ContainerDiv = styled.div`
     height: 100%;
     background-image: linear-gradient(to right, white, lightblue);
     background-repeat: repeat;
-    padding: 5px 0;
 `;
 
 export const ListaDiv = styled.div`
     float:left;
     width: 50%;
-    height:50%;
+    height:auto;
     border: 1px solid lightgrey;
     background-image: linear-gradient(to right, white, white);
-    overflow: auto;
     margin: 10px;
     padding: 10px;
 `;
@@ -35,6 +33,7 @@ export const MisAmigosDiv = styled.div`
     border: 1px solid lightgrey;
     background-image: linear-gradient(to right, white, white);
     margin: 10px;
+    padding: 10px;
 `;
 export const InputStyle = styled.input`
     width: 80%;
@@ -43,6 +42,7 @@ export const InputStyle = styled.input`
 `;
 
 export const ButtonStyle = styled.button`
-    margin: 5px;
+    margin-top : 10px;
+    margin-left: 5px;
 `;
 

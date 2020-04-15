@@ -29,14 +29,6 @@ class bajarRutas {
                             rutas = true;
                     }
                 });
-                if (rutas) {
-                    alert("Rutas bajandose")
-
-                }
-                else
-                    alert("No hay rutas");
-
-
             } catch (error) {
                 console.log(error);
                 alert("No se ha podido encontrar la carpeta en su POD");
@@ -45,23 +37,17 @@ class bajarRutas {
     }
 
     // Metodo auxiliar para obtener el objeto json
-    async loadJSon(url, files) {
-        let fileGet = await this.sfc.get(url);
-        if (fileGet) {
-            let jsonObj = await fetch(fileGet.url)
-            if (jsonObj) {
-                var Httpreq = new XMLHttpRequest(); // Solicitud
-                Httpreq.open("GET", url, false);
-                Httpreq.send(null);
-                console.log(Httpreq.responseText);
-                var jsonRuta = JSON.parse(Httpreq.responseText);
-                this.rutas.push(jsonRuta);
-            }
-            if (this.rutas.length === files.length)
-                alert("Descarga Finalizada")
-            console.log(files.length);
-            console.log(this.rutas.length);
-        }
+    loadJSon(url, files) {
+        var Httpreq = new XMLHttpRequest(); // Solicitud
+        Httpreq.open("GET", url, false);
+        Httpreq.send(null);
+        console.log(Httpreq.responseText);
+        var jsonRuta = JSON.parse(Httpreq.responseText);
+        this.rutas.push(jsonRuta);
+        if (this.rutas.length === files.length)
+            alert("Descarga Finalizada");
+        if (files.length === 0)
+            alert("No hay rutas disponibles");
     }
 
 }
