@@ -46,7 +46,10 @@
   "friends":{
     "myFriends": "My friends",
     "addFriend": "Add Friend",
-    "recievedRequest": "Recieved requests"
+    "recievedRequest": "Recieved requests",
+    "share":"Share",
+    "remove":"Remove friend",
+    "add":"Add to group"
   },
   "notFound": {
     "title": "Page not found",

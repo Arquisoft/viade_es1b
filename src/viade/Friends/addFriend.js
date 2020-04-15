@@ -28,14 +28,16 @@ class AddFriend {
     };
 
     async removeFriend(event, webId) {
-        var selectedOption = document.querySelector('input[name = food]:checked').value;
-        event.preventDefault();
-        console.log(selectedOption);
-        const user = data[webId];
-        if (selectedOption.localeCompare("") !== 0) {
-            await user.knows.delete(data[selectedOption]);
-            await window.location.reload();
-            alert('Amigo eliminado');
+        try {
+            var selectedOption = document.querySelector('input[name = food]:checked').value;
+            event.preventDefault();
+            const user = data[webId];
+            if (selectedOption.localeCompare("") !== 0) {
+                await user.knows.delete(data[selectedOption]);
+                alert('Amigo eliminado');
+            }
+        } catch (e) {
+            alert('Seleccione un amigo a eliminar');
         }
     };
 

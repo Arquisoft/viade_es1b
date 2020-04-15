@@ -33,10 +33,12 @@ const Friends = props => {
                         <AmigosDiv id="lista">
                         </AmigosDiv>
                         <button onClick={(event) => addFriend.removeFriend(event, name)}>
-                            <img src={process.env.PUBLIC_URL + "/img/icon/eraser.svg"} width="40" height="40" alt="" />
+                            <img src={process.env.PUBLIC_URL + "/img/icon/rubbish.svg"} width="40" height="40" alt="" />
+                            {t('friends.remove')}
                         </button>
                         <button>
                             <img src={process.env.PUBLIC_URL + "/img/icon/share.svg"} width="40" height="40" alt="" />
+                            {t('friends.share')}
                         </button>
                     </ListaDiv>
                     <MisAmigosDiv>

@@ -17,12 +17,14 @@ export const ListaDiv = styled.div`
     background-image: linear-gradient(to right, white, white);
     overflow: auto;
     margin: 5px;
+    padding: 10px;
 `;
 
 export const AmigosDiv = styled.div`
    text-align: left;
    height: 60%;
    overflow: auto;
+   border: 1px solid lightgrey;
    padding: 10px;
 `;
 
