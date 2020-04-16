@@ -6,7 +6,8 @@ import ReactDOM from 'react-dom';
 import { MapStyle, DivStyle, LiStyle, H3Style, LiStyle2, InputStyle } from './map.style';
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
-import bajarRutas from "../Download/bajarRutas";
+import bajarRutas from "../../services/bajarRutas";
+
 
 
 delete L.Icon.Default.prototype._getIconUrl;

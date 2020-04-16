@@ -10,6 +10,7 @@ class bajarRutas {
         this.rutas = [];
     }
 
+
     async bajarRutasDePod(direccion) {
         this.rutas = [];
         //Dandole al boton se obtendria los contenidos del fichero   

@@ -22,29 +22,12 @@ class CreateRoute extends React.Component {
       markers: [],
       name: "",
       images: [],
-      videos: []
+      videos: [],
+      center: {
+        lat: 43.3551061,
+        lng: -5.8512792,
+      }
     };
-  }
-
-  getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.setState({
-          center: {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          }
-        })
-      },
-        (error) => {
-          this.setState({
-            center: {
-              lat: 43.3551061,
-              lng: -5.8512792,
-            }
-          })
-        });
-    }
   }
 
   mapClick = (e) => {
@@ -100,7 +83,6 @@ class CreateRoute extends React.Component {
   }
 
   render() {
-    this.getLocation();
     return (
       <React.Fragment>
         <DivStyle>
