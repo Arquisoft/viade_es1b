@@ -15,9 +15,9 @@ export const Notifications=() =>{
         <LoggedIn>
             <ContainerDiv>
                 <NotificationsDiv>
-                    <MisNotificaciones myWebId={webId}>
+                    <NotificationsList myWebId={webId}>
 
-                    </MisNotificaciones>
+                    </NotificationsList>
 
                 </NotificationsDiv>
             </ContainerDiv>

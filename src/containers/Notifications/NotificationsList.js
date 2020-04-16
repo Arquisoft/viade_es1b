@@ -9,7 +9,7 @@ import {NotificationContainer, NotificationManager} from "react-notifications";
 
 let times = 0; 
 
-export const NotificationsTable = ({myWebId}) => {
+export const NotificationsList = ({myWebId}) => {
 
   const {t} = useTranslation();
   const [rows, setRows] = useState([]);
