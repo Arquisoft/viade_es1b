@@ -5,11 +5,16 @@ export const LoginWrapper = styled(GradientBackground)`
   h1 {
     color: #ffffff;
   }
-  margin-top: 60px;
-  height: 100%;
 `;
 
-export const LoginPanel = styled(Panel)``;
+export const LoginPanel = styled(Panel)`
+  height: 60%;
+  `;
+
+export const H1Style = styled.h1`
+color: black;
+text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black
+  `;
 
 export const PanelBody = styled.div`
   display: grid;

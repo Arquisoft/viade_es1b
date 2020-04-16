@@ -10,29 +10,25 @@ export const MapStyle = styled(Map)`
   `;
 
 export const ButtonStyle = styled.button`
+    float:left;
     width: auto;
     height: auto;
-    z-index: 99;
-    margin-top: 10%;
-    margin-bottom: 5%;
-    left: 86%;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
     padding: 10px;
   `;
 export const ButtonStyle2 = styled.button`
+    float:left;
     width: auto;
     height: auto;
     z-index: 99;
-    margin-top: 10%;
-    margin-bottom: 5%;
-    left: 90%;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
     padding: 10px;
   `;
 
 export const InputStyle = styled.input`
+    float:left;
     margin: auto;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
@@ -40,7 +36,6 @@ export const InputStyle = styled.input`
     width: auto;
     height: auto;
     z-index: 99;
-    
     `;
 
 export const DivStyle = styled.div`
@@ -51,10 +46,12 @@ export const DivStyle = styled.div`
     width: auto;
     height: auto;
     right:auto;
+    background-image: linear-gradient( white, lightgrey);
     z-Index: 99;
   `;
 
 export const ChooseButton = styled.div`
+  float:left;
   input{
     width: 0.1px;
     height:0.1x;

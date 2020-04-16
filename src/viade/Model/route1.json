@@ -1,7 +1,7 @@
 {
     "@context": "http://schema.org",
     "@type": "Trip",
-    "name": "Demo2",
+    "name": "Demo",
     "itinerary": {
         "@type": "ItemList",
         "numberOfItems": 4,
@@ -9,28 +9,23 @@
         "itemListElement": [
             {
                 "@type": "GeoCoordinates",
-                "latitude": 43.3551061,
-                "longitude": -5.8512792
+                "latitude": 43.3547082,
+                "longitude": -5.8507937
             },
             {
                 "@type": "GeoCoordinates",
-                "latitude": 43.368307,
-                "longitude": -5.531413
+                "latitude": 43.3545444,
+                "longitude": -5.8494473
             },
             {
                 "@type": "GeoCoordinates",
-                "latitude": 43.36887,
-                "longitude": -5.527693
+                "latitude": 43.3546653,
+                "longitude": -5.8490288
             },
             {
                 "@type": "GeoCoordinates",
-                "latitude":  43.370588,
-                "longitude": -5.523303
-            },
-            {
-                "@type": "GeoCoordinates",
-                "latitude": 43.370383 ,
-                "longitude": -5.517821
+                "latitude": 43.354872,
+                "longitude": -5.8487445
             }
         ]
     }

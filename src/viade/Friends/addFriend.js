@@ -27,6 +27,21 @@ class AddFriend {
             alert("WebId no existe")
     };
 
+    async removeFriend(event, webId) {
+        try {
+            var selectedOption = document.querySelector('input[name = food]:checked').value;
+            event.preventDefault();
+            const user = data[webId];
+            if (selectedOption.localeCompare("") !== 0) {
+                await user.knows.delete(data[selectedOption]);
+                await window.location.reload();
+                alert('Amigo eliminado');
+            }
+        } catch (e) {
+            alert('Seleccione un amigo a eliminar');
+        }
+    };
+
     async checkID(id) {
         const fc = new FC(auth);
         let session = await auth.currentSession();

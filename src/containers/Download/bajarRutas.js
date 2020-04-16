@@ -1,6 +1,7 @@
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 
+
 class bajarRutas {
 
     constructor() {
@@ -17,50 +18,38 @@ class bajarRutas {
         else {
             // Leemos toda la carpeta
             try {
-            let folder = await this.sfc.readFolder(direccion);
-            // Leemos los ficheros
-            const files = folder.files;
-            console.log(files);
-            var rutas = false;
-            // Para cada fichero que sea json (o el formato que vaya a ser), lo muestra
-            files.forEach(file => {
-                if (file.type === "application/json") {
-                    this.loadJSon(file.url);
-                    //var jsonRuta = JSON.parse(this.loadJSon(file.url));
-                    //this.rutas.push(jsonRuta);
-                    if(!rutas)
-                        rutas = true;
-                }
-            });
-                if(rutas) {
-                    alert("Rutas bajandose")
-                }
-                else {
-                    alert("No hay rutas");
-                }            
-            } catch(error) {
-                console.log(error);
+                let folder = await this.sfc.readFolder(direccion);
+                // Leemos los ficheros
+                const files = folder.files;
+                var rutas = false;
+                // Para cada fichero que sea json (o el formato que vaya a ser), lo muestra
+                files.forEach(file => {
+                    if (file.type === "application/json") {
+                        this.loadJSon(file.url, files);
+                        if (!rutas)
+                            rutas = true;
+                    }
+                });
+            } catch (error) {
                 alert("No se ha podido encontrar la carpeta en su POD");
-            }            
+            }
         }
     }
 
     // Metodo auxiliar para obtener el objeto json
-    async loadJSon(url) {
-       let fileGet = await this.sfc.get(url);
-       if(fileGet) {
-           let jsonObj = await fetch(fileGet.url)
-           if(jsonObj) {      
-            var Httpreq = new XMLHttpRequest(); // Solicitud
-            Httpreq.open("GET", url, false);
-            Httpreq.send(null);
-            console.log(Httpreq.responseText);
-            var jsonRuta = JSON.parse(Httpreq.responseText);
-            this.rutas.push(jsonRuta);
-            }            
+    loadJSon(url, files) {
+        var Httpreq = new XMLHttpRequest(); // Solicitud
+        Httpreq.open("GET", url, false);
+        Httpreq.send(null);
+        var jsonRuta = JSON.parse(Httpreq.responseText);
+        this.rutas.push(jsonRuta);
+        if (this.rutas.length === files.length) {
+            alert("Descarga Finalizada");
         }
+        if (files.length === 0)
+            alert("No hay rutas disponibles");
     }
-    
+
 }
 
 export default bajarRutas = new bajarRutas();
