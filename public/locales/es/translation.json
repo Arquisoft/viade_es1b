@@ -53,6 +53,17 @@
     "content": "Puede existir un problema con la dirección buscada. Por favor verifiquela e intente de nuevo. O la página que buscaste ha sido movida o eliminada",
     "redirectButton": "Llevarme a la página principal"
   },
+  "notifications":{
+    "informacion": "",
+    "infoFilas": "",
+    "infoTitulo": "",
+    "cargando":"",
+    "errorMessage":"",
+    "errorTitle":"",
+    "nombre":"",
+    "leido":"",
+    "mark":""
+  },
   "welcome": {
     "welcome": "Bienvenido",
     "doneMessage": "¿Terminaste?",

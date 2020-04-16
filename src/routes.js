@@ -10,7 +10,8 @@ import {
   Download,
   CreateRoute,
   PageNotFound,
-  Friends
+  Friends,
+  Notifications
 } from './containers';
 import NavBar from './components/NavBar';
 
@@ -28,6 +29,7 @@ const Routes = () => (
         {/* <Route exact path="/login" component={Login} /> */}
         <Route exact path="/download" component={Download} />
         <Route exact path="/friends" component={Friends} />
+        <Route exact path="/notifications" component={Notifications} />
         <Route exact path="/" component={Welcome} />
         <Route exact path="/*" component={PageNotFound} />
         <Redirect to="/"></Redirect>

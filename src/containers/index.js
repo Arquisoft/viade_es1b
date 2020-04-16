@@ -5,6 +5,7 @@ import Download from './Download';
 import CreateRoute from './CreateRoute';
 import PageNotFound from './PageNotFound';
 import Friends from './Friends';
+import Notifications from './Notifications';
 export {
   Login,
   Welcome,
@@ -12,5 +13,6 @@ export {
   Download,
   CreateRoute,
   PageNotFound,
-  Friends
+  Friends,
+  Notifications
 };
