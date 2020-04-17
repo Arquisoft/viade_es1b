@@ -26,19 +26,32 @@ class bajarRutas {
             // Leemos los ficheros
             const files = folder.files;
             console.log(files);
-            var rutas = false;
-            // Para cada fichero que sea json (o el formato que vaya a ser), lo muestra
+            var hayRutas = false;
+            var totalRutas = 0;
+            var rutasCargadas = 0;
+            // Para cada fichero que sea json (o el formato que vaya a ser), lo recoge
+            files.forEach( file => {
+                if (file.type === "application/json") 
+                    totalRutas++;
+                });
             files.forEach(async file => {
                 if (file.type === "application/json") {
-                    //console.log(this.tmpFolder+"/"+file.name);
-                    this.sfc.copyFile(file.url,this.tmpFolder+"/"+file.name);
-                        this.loadJSon(this.tmpFolder+"/"+file.name);
-                        rutas = true 
+                     //console.log(this.tmpFolder+"/"+file.name);
+                    hayRutas = true;
+                    let copiado = await this.sfc.copyFile(file.url,this.tmpFolder+"/"+file.name);
+                        if(copiado) {
+                        let cargado = this.loadJSon(this.tmpFolder+"/"+file.name);                        
+                        if(cargado) {
+                            rutasCargadas++;                        
+                        }
+                        }
+                    }
+                    if(totalRutas===rutasCargadas) {
+                        this.sfc.deleteFolder(this.tmpFolder);
                     }
             });
-                if(rutas) {
+                if(hayRutas) {
                     alert("Rutas bajandose")
-                    await this.sfc.deleteFolder(this.tmpFolder,null);
                 }
                 else {
                     alert("No hay rutas");
@@ -46,7 +59,7 @@ class bajarRutas {
             } catch(error) {
                 console.log(error);
                 alert("No se ha podido encontrar la carpeta en su POD");
-            }            
+            }
         }
     }
 
@@ -55,7 +68,7 @@ class bajarRutas {
             var Httpreq = new XMLHttpRequest(); // Solicitud
             Httpreq.open("GET", url, false);
             Httpreq.send(null);
-            console.log(Httpreq.responseText);
+            //console.log(Httpreq.responseText);
             var jsonRuta = JSON.parse(Httpreq.responseText);
             console.log(jsonRuta);
             this.rutas.push(jsonRuta);         
