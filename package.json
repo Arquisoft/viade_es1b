@@ -21,6 +21,7 @@
     "i18next-xhr-backend": "^3.2.2",
     "leaflet": "^1.6.0",
     "leaflet-geosearch": "^2.7.0",
+    "rdf-namespaces": "^1.8.0",
     "react": "^16.12.0",
     "react-addons-update": "^15.6.2",
     "react-bootstrap": "^1.0.0",
@@ -33,7 +34,8 @@
     "react-scripts": "3.3.0",
     "react-toastify": "^5.5.0",
     "solid-file-client": "^1.0.2",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "tripledoc": "^4.3.4"
   },
   "scripts": {
     "start": "react-scripts start",
