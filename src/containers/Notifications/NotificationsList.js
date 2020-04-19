@@ -1,4 +1,5 @@
 import React from "react";
+import Button from '@inrupt/solid-react-components'
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import { useWebId } from "@solid/react";
@@ -30,8 +31,10 @@ async function getNNotifications() {
 
 const NotificationList = (myWebId) => {
     const { t } = useTranslation();
-
-    let webid = String(String(useWebId()).replace(myWebId, "/inbox/"));
+    console.log(myWebId);
+    let str = myWebId.myWebId;
+    console.log(str);
+    let webid = String(String(useWebId()).replace(myWebId, "inbox"));
 
     class Notification extends React.Component {
 
@@ -70,8 +73,8 @@ const NotificationList = (myWebId) => {
                 <p>
                    {t('notificaciones.informacion')}: {this.state.nNotifications}
                     
-                    <Button
-                        class="btn"
+                    <button
+                        className="btn"
                         text={t('notificaciones.informacion')}
 
                         disabled={false}

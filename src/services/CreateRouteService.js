@@ -24,7 +24,7 @@ class CreateRouteService {
 
 
             var webId = `${session.webId}`;
-
+            
 
             let id = webId.replace('/profile/card#me', '/viade/');
 
