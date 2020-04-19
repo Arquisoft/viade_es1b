@@ -1,43 +1,52 @@
-const {defineFeature, loadFeature}=require('jest-cucumber');
-const feature = loadFeature('./e2e/features/login.feature');
+const {defineFeature, loadFeature}=require("jest-cucumber");
+const feature = loadFeature("./e2e/features/login.feature");
+const puppeteer = require("puppeteer");
+let browser = null;
+let page = null;
 
-defineFeature(feature, test => {
+
+defineFeature((feature), (test) => {
   
-  beforeEach(async () => {
-    await page.goto('http://localhost:3000');
-    if(await expect(page).toMatchElement('a', { href: '#/map' })){
-        await expect(page).toClick('button', {text: 'Log out'});
+  beforeEach(() => act(() => {
+    browser = await puppeteer.launch({
+      headless: false,
+      defaultViewport: null
+    });
+    page = await browser.newPage();
+    await page.goto("http://localhost:3000/#/",{waitUntil: "load", timeout: 0});
+    const welcome = await page.$eval('#welcome-image', el => el ? true : false)
+    if(welcome){
+      await expect(page).toClick("div > div > section > nav > div > button", { id: "logoutButton" });
     }
-    
-  })
+  }
+  
+  ));
+	
+  test("We want to login into Viade", ({ given, when, then}) => {
+    let popup;
 
-  test('The user has to log in the site', ({given,when,then}) => {
-    
-
-    given('The Log in page', async () => {
-        await expect(page).toMatchElement('h1', { id: 'login-title' });
+    given("The login page", async() => {
+      await page.goto("http://localhost:3000/#/login",{waitUntil: "load", timeout: 0}); 
     });
 
-    when('I press the LogIn button', async () => {
-        const newPagePromise = new Promise(x => browser.once('targetcreated', target => x(target.page())));	
-        await expect(page).toClick('button', { text: 'Log In' });
-        popup = await newPagePromise;
-      
-        console.log(popup.url());
+    when("I press Log In button and enter our information", async () => {
+
+      const newPagePromise = new Promise((x) =>  browser.once(("targetcreated"), (target) => x(target.page())));	
+      await expect(page).toClick("button", { className: "btn btn-primary a-solid button-login" });
+      popup = await newPagePromise;
+
+      expect(popup).toClick("button", { text: "Solid Community" });
+      await popup.waitForNavigation({waitUntil: "load", timeout: 0});
+
+      await popup.type("[name='username']", "es1b", {visible: true});
+      await popup.type("[name='password']", "Viade_es1b", {visible: true});
+      await expect(popup).toClick("button", { text: "Log In" });
     });
 
-    then('I expect to see a popup to log in', () => {
-        expect(popup.title()).resolves.toMatch('Select your Identity Provider');
-      
-        expect(popup).toMatch("Solid Community", { timeout: 1000 });
-        expect(popup).toMatch("Inrupt", { timeout: 1000 });
-        expect(popup).toMatch("solid.github.io", { timeout: 1000 });
+    then("I expect to be on the Welcome page of ViaDe", async () => {
+      await expect(page).toMatch("Bienvenido", { timeout: 1000 });
     });
 
-    // and('After entering my credentials, log in the app', async()=>{
-
-    // });
-  });
-
+  }); 
 
 });

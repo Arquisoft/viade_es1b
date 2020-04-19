@@ -18,6 +18,7 @@
     "i18next": "^19.3.3",
     "i18next-browser-languagedetector": "^4.0.2",
     "i18next-xhr-backend": "^3.2.2",
+    "jest": "^25.3.0",
     "jquery": "^3.5.0",
     "leaflet": "^1.6.0",
     "leaflet-geosearch": "^2.7.0",
@@ -41,7 +42,7 @@
     "test": "react-scripts test --coverage",
     "docs": "shx rm -rf build/docs && asciidoctor -D build/docs -a imagesdir=./images -r asciidoctor-diagram src/docs/index.adoc && shx cp -R src/docs/images build/docs",
     "eject": "react-scripts eject",
-    "test:e2e": "jest -c jest-config.js"
+    "test:e2e": "jest -c e2e/jest-config.js"
   },
   "eslintConfig": {
     "extends": "react-app"

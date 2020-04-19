@@ -32,7 +32,7 @@ export const WelcomePageContent = props => {
     <section data-testid="welcome-wrapper" style={style}>
       <WelcomeCard className="card">
         <WelcomeLogo data-testid="welcome-logo">
-          <img src={process.env.PUBLIC_URL + "/img/inrupt.svg"} alt="Inrupt" />
+          <img id="welcome-img" src={process.env.PUBLIC_URL + "/img/inrupt.svg"} alt="Inrupt" />
         </WelcomeLogo>
         <WelcomeProfile data-testid="welcome-profile">
           <h3>

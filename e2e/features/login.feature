@@ -1,7 +1,6 @@
-Feature: Loggin into the app
+Feature: Login into Viade
 
-Scenario: The user has to log in the site
-  Given The Log in page
-  When I press the LogIn button
-  Then I expect to see a popup to log in
-  And After entering my credentials, log in the app
+	Scenario: We want to login into Viade
+		Given The login page
+		When I press Log In button and enter our information
+		Then I expect to be on the Welcome page of ViaDe
