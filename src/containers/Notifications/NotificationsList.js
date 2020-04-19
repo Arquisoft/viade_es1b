@@ -66,8 +66,10 @@ const NotificationList = (myWebId) => {
 
         render() {
             return (
+                <div>
                 <p>
-                    <a href={this.state.inboxUrl}>{t('notificaciones.informacion')}</a>: {this.state.nNotifications}
+                   {t('notificaciones.informacion')}: {this.state.nNotifications}
+                    
                     <Button
                         class="btn"
                         text={t('notificaciones.informacion')}
@@ -76,6 +78,10 @@ const NotificationList = (myWebId) => {
                         onClick={() => this.updateNotifications()}
                     />
                 </p>
+                <p>
+                    <a href={this.state.inboxUrl}>{t('notificaciones.informacion')}</a>
+                </p>
+                </div>
             );
         }
     }
