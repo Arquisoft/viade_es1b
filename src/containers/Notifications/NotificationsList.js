@@ -4,10 +4,6 @@ import { fetchDocument } from "tripledoc";
 import { useWebId } from "@solid/react";
 import { useTranslation } from 'react-i18next';
 
-
-
-
-
 async function getNNotifications() {
     const auth = require("solid-auth-client");
     const FC = require("solid-file-client");
@@ -71,10 +67,10 @@ const NotificationList = (myWebId) => {
         render() {
             return (
                 <p>
-                    <a href={this.state.inboxUrl}>{t('Notificaciones.1')}</a>: {this.state.nNotifications}
+                    <a href={this.state.inboxUrl}>{t('notificaciones.informacion')}</a>: {this.state.nNotifications}
                     <Button
                         class="btn"
-                        text={t('Refrescar.1')}
+                        text={t('notificaciones.informacion')}
 
                         disabled={false}
                         onClick={() => this.updateNotifications()}
