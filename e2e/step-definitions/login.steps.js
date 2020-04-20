@@ -8,7 +8,7 @@ let page = null;
 defineFeature((feature), (test) => {
   
 	
-  test("We want to login into Viade", ({ given, when, then}) => {
+  test("I want to login into Viade", ({ given, when, then}) => {
     let popup;
 
     given("The login page", async() => {
@@ -21,7 +21,7 @@ defineFeature((feature), (test) => {
       
     });
 
-    when("I press Log In button and enter our information", async () => {
+    when("I press Log In button and enter my personal data", async () => {
 
       const newPagePromise = new Promise((x) =>  browser.once(("targetcreated"), (target) => x(target.page())));	
       await expect(page).toClick("button", { className: "btn btn-primary a-solid button-login" });

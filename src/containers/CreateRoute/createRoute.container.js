@@ -124,7 +124,7 @@ class CreateRoute extends React.Component {
         </DivStyle>
         <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          {/* <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" /> */}
           {this.state.markers.map((position, idx) =>
             <Marker key={`marker-${idx}`} position={position}>
             </Marker>
