@@ -8,7 +8,7 @@ import { MapStyle, DivStyle, LiStyle, H3Style, LiStyle2, InputStyle } from './ma
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 import bajarRutas from "../../services/bajarRutas";
-
+import { NotificationContainer } from "react-notifications";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -92,10 +92,11 @@ const Mapac = props => {
       const position = this.puntos[0];
       return (
         <React.Fragment>
+          <NotificationContainer />
           <DivStyle>
             <H3Style data-testid="map-title" id="name">{this.name}</H3Style>
             <InputStyle data-testid="download-input" type="text" onChange={this.obtenerCarpetaPod} placeholder={t('map.placeholder1')} />
-            <button data-testid="download-button" onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion)} >{t('map.upload')} <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="25" height="20" alt="" /> </button>
+            <button data-testid="download-button" onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion, t('map.success_message'), t('map.failed_message'), t('map.empty_string_message'), t('map.empty_message'))} >{t('map.download')} <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="25" height="20" alt="" /> </button>
             <button onClick={this.getLista} > <img src={process.env.PUBLIC_URL + "/img/icon/refresh.svg"} width="25" height="20" alt="" />{t('map.refresh')} </button>
             <Lista />
           </DivStyle>

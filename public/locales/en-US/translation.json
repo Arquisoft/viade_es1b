@@ -47,7 +47,7 @@
     "myFriends": "My Friends",
     "addFriend": "Add Friend",
     "recievedRequest": "Recieved requests",
-    "share":"Share",
+    "share":"Share Routes",
     "remove":"Remove Friend",
     "add":"Add to Group",
     "group":"Mis Grupos"
@@ -64,7 +64,11 @@
     "photos": "Add photos",
     "videos": "Add videos",
     "placeholder1": "Example: public/routes...",
-    "placeholder2": "Example: country route"
+    "placeholder2": "Example: country route",
+    "success_message": "Routes Downloaded Successfully",
+    "failed_message:": "Fail occurred while route's download",
+    "empty_message": "This folder has no routes",
+    "empty_string_message": "You need to write a folder address"
   },
   "welcome": {
     "welcome": "Welcome",

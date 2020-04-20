@@ -16,6 +16,7 @@ export const DivStyle = styled.div`
     padding: 20px;
     width: 30%;
     height: auto;
+    max-height: 35%;
     z-Index: 99;
     overflow: auto;
     align:left;

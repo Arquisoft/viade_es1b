@@ -47,7 +47,7 @@
     "myFriends": "Mis Amigos",
     "addFriend": "Añadir Amigo",
     "recievedRequest": "Peticiones recibidas",
-    "share":"Compartir",
+    "share":"Compartir Rutas",
     "remove":"Eliminar Amigo",
     "add":"Añadir a Grupo",
     "group":"Mis Grupos"
@@ -64,7 +64,11 @@
     "photos": "Añadir fotos",
     "videos": "Añadir videos",
     "placeholder1": "Ejemplo: public/routes...",
-    "placeholder2": "Ejemplo: ruta1"
+    "placeholder2": "Ejemplo: ruta1",
+    "success_message": "Rutas descargadas con éxito",
+    "failed_message:": "Ocurrió un error descargando las rutas",
+    "empty_message": "Esta carpeta no tiene ninguna ruta",
+    "empty_string_message": "Este campo no puede estar vacío"
   },
   "welcome": {
     "welcome": "Bienvenido",
