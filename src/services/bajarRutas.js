@@ -1,6 +1,6 @@
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
-
+import { NotificationManager } from "react-notifications";
 
 class bajarRutas {
 
@@ -30,9 +30,10 @@ class bajarRutas {
                         if (!rutas)
                             rutas = true;
                     }
+
                 });
             } catch (error) {
-                alert("No se ha podido encontrar la carpeta en su POD");
+                NotificationManager.success('Success message', 'Title here', 10000);
             }
         }
     }
@@ -45,12 +46,11 @@ class bajarRutas {
         var jsonRuta = JSON.parse(Httpreq.responseText);
         this.rutas.push(jsonRuta);
         if (this.rutas.length === files.length) {
-            alert("Descarga Finalizada");
+            NotificationManager.error('Success message', "TIULO", 2000);
         }
         if (files.length === 0)
             alert("No hay rutas disponibles");
     }
-
 }
 
 export default bajarRutas = new bajarRutas();

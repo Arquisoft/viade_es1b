@@ -25,7 +25,7 @@ const Friends = props => {
     })()
 
     return (
-        <div>
+        <section>
             <LoggedIn>
                 <ContainerDiv>
                     <ListaDiv>
@@ -66,7 +66,7 @@ const Friends = props => {
             <LoggedOut>
                 <Redirect to='/login'></Redirect>
             </LoggedOut>
-        </div >
+        </section >
     );
 };
 

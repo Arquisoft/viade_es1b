@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
-
+import { NotificationContainer, NotificationManager } from "react-notifications";
 import { LoggedIn, LoggedOut } from "@solid/react";
 
 import {

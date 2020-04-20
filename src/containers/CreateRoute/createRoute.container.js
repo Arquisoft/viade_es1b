@@ -86,18 +86,16 @@ class CreateRoute extends React.Component {
     return (
       <React.Fragment>
         <DivStyle>
-          <InputStyle data-testid="name-input" id="name" type="text" placeholder="Write route name..." ref={this.name} onChange={this.updateValue} />
+          <InputStyle data-testid="name-input" id="name" type="text" placeholder="Avilés-Gijón..." ref={this.name} onChange={this.updateValue} />
           <ChooseButton data-testid="upload-images-button">
             <input type="file" id="photo" name="image" accept="image/*" multiple={true} onChange={(e) => this.addImage(e.target.files)} />
             <label id="label-input" htmlFor="photo">
-              <span>Elegir fotos </span>
               <img src={process.env.PUBLIC_URL + "/img/icon/photo.svg"} width="30" height="31" alt="" />
             </label>
           </ChooseButton>
           <ChooseButton data-testid="upload-videos-button">
             <input type="file" id="video" name="video" accept="video/*" multiple={true} onChange={(e) => this.addVideo(e.target.files)} />
             <label id="label-input" htmlFor="video">
-              <span>Elegir vídeos </span>
               <img src={process.env.PUBLIC_URL + "/img/icon/videocamera.svg"} width="30" height="31" alt="" />
             </label>
           </ChooseButton>
