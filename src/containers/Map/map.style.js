@@ -14,8 +14,8 @@ export const DivStyle = styled.div`
     background-image: linear-gradient( white, lightgrey);
     border: 1px solid lightgray;
     padding: 20px;
-    width: 20%;
-    height: 35%;
+    width: 30%;
+    height: auto;
     z-Index: 99;
     overflow: auto;
     align:left;

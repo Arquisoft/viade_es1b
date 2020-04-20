@@ -57,6 +57,15 @@
     "content": "Puede existir un problema con la dirección buscada. Por favor verifiquela e intente de nuevo. O la página que buscaste ha sido movida o eliminada",
     "redirectButton": "Llevarme a la página principal"
   },
+  "map": {
+    "upload": "Subir",
+    "download": "Descargar",
+    "refresh": "Actualizar",
+    "photos": "Añadir fotos",
+    "videos": "Añadir videos",
+    "placeholder1": "Ejemplo: public/routes...",
+    "placeholder2": "Ejemplo: ruta1"
+  },
   "welcome": {
     "welcome": "Bienvenido",
     "doneMessage": "¿Terminaste?",
