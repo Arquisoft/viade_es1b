@@ -50,7 +50,12 @@
     "share":"Compartir Rutas",
     "remove":"Eliminar Amigo",
     "add":"Añadir a Grupo",
-    "group":"Mis Grupos"
+    "group":"Mis Grupos",
+    "added":"Ya sois amigos",
+    "empty":"Este campo no puede estar vacío",
+    "webIdF":"WebId no existe",
+    "deleted":"Amigo eliminado",
+    "choose":"Seleccione un amigo a eliminar"
   },
   "notFound": {
     "title": "Página no encontrada",

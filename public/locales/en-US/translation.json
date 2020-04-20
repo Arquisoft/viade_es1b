@@ -50,7 +50,12 @@
     "share":"Share Routes",
     "remove":"Remove Friend",
     "add":"Add to Group",
-    "group":"Mis Grupos"
+    "group":"My Groups",
+    "added":"You already are friends",
+    "empty":"This field cannot be empty",
+    "webIdF":"WebId does not exist",
+    "deleted":"Friend deleted",
+    "choose":"Choose a friend to delete"
   },
   "notFound": {
     "title": "Page not found",

@@ -1,6 +1,7 @@
 import auth from "solid-auth-client";
 import data from '@solid/query-ldflex';
 import FC from 'solid-file-client';
+import { NotificationManager } from "react-notifications";
 
 class AddFriend {
 
@@ -9,25 +10,25 @@ class AddFriend {
         this.friends = this.getFriends();
     }
 
-    async addFriend(event, id, webId) {
+    async addFriend(event, id, webId, added, empty, error) {
         event.preventDefault();
 
         const user = data[webId];
         if (await this.checkID(id)) {
             if (id.localeCompare("") !== 0) {
                 if (await this.friendAlreadyAdded(id, webId))
-                    alert('¡Ya sois amigos!');
+                    NotificationManager.error("", added, 3000);
                 else {
                     await user.knows.add(data[id]);
                     await window.location.reload();
                 }
             } else
-                alert('Este campo no puede estar vacío');
+                NotificationManager.error("", empty, 3000);
         } else
-            alert("WebId no existe")
+            NotificationManager.error("", error, 3000);
     };
 
-    async removeFriend(event, webId) {
+    async removeFriend(event, webId, eliminado, error) {
         try {
             var selectedOption = document.querySelector('input[name = food]:checked').value;
             event.preventDefault();
@@ -35,10 +36,10 @@ class AddFriend {
             if (selectedOption.localeCompare("") !== 0) {
                 await user.knows.delete(data[selectedOption]);
                 await window.location.reload();
-                alert('Amigo eliminado');
+                NotificationManager.error("", eliminado, 3000);
             }
         } catch (e) {
-            alert('Seleccione un amigo a eliminar');
+            NotificationManager.error("", error, 3000);
         }
     };
 
