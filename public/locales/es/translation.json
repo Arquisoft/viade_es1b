@@ -68,7 +68,15 @@
     "success_message": "Rutas descargadas con éxito",
     "failed_message:": "Ocurrió un error descargando las rutas",
     "empty_message": "Esta carpeta no tiene ninguna ruta",
-    "empty_string_message": "Este campo no puede estar vacío"
+    "empty_string_message": "Este campo no puede estar vacío",
+    "photo_success": "Foto subida",
+    "photo_fail": "Error subiendo la foto",
+    "video_success": "Video subido",
+    "video_fail": "Error subiendo video",
+    "logged": "No estás loggeado",
+    "success_upload":"Archivo subido",
+    "lenght":"La ruta tiene que tener un nombre",
+    "twopoints":"La ruta tiene que tener al menos dos puntos"
   },
   "welcome": {
     "welcome": "Bienvenido",

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { TileLayer, Marker, Polyline } from 'react-leaflet';
 import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2, ChooseButton } from './createRoute.style';
 import CreateRouteService from '../../services/CreateRouteService';
-
+import { NotificationManager, NotificationContainer } from "react-notifications";
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -57,12 +57,11 @@ const Createc = props => {
       var { name } = this.state;
       const { markers } = this.state;
       if (name.length === 0)
-        alert("La ruta tiene que tener un nombre");
+        NotificationManager.error("", t('map.lenght'), 3000);
       if (markers.length <= 1)
-        alert("La ruta tiene que tener al menos 2 puntos");
+        NotificationManager.error("", t('map.twopoints'), 3000);
       if (name.length !== 0 && markers.length > 1) {
-        alert("Ruta guardada correctamente");
-        CreateRouteService.createRoute(name, markers, this.state.images, this.state.videos);
+        CreateRouteService.createRoute(name, markers, this.state.images, this.state.videos, t('map.photo_success'), t('map.photo_fail'), t('map.video_success'), t('map.video_fail'), t('map.logged'), t('map.success_upload'));
       }
     }
 
@@ -87,6 +86,7 @@ const Createc = props => {
     render() {
       return (
         <React.Fragment>
+          <NotificationContainer />
           <DivStyle>
             <InputStyle data-testid="name-input" id="name" type="text" placeholder={t('map.placeholder2')} ref={this.name} onChange={this.updateValue} />
             <ChooseButton data-testid="upload-images-button">

@@ -68,7 +68,15 @@
     "success_message": "Routes Downloaded Successfully",
     "failed_message:": "Fail occurred while route's download",
     "empty_message": "This folder has no routes",
-    "empty_string_message": "You need to write a folder address"
+    "empty_string_message": "You need to write a folder address",
+    "photo_success": "Picture uploaded",
+    "photo_fail": "Error uploading photo",
+    "video_success": "Video uploaded",
+    "video_fail": "Error uploading video",
+    "logged": "You are not logged in",
+    "success_upload":"File uploaded",
+    "lenght":"The route must have a name",
+    "twopoints":"The route must have at least two points"
   },
   "welcome": {
     "welcome": "Welcome",
