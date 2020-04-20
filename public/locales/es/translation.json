@@ -38,6 +38,7 @@
     "createRoute":"Nueva Ruta",
     "routeLoader":"Cargar Rutas",
     "friends":"Amigos",
+    "notifications": "Notificaciones",
     "languages": {
       "en": "English (Inglés)",
       "es": "Español (Español)"
@@ -54,15 +55,9 @@
     "redirectButton": "Llevarme a la página principal"
   },
   "notifications":{
-    "informacion": "",
-    "infoFilas": "",
-    "infoTitulo": "",
-    "cargando":"",
-    "errorMessage":"",
-    "errorTitle":"",
-    "nombre":"",
-    "leido":"",
-    "mark":""
+   "verNotificaciones": "Ver notificaciones",
+   "informacion": "Tus notificaciones recibidas",
+   "actualizar": "Actualizar notificaciones"
   },
   "welcome": {
     "welcome": "Bienvenido",

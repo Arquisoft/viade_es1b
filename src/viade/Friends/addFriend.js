@@ -9,6 +9,26 @@ class AddFriend {
         this.friends = this.getFriends();
     }
 
+    async sendNotification(userWebId, friendWebId) {
+        request({
+            method: "POST",
+            uri: friendWebId,
+            body: `@prefix as: <https://www.w3.org/ns/activitystreams#> .
+                @prefix schema: <http://schema.org/> .
+                <> a as:Follow ;
+                schema:Action "addFriend" ;
+                schema:agent <${userWebId}> ;
+                schema:identifier "${friendWebId}" .`,
+           
+    
+        },
+            function (error, response, body) {
+                if (!error) {
+                    alert("Notificacion enviada");
+                }
+                return !error;
+            });
+    }
     async addFriend(event, id, webId) {
         event.preventDefault();
 
@@ -19,6 +39,7 @@ class AddFriend {
                     alert('¡Ya sois amigos!');
                 else {
                     await user.knows.add(data[id]);
+                    sendNotificationFriend(webId,id);
                     await window.location.reload();
                 }
             } else

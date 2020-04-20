@@ -75,14 +75,14 @@ const NotificationList = (myWebId) => {
                     
                     <button
                         className="btn"
-                        text={t('notificaciones.informacion')}
+                        text={t('notificaciones.actualizar')}
 
                         disabled={false}
                         onClick={() => this.updateNotifications()}
                     />
                 </p>
                 <p>
-                    <a href={this.state.inboxUrl}>{t('notificaciones.informacion')}</a>
+                    <a href={this.state.inboxUrl}>{t('notificaciones.verNotificaciones')}</a>
                 </p>
                 </div>
             );
