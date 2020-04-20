@@ -45,8 +45,11 @@ class AddFriend {
     async checkID(id) {
         const fc = new FC(auth);
         let session = await auth.currentSession();
-        if (!session)
+        console.log(session);
+        if (!session) {
             session = await auth.login();
+            console.log(session);
+        }
         try {
             let op = async client => await client.itemExists(id);
             return await op(fc);
@@ -65,12 +68,15 @@ class AddFriend {
     async getFriends() {
         const friends = [];
         let session = await auth.currentSession();
-        var id = `${session.webId}`;
-        const user = data[id];
-        for await (const friend of user.friends)
-            friends.push(friend.toString());
-        const users = await Promise.all(friends);
-        return users;
+        if (session) {
+            var id = `${session.webId}`;
+            const user = data[id];
+            for await (const friend of user.friends)
+                friends.push(friend.toString());
+            const users = await Promise.all(friends);
+            return users;
+        }
+        return friends;
     };
 
 
