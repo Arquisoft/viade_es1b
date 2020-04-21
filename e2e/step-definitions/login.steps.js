@@ -7,21 +7,28 @@ let page = null;
 
 defineFeature((feature), (test) => {
   
-	
-  test("I want to login into Viade", ({ given, when, then}) => {
+  beforeAll(() => {
+    //Create page
+    browser = await puppeteer.launch({
+      headless: false,
+      defaultViewport: null
+    });
+    page = await browser.newPage();
+  });
+
+  afterAll(()=>{
+    browser.close();
+  });
+
+  test("The user wants to login into Viade", ({ given, when, then}) => {
     let popup;
 
     given("The login page", async() => {
-      browser = await puppeteer.launch({
-        headless: false,
-        defaultViewport: null
-      });
-      page = await browser.newPage();
       await page.goto("http://localhost:3000/#/",{waitUntil: "load", timeout: 0});
       
     });
 
-    when("I press Log In button and enter my personal data", async () => {
+    when("The user press Log In button and enter his personal data", async () => {
 
       const newPagePromise = new Promise((x) =>  browser.once(("targetcreated"), (target) => x(target.page())));	
       await expect(page).toClick("button", { className: "btn btn-primary a-solid button-login" });
@@ -35,7 +42,7 @@ defineFeature((feature), (test) => {
       await expect(popup).toClick("button", { text: "Log In" });
     });
 
-    then("I expect to be on the Welcome page of ViaDe", async () => {
+    then("The user expects to be on the Welcome page of ViaDe", async () => {
       await expect(page.$eval('#welcome-image', el => el ? true : false)).toBeTruthy();
     });
 

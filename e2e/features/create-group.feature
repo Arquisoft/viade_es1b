@@ -1,4 +1,4 @@
-Feature: Add and remove a friend and create a group
+Feature: Add a friend 
 
 	Scenario: I want to add a new friend
 		Given The friends page

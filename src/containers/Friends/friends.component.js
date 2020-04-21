@@ -45,7 +45,7 @@ const Friends = props => {
                         <h3>{t('friends.addFriend')}</h3>
                         <form className="modal-body">
                             <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input" />
-                            <button onClick={(event) => addFriend.addFriend(event, document.getElementById('input').value, name)} className="send">
+                            <button id="send-button" onClick={(event) => addFriend.addFriend(event, document.getElementById('input').value, name)} className="send">
                                 <span className="icon">
                                     <img src={process.env.PUBLIC_URL + "/img/icon/arrow.svg"} width="25" height="20" alt="" />
                                 </span>

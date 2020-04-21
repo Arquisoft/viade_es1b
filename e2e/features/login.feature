@@ -1,6 +1,6 @@
 Feature: Login into Viade
 
-	Scenario: I want to login into Viade
+	Scenario: The user wants to login into Viade
 		Given The login page
-		When I press Log In button and enter my personal data
-		Then I expect to be on the Welcome page of ViaDe
+		When The user press Log In button and enter his personal data
+		Then The user expects to be on the Welcome page of ViaDe
