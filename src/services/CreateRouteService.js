@@ -1,6 +1,7 @@
 import createJson from '../viade/ParserRoute/route-to-JSON';
 import auth from 'solid-auth-client';
 import SolidFileClient from 'solid-file-client';
+import { NotificationManager } from "react-notifications";
 const fc = new SolidFileClient(auth, { enableLogging: true });
 
 class CreateRouteService {
@@ -15,7 +16,7 @@ class CreateRouteService {
         this.videosRoutes = [];
     }
 
-    async createRoute(name, markers, images, videos) {
+    async createRoute(name, markers, images, videos, ps, pf, vs, vf, l, su) {
 
         let session = await auth.currentSession();
 
@@ -32,9 +33,9 @@ class CreateRouteService {
                 let imageRoute = id + "resources/" + images[i].name;
                 if (fc.createFile(imageRoute, images[i], images[i].type)) {
                     this.imagesRoutes.push(imageRoute);
-                    alert("Foto " + images[i].name + " subida ");
+                    NotificationManager.error("", ps + images[i].name, 4000);
                 } else {
-                    alert("Error al subir la foto " + images[i].name);
+                    NotificationManager.error("", pf + images[i].name, 4000);
                 }
             }
 
@@ -42,9 +43,9 @@ class CreateRouteService {
                 let videoRoute = id + "resources/" + videos[i].name;
                 if (fc.createFile(videoRoute, videos[i], videos[i].type)) {
                     this.videosRoutes.push(videoRoute);
-                    alert("Foto " + videos[i].name + " subida ");
+                    NotificationManager.error("", vs + videos[i].name, 4000);
                 } else {
-                    alert("Error al subir la foto " + videos[i].name);
+                    NotificationManager.error("", vf + videos[i].name, 4000);
                 }
             }
 
@@ -57,15 +58,14 @@ class CreateRouteService {
             console.log(images);
 
             id = webId.replace('/profile/card#me', '/public/');
-            this.subirFicheroAPod(name, this.routeJson, id);
+            this.subirFicheroAPod(name, this.routeJson, id, su);
         }
         else {
-            console.log("No estás loggeado");
-            alert("No estás loggeado");
+            NotificationManager.error("", l, 4000);
         }
     }
 
-    async subirFicheroAPod(name, sdict, id) {
+    async subirFicheroAPod(name, sdict, id, su) {
         //El archivo a subir será:
         let archivo = sdict;
         var date = new Date();
@@ -73,9 +73,9 @@ class CreateRouteService {
 
 
         try {
-            alert(id + n + "_" + name + ".json");
+            NotificationManager.error("", id + n + "_" + name + ".json", 4000);
             await fc.postItem(id + n + "_" + name + ".json", archivo, "application/json", archivo.type);
-            alert("Archivo subido");
+            NotificationManager.error("", su, 4000);
         }
         catch (error) {
             console.error(error);

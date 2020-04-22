@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MisAmigosDiv, ContainerDiv, ListaDiv, InputStyle, AmigosDiv, ButtonStyle } from './friends.style';
 import addFriend from '../../viade/Friends/addFriend';
+import { NotificationContainer } from "react-notifications";
 
 const Friends = props => {
     const { t } = useTranslation();
@@ -25,14 +26,15 @@ const Friends = props => {
     })()
 
     return (
-        <div>
+        <section>
+            <NotificationContainer />
             <LoggedIn>
                 <ContainerDiv>
                     <ListaDiv>
                         <h3>{t('friends.myFriends')}</h3>
                         <AmigosDiv id="lista">
                         </AmigosDiv>
-                        <ButtonStyle onClick={(event) => addFriend.removeFriend(event, name)}>
+                        <ButtonStyle onClick={(event) => addFriend.removeFriend(event, name, t('friends.deleted'), t('friends.choose'))}>
                             <img src={process.env.PUBLIC_URL + "/img/icon/rubbish.svg"} width="35" height="35" alt="" />
                             {t('friends.remove')}
                         </ButtonStyle>
@@ -45,7 +47,7 @@ const Friends = props => {
                         <h3>{t('friends.addFriend')}</h3>
                         <form className="modal-body">
                             <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input" />
-                            <button onClick={(event) => addFriend.addFriend(event, document.getElementById('input').value, name)} className="send">
+                            <button onClick={(event) => addFriend.addFriend(event, document.getElementById('input').value, name, t('friends.added'), t('friends.empty'), t('friends.webIdF'))} className="send">
                                 <span className="icon">
                                     <img src={process.env.PUBLIC_URL + "/img/icon/arrow.svg"} width="25" height="20" alt="" />
                                 </span>
@@ -66,7 +68,7 @@ const Friends = props => {
             <LoggedOut>
                 <Redirect to='/login'></Redirect>
             </LoggedOut>
-        </div >
+        </section >
     );
 };
 

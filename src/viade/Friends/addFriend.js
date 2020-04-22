@@ -1,6 +1,7 @@
 import auth from "solid-auth-client";
 import data from '@solid/query-ldflex';
 import FC from 'solid-file-client';
+import { NotificationManager } from "react-notifications";
 
 class AddFriend {
 
@@ -9,36 +10,35 @@ class AddFriend {
         this.friends = this.getFriends();
     }
 
-    async addFriend(event, id, webId) {
+    async addFriend(event, id, webId, added, empty, error) {
         event.preventDefault();
-
-        const user = data[webId];
+        const user = data[webId]; //sacamos nuestra informacion 
         if (await this.checkID(id)) {
-            if (id.localeCompare("") !== 0) {
-                if (await this.friendAlreadyAdded(id, webId))
-                    alert('¡Ya sois amigos!');
+            if (id.localeCompare("") !== 0) { //comprobamos que no pasamos un campo vacio 
+                if (await this.friendAlreadyAdded(id, webId)) //notificamos si el amigo estaba añadido
+                    NotificationManager.error("", added, 3000);
                 else {
-                    await user.knows.add(data[id]);
+                    await user.knows.add(data[id]); //añadimos el amigo
                     await window.location.reload();
                 }
             } else
-                alert('Este campo no puede estar vacío');
+                NotificationManager.error("", empty, 3000);
         } else
-            alert("WebId no existe")
+            NotificationManager.error("", error, 3000);
     };
 
-    async removeFriend(event, webId) {
+    async removeFriend(event, webId, eliminado, error) {
         try {
-            var selectedOption = document.querySelector('input[name = food]:checked').value;
+            var selectedOption = document.querySelector('input[name = food]:checked').value; //sacamos el amigo seleccionado
             event.preventDefault();
-            const user = data[webId];
+            const user = data[webId]; //sacamos nuestra informacion
             if (selectedOption.localeCompare("") !== 0) {
-                await user.knows.delete(data[selectedOption]);
+                await user.knows.delete(data[selectedOption]); //eliminamos el amigo
                 await window.location.reload();
-                alert('Amigo eliminado');
+                NotificationManager.error("", eliminado, 3000);
             }
         } catch (e) {
-            alert('Seleccione un amigo a eliminar');
+            NotificationManager.error("", error, 3000);
         }
     };
 

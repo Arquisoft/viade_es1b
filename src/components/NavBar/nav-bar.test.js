@@ -22,8 +22,8 @@ describe.only('Nav Bar', () => {
     expect(wrapper).toBeTruthy();
   });
 
-  it('renders with all available links', async() => {
-    
+  it('renders with all available links', async () => {
+
     await expect(queryByTestId(wrapper, "nav-bar-home")).not.toBeNull();
     await expect(queryByTestId(wrapper, "nav-bar-map")).not.toBeNull();
     await expect(queryByTestId(wrapper, "nav-bar-createRoute")).not.toBeNull();
@@ -31,8 +31,8 @@ describe.only('Nav Bar', () => {
     await expect(queryByTestId(wrapper, "nav-bar-profile")).not.toBeNull();
     await expect(queryByTestId(wrapper, "nav-bar-language")).not.toBeNull();
     await expect(queryByTestId(wrapper, "nav-bar-logout")).not.toBeNull();
-    
+
   });
 
-  
+
 });
