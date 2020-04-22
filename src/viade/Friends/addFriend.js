@@ -12,14 +12,13 @@ class AddFriend {
 
     async addFriend(event, id, webId, added, empty, error) {
         event.preventDefault();
-
-        const user = data[webId];
+        const user = data[webId]; //sacamos nuestra informacion 
         if (await this.checkID(id)) {
-            if (id.localeCompare("") !== 0) {
-                if (await this.friendAlreadyAdded(id, webId))
+            if (id.localeCompare("") !== 0) { //comprobamos que no pasamos un campo vacio 
+                if (await this.friendAlreadyAdded(id, webId)) //notificamos si el amigo estaba añadido
                     NotificationManager.error("", added, 3000);
                 else {
-                    await user.knows.add(data[id]);
+                    await user.knows.add(data[id]); //añadimos el amigo
                     await window.location.reload();
                 }
             } else
@@ -30,11 +29,11 @@ class AddFriend {
 
     async removeFriend(event, webId, eliminado, error) {
         try {
-            var selectedOption = document.querySelector('input[name = food]:checked').value;
+            var selectedOption = document.querySelector('input[name = food]:checked').value; //sacamos el amigo seleccionado
             event.preventDefault();
-            const user = data[webId];
+            const user = data[webId]; //sacamos nuestra informacion
             if (selectedOption.localeCompare("") !== 0) {
-                await user.knows.delete(data[selectedOption]);
+                await user.knows.delete(data[selectedOption]); //eliminamos el amigo
                 await window.location.reload();
                 NotificationManager.error("", eliminado, 3000);
             }

@@ -5,11 +5,9 @@ import { NotificationManager } from "react-notifications";
 class bajarRutas {
 
     constructor() {
-
         this.sfc = new SolidFileClient(auth);
         this.rutas = [];
     }
-
 
     async bajarRutasDePod(direccion, exito, fallo, vacio, noruta) {
         this.rutas = [];
@@ -30,7 +28,6 @@ class bajarRutas {
                         if (!rutas)
                             rutas = true;
                     }
-
                 });
             } catch (error) {
                 NotificationManager.error("", fallo, 3000);

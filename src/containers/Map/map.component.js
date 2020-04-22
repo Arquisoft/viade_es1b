@@ -78,6 +78,7 @@ const Mapac = props => {
       let session = await auth.currentSession();
       var id = `${session.webId}`;
       id = id.replace('/profile/card#me', '/' + parameter.target.value);
+      console.log(id);
       if (session) {
         this.setState({ direccion: id });
       }
