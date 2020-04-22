@@ -7,10 +7,13 @@ class bajarRutas {
     constructor() {
         this.sfc = new SolidFileClient(auth);
         this.rutas = [];
+        this.session = null;
+        this.tmpFolder = "";
     }
 
     async bajarRutasDePod(direccion, exito, fallo, vacio, noruta) {
         this.rutas = [];
+        this.tmpFolder = id.replace('/profile/card#me', '/public/temp');
         //Dandole al boton se obtendria los contenidos del fichero   
         if (direccion === "")
             NotificationManager.error("", vacio, 3000);
