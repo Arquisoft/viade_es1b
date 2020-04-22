@@ -57,7 +57,7 @@ class CreateRouteService {
             //console.log(this.state);
             console.log(images);
 
-            id = webId.replace('/profile/card#me', '/public/');
+            id = webId.replace('/profile/card#me', '/viade/routes/');
             this.subirFicheroAPod(name, this.routeJson, id, su);
         }
         else {

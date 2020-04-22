@@ -22,18 +22,38 @@ class bajarRutas {
         else {
             // Leemos toda la carpeta
             try {
-                let folder = await this.sfc.readFolder(direccion);
+                let folder = await this.sfc.readFolder(direccion, null);
                 // Leemos los ficheros
                 const files = folder.files;
-                var rutas = false;
-                // Para cada fichero que sea json (o el formato que vaya a ser), lo muestra
+                var hayRutas = false;
+                var totalRutas = 0;
+                var rutasCargadas = 0;
+                // Para cada fichero que sea json (o el formato que vaya a ser), lo recoge
                 files.forEach(file => {
+                    if (file.type === "application/json")
+                        totalRutas++;
+                });
+                files.forEach(async file => {
                     if (file.type === "application/json") {
-                        this.loadJSon(file.url, files, exito, noruta);
-                        if (!rutas)
-                            rutas = true;
+                        hayRutas = true;
+                        let copiado = await this.sfc.copyFile(file.url, this.tmpFolder + "/" + file.name);
+                        if (copiado) {
+                            let cargado = this.loadJSon(this.tmpFolder + "/" + file.name);
+                            if (cargado) {
+                                rutasCargadas++;
+                            }
+                        }
+                    }
+                    if (totalRutas === rutasCargadas) {
+                        this.sfc.deleteFolder(this.tmpFolder);
                     }
                 });
+                if (hayRutas) {
+                    NotificationManager.error("", exito, 3000);
+                } else {
+                    NotificationManager.error("", noruta, 3000);
+                }
+
             } catch (error) {
                 NotificationManager.error("", fallo, 3000);
             }
@@ -41,17 +61,12 @@ class bajarRutas {
     }
 
     // Metodo auxiliar para obtener el objeto json
-    loadJSon(url, files, exito, noruta) {
+    loadJSon(url, exito, noruta) {
         var Httpreq = new XMLHttpRequest(); // Solicitud
         Httpreq.open("GET", url, false);
         Httpreq.send(null);
         var jsonRuta = JSON.parse(Httpreq.responseText);
         this.rutas.push(jsonRuta);
-        if (this.rutas.length === files.length) {
-            NotificationManager.success("", exito, 3000);
-        }
-        if (files.length === 0)
-            NotificationManager.error("", noruta, 3000);
     }
 }
 
