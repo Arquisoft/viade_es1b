@@ -12,6 +12,8 @@ class bajarRutas {
     }
 
     async bajarRutasDePod(direccion, exito, fallo, vacio, noruta) {
+        let session = await auth.currentSession();
+        var id = `${session.webId}`;
         this.rutas = [];
         this.tmpFolder = id.replace('/profile/card#me', '/public/temp');
         //Dandole al boton se obtendria los contenidos del fichero   
