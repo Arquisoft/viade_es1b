@@ -31,7 +31,8 @@
     "react-leaflet": "^2.6.3",
     "react-modal": "^3.11.2",
     "react-native-fs": "^2.16.6",
-    "react-scripts": "3.4.0",
+    "react-notifications": "^1.6.0",
+    "react-scripts": "^3.4.0",
     "react-toastify": "^5.5.0",
     "solid-file-client": "^1.0.2",
     "styled-components": "^5.0.1"

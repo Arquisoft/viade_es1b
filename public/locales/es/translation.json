@@ -47,15 +47,41 @@
     "myFriends": "Mis Amigos",
     "addFriend": "Añadir Amigo",
     "recievedRequest": "Peticiones recibidas",
-    "share":"Compartir",
+    "share":"Compartir Rutas",
     "remove":"Eliminar Amigo",
     "add":"Añadir a Grupo",
-    "group":"Mis Grupos"
+    "group":"Mis Grupos",
+    "added":"Ya sois amigos",
+    "empty":"Este campo no puede estar vacío",
+    "webIdF":"WebId no existe",
+    "deleted":"Amigo eliminado",
+    "choose":"Seleccione un amigo a eliminar"
   },
   "notFound": {
     "title": "Página no encontrada",
     "content": "Puede existir un problema con la dirección buscada. Por favor verifiquela e intente de nuevo. O la página que buscaste ha sido movida o eliminada",
     "redirectButton": "Llevarme a la página principal"
+  },
+  "map": {
+    "upload": "Subir",
+    "download": "Descargar",
+    "refresh": "Actualizar",
+    "photos": "Añadir fotos",
+    "videos": "Añadir videos",
+    "placeholder1": "Ejemplo: public/routes...",
+    "placeholder2": "Ejemplo: ruta1",
+    "success_message": "Rutas descargadas con éxito",
+    "failed_message:": "Ocurrió un error descargando las rutas",
+    "empty_message": "Esta carpeta no tiene ninguna ruta",
+    "empty_string_message": "Este campo no puede estar vacío",
+    "photo_success": "Foto subida",
+    "photo_fail": "Error subiendo la foto",
+    "video_success": "Video subido",
+    "video_fail": "Error subiendo video",
+    "logged": "No estás loggeado",
+    "success_upload":"Archivo subido",
+    "lenght":"La ruta tiene que tener un nombre",
+    "twopoints":"La ruta tiene que tener al menos dos puntos"
   },
   "welcome": {
     "welcome": "Bienvenido",
