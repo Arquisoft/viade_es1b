@@ -4,10 +4,11 @@ import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
 import { Rutas } from '../../viade/Model';
 import ReactDOM from 'react-dom';
 import { useTranslation } from 'react-i18next';
-import { MapStyle, DivStyle, LiStyle, H3Style, LiStyle2, InputStyle } from './map.style';
+import { MapStyle, DivStyle, LiStyle, H3Style, LiStyle2, InputStyle, AmigosDiv, DivStyle3, DivStyle4 } from './map.style';
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 import bajarRutas from "../../services/bajarRutas";
+import addFriend from '../../viade/Friends/addFriend';
 import { NotificationContainer } from "react-notifications";
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -18,7 +19,9 @@ L.Icon.Default.mergeOptions({
 });
 
 const Mapac = props => {
+
   const { t } = useTranslation();
+
   class Lista extends React.Component {
 
     state = { count: 0 };
@@ -52,7 +55,15 @@ const Mapac = props => {
     }
 
     render() {
-      return (<LiStyle2 data-testid="map-routes-list" id="lista">{Rutas.getNames().map((n, i) => <LiStyle key={i} onClick={() => this.getRoutes(n)}> <img src={process.env.PUBLIC_URL + "/img/icon/start.svg"} width="25" height="25" alt="" /> {n}</LiStyle>)}</LiStyle2>)
+      return (
+        <DivStyle3>
+          <LiStyle2 data-testid="map-routes-list" id="lista">
+            {Rutas.getNames().map((n, i) => <LiStyle key={i} onClick={() => this.getRoutes(n)}>
+              <img src={process.env.PUBLIC_URL + "/img/icon/start.svg"} width="25" height="25" alt="" />  {n}
+            </LiStyle>)}
+          </LiStyle2>
+        </DivStyle3>
+      )
     }
   }
 
@@ -89,6 +100,21 @@ const Mapac = props => {
     };
 
     render() {
+      var friends = [];
+      (async () => {
+        friends = await addFriend.friends
+        var str = '<List>'
+        friends.forEach(function (friend) {
+          str += '<button value=' + friend + ' id = "radio">' + friend + '</button>';
+        });
+        str += '</List>';
+        try {
+          document.getElementById("list").innerHTML = str;
+        }
+        catch (e) {
+
+        }
+      })()
       Rutas.actualizarRutasConPod();
       const position = this.puntos[0];
       return (
@@ -100,6 +126,11 @@ const Mapac = props => {
             <button data-testid="download-button" onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion, t('map.success_message'), t('map.failed_message'), t('map.empty_string_message'), t('map.empty_message'))} >{t('map.download')} <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="25" height="20" alt="" /> </button>
             <button onClick={this.getLista} > <img src={process.env.PUBLIC_URL + "/img/icon/refresh.svg"} width="25" height="20" alt="" />{t('map.refresh')} </button>
             <Lista />
+            <H3Style>{t('friends.share')}</H3Style>
+            <AmigosDiv>
+              <DivStyle4 id="list">
+              </DivStyle4>
+            </AmigosDiv>
           </DivStyle>
           <MapStyle id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

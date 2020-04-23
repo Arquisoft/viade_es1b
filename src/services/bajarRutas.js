@@ -61,7 +61,7 @@ class bajarRutas {
     }
 
     // Metodo auxiliar para obtener el objeto json
-    loadJSon(url, exito, noruta) {
+    loadJSon(url) {
         var Httpreq = new XMLHttpRequest(); // Solicitud
         Httpreq.open("GET", url, false);
         Httpreq.send(null);

@@ -16,11 +16,30 @@ export const DivStyle = styled.div`
     padding: 20px;
     width: 30%;
     height: auto;
-    max-height: 35%;
+    max-height: 50%;
     z-Index: 99;
     overflow: auto;
     align:left;
   `;
+
+export const DivStyle3 = styled.div`
+  overflow: auto; 
+`;
+
+export const DivStyle4 = styled.div`
+  background-image: linear-gradient( white, white);
+  border: 1px solid gray;
+  overflow: auto;
+  button{
+    width:100%;
+    text-align: left;
+  }
+`;
+
+export const AmigosDiv = styled.div`
+   border: 1px solid gray;
+   padding: 5px;
+`;
 
 export const LiStyle = styled.li`
     list-style: none;
