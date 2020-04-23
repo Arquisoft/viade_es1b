@@ -46,7 +46,7 @@ defineFeature((feature), (test) => {
     when("the user types his new friend's webId", async () => {
       await page.type("[id='input']", "https://mariomiguel.inrupt.net/profile/card#me", {visible: true});
       await expect(page).toClick("button", { id: "send-button" });
-      //TODO click in alerts
+      
     });
 
     then("the user expects to see him in his friends list", async () => {
@@ -70,7 +70,7 @@ defineFeature((feature), (test) => {
     });
 
     then("an error must appear", async () => {
-      //TODO assert alerts messages
+      //TODO check if message appears
     });
 
     and("the friend is not added", ()=>{
@@ -93,7 +93,7 @@ defineFeature((feature), (test) => {
     });
 
     then("the user must be notified", async () => {
-      //TODO assert alerts
+      //TODO check if message appears
     });
 
     and("the friend is not added",()=>{

@@ -50,7 +50,7 @@ const Createc = props => {
       var { name } = this.state;
       name = document.getElementById('name').value;
       this.setState({ name });
-      console.log(name);
+      //console.log(name);
     }
 
     sendData = () => {
