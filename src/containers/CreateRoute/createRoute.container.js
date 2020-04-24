@@ -50,7 +50,6 @@ const Createc = props => {
       var { name } = this.state;
       name = document.getElementById('name').value;
       this.setState({ name });
-      //console.log(name);
     }
 
     sendData = () => {
@@ -72,15 +71,11 @@ const Createc = props => {
     addImage(imageList) {
       for (let i = 0; i < imageList.length; i++)
         this.state.images.push(imageList[i]);
-      console.log(imageList);
-      console.log(this.state.images);
     }
 
     addVideo(videoList) {
       for (let i = 0; i < videoList.length; i++)
         this.state.videos.push(videoList[i]);
-      console.log(videoList);
-      console.log(this.state.videos);
     }
 
     render() {

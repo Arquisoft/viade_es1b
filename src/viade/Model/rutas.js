@@ -10,8 +10,6 @@ class Rutas {
 
     actualizarRutasConPod() {
         if (bajarRutas.rutas.length > 0) {
-            //console.log(bajarRutas.rutas);
-            //console.log(bajarRutas.rutas.length);
             while (this.rutas.length > 0) {
                 this.rutas.pop();
             }

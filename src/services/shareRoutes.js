@@ -1,0 +1,22 @@
+import auth from "solid-auth-client";
+import SolidFileClient from "solid-file-client";
+import { NotificationManager } from "react-notifications";
+
+export const sharing = async (friendId, shareUrl, addr, exito, errorm, double) => {
+    try {
+        var sfc = new SolidFileClient(auth);
+        var content = await sfc.readFile(shareUrl)
+        friendId = friendId.replace("profile/card#me", addr);
+        console.log(friendId);
+        if (await sfc.itemExists(friendId)) {
+            NotificationManager.success("", double, 3000);
+        }
+        else {
+            await sfc.postFile(friendId, content, "application/json")
+            NotificationManager.success("", exito, 3000);
+        }
+    } catch (error) {
+        NotificationManager.error("", errorm, 3000);
+    }
+
+};
