@@ -70,8 +70,8 @@
     "videos": "Add videos",
     "placeholder1": "Example: public/routes...",
     "placeholder2": "Example: country route",
-    "success_message": "Routes Downloaded Successfully",
-    "failed_message:": "Fail occurred while route's download",
+    "success_message": "Routes downloaded successfully",
+    "failed_message": "Fail occurred while route's download",
     "empty_message": "This folder has no routes",
     "empty_string_message": "You need to write a folder address",
     "photo_success": "Picture uploaded",
@@ -79,10 +79,17 @@
     "video_success": "Video uploaded",
     "video_fail": "Error uploading video",
     "logged": "You are not logged in",
+    "while":"Your routes are being downloaded",
     "success_upload":"File uploaded",
     "lenght":"The route must have a name",
     "twopoints":"The route must have at least two points",
     "listMedia":"Route files"
+    "shareB":"Share",
+    "demo":"You cannot share the demo route",
+    "shareError":"An error occurred while sharing the route",
+    "shareSuccess":"Route shared successfully",
+    "friend":"Select a friend",
+    "double":"This route has already been shared"
   },
   "welcome": {
     "welcome": "Welcome",

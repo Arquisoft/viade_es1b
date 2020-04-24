@@ -11,17 +11,12 @@ class Rutas {
 
     actualizarRutasConPod() {
         if (bajarRutas.rutas.length > 0) {
+
             if(!this.hayRuta) {
             this.rutas.pop();
             this.hayRuta = true;
         }
-            // console.log(this.rutas);            
-            //console.log(bajarRutas.rutas.length);
-            /*
-           while (this.rutas.length > 0) {
-                this.rutas.pop();
-            }            
-            */
+     
             while (bajarRutas.rutas.length !== 0) {
                 this.rutas.push(new Ruta(bajarRutas.rutas.pop()));                
             }
