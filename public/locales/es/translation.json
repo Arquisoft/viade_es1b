@@ -71,7 +71,7 @@
     "placeholder1": "Ejemplo: public/routes...",
     "placeholder2": "Ejemplo: ruta1",
     "success_message": "Rutas descargadas con éxito",
-    "failed_message:": "Ocurrió un error descargando las rutas",
+    "failed_message": "Ocurrió un error descargando las rutas",
     "empty_message": "Esta carpeta no tiene ninguna ruta",
     "empty_string_message": "Este campo no puede estar vacío",
     "photo_success": "Foto subida",
@@ -79,9 +79,16 @@
     "video_success": "Video subido",
     "video_fail": "Error subiendo video",
     "logged": "No estás loggeado",
+    "while":"Tus rutas están siendo descargadas",
     "success_upload":"Archivo subido",
     "lenght":"La ruta tiene que tener un nombre",
-    "twopoints":"La ruta tiene que tener al menos dos puntos"
+    "twopoints":"La ruta tiene que tener al menos dos puntos",
+    "shareB":"Compartir",
+    "demo":"No puedes compartir la ruta de demostración",
+    "shareError":"Ha ocurrido un error compartiendo la ruta",
+    "shareSuccess":"La ruta ha sido compartida con éxito",
+    "friend":"Selecciona un amigo",
+    "double":"Esta ruta ya ha sido compartida"
   },
   "welcome": {
     "welcome": "Bienvenido",

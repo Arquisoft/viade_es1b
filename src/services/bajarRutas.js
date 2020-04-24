@@ -11,13 +11,15 @@ class bajarRutas {
         this.tmpFolder = "";
     }
 
-    async bajarRutasDePod(direccion, exito, fallo, vacio, noruta) {
+    async bajarRutasDePod(direccion, exito, fallo, vacio, noruta, mientras) {
         let session = await auth.currentSession();
         var id = `${session.webId}`;
         this.rutas = [];
         this.tmpFolder = id.replace('/profile/card#me', '/public/temp');
+        var totalRutas = 0;
+        var rutasCargadas = 0;
         //Dandole al boton se obtendria los contenidos del fichero   
-        if (direccion === "")
+        if (direccion.length === 0)
             NotificationManager.error("", vacio, 3000);
         else {
             // Leemos toda la carpeta
@@ -26,8 +28,6 @@ class bajarRutas {
                 // Leemos los ficheros
                 const files = folder.files;
                 var hayRutas = false;
-                var totalRutas = 0;
-                var rutasCargadas = 0;
                 // Para cada fichero que sea json (o el formato que vaya a ser), lo recoge
                 files.forEach(file => {
                     if (file.type === "application/json")
@@ -38,9 +38,10 @@ class bajarRutas {
                         hayRutas = true;
                         let copiado = await this.sfc.copyFile(file.url, this.tmpFolder + "/" + file.name);
                         if (copiado) {
-                            let cargado = this.loadJSon(this.tmpFolder + "/" + file.name);
-                            if (cargado) {
-                                rutasCargadas++;
+                            this.loadJSon(this.tmpFolder + "/" + file.name);
+                            rutasCargadas++;
+                            if (totalRutas === rutasCargadas) {
+                                NotificationManager.success("", exito, 3000);
                             }
                         }
                     }
@@ -49,7 +50,7 @@ class bajarRutas {
                     }
                 });
                 if (hayRutas) {
-                    NotificationManager.error("", exito, 3000);
+                    NotificationManager.success("", mientras, 3000);
                 } else {
                     NotificationManager.error("", noruta, 3000);
                 }
@@ -61,7 +62,7 @@ class bajarRutas {
     }
 
     // Metodo auxiliar para obtener el objeto json
-    loadJSon(url, exito, noruta) {
+    loadJSon(url) {
         var Httpreq = new XMLHttpRequest(); // Solicitud
         Httpreq.open("GET", url, false);
         Httpreq.send(null);
