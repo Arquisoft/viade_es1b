@@ -83,7 +83,7 @@
     "success_upload":"Archivo subido",
     "lenght":"La ruta tiene que tener un nombre",
     "twopoints":"La ruta tiene que tener al menos dos puntos",
-    "listMedia":"Archivos de la ruta"
+    "listMedia":"Archivos de la ruta",
     "shareB":"Compartir",
     "demo":"No puedes compartir la ruta de demostración",
     "shareError":"Ha ocurrido un error compartiendo la ruta",

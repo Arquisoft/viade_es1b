@@ -127,7 +127,7 @@ class createJson {
             else
                 tot += '{ "@id": "' + imagesRoutes[i] + '"}';
         }
-        if(imagesRoutes.length == 1)
+        if (videosRoutes.length >= 1 && imagesRoutes.length != 0)
             tot += ","
         for (let i = 0; i < videosRoutes.length; i++) {
             if (i < videosRoutes.length - 1)

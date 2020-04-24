@@ -15,8 +15,7 @@ export const DivStyle = styled.div`
     border: 1px solid lightgray;
     padding: 20px;
     width: 30%;
-    height: auto;
-    max-height: 50%;
+    height: 100vh;
     z-Index: 99;
     overflow: auto;
     align:left;
@@ -73,15 +72,6 @@ export const InputStyle = styled.input`
     height: auto;
     `;
 
-    export const DivStyle4 = styled.div`
-    background-image: linear-gradient( white, white);
-    border: 1px solid gray;
-    overflow: auto;
-    button{
-      width:100%;
-      text-align: left;
-    }
-  `;
 
 export const MediaDiv = styled.div`
    border: 1px solid gray;
