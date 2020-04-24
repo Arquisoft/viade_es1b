@@ -28,6 +28,8 @@ class bajarRutas {
                 var hayRutas = false;
                 var totalRutas = 0;
                 var rutasCargadas = 0;
+                var rutasCopiadas = 0;
+                var rutasALeer = [];
                 // Para cada fichero que sea json (o el formato que vaya a ser), lo recoge
                 files.forEach(file => {
                     if (file.type === "application/json")
@@ -38,23 +40,28 @@ class bajarRutas {
                         hayRutas = true;
                         let copiado = await this.sfc.copyFile(file.url, this.tmpFolder + "/" + file.name);
                         if (copiado) {
-                            let cargado = this.loadJSon(this.tmpFolder + "/" + file.name);
-                            if (cargado) {
+                            //this.loadJSon(this.tmpFolder + "/" + file.name);
+                            rutasCopiadas++;
+                            console.log("copiadas: "+rutasCopiadas);
+                            this.rutas.push(this.loadJSon(this.tmpFolder + "/" + file.name));
+                            console.log("cargadas: "+rutasCargadas);
+                            let eliminado = await this.sfc.deleteFile(this.tmpFolder + "/" + file.name);
+                            if(eliminado) {
                                 rutasCargadas++;
+                            }
+                            if (totalRutas === rutasCargadas) {
+                                this.sfc.deleteFolder(this.tmpFolder);
                             }
                         }
                     }
-                    if (totalRutas === rutasCargadas) {
-                        this.sfc.deleteFolder(this.tmpFolder);
-                    }
-                });
+                });                
                 if (hayRutas) {
                     NotificationManager.error("", exito, 3000);
                 } else {
                     NotificationManager.error("", noruta, 3000);
                 }
-
-            } catch (error) {
+            }            
+            catch (error) {
                 NotificationManager.error("", fallo, 3000);
             }
         }
@@ -66,7 +73,7 @@ class bajarRutas {
         Httpreq.open("GET", url, false);
         Httpreq.send(null);
         var jsonRuta = JSON.parse(Httpreq.responseText);
-        this.rutas.push(jsonRuta);
+        return jsonRuta;
     }
 }
 
