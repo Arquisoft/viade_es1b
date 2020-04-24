@@ -98,7 +98,7 @@ const Createc = props => {
                 <span>{t('map.videos')}</span>
               </label>
             </ChooseButton>
-            <ButtonStyle data-testid="upload-button" onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> {t('map.upload')}</ButtonStyle>
+            <ButtonStyle id="upload-button" data-testid="upload-button" onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> {t('map.upload')}</ButtonStyle>
             <ButtonStyle2 data-testid="clear-button" onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
           </DivStyle>
           <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
