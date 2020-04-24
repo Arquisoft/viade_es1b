@@ -28,7 +28,6 @@ class bajarRutas {
                 var hayRutas = false;
                 var totalRutas = 0;
                 var rutasCargadas = 0;
-                var rutasCopiadas = 0;
                 // Para cada fichero que sea json (o el formato que vaya a ser), lo recoge
                 files.forEach(file => {
                     if (file.type === "application/json")
@@ -40,13 +39,12 @@ class bajarRutas {
                         let copiado = await this.sfc.copyFile(file.url, this.tmpFolder + "/" + file.name);
                         if (copiado) {
                             //this.loadJSon(this.tmpFolder + "/" + file.name);
-                            rutasCopiadas++;
-                            console.log("copiadas: "+rutasCopiadas);
+                            //console.log("copiadas: "+rutasCopiadas);
                             this.rutas.push(this.loadJSon(this.tmpFolder + "/" + file.name));
                             let eliminado = await this.sfc.deleteFile(this.tmpFolder + "/" + file.name);
                             if(eliminado) {
                                 rutasCargadas++;
-                                console.log("cargadas: "+rutasCargadas);
+                              //  console.log("cargadas: "+rutasCargadas);
                             }
                             if (totalRutas === rutasCargadas) {
                                 this.sfc.deleteFolder(this.tmpFolder);
@@ -72,6 +70,7 @@ class bajarRutas {
         Httpreq.open("GET", url, false);
         Httpreq.send(null);
         var jsonRuta = JSON.parse(Httpreq.responseText);
+        console.log(jsonRuta);
         return jsonRuta;
     }
 }

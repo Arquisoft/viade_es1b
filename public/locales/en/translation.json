@@ -81,7 +81,8 @@
     "logged": "You are not logged in",
     "success_upload":"File uploaded",
     "lenght":"The route must have a name",
-    "twopoints":"The route must have at least two points"
+    "twopoints":"The route must have at least two points",
+    "listMedia":"Route files"
   },
   "welcome": {
     "welcome": "Welcome",

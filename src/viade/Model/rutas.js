@@ -6,10 +6,15 @@ class Rutas {
 
     constructor() {
         this.rutas = [new Ruta(ruta1)];
+        this.hayRuta = false;
     }
 
     actualizarRutasConPod() {
         if (bajarRutas.rutas.length > 0) {
+            if(!this.hayRuta) {
+            this.rutas.pop();
+            this.hayRuta = true;
+        }
             // console.log(this.rutas);            
             //console.log(bajarRutas.rutas.length);
             /*

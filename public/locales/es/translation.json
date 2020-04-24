@@ -81,7 +81,8 @@
     "logged": "No estás loggeado",
     "success_upload":"Archivo subido",
     "lenght":"La ruta tiene que tener un nombre",
-    "twopoints":"La ruta tiene que tener al menos dos puntos"
+    "twopoints":"La ruta tiene que tener al menos dos puntos",
+    "listMedia":"Archivos de la ruta"
   },
   "welcome": {
     "welcome": "Bienvenido",
