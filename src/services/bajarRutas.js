@@ -38,24 +38,28 @@ class bajarRutas {
                         hayRutas = true;
                         let copiado = await this.sfc.copyFile(file.url, this.tmpFolder + "/" + file.name);
                         if (copiado) {
-                            this.loadJSon(this.tmpFolder + "/" + file.name);
-                            rutasCargadas++;
+                            //this.loadJSon(this.tmpFolder + "/" + file.name);
+                            //console.log("copiadas: "+rutasCopiadas);
+                            this.rutas.push(this.loadJSon(this.tmpFolder + "/" + file.name));
+                            let eliminado = await this.sfc.deleteFile(this.tmpFolder + "/" + file.name);
+                            if(eliminado) {
+                                rutasCargadas++;
+                              //  console.log("cargadas: "+rutasCargadas);
+                            }
                             if (totalRutas === rutasCargadas) {
+                                this.sfc.deleteFolder(this.tmpFolder);
                                 NotificationManager.success("", exito, 3000);
                             }
                         }
                     }
-                    if (totalRutas === rutasCargadas) {
-                        this.sfc.deleteFolder(this.tmpFolder);
-                    }
-                });
+                });                
                 if (hayRutas) {
                     NotificationManager.success("", mientras, 3000);
                 } else {
                     NotificationManager.error("", noruta, 3000);
                 }
-
-            } catch (error) {
+            }            
+            catch (error) {
                 NotificationManager.error("", fallo, 3000);
             }
         }
@@ -67,7 +71,8 @@ class bajarRutas {
         Httpreq.open("GET", url, false);
         Httpreq.send(null);
         var jsonRuta = JSON.parse(Httpreq.responseText);
-        this.rutas.push(jsonRuta);
+        console.log(jsonRuta);
+        return jsonRuta;
     }
 }
 

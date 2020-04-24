@@ -5,7 +5,7 @@ import { Rutas } from '../../viade/Model';
 import { useWebId } from '@solid/react';
 import ReactDOM from 'react-dom';
 import { useTranslation } from 'react-i18next';
-import { MapStyle, DivStyle, LiStyle, H3Style, LiStyle2, InputStyle, AmigosDiv, DivStyle3, DivStyle4, ButtonStyle } from './map.style';
+import { MapStyle, DivStyle, LiStyle, H3Style, LiStyle2, InputStyle, AmigosDiv, DivStyle3, DivStyle4, ButtonStyle, MediaDiv } from './map.style';
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 import bajarRutas from "../../services/bajarRutas";
@@ -40,6 +40,31 @@ const Mapac = props => {
 
     getRoutes(id) {
       var newRuta = Rutas.getRutaByName(id);
+      console.log(newRuta);
+      if(newRuta.media.length >= 1 || newRuta.media != undefined) {
+      (() => {        
+        var str = '<List>'
+        newRuta.media.forEach(function (archivo) {
+          var stringJSON = JSON.stringify(archivo);
+          var archivoURLFull = stringJSON.slice(8,stringJSON.length-2).toString();
+          // Por los espacios
+          var archivoURL = archivoURLFull.replace(" ","%20");
+          var nombreArchivo = archivoURL.split("/")[archivoURLFull.split("/").length-1].replace("%20"," ");
+          console.log(archivoURL);
+          str += '<p><a target="_blank" rel="noopener noreferrer" href=' + archivoURL + '>' + nombreArchivo + '</a></p>';
+        });
+        str += '</List>';
+        try {
+          document.getElementById("listMedia").innerHTML = str;
+        }
+        catch (e) {
+
+        }
+      })()}
+      else {
+        var str = '<List>Sin archivos</List>';
+        document.getElementById("listMedia").innerHTML = str;
+      }
       document.getElementById("name").textContent = newRuta.name;
       this.puntos = newRuta.point;
       const position = this.puntos[0];
@@ -77,7 +102,8 @@ const Mapac = props => {
       this.state = {
         sfc: new SolidFileClient(auth),
         direccion: "",
-        rutas: []
+        rutas: [],
+        rutaActual: null
       };
       // Bind es necesario para usar el this
       this.obtenerCarpetaPod = this.obtenerCarpetaPod.bind(this);
@@ -144,12 +170,17 @@ const Mapac = props => {
             <button data-testid="download-button" onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion, t('map.success_message'), t('map.failed_message'), t('map.empty_string_message'), t('map.empty_message'), t('map.while'))} >{t('map.download')} <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="25" height="20" alt="" /> </button>
             <button onClick={this.getLista} > <img src={process.env.PUBLIC_URL + "/img/icon/refresh.svg"} width="25" height="20" alt="" />{t('map.refresh')} </button>
             <Lista />
-            <H3Style>{t('friends.share')}</H3Style>
+           <H3Style>{t('friends.share')}</H3Style>
             <AmigosDiv>
               <DivStyle4 id="list">
               </DivStyle4>
             </AmigosDiv>
-            <ButtonStyle onClick={this.shareRoute} > <img src={process.env.PUBLIC_URL + "/img/icon/share.svg"} width="25" height="20" alt="" />{t('map.shareB')} </ButtonStyle>
+            <ButtonStyle onClick={this.shareRoute} > <img src={process.env.PUBLIC_URL + "/img/icon/share.svg"} width="25" height="20" alt="" />{t('map.shareB')} </ButtonStyle>                                                                                                                                                                                                                                                              
+            <H3Style>{t('map.listMedia')}</H3Style>
+            <MediaDiv>
+              <DivStyle4 id="listMedia">
+              </DivStyle4>
+            </MediaDiv>
           </DivStyle>
           <MapStyle id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

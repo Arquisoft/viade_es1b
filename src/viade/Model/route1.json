@@ -1,7 +1,7 @@
 {
     "@context": "http://schema.org",
     "@type": "Trip",
-    "name": "Demo",
+    "name": "Ruta",
     "itinerary": {
         "@type": "ItemList",
         "numberOfItems": 4,

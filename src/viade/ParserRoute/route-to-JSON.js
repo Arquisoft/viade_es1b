@@ -127,7 +127,8 @@ class createJson {
             else
                 tot += '{ "@id": "' + imagesRoutes[i] + '"}';
         }
-
+        if(imagesRoutes.length == 1)
+            tot += ","
         for (let i = 0; i < videosRoutes.length; i++) {
             if (i < videosRoutes.length - 1)
                 tot += '{ "@id": "' + videosRoutes[i] + '"},';
@@ -136,7 +137,7 @@ class createJson {
         }
 
         tot += '] } ';
-
+        console.log(tot);
         var sdict = JSON.parse(tot);
         var save = JSON.stringify(sdict);
         this.fileToUpload = save;
