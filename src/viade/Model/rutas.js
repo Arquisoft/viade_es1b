@@ -10,14 +10,23 @@ class Rutas {
 
     actualizarRutasConPod() {
         if (bajarRutas.rutas.length > 0) {
-            //console.log(bajarRutas.rutas);
+            // console.log(this.rutas);            
             //console.log(bajarRutas.rutas.length);
-            while (this.rutas.length > 0) {
+            /*
+           while (this.rutas.length > 0) {
                 this.rutas.pop();
-            }
+            }            
+            */
             while (bajarRutas.rutas.length !== 0) {
-                this.rutas.push(new Ruta(bajarRutas.rutas.pop()));
+                this.rutas.push(new Ruta(bajarRutas.rutas.pop()));                
             }
+            // Esta funcion elimina duplicados por nombre
+            this.rutas = this.rutas.filter((ruta, index, self) =>
+            index === self.findIndex((t) => (
+                t.place === ruta.place && t.name === ruta.name
+            ))
+            )
+            //console.log(this.rutas);
         }
     }
 
