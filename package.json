@@ -33,6 +33,7 @@
     "react-notifications": "^1.6.0",
     "react-scripts": "3.3.0",
     "react-toastify": "^5.5.0",
+    "solid-acl-utils": "github:otto-aa/solid-acl-utils",
     "solid-file-client": "^1.0.2",
     "styled-components": "^5.0.1"
   },

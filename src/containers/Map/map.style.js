@@ -26,11 +26,15 @@ export const DivStyle3 = styled.div`
   overflow: auto; 
 `;
 
+export const ButtonStyle = styled.button`
+  margin: 5px; 
+`;
+
 export const DivStyle4 = styled.div`
   background-image: linear-gradient( white, white);
   border: 1px solid gray;
   overflow: auto;
-  button{
+  li{
     width:100%;
     text-align: left;
   }
