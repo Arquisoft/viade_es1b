@@ -41,10 +41,12 @@ const Mapac = props => {
         var str = '<List>'
         newRuta.media.forEach(function (archivo) {
           var stringJSON = JSON.stringify(archivo);
-          var archivoURL = stringJSON.slice(8,stringJSON.length-2);
-          var nombreArchivo = archivoURL.split("/")[archivoURL.split("/").length-1];
+          var archivoURLFull = stringJSON.slice(8,stringJSON.length-2).toString();
+          // Por los espacios
+          var archivoURL = archivoURLFull.replace(" ","%20");
+          var nombreArchivo = archivoURL.split("/")[archivoURLFull.split("/").length-1].replace("%20"," ");
           console.log(archivoURL);
-          str += '<a target="_blank" rel="noopener noreferrer" href=' + archivoURL + '>' + nombreArchivo + '</a>';
+          str += '<p><a target="_blank" rel="noopener noreferrer" href=' + archivoURL + '>' + nombreArchivo + '</a></p>';
         });
         str += '</List>';
         try {
