@@ -34,7 +34,7 @@ defineFeature((feature), (test) => {
       await expect(page).toClick("button", { className: "btn btn-primary a-solid button-login" });
       popup = await newPagePromise;
 
-      expect(popup).toClick("button", { text: "Solid Community" });
+      expect(popup).toClick("button", { text: "Solid Community", timeout: 2000 });
       await popup.waitForNavigation({ waitUntil: "load", timeout: 0 });
 
       await popup.type("[name='username']", "aswes1b", { visible: true });

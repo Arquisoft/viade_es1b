@@ -115,6 +115,7 @@ const Mapac = props => {
 
     getLista = docId => {
       this.setState({ requirementKey: Math.random() });
+      console.log("refresh");
     };
 
     render() {
