@@ -5,7 +5,7 @@ import { Rutas } from '../../viade/Model';
 import { useWebId } from '@solid/react';
 import ReactDOM from 'react-dom';
 import { useTranslation } from 'react-i18next';
-import { MapStyle, DivStyle, LiStyle, H3Style, LiStyle2, InputStyle, AmigosDiv, DivStyle3, DivStyle4, ButtonStyle, MediaDiv } from './map.style';
+import { MapStyle, DivStyle, LiStyle, H3Style, LiStyle2, InputStyle, AmigosDiv, DivStyle3, DivStyle4, ButtonStyle, MediaDiv, DivStyle1 } from './map.style';
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 import bajarRutas from "../../services/bajarRutas";
@@ -165,9 +165,9 @@ const Mapac = props => {
       Rutas.actualizarRutasConPod();
       const position = this.puntos[0];
       return (
-        <React.Fragment>
-          <NotificationContainer />
+        <DivStyle1>
           <DivStyle>
+            <NotificationContainer />
             <H3Style data-testid="map-title" id="name">{this.name}</H3Style>
             <InputStyle data-testid="download-input" type="text" onChange={this.obtenerCarpetaPod} placeholder={t('map.placeholder1')} />
             <button data-testid="download-button" onClick={() => bajarRutas.bajarRutasDePod(this.state.direccion, t('map.success_message'), t('map.failed_message'), t('map.empty_string_message'), t('map.empty_message'), t('map.while'))} >{t('map.download')} <img src={process.env.PUBLIC_URL + "/img/icon/download.svg"} width="25" height="20" alt="" /> </button>
@@ -188,7 +188,7 @@ const Mapac = props => {
           <MapStyle id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           </MapStyle>
-        </React.Fragment>
+        </DivStyle1>
       );
     }
   }

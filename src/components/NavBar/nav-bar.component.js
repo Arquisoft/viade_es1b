@@ -17,7 +17,7 @@ const NavBar = props => {
             <DivStyle><Astyle href="#/friends"><img src={process.env.PUBLIC_URL + "/img/icon/friendship.svg"} width="25" height="25" alt="" /> {t('navBar.friends')}</Astyle></DivStyle>
             <DivStyle><Astyle data-testid="nav-bar-profile" href={name}><img src={process.env.PUBLIC_URL + "/img/icon/empty-profile.svg"} width="25" height="25" alt="" /> {t('navBar.profile')}</Astyle></DivStyle>
             <DivStyle3 data-testid="nav-bar-language">
-                <DropdownButton variant="white" title={<img src={process.env.PUBLIC_URL + "/img/icon/subject.svg"} width="25" height="25" alt="" />}>
+                <DropdownButton variant="white" drop={"down"} title={<img src={process.env.PUBLIC_URL + "/img/icon/subject.svg"} width="25" height="25" alt="" />}>
                     <DropdownItem>
                         <div onClick={() => i18n.changeLanguage("en")}> ENG </div>
                     </DropdownItem>
@@ -27,7 +27,8 @@ const NavBar = props => {
                 </DropdownButton>
             </DivStyle3>
             <DivStyle2><ButtonStyle><img data-testid="nav-bar-logout" src={process.env.PUBLIC_URL + "/img/icon/logout.svg"} width="25" height="25" alt="Logout" /></ButtonStyle></DivStyle2>
-        </NavStyle>
+
+        </NavStyle >
     );
 }
 export default NavBar;

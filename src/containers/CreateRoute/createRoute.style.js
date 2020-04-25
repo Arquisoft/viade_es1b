@@ -3,10 +3,10 @@ import { Map } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
 
 export const MapStyle = styled(Map)`
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 100%;
-    z-index: 1;
+    height: 91%;
+    z-Index: 1;
   `;
 
 export const ButtonStyle = styled.button`
@@ -27,6 +27,17 @@ export const ButtonStyle2 = styled.button`
     padding: 10px;
   `;
 
+export const DivStyle1 = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    background-image: url("/fondo2.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    padding: 40px;
+    overflow: hidden;
+`;
+
 export const InputStyle = styled.input`
     float:left;
     margin: auto;
@@ -39,25 +50,25 @@ export const InputStyle = styled.input`
     `;
 
 export const DivStyle = styled.div`
-    position: absolute;
+    position: relative;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
     padding: 10px;
     width: auto;
-    height: auto;
-    right:auto;
-    background-image: linear-gradient( white, lightgrey);
+    height: 9%;
+    opacity: 0.94;
+    background-image: linear-gradient( lightgrey, lightgrey);
     z-Index: 99;
   `;
 
 export const ChooseButton = styled.div`
-  float:left;
-  input{
-    width: 0.1px;
-    height:0.1x;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
+    float:left;
+    input{
+      width: 0.1px;
+      height:0.1x;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
     }
   label {
     border: 1px solid lightgray;

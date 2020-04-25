@@ -5,7 +5,7 @@ import { media } from '../../utils';
 export const WelcomeCard = styled.div`
   background-color: #fff;
   margin: 30px auto;
-
+  opacity: 0.8;
   //Overriding the style guide card flexbox settings
   max-width: 80% !important;
   flex-direction: row !important;
@@ -29,7 +29,7 @@ export const WelcomeCard = styled.div`
 export const WelcomeLogo = styled.div`
   width: 50%;
   height: 100%;
-
+  
   img {
     width: 60%;
     display: block;
@@ -41,7 +41,7 @@ export const WelcomeProfile = styled.div`
   height: 100%;
   text-align: center;
   position: relative;
-
+  
   img {
     width: 120px;
     height: 120px;
