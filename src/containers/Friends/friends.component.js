@@ -33,7 +33,7 @@ const Friends = props => {
                     <h3>{t('friends.myFriends')}</h3>
                     <AmigosDiv id="lista">
                     </AmigosDiv>
-                    <ButtonStyle data-testid="remove-button" onClick={(event) => addFriend.removeFriend(event, name, t('friends.deleted'), t('friends.choose'))}>
+                    <ButtonStyle id="removeFriend-button" data-testid="remove-button" onClick={(event) => addFriend.removeFriend(event, name, t('friends.deleted'), t('friends.choose'))}>
                         <img src={process.env.PUBLIC_URL + "/img/icon/rubbish.svg"} width="35" height="35" alt="" />
                         {t('friends.remove')}
                     </ButtonStyle>
