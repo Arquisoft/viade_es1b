@@ -91,6 +91,14 @@
     "friend":"Select a friend",
     "double":"This route has already been shared"
   },
+  "notifications": {
+    "titleAdd":"New friend",
+    "titleShare":"Route shared",
+    "summaryAdd":" added you as a friend",
+    "summaryShare":" shared a rotue with you",
+    "inboxFail":"This user doesn't have a configured inbox",
+    "error":"Something has failed"
+   },
   "welcome": {
     "welcome": "Welcome",
     "doneMessage": "All done ?",
