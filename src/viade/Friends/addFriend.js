@@ -11,19 +11,26 @@ class AddFriend {
     }
 
     async addFriend(id, webId, added, empty, error) {
+        var ret = 0;
         const user = data[webId]; //sacamos nuestra informacion 
         if (await this.checkID(id)) {
             if (id.localeCompare("") !== 0) { //comprobamos que no pasamos un campo vacio 
-                if (await this.friendAlreadyAdded(id, webId)) //notificamos si el amigo estaba añadido
+                if (await this.friendAlreadyAdded(id, webId)) { //notificamos si el amigo estaba añadido
                     NotificationManager.error("", added, 3000);
-                else {
+                    ret = -1;
+                } else {
                     await user.knows.add(data[id]); //añadimos el amigo
-                    await window.location.reload();
+                    ret = 1;
                 }
-            } else
+            } else {
                 NotificationManager.error("", empty, 3000);
-        } else
+                ret = -1;
+            }
+        } else {
             NotificationManager.error("", error, 3000);
+            ret = -1;
+        }
+        return await ret;
     };
 
     async removeFriend(event, webId, eliminado, error) {

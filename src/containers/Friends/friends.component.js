@@ -29,27 +29,29 @@ const Friends = props => {
         }
     })()
 
-    const sendNotification = async (title, userWebId, summary) => {
+    const sendNotification = async (title, friendId, summary) => {
         try {
-            const inbox = await discoverInbox(userWebId);
+            const inbox = await discoverInbox(friendId);
             if (!inbox)
-                NotificationManager.error("", "d", 3000);
+                NotificationManager.error("", t('notifications.inboxFail'), 3000);
             createNotification(
                 {
                     title: title,
-                    summary: summary,
+                    summary: name + summary,
                     actor: name
                 },
                 inbox
             );
         } catch (error) {
-            NotificationManager.error("", "d", 3000);
+            NotificationManager.error("", t('notifications.error'), 3000);
         }
     };
 
     function addFriendS() {
-        addFriend.addFriend(document.getElementById('input').value, name, t('friends.added'), t('friends.empty'), t('friends.webIdF'));
-        sendNotification("prueba", document.getElementById('input').value, "prueba");
+        addFriend.addFriend(document.getElementById('input').value, name, t('friends.added'), t('friends.empty'), t('friends.webIdF')).then(ret => {
+            if (ret === 1)
+                sendNotification(t('notifications.titleAdd'), document.getElementById('input').value, t('notifications.summaryAdd'));
+        });
     }
 
     return (
