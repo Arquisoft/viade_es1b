@@ -45,8 +45,8 @@ const Friends = props => {
                 <MisAmigosDiv data-testid="add-friend">
                     <h3>{t('friends.addFriend')}</h3>
                     <form className="modal-body">
-                        <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input" />
-                        <button data-testid="add-friend-button" onClick={(event) => addFriend.addFriend(event, document.getElementById('input').value, name, t('friends.added'), t('friends.empty'), t('friends.webIdF'))} className="send">
+                        <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input-webid" />
+                        <button data-testid="add-friend-button" id="add-friend-button" onClick={(event) => addFriend.addFriend(event, document.getElementById('input-webid').value, name, t('friends.added'), t('friends.empty'), t('friends.webIdF'))} className="send">
                             <span className="icon">
                                 <img src={process.env.PUBLIC_URL + "/img/icon/arrow.svg"} width="25" height="20" alt="" />
                             </span>

@@ -3,7 +3,6 @@ const feature = loadFeature('./e2e/features/visualize-routes.feature');
 const puppeteer = require('puppeteer');
 let browser = null;
 let page = null;
-let page2=null;
 
 defineFeature((feature), (test) => {
 
@@ -15,14 +14,14 @@ defineFeature((feature), (test) => {
         });
         page = await browser.newPage();
         
-        await page.goto("http://localhost:3000/", { waitUntil: "load", timeout: 100000 });
+        await page.goto("http://localhost:3000/", { waitUntil: "load", timeout: 0 });
 
         const newPagePromise = new Promise((x) => browser.once(("targetcreated"), (target) => x(target.page())));
         await expect(page).toClick("button", { className: "btn btn-primary a-solid button-login" });
         popup = await newPagePromise;
 
-        expect(popup).toClick("button", { text: "Solid Community", timeout: 2000 });
-        await popup.waitForNavigation({ waitUntil: "load", timeout: 10000 });
+        expect(popup).toClick("button", { text: "Solid Community", timeout: 0 });
+        await popup.waitForNavigation({ waitUntil: "load", timeout: 0 });
 
         await popup.type("[name='username']", "aswes1b", { visible: true });
         await popup.type("[name='password']", "Viade_es1b", { visible: true });
@@ -56,7 +55,7 @@ defineFeature((feature), (test) => {
         });
 
         then("the user expects to watch them in the list", async () => {
-            await page.waitForSelector('h4', {class:"title"});
+            await page.waitForSelector('h4', {class:"title", timeout: 0});
             const refreshButton = await page.$('[id="refresh-button"]');
             await refreshButton.click();
             await expect(page).toMatch("test", { waitUntil: "load", timeout: 0 });

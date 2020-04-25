@@ -10,7 +10,7 @@ const NavBar = props => {
     const name = useWebId();
     const { t } = useTranslation();
     return (
-        <NavStyle>
+        <NavStyle id="navBar">
             <a href="#/"><img data-testid="nav-bar-home" src={process.env.PUBLIC_URL + "/img/inrupt.svg"} width="225" height="75" alt="" /></a>
             <DivStyle><Astyle data-testid="nav-bar-map" href="#/map"><img src={process.env.PUBLIC_URL + "/img/icon/map.svg"} width="25" height="25" alt="" />{t('navBar.map')}</Astyle></DivStyle>
             <DivStyle><Astyle data-testid="nav-bar-createRoute" href="#/createRoute"><img src={process.env.PUBLIC_URL + "/img/icon/newRoute.svg"} width="25" height="25" alt="" /> {t('navBar.createRoute')}</Astyle></DivStyle>
@@ -26,7 +26,7 @@ const NavBar = props => {
                     </DropdownItem>
                 </DropdownButton>
             </DivStyle3>
-            <DivStyle2><ButtonStyle><img data-testid="nav-bar-logout" src={process.env.PUBLIC_URL + "/img/icon/logout.svg"} width="25" height="25" alt="Logout" /></ButtonStyle></DivStyle2>
+            <DivStyle2><ButtonStyle><img data-testid="nav-bar-logout" id="nav-bar-logout" src={process.env.PUBLIC_URL + "/img/icon/logout.svg"} width="25" height="25" alt="Logout" /></ButtonStyle></DivStyle2>
         </NavStyle>
     );
 }
