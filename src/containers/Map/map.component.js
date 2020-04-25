@@ -125,7 +125,7 @@ const Mapac = props => {
           var aux = webID.replace("profile/card#me", "");
           let routeAddress = aux + 'viade/routes/' + routeName + '.json';
           let folderAddress = 'viade/share/' + routeName + '.json';
-          sharing(friendID, routeAddress, folderAddress, t('map.shareSuccess'), t('map.shareError'), t('map.double'));
+          sharing(friendID, routeAddress, folderAddress, t('map.shareSuccess'), t('map.shareError'), t('map.double'),t('notifications.titleShare'),t('notifications.summaryShare'),t('notifications.inboxFail'),t('notifications.error'));
         } catch (error) {
           NotificationManager.error("", t('map.friend'), 3000);
         }
