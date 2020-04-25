@@ -6,6 +6,7 @@ import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2, ChooseButton
 import CreateRouteService from '../../services/CreateRouteService';
 import { NotificationManager, NotificationContainer } from "react-notifications";
 
+
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
@@ -107,12 +108,10 @@ const Createc = props => {
             {this.state.markers.map((position, idx) =>
               <Marker key={`marker-${idx}`} position={position}>
               </Marker>
-
             )}
             <Polyline
               positions={this.draw()}
             />
-
           </MapStyle>
         </DivStyle1>
       );
