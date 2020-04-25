@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Gradient = styled.div`
-  background-image: linear-gradient(to right, lightgray, lightblue);
-  background-repeat: repeat;
+  background-image: url("/fondo.jpg");
+  background-size: cover;
   box-sizing: border-box;
   height: 100%;
   width: 100%;

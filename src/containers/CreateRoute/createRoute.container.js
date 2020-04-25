@@ -2,7 +2,7 @@ import React from 'react';
 import L from 'leaflet';
 import { useTranslation } from 'react-i18next';
 import { TileLayer, Marker, Polyline } from 'react-leaflet';
-import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2, ChooseButton } from './createRoute.style';
+import { MapStyle, DivStyle, InputStyle, ButtonStyle, ButtonStyle2, ChooseButton, DivStyle1 } from './createRoute.style';
 import CreateRouteService from '../../services/CreateRouteService';
 import { NotificationManager, NotificationContainer } from "react-notifications";
 
@@ -80,8 +80,7 @@ const Createc = props => {
 
     render() {
       return (
-        <React.Fragment>
-          <NotificationContainer />
+        <DivStyle1>
           <DivStyle>
             <InputStyle data-testid="name-input" id="name" type="text" placeholder={t('map.placeholder2')} ref={this.name} onChange={this.updateValue} />
             <ChooseButton data-testid="upload-images-button">
@@ -100,6 +99,7 @@ const Createc = props => {
             </ChooseButton>
             <ButtonStyle data-testid="upload-button" onClick={this.sendData} ><img src={process.env.PUBLIC_URL + "/img/icon/upload.svg"} width="20" height="20" alt="" /> {t('map.upload')}</ButtonStyle>
             <ButtonStyle2 data-testid="clear-button" onClick={this.clear}> <img src={process.env.PUBLIC_URL + "/img/icon/cross.svg"} width="20" height="20" alt="" /> </ButtonStyle2>
+            <NotificationContainer />
           </DivStyle>
           <MapStyle id="map" center={this.state.center} zoom={15} onClick={this.mapClick}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -114,7 +114,7 @@ const Createc = props => {
             />
 
           </MapStyle>
-        </React.Fragment>
+        </DivStyle1>
       );
     }
   }
