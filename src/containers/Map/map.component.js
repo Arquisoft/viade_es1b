@@ -12,6 +12,7 @@ import bajarRutas from "../../services/bajarRutas";
 import addFriend from '../../viade/Friends/addFriend';
 import { NotificationContainer, NotificationManager } from "react-notifications";
 import { sharing } from "../../services/shareRoutes";
+import { useNotification } from "@inrupt/solid-react-components";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -24,6 +25,27 @@ const Mapac = props => {
 
   const { t } = useTranslation();
   const webID = useWebId();
+  const { createNotification, discoverInbox } = useNotification(
+    webID
+  );
+
+  const sendNotification = async (title, friendId, summary, inboxFail, inboxerror) => {
+    try {
+      const inbox = await discoverInbox(friendId);
+      if (!inbox)
+        NotificationManager.error("", inboxFail, 3000);
+      createNotification(
+        {
+          title: title,
+          summary: webID + summary,
+          actor: webID
+        },
+        inbox
+      );
+    } catch (error) {
+      NotificationManager.error("", inboxerror, 3000);
+    }
+  };
 
   class Lista extends React.Component {
 
@@ -125,7 +147,12 @@ const Mapac = props => {
           var aux = webID.replace("profile/card#me", "");
           let routeAddress = aux + 'viade/routes/' + routeName + '.json';
           let folderAddress = 'viade/share/' + routeName + '.json';
-          sharing(friendID, routeAddress, folderAddress, t('map.shareSuccess'), t('map.shareError'), t('map.double'),t('notifications.titleShare'),t('notifications.summaryShare'),t('notifications.inboxFail'),t('notifications.error'));
+          sharing(friendID, routeAddress, folderAddress, t('map.shareSuccess'), t('map.shareError'), t('map.double')).then(ret => {
+            if (ret === 1) {
+              sendNotification(t('notifications.titleShare'), friendID, t('notifications.summaryShare'), t('notifications.inboxFail'), t('notifications.error'));
+              alert("aqui");
+            }
+          })
         } catch (error) {
           NotificationManager.error("", t('map.friend'), 3000);
         }
