@@ -10,8 +10,7 @@ class AddFriend {
         this.friends = this.getFriends();
     }
 
-    async addFriend(event, id, webId, added, empty, error) {
-        event.preventDefault();
+    async addFriend(id, webId, added, empty, error) {
         const user = data[webId]; //sacamos nuestra informacion 
         if (await this.checkID(id)) {
             if (id.localeCompare("") !== 0) { //comprobamos que no pasamos un campo vacio 
@@ -65,14 +64,14 @@ class AddFriend {
     async getFriends() {
         const friends = [];
         let session = await auth.currentSession();
-        if(session) {
-        var id = `${session.webId}`;
-        const user = data[id];
-        for await (const friend of user.friends)
-            friends.push(friend.toString());
-        const users = await Promise.all(friends);
-        return users;
-    }
+        if (session) {
+            var id = `${session.webId}`;
+            const user = data[id];
+            for await (const friend of user.friends)
+                friends.push(friend.toString());
+            const users = await Promise.all(friends);
+            return users;
+        }
     };
 
 
