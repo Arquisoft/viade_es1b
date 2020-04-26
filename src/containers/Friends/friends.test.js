@@ -22,7 +22,6 @@ describe('Login', () => {
   test('renders list of friends properly', () => {
     expect(wrapper.querySelector('#lista')).not.toBeNull();
     expect(queryByTestId(wrapper, "remove-button")).not.toBeNull();
-    expect(queryByTestId(wrapper, "share-button")).not.toBeNull();
   });
 
   test('renders add a friend component properly', () => {

@@ -38,15 +38,19 @@ class bajarRutas {
                         hayRutas = true;
                         let copiado = await this.sfc.copyFile(file.url, this.tmpFolder + "/" + file.name);
                         if (copiado) {
-                            this.loadJSon(this.tmpFolder + "/" + file.name);
-                            rutasCargadas++;
+                            //this.loadJSon(this.tmpFolder + "/" + file.name);
+                            //console.log("copiadas: "+rutasCopiadas);
+                            this.rutas.push(this.loadJSon(this.tmpFolder + "/" + file.name, fallo));
+                            let eliminado = await this.sfc.deleteFile(this.tmpFolder + "/" + file.name);
+                            if (eliminado) {
+                                rutasCargadas++;
+                                //  console.log("cargadas: "+rutasCargadas);
+                            }
                             if (totalRutas === rutasCargadas) {
+                                this.sfc.deleteFolder(this.tmpFolder);
                                 NotificationManager.success("", exito, 3000);
                             }
                         }
-                    }
-                    if (totalRutas === rutasCargadas) {
-                        this.sfc.deleteFolder(this.tmpFolder);
                     }
                 });
                 if (hayRutas) {
@@ -54,23 +58,26 @@ class bajarRutas {
                 } else {
                     NotificationManager.error("", noruta, 3000);
                 }
-
-            } catch (error) {
+            }
+            catch (error) {
                 NotificationManager.error("", fallo, 3000);
             }
         }
     }
 
     // Metodo auxiliar para obtener el objeto json
-    loadJSon(url) {
+    loadJSon(url, fallo) {
         try{
         var Httpreq = new XMLHttpRequest(); // Solicitud
         Httpreq.open("GET", url, false);
         Httpreq.send(null);
         var jsonRuta = JSON.parse(Httpreq.responseText);
-        this.rutas.push(jsonRuta);
+        console.log(jsonRuta);
+        return jsonRuta;
         }
-        catch (e){}
+        catch(e){
+            NotificationManager.error("", fallo, 3000);
+        }
     }
 }
 

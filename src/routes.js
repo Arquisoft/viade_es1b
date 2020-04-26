@@ -1,6 +1,5 @@
 import React from 'react';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { NotificationContainer, NotificationManager } from "react-notifications";
 import { LoggedIn, LoggedOut } from "@solid/react";
 
 import {
@@ -9,7 +8,8 @@ import {
   Map,
   CreateRoute,
   PageNotFound,
-  Friends
+  Friends,
+  NotificationsList
 } from './containers';
 import NavBar from './components/NavBar';
 
@@ -26,6 +26,7 @@ const Routes = () => (
           <Route exact path="/createRoute" component={CreateRoute} />
           {/* <Route exact path="/login" component={Login} /> */}
           <Route exact path="/friends" component={Friends} />
+          <Route exact path="/notification" component={NotificationsList} />
           <Route exact path="/" component={Welcome} />
           <Route exact path="/*" component={PageNotFound} />
           <Redirect to="/"></Redirect>

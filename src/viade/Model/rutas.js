@@ -6,16 +6,27 @@ class Rutas {
 
     constructor() {
         this.rutas = [new Ruta(ruta1)];
+        this.hayRuta = false;
     }
 
     actualizarRutasConPod() {
         if (bajarRutas.rutas.length > 0) {
-            while (this.rutas.length > 0) {
-                this.rutas.pop();
-            }
+
+            if(!this.hayRuta) {
+            this.rutas.pop();
+            this.hayRuta = true;
+        }
+     
             while (bajarRutas.rutas.length !== 0) {
-                this.rutas.push(new Ruta(bajarRutas.rutas.pop()));
+                this.rutas.push(new Ruta(bajarRutas.rutas.pop()));                
             }
+            // Esta funcion elimina duplicados por nombre
+            this.rutas = this.rutas.filter((ruta, index, self) =>
+            index === self.findIndex((t) => (
+                t.place === ruta.place && t.name === ruta.name
+            ))
+            )
+            //console.log(this.rutas);
         }
     }
 

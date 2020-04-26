@@ -38,7 +38,7 @@ class CreateRouteService {
                 let videoRoute = id + "resources/" + videos[i].name;
                 if (fc.createFile(videoRoute, videos[i], videos[i].type)) {
                     this.videosRoutes.push(videoRoute);
-                    NotificationManager.sccess("", videoS + videos[i].name, 4000);
+                    NotificationManager.success("", videoS + videos[i].name, 4000);
                 } else {
                     NotificationManager.error("", videoF + videos[i].name, 4000);
                 }

@@ -78,11 +78,7 @@ defineFeature((feature), (test) => {
         then("the user expects to watch it drown in the map", async () => {
             const markerPanel = await page.$('[class="leaflet-pane leaflet-marker-pane"]');
             await expect(markerPanel).not.toBeNull();
-            await new Promise(res => setTimeout(() => {
-                console.log("Simulates user writing")
-                expect(true).toBe(true)
-                res()
-              }, 20000)); 
+            await new Promise(res => setTimeout(res, 6000));
         });
 
     });
