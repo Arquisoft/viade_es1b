@@ -4,7 +4,7 @@ import Map from './Map';
 import CreateRoute from './CreateRoute';
 import PageNotFound from './PageNotFound';
 import Friends from './Friends';
-import Notifications from "./Notifications";
+import NotificationsList from "./Notifications";
 export {
   Login,
   Welcome,
@@ -12,5 +12,5 @@ export {
   CreateRoute,
   PageNotFound,
   Friends,
-  Notifications
+  NotificationsList
 };

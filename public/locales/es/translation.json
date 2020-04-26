@@ -98,7 +98,8 @@
     "summaryAdd":" te ha agregado como amigo",
     "summaryShare":" ha compartido una ruta contigo",
     "inboxFail":"Este usuario no tiene un inbox configurado",
-    "error":"Ha habido un error"
+    "error":"Ha habido un error",
+    "information":"Notificaciones"
    },
   "welcome": {
     "welcome": "Bienvenido",

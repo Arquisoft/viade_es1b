@@ -34,3 +34,15 @@ export const DivStyle1 = styled.div`
     padding: 40px;
     overflow: hidden;
 `;
+
+export const DivStyle = styled.div`
+    position: relative;
+    opacity: 0.93;
+    float: left;
+    background-image: linear-gradient( lightgrey, lightgrey);
+    padding: 20px;
+    width: 30%;
+    height:100%;
+    z-Index: 99;
+    overflow: auto;    
+  `;

@@ -1,94 +1,70 @@
 import React from "react";
-import { space } from "rdf-namespaces";
-import { fetchDocument } from "tripledoc";
 import { useWebId } from "@solid/react";
 import { useTranslation } from 'react-i18next';
+import { useNotification } from "@inrupt/solid-react-components";
+import { DivStyle1, DivStyle } from "./notifications.style";
 
-async function getNNotifications() {
-    const auth = require("solid-auth-client");
-    const FC = require("solid-file-client");
-    const fc = new FC(auth);
+const NotificationList = docId => {
 
-    let session = await auth.currentSession();
-
-    const profileDocument = await fetchDocument(session.webId);
-    const profile = profileDocument.getSubject(session.webId);
-
-    const storage = profile.getRef(space.storage);
-
-
-    let folder;
-    await fc.readFolder(storage + "/inbox/")
-        .then((content) => { folder = content; })
-        .catch((err) => (folder = null));
-    let result = 0;
-    if (folder) {
-        result = folder.files.length;
-    }
-    return result;
-}
-
-const NotificationList = (myWebId) => {
+    const myWebId = useWebId();
     const { t } = useTranslation();
-    console.log(myWebId);
-    let str = myWebId.myWebId;
-    console.log(str);
-    let webid = String(String(useWebId()).replace(myWebId, "inbox"));
+    const {
+        notification,
+        fetchNotification,
+    } = useNotification(myWebId);
 
-    class Notification extends React.Component {
+    class NotificationClass {
 
-        _isMounted = false;
-
-        constructor(props) {
-            super(props);
-            this.state = {
-                nNotifications: "",
-                inboxUrl: webid
-            };
+        constructor() {
+            this.notificationA = this.handleNotifications()
         }
 
-        componentDidMount() {
-            this._isMounted = true;
-            this.updateNotifications();
-        }
-
-        componentWillUnmount() {
-            this._isMounted = false;
-        }
-
-        async updateNotifications() {
-            var num = String(await getNNotifications());
-            if (this._isMounted) {
-                this.setState({
-                    nNotifications: num,
-                });
+        async  handleNotifications() {
+            const notificationArray = [];
+            if (myWebId !== undefined && myWebId !== null) {
+                let inbox = myWebId.replace("/profile/card#me", "/inbox/");
+                const inboxes = [{ path: inbox, inboxName: 'Global Inbox', shape: 'default' }];
+                await fetchNotification(inboxes);
+                if (notification.notifications.length > 0)
+                    for (let i = 0; i < notification.notifications.length; i++)
+                        if (notification.notifications[i].read !== "true")
+                            notificationArray.push(notification.notifications[i].summary);
             }
-        }
-
-
-        render() {
-            return (
-                <div>
-                    <p>
-                        {t('notificaciones.informacion')}: {this.state.nNotifications}
-
-                        <button
-                            className="btn"
-                            text={t('notificaciones.actualizar')}
-
-                            disabled={false}
-                            onClick={() => this.updateNotifications()}
-                        />
-                    </p>
-                    <p>
-                        <a href={this.state.inboxUrl}>{t('notificaciones.verNotificaciones')}</a>
-                    </p>
-                </div>
-            );
+            const ret = await Promise.all(notificationArray);
+            return ret;
         }
     }
 
-    return (<Notification />);
+    var notificationR = new NotificationClass();
+
+    (async () => {
+        var notifications = [];
+        notifications = await notificationR.notificationA
+        var str = '<List>'
+        notifications.forEach(function (notification) {
+            str += '<li style="list-style-type: none;"><input name="food" type="radio" value=' + notification + ' id = "radio">' + notification + '</li>';
+        });
+        str += '</List>';
+        try {
+            document.getElementById("lista").innerHTML = str;
+        }
+        catch (e) {
+
+        }
+    })()
+
+    return (
+        <DivStyle1>
+            <DivStyle>
+                <h3>
+                    {t('notifications.information')}
+                </h3>
+                <div id="lista">
+
+                </div>
+            </DivStyle>
+        </DivStyle1>
+    );
 };
 
 export default NotificationList;
