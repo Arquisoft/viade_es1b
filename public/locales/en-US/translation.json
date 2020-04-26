@@ -26,6 +26,7 @@
   },
   "navBar": {
     "welcome": "Welcome",
+    "notification": "Notifications",
     "logOut": "Log out",
     "profile": "Profile",
     "formModelRender": "Form Model Render",
@@ -91,6 +92,15 @@
     "friend":"Select a friend",
     "double":"This route has already been shared"
   },
+  "notifications": {
+    "titleAdd":"New friend",
+    "titleShare":"Route shared",
+    "summaryAdd":" added you as a friend",
+    "summaryShare":" shared a route with you",
+    "inboxFail":"This user doesn't have a configured inbox",
+    "error":"Something has failed",
+    "information":"Notifications"
+   },
   "welcome": {
     "welcome": "Welcome",
     "doneMessage": "All done ?",

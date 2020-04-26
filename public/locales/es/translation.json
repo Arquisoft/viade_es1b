@@ -26,6 +26,7 @@
   },
   "navBar": {
     "welcome": "Bienvenida",
+    "notification": "Notificaciones",
     "logOut": "Cerrar Sesión",
     "profile": "Perfil",
     "formModelRender": "Form Model Render",
@@ -91,6 +92,15 @@
     "friend":"Selecciona un amigo",
     "double":"Esta ruta ya ha sido compartida"
   },
+  "notifications": {
+    "titleAdd":"Nuevo amigo",
+    "titleShare":"Ruta compartida",
+    "summaryAdd":" te ha agregado como amigo",
+    "summaryShare":" ha compartido una ruta contigo",
+    "inboxFail":"Este usuario no tiene un inbox configurado",
+    "error":"Ha habido un error",
+    "information":"Notificaciones"
+   },
   "welcome": {
     "welcome": "Bienvenido",
     "doneMessage": "¿Terminaste?",

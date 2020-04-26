@@ -16,7 +16,6 @@ export const ListaDiv = styled.div`
     float:left;
     width: 48%;
     height:100%;
-    border: 1px solid grey;
     background-image: linear-gradient(to right, lightgrey, lightgrey);
     margin-left: 1%;
     margin-right: 1%;
@@ -27,11 +26,13 @@ export const ListaDiv = styled.div`
 export const AmigosDiv = styled.div`
    text-align: left;
    height: auto;
+   width: 100%;
    max-height: 73%;
    overflow: auto;
    border: 1px solid grey;
    background-image: linear-gradient(to right, white, white);
    padding: 10px;
+   border-radius: .25rem .25rem .25rem .25rem;
 `;
 
 export const MisAmigosDiv = styled.div`
@@ -48,16 +49,25 @@ export const MisAmigosDiv = styled.div`
 export const InputStyle = styled.input`
     width: 90%;
     border: 1px solid grey;
+    border-radius: .25rem 0 0 .25rem;
+    margin-bottom: 10px;
 `;
 
 export const ButtonStyle = styled.button`
     margin-top : 10px;
     border: 1px solid grey;
-    margin-left: 5px;
+    border-radius: .25rem .25rem .25rem .25rem;
+    width:100%;
 `;
 
 export const ButtonStyle2 = styled.button`
     width: 10%;
     border: 1px solid grey;
+    border-radius: 0 .25rem .25rem 0;
 `;
+
+export const H3Style = styled.h3`
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+  `;
 
