@@ -29,7 +29,12 @@ const Mapac = props => {
     webID
   );
 
-  const sendNotification = async (title, friendId, summary, inboxFail, inboxerror) => {
+
+  const sendNotification = async (title, friendId, summary, inboxFail, inboxerror, name) => {
+    var names = webID.split(".");
+    var shortName = names[0];
+    shortName = shortName.replace("https://", "");
+    alert(shortName);
     try {
       const inbox = await discoverInbox(friendId);
       if (!inbox)
@@ -37,7 +42,7 @@ const Mapac = props => {
       createNotification(
         {
           title: title,
-          summary: webID + summary,
+          summary: shortName + summary + ": " + name,
           actor: webID
         },
         inbox
@@ -149,7 +154,7 @@ const Mapac = props => {
           let folderAddress = 'viade/share/' + routeName + '.json';
           sharing(friendID, routeAddress, folderAddress, t('map.shareSuccess'), t('map.shareError'), t('map.double')).then(ret => {
             if (ret === 1) {
-              sendNotification(t('notifications.titleShare'), friendID, t('notifications.summaryShare'), t('notifications.inboxFail'), t('notifications.error'));
+              sendNotification(t('notifications.titleShare'), friendID, t('notifications.summaryShare'), t('notifications.inboxFail'), t('notifications.error'), routeName);
             }
           })
         } catch (error) {
@@ -182,7 +187,7 @@ const Mapac = props => {
         });
         str += '</List>';
         try {
-          document.getElementById("list").innerHTML = str;
+          document.getElementById("listaMap").innerHTML = str;
         }
         catch (e) {
 
@@ -201,7 +206,7 @@ const Mapac = props => {
             <Lista />
             <H3Style>{t('friends.share')}</H3Style>
             <AmigosDiv>
-              <DivStyle4 id="list">
+              <DivStyle4 id="listaMap">
               </DivStyle4>
             </AmigosDiv>
             <ButtonStyle onClick={this.shareRoute} > <img src={process.env.PUBLIC_URL + "/img/icon/share.svg"} width="25" height="20" alt="" />{t('map.shareB')} </ButtonStyle>

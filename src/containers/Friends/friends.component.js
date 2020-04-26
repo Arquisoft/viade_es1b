@@ -30,6 +30,9 @@ const Friends = props => {
     })()
 
     const sendNotification = async (title, friendId, summary) => {
+        var names = name.split(".");
+        var shortName = names[0];
+        shortName = shortName.replace("https://", "");
         try {
             const inbox = await discoverInbox(friendId);
             if (!inbox)
@@ -37,7 +40,7 @@ const Friends = props => {
             createNotification(
                 {
                     title: title,
-                    summary: name + summary,
+                    summary: shortName + summary,
                     actor: name
                 },
                 inbox

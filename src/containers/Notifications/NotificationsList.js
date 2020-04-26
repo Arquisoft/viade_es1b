@@ -7,6 +7,7 @@ import { DivStyle1, DivStyle } from "./notifications.style";
 const NotificationList = docId => {
 
     const myWebId = useWebId();
+
     const { t } = useTranslation();
     const {
         notification,
@@ -42,11 +43,11 @@ const NotificationList = docId => {
         notifications = await notificationR.notificationA
         var str = '<List>'
         notifications.forEach(function (notification) {
-            str += '<li style="list-style-type: none;"><input name="food" type="radio" value=' + notification + ' id = "radio">' + notification + '</li>';
+            str += '<li><a>' + notification + '</a></li>';
         });
         str += '</List>';
         try {
-            document.getElementById("lista").innerHTML = str;
+            document.getElementById("lis").innerHTML = str;
         }
         catch (e) {
 
@@ -59,7 +60,7 @@ const NotificationList = docId => {
                 <h3>
                     {t('notifications.information')}
                 </h3>
-                <div id="lista">
+                <div id="lis">
 
                 </div>
             </DivStyle>

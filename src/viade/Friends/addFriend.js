@@ -31,6 +31,7 @@ class AddFriend {
             ret = -1;
         }
         return await ret;
+
     };
 
     async removeFriend(event, webId, eliminado, error) {

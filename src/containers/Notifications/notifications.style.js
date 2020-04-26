@@ -37,12 +37,15 @@ export const DivStyle1 = styled.div`
 
 export const DivStyle = styled.div`
     position: relative;
-    opacity: 0.93;
+    opacity: 0.8;
     float: left;
-    background-image: linear-gradient( lightgrey, lightgrey);
+    background-image: linear-gradient( white, white);
     padding: 20px;
-    width: 30%;
+    width: 50%;
     height:100%;
+    text-align: left;
     z-Index: 99;
-    overflow: auto;    
+    overflow: auto;
+    border-radius: .25rem;
+        
   `;
