@@ -25,7 +25,7 @@ describe('Login', () => {
   });
 
   test('renders add a friend component properly', () => {
-    expect(queryByTestId(wrapper, "add-friend")).not.toBeNull();
+    expect(queryByTestId(wrapper, "input-webid")).not.toBeNull();
     expect(queryByTestId(wrapper, "add-friend-button")).not.toBeNull();
   });
 

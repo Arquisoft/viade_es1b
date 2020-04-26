@@ -64,7 +64,7 @@ const Friends = props => {
                 <H3Style>{t('friends.addFriend')}</H3Style>
                 <NotificationContainer />
 
-                <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input-webid" />
+                <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" data-testid="input-webid" id="input-webid" />
                 <ButtonStyle2 data-testid="add-friend-button" id="add-friend-button" onClick={addFriendS} className="send">
                     <span className="icon">
                         <img src={process.env.PUBLIC_URL + "/img/icon/arrow.svg"} width="25" height="20" alt="" />
