@@ -1,5 +1,4 @@
 import React from "react";
-import Button from '@inrupt/solid-react-components'
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import { useWebId } from "@solid/react";
@@ -65,25 +64,25 @@ const NotificationList = (myWebId) => {
                 });
             }
         }
-        
+
 
         render() {
             return (
                 <div>
-                <p>
-                   {t('notificaciones.informacion')}: {this.state.nNotifications}
-                    
-                    <button
-                        className="btn"
-                        text={t('notificaciones.actualizar')}
+                    <p>
+                        {t('notificaciones.informacion')}: {this.state.nNotifications}
 
-                        disabled={false}
-                        onClick={() => this.updateNotifications()}
-                    />
-                </p>
-                <p>
-                    <a href={this.state.inboxUrl}>{t('notificaciones.verNotificaciones')}</a>
-                </p>
+                        <button
+                            className="btn"
+                            text={t('notificaciones.actualizar')}
+
+                            disabled={false}
+                            onClick={() => this.updateNotifications()}
+                        />
+                    </p>
+                    <p>
+                        <a href={this.state.inboxUrl}>{t('notificaciones.verNotificaciones')}</a>
+                    </p>
                 </div>
             );
         }

@@ -150,7 +150,6 @@ const Mapac = props => {
           sharing(friendID, routeAddress, folderAddress, t('map.shareSuccess'), t('map.shareError'), t('map.double')).then(ret => {
             if (ret === 1) {
               sendNotification(t('notifications.titleShare'), friendID, t('notifications.summaryShare'), t('notifications.inboxFail'), t('notifications.error'));
-              alert("aqui");
             }
           })
         } catch (error) {

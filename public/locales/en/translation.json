@@ -26,6 +26,7 @@
   },
   "navBar": {
     "welcome": "Welcome",
+    "notification": "Notifications", 
     "logOut": "Log out",
     "profile": "Profile",
     "formModelRender": "Form Model Render",

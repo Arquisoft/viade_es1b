@@ -4,11 +4,13 @@ import Map from './Map';
 import CreateRoute from './CreateRoute';
 import PageNotFound from './PageNotFound';
 import Friends from './Friends';
+import Notifications from "./Notifications";
 export {
   Login,
   Welcome,
   Map,
   CreateRoute,
   PageNotFound,
-  Friends
+  Friends,
+  Notifications
 };
