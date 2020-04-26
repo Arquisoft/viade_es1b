@@ -69,7 +69,7 @@ const Mapac = props => {
       var newRuta = Rutas.getRutaByName(id);
       console.log(newRuta);
       if (id !== "Ruta") {
-        if (newRuta.media.length >= 1 || newRuta.media != undefined) {
+        if (newRuta.media.length >= 1 || newRuta.media !== undefined) {
           (() => {
             var str = '<List>'
             newRuta.media.forEach(function (archivo) {

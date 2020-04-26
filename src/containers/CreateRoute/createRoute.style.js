@@ -5,12 +5,13 @@ import 'leaflet/dist/leaflet.css';
 export const MapStyle = styled(Map)`
     position: relative;
     width: 100%;
-    height: 91%;
+    height: 90%;
     z-Index: 1;
     border-radius: 0 0 .25rem 0.25rem;
   `;
 
 export const ButtonStyle = styled.button`
+    position:relative;
     float:left;
     width: auto;
     height: auto;
@@ -19,6 +20,7 @@ export const ButtonStyle = styled.button`
     padding: 10px;
   `;
 export const ButtonStyle2 = styled.button`
+    position:relative;
     float:left;
     width: auto;
     height: auto;
@@ -58,7 +60,7 @@ export const DivStyle = styled.div`
     border: 1px solid lightgray;
     padding: 10px;
     width: auto;
-    height: 9%;
+    height: 10%;
     opacity: 0.94;
     background-image: linear-gradient( lightgrey, lightgrey);
     z-Index: 99;
@@ -67,6 +69,7 @@ export const DivStyle = styled.div`
 
 export const ChooseButton = styled.div`
     float:left;
+    height:auto;
     input{
       width: 0.1px;
       height:0.1x;

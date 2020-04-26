@@ -8,7 +8,6 @@ export const sharing = async (friendId, shareUrl, addr, exito, errorm, double) =
     try {
         var sfc = new SolidFileClient(auth);
         var content = await sfc.readFile(shareUrl)
-        var aux = friendId;
         friendId = friendId.replace("profile/card#me", addr);
         console.log(friendId);
         if (await sfc.itemExists(friendId)) {
