@@ -21,7 +21,7 @@ class AddFriend {
                 } else {
                     await user.knows.add(data[id]); //añadimos el amigo
                     ret = 1;
-                    await window.location.reload();
+                    
                 }
             } else {
                 NotificationManager.error("", empty, 3000);

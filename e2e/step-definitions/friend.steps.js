@@ -46,14 +46,28 @@ defineFeature((feature), (test) => {
       await page.waitForSelector('input');
       await page.type("[id='input-webid']", "https://mariomiguel.inrupt.net/profile/card#me", { visible: true });
 
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 15000));
+      //-------------------------------
+
       const sendButton = await page.$('[id="add-friend-button"]');
       await sendButton.click();
 
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 3000));
+      //-------------------------------
+
+      await page.reload({ waitUntil: ["networkidle0", "domcontentloaded"] });
 
     });
 
     then("the user expects to see him in his friends list", async () => {
-      await page.waitForSelector('input', { type: "radio", value:'https://mariomiguel.inrupt.net/profile/card#me' });
+
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 15000));
+      //-------------------------------
+
+      await page.waitForSelector('input', { type: "radio", value: 'https://mariomiguel.inrupt.net/profile/card#me' });
       //await expect(page).toMatch("https://mariomiguel.inrupt.net/profile/card#me", { timeout: 30000 });
     });
 
@@ -65,24 +79,39 @@ defineFeature((feature), (test) => {
 
     given("the friends page", async () => {
       await page.goto("http://localhost:3000/", { waitUntil: "load", timeout: 3000 });
-      await new Promise(res => setTimeout(res, 6000));
       await page.goto("http://localhost:3000/#/friends", { waitUntil: "load", timeout: 3000 });
+
     });
 
     when("the user types an inexistent webId", async () => {
       await page.waitForSelector('input');
       await page.type("[id='input-webid']", "https://__--!!/profile/card#me", { visible: true });
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 5000));
+      //-------------------------------
       const sendButton = await page.$('[id="add-friend-button"]');
       await sendButton.click();
 
     });
 
     then("an error must appear", async () => {
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 1000));
+      //-------------------------------
       await page.waitForSelector('h4', { class: "title" });
     });
 
     and("the friend is not added", async () => {
-      await expect(page).not.toMatch("https://__--!!/profile/card#me");
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 5000));
+      //-------------------------------
+      try {
+        await page.waitForSelector('input[value="https://__--!!/profile/card#me"]', { timeout: 3000 });
+        expect(true).toBe(false);
+      } catch (error) {
+        expect(true).toBe(true);
+      }
+      //expect(page).not.toMatch("https://__--!!/profile/card#me");
     });
 
   });
@@ -93,18 +122,28 @@ defineFeature((feature), (test) => {
     given("the friends page", async () => {
       await page.goto("http://localhost:3000/", { waitUntil: "load", timeout: 3000 });
       await page.goto("http://localhost:3000/#/friends", { waitUntil: "load", timeout: 3000 });
+
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 15000));
+      //-------------------------------
+
     });
 
     when("the user types a webId of a friend", async () => {
       await page.waitForSelector('input');
       await page.type("[id='input-webid']", "https://mariomiguel.inrupt.net/profile/card#me", { visible: true });
+
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 15000));
+      //-------------------------------
+
       const sendButton = await page.$('[id="add-friend-button"]');
       await sendButton.click();
 
     });
 
     then("the user must be notified", async () => {
-      await page.waitForSelector('h4');
+      await page.waitForSelector('h4', { timeout: 10000 });
     });
 
     and("the friend is not added", async () => {
@@ -119,14 +158,21 @@ defineFeature((feature), (test) => {
     given("the friends page", async () => {
       await page.goto("http://localhost:3000/", { waitUntil: "load", timeout: 3000 });
       await page.goto("http://localhost:3000/#/friends", { waitUntil: "load", timeout: 3000 });
+
     });
 
     when("the user selects the friend he wants to remove", async () => {
-      await new Promise(res => setTimeout(res, 10000));
-      await page.waitForSelector('input', { type: "radio", value:'https://mariomiguel.inrupt.net/profile/card#me' });
-      const radioButton = await page.$('input[value="https://mariomiguel.inrupt.net/profile/card#me"]');
-      //const radioButton = await page.$('input[type="radio"]');
-      await radioButton.click();
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 15000));
+      //-------------------------------
+      await page.waitForSelector('input', { type: "radio", value: 'https://mariomiguel.inrupt.net/profile/card#me' });
+
+      let selector = 'input[value="https://mariomiguel.inrupt.net/profile/card#me"]';
+      await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 30000));
+      //-------------------------------
 
     });
 
@@ -136,9 +182,9 @@ defineFeature((feature), (test) => {
     });
 
     then("the friend is not showed", async () => {
-      // const radioButton = page.$eval('input[value="https://mariomiguel.inrupt.net/profile/card#me"]', el => el ? true : false);
-      // //await expect(page.$eval('#welcome-image', el => el ? true : false)).toBeTruthy();
-      // expect(radioButton).toBe(false);
+      //-------------------------------
+      await new Promise(res => setTimeout(res, 15000));
+      //-------------------------------
       try {
         await page.waitForSelector('input[value="https://mariomiguel.inrupt.net/profile/card#me"]', { timeout: 3000 });
         expect(true).toBe(false);
