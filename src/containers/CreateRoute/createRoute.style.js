@@ -7,6 +7,7 @@ export const MapStyle = styled(Map)`
     width: 100%;
     height: 91%;
     z-Index: 1;
+    border-radius: 0 0 .25rem 0.25rem;
   `;
 
 export const ButtonStyle = styled.button`
@@ -25,6 +26,7 @@ export const ButtonStyle2 = styled.button`
     background-color: #FFFFFF;
     border: 1px solid lightgray;
     padding: 10px;
+    border-radius: 0 .25rem .25rem 0;
   `;
 
 export const DivStyle1 = styled.div`
@@ -47,6 +49,7 @@ export const InputStyle = styled.input`
     width: auto;
     height: auto;
     z-index: 99;
+    border-radius: .25rem 0 0 .25rem;
     `;
 
 export const DivStyle = styled.div`
@@ -59,6 +62,7 @@ export const DivStyle = styled.div`
     opacity: 0.94;
     background-image: linear-gradient( lightgrey, lightgrey);
     z-Index: 99;
+    border-radius: .25rem 0.25rem 0 0 ;
   `;
 
 export const ChooseButton = styled.div`

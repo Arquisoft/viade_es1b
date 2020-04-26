@@ -2,7 +2,7 @@ import React from 'react';
 import { LoggedOut, LoggedIn, useWebId } from '@solid/react';
 import { Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ListaDiv, InputStyle, AmigosDiv, ButtonStyle, DivStyle1, ButtonStyle2 } from './friends.style';
+import { ListaDiv, InputStyle, AmigosDiv, ButtonStyle, DivStyle1, ButtonStyle2, H3Style } from './friends.style';
 import { useNotification } from "@inrupt/solid-react-components";
 import addFriend from '../../viade/Friends/addFriend';
 import { NotificationContainer, NotificationManager } from "react-notifications";
@@ -61,30 +61,26 @@ const Friends = props => {
         <DivStyle1>
             <LoggedIn>
                 <ListaDiv>
-                    <h3>{t('friends.addFriend')}</h3>
+                    <H3Style>{t('friends.addFriend')}</H3Style>
                     <NotificationContainer />
-                    <form className="modal-body">
-                        <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input" />
-                        <ButtonStyle2 onClick={addFriendS} className="send">
-                            <span className="icon">
-                                <img src={process.env.PUBLIC_URL + "/img/icon/arrow.svg"} width="25" height="20" alt="" />
-                            </span>
-                        </ButtonStyle2>
-                    </form>
-                    <h3>{t('friends.myFriends')}</h3>
+
+                    <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input" />
+                    <ButtonStyle2 onClick={addFriendS} className="send">
+                        <span className="icon">
+                            <img src={process.env.PUBLIC_URL + "/img/icon/arrow.svg"} width="25" height="20" alt="" />
+                        </span>
+                    </ButtonStyle2>
+
+                    <H3Style>{t('friends.myFriends')}</H3Style>
                     <AmigosDiv id="lista">
                     </AmigosDiv>
                     <ButtonStyle onClick={(event) => addFriend.removeFriend(event, name, t('friends.deleted'), t('friends.choose'))}>
                         <img src={process.env.PUBLIC_URL + "/img/icon/rubbish.svg"} width="35" height="35" alt="" />
                         {t('friends.remove')}
                     </ButtonStyle>
-                    <ButtonStyle>
-                        <img src={process.env.PUBLIC_URL + "/img/icon/share.svg"} width="35" height="35" alt="" />
-                        {t('friends.share')}
-                    </ButtonStyle>
                 </ListaDiv>
                 <ListaDiv>
-                    <h3>{t('friends.group')}</h3>
+                    <H3Style>{t('friends.group')}</H3Style>
                     <AmigosDiv id="groups">
                     </AmigosDiv>
                     <ButtonStyle>

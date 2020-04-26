@@ -11,6 +11,7 @@ export const DivStyle = styled.div`
     width: auto;
     height: 5%;
     opacity: 0.80;
+    border-radius: 0 0 0 0;
   `;
 
 export const DivStyle2 = styled.div`
@@ -20,7 +21,20 @@ export const DivStyle2 = styled.div`
     padding: 9px;
     width: auto;
     height: 5%;
+    border-radius: 0 .25rem .25rem 0;
   `;
+
+export const DivStyle1 = styled.div`
+  background-color: white;
+  border: 1px solid gray;
+  text-align: left;
+  padding: 10px;
+  width: auto;
+  height: 5%;
+  opacity: 0.80;
+  border-radius: .25rem 0 0 .25rem;
+`;
+
 export const DivStyle3 = styled.div`
     background-color: lightgray;
     border: 1px solid gray;

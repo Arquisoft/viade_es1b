@@ -7,6 +7,7 @@ export const MapStyle = styled(Map)`
     width: auto;
     height: 100%;
     z-Index: 1;
+    border-radius: 0 .25rem .25rem 0 ;
   `;
 
 export const DivStyle = styled.div`
@@ -18,7 +19,8 @@ export const DivStyle = styled.div`
     width: 30%;
     height:100%;
     z-Index: 99;
-    overflow: auto;    
+    overflow: auto; 
+    border-radius: .25rem 0 0 .25rem;   
   `;
 
 export const DivStyle1 = styled.div`
@@ -39,6 +41,8 @@ export const DivStyle3 = styled.div`
   max-height: 30%;
   overflow: auto; 
   margin: 10px 0px 0px 0px;
+  border-radius: .25rem .25rem .25rem .25rem;
+  margin-bottom : 10px;
 `;
 
 export const ButtonStyle = styled.button`
@@ -53,7 +57,9 @@ export const DivStyle4 = styled.div`
   li{
     width:100%;
     text-align: left;
+    border-radius: .25rem .25rem .25rem .25rem;
   }
+  border-radius: .25rem .25rem .25rem .25rem;
 `;
 
 export const AmigosDiv = styled.div`
@@ -62,6 +68,7 @@ export const AmigosDiv = styled.div`
    border: 1px solid gray;
    overflow: auto;
    padding: 5px;
+   border-radius: .25rem .25rem .25rem .25rem;
 `;
 
 export const LiStyle = styled.li`
@@ -71,6 +78,7 @@ export const LiStyle = styled.li`
     background-color: white;
     text-align:left;
     padding: 5px;
+    border-radius: .25rem .25rem .25rem .25rem;
   `;
 
 export const H3Style = styled.h3`
@@ -84,6 +92,7 @@ export const LiStyle2 = styled.div`
   width : 100%;
   text-align:center;
   padding: 5px;
+  border-radius: .25rem .25rem .25rem .25rem;
   
 `;
 
@@ -99,5 +108,6 @@ export const MediaDiv = styled.div`
   border: 1px solid gray;
   padding: 5px;
   overflow: auto;
+  border-radius: .25rem .25rem .25rem .25rem;
 `;
 

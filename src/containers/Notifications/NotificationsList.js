@@ -2,7 +2,7 @@ import React from "react";
 import { useWebId } from "@solid/react";
 import { useTranslation } from 'react-i18next';
 import { useNotification } from "@inrupt/solid-react-components";
-import { DivStyle1, DivStyle } from "./notifications.style";
+import { DivStyle1, DivStyle, H3Style, DivStyle2 } from "./notifications.style";
 
 const NotificationList = docId => {
 
@@ -57,12 +57,11 @@ const NotificationList = docId => {
     return (
         <DivStyle1>
             <DivStyle>
-                <h3>
+                <H3Style>
                     {t('notifications.information')}
-                </h3>
-                <div id="lis">
-
-                </div>
+                </H3Style>
+                <DivStyle2 id="lis">
+                </DivStyle2>
             </DivStyle>
         </DivStyle1>
     );
