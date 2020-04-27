@@ -40,8 +40,10 @@ const Friends = props => {
 
     function addFriendS() {
         AddFriend.addFriend(document.getElementById('input').value, name, t('friends.added'), t('friends.empty'), t('friends.webIdF')).then(ret => {
-            if (ret === 1)
+            if (ret === 1) {
                 sendNotification(t('notifications.titleAdd'), document.getElementById('input').value, t('notifications.summaryAdd'));
+                NotificationManager.error("", t('friends.addeds'), 3000);
+            }
         });
     }
 
@@ -53,15 +55,17 @@ const Friends = props => {
             if (amigos.includes(friend.toString()) === false)
                 setAmigos(amigos => [...amigos, friend]);
         });
-        if (amigos.length > friends.length)
-            setAmigos(friends);
+        setAmigos(friends);
     }
 
+    const style = {
+        listStyleType: "none"
+    };
 
     return (
         <DivStyle1>
             <LoggedIn>
-                <ListaDiv>
+                <ListaDiv onLoad={refresh}>
                     <H3Style>{t('friends.addFriend')}</H3Style>
                     <InputStyle type="text" placeholder="https://marshall.solid.community/profile/card#me" id="input" />
                     <ButtonStyle3 onClick={refresh} > <img src={process.env.PUBLIC_URL + "/img/icon/refresh.svg"} width="25" height="20" alt="" /></ButtonStyle3>
@@ -74,9 +78,8 @@ const Friends = props => {
 
                     <H3Style>{t('friends.myFriends')}</H3Style>
                     <AmigosDiv className="lista">
-                        <ul>
-                            {amigos.map(item => <li><input name="food" type="radio" value={item} id="radio" ></input>{item}</li>)}
-                        </ul>
+                        {amigos.map(item => <li style={style}><input name="food" type="radio" value={item} id="radio" ></input>{item}</li>)}
+
                     </AmigosDiv>
                     <ButtonStyle onClick={(event) => AddFriend.removeFriend(event, name, t('friends.deleted'), t('friends.choose'))}>
                         <img src={process.env.PUBLIC_URL + "/img/icon/rubbish.svg"} width="35" height="35" alt="" />
@@ -86,7 +89,7 @@ const Friends = props => {
                 </ListaDiv>
                 <ListaDiv>
                     <H3Style>{t('friends.group')}</H3Style>
-                    <AmigosDiv id="groups">
+                    <AmigosDiv id="groups" >
                     </AmigosDiv>
                     <ButtonStyle>
                         <img src={process.env.PUBLIC_URL + "/img/icon/network.svg"} width="35" height="35" alt="" />
