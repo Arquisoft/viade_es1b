@@ -6,6 +6,7 @@ import { ListaDiv, InputStyle, AmigosDiv, ButtonStyle, DivStyle1, ButtonStyle2, 
 import { useNotification } from "@inrupt/solid-react-components";
 import addFriend from '../../viade/Friends/addFriend';
 import { NotificationContainer, NotificationManager } from "react-notifications";
+import { initalize } from '../../viade/Friends/addGroups';
 
 const Friends = props => {
     const { t } = useTranslation();
@@ -14,6 +15,9 @@ const Friends = props => {
     const { createNotification, discoverInbox } = useNotification(
         name
     );
+
+
+
     (async () => {
         friends = await addFriend.friends
         var str = '<List>'
@@ -87,7 +91,7 @@ const Friends = props => {
                         <img src={process.env.PUBLIC_URL + "/img/icon/network.svg"} width="35" height="35" alt="" />
                         {t('friends.add')}
                     </ButtonStyle>
-                    <ButtonStyle>
+                    <ButtonStyle onClick={initalize}>
                         <img src={process.env.PUBLIC_URL + "/img/icon/mas.svg"} width="35" height="35" alt="" />
                         {t('friends.addG')}
                     </ButtonStyle>
