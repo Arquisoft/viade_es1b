@@ -20,6 +20,9 @@ defineFeature((feature), (test) => {
     browser.close();
   });
 
+  /**
+   * Most of the test has been created by group es1c
+   */
   test("The user wants to login into Viade", ({ given, when, then }) => {
     let popup;
 

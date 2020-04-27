@@ -8,7 +8,7 @@ beforeEach(() => act(() => {
     <Friends />
   );
   wrapper = container;
-  debug();
+  //debug();
 }
 ));
 

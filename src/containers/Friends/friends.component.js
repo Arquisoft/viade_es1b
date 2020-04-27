@@ -38,9 +38,9 @@ const Friends = props => {
     };
 
     function addFriendS() {
-        AddFriend.addFriend(document.getElementById('input').value, name, t('friends.added'), t('friends.empty'), t('friends.webIdF')).then(ret => {
+        AddFriend.addFriend(document.getElementById('input-webid').value, name, t('friends.added'), t('friends.empty'), t('friends.webIdF')).then(ret => {
             if (ret === 1) {
-                sendNotification(t('notifications.titleAdd'), document.getElementById('input').value, t('notifications.summaryAdd'));
+                sendNotification(t('notifications.titleAdd'), document.getElementById('input-webid').value, t('notifications.summaryAdd'));
                 NotificationManager.error("", t('friends.addeds'), 3000);
             }
         });

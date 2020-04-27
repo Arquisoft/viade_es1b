@@ -8,7 +8,7 @@ beforeEach(() => {
     <Map />
   );
   wrapper = container;
-  debug();
+  //debug();
 });
 
 describe('Map Page Render', () => {

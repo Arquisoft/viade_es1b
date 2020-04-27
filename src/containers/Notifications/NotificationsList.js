@@ -55,10 +55,10 @@ const NotificationList = docId => {
     return (
         <DivStyle1>
             <DivStyle>
-                <H3Style>
+                <H3Style data-testid="notifications-title">
                     {t('notifications.information')}
                 </H3Style>
-                <DivStyle2 id="lis">
+                <DivStyle2 id="lis" data-testid="notifications-list">
                 </DivStyle2>
             </DivStyle>
         </DivStyle1>

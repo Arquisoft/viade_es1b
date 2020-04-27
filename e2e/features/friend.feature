@@ -21,5 +21,6 @@ Feature: Add a friend
 		Given the friends page
 		When the user selects the friend he wants to remove
 		And press de remove button
-		Then the friend is not showed
+		Then the user is notified
+		And the friend is not showed
 

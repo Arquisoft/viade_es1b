@@ -8,7 +8,7 @@ beforeEach(() => act(() => {
     <Welcome />
   );
   wrapper = container;
-  debug();
+  //debug();
 }
 
 ));
