@@ -61,9 +61,13 @@ export const ButtonStyle = styled.button`
 `;
 
 export const ButtonStyle2 = styled.button`
-    width: 10%;
+    width: 5%;
     border: 1px solid grey;
     border-radius: 0 .25rem .25rem 0;
+`;
+export const ButtonStyle3 = styled.button`
+    width: 5%;
+    border: 1px solid grey;
 `;
 
 export const H3Style = styled.h3`
