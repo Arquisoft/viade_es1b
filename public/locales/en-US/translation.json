@@ -56,7 +56,8 @@
     "empty":"This field cannot be empty",
     "webIdF":"WebId does not exist",
     "deleted":"Friend deleted",
-    "choose":"Choose a friend to delete"
+    "choose":"Choose a friend to delete",
+    "addG":"Add Group"
   },
   "notFound": {
     "title": "Page not found",

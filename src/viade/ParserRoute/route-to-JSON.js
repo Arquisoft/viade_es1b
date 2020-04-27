@@ -64,52 +64,8 @@ class createJson {
 
     }
 
-
-
-    // async createJson(name, markers) {
-    //     var tot = '{ "@context": "http://schema.org",  "@type": "Trip", "name":' + '"' + name + '"' + ', "itinerary": { "@type": "ItemList", "numberOfItems":' + markers.length + ', "itemListOrder": "http://schema.org/ItemListOrderDescending","itemListElement": [';
-    //     for (let i = 0; i < markers.length; i++) {
-    //         if (i < markers.length - 1)
-    //             tot = tot + '{ "@type": "GeoCoordinates", "latitude":' + markers[i].lat + ', "longitude":' + markers[i].lng + '},'
-    //         else
-    //             tot = tot + '{ "@type": "GeoCoordinates", "latitude":' + markers[i].lat + ', "longitude":' + markers[i].lng + '}'
-    //     }
-    //     tot = tot + '] } } ';
-    //     var sdict = JSON.parse(tot);
-    //     var save = JSON.stringify(sdict);
-    //     this.fileToUpload = save;
-    //     //this.subirFicheroAPod(name, save);
-    // }
-
     async createJson(name, markers, imagesRoutes, videosRoutes, webId) {
 
-        // var tot = this.header + ',"name":' + '"' + name + '"' + ', "author": ' + '"' + webId + '"' + ', "description: " : "Ejemplo de descripcion"';
-        // tot += ', "media": [';
-        // for (let i = 0; i < imagesRoutes.length; i++) {
-        //     if (videosRoutes.length !== 0 && i < imagesRoutes.length - 1)
-        //         tot += '{ "@id": "' + imagesRoutes[i] + '"},';
-        //     else
-        //         tot += '{ "@id": "' + imagesRoutes[i] + '"}';
-        // }
-
-        // for (let i = 0; i < videosRoutes.length; i++) {
-        //     if (i < videosRoutes.length - 1)
-        //         tot += '{ "@id": "' + videosRoutes[i] + '"},';
-        //     else
-        //         tot += '{ "@id": "' + videosRoutes[i] + '"}';
-        // }
-
-        // tot += ']';
-
-        // tot += ', "points": [';
-        // for (let i = 0; i < markers.length; i++) {
-        //     if (i < markers.length - 1)
-        //         tot = tot + '{ "latitude":' + markers[i].lat + ', "longitude":' + markers[i].lng + '},'
-        //     else
-        //         tot = tot + '{ "latitude":' + markers[i].lat + ', "longitude":' + markers[i].lng + '}'
-        // }
-        // tot += ']'
-        // tot = tot + '} ';
 
         var tot = '{ "@context": "http://schema.org",  "@type": "Trip", "name":"' + name + '", "itinerary": { "@type": "ItemList", "numberOfItems":' + markers.length + ', "itemListOrder": "http://schema.org/ItemListOrderDescending","itemListElement": [';
         for (let i = 0; i < markers.length; i++) {
@@ -141,7 +97,6 @@ class createJson {
         var sdict = JSON.parse(tot);
         var save = JSON.stringify(sdict);
         this.fileToUpload = save;
-        //this.subirFicheroAPod(name, save);
     }
 
 }

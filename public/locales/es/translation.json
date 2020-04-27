@@ -56,7 +56,8 @@
     "empty":"Este campo no puede estar vacío",
     "webIdF":"WebId no existe",
     "deleted":"Amigo eliminado",
-    "choose":"Seleccione un amigo a eliminar"
+    "choose":"Seleccione un amigo a eliminar",
+    "addG":"Add Group"
   },
   "notFound": {
     "title": "Página no encontrada",

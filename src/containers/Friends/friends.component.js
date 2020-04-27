@@ -87,6 +87,10 @@ const Friends = props => {
                         <img src={process.env.PUBLIC_URL + "/img/icon/network.svg"} width="35" height="35" alt="" />
                         {t('friends.add')}
                     </ButtonStyle>
+                    <ButtonStyle>
+                        <img src={process.env.PUBLIC_URL + "/img/icon/mas.svg"} width="35" height="35" alt="" />
+                        {t('friends.addG')}
+                    </ButtonStyle>
                 </ListaDiv>
             </LoggedIn>
             <LoggedOut>
