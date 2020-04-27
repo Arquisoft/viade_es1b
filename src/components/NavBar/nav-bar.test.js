@@ -10,7 +10,7 @@ beforeEach(() => act(() => {
     <NavBar />
   );
   wrapper = container;
-  debug();
+  //debug();
 }
 
 ));
@@ -24,12 +24,14 @@ describe.only('Nav Bar', () => {
 
   it('renders with all available links', async () => {
 
-    await expect(queryByTestId(wrapper, "nav-bar-home")).not.toBeNull();
-    await expect(queryByTestId(wrapper, "nav-bar-map")).not.toBeNull();
-    await expect(queryByTestId(wrapper, "nav-bar-createRoute")).not.toBeNull();
-    await expect(queryByTestId(wrapper, "nav-bar-profile")).not.toBeNull();
-    await expect(queryByTestId(wrapper, "nav-bar-language")).not.toBeNull();
-    await expect(queryByTestId(wrapper, "nav-bar-logout")).not.toBeNull();
+    expect(queryByTestId(wrapper, "nav-bar-home")).not.toBeNull();
+    expect(queryByTestId(wrapper, "nav-bar-map")).not.toBeNull();
+    expect(queryByTestId(wrapper, "nav-bar-createRoute")).not.toBeNull();
+    expect(queryByTestId(wrapper, "nav-bar-friends")).not.toBeNull();
+    expect(queryByTestId(wrapper, "nav-bar-profile")).not.toBeNull();
+    expect(queryByTestId(wrapper, "nav-bar-notifications")).not.toBeNull();
+    expect(queryByTestId(wrapper, "nav-bar-language")).not.toBeNull();
+    expect(queryByTestId(wrapper, "nav-bar-logout")).not.toBeNull();
 
   });
 

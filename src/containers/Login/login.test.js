@@ -8,7 +8,7 @@ beforeEach(() => act(() => {
     <Login />
   );
   wrapper = container;
-  debug();
+  //debug();
 }
 ));
 

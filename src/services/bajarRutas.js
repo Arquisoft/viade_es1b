@@ -40,11 +40,11 @@ class bajarRutas {
                         if (copiado) {
                             //this.loadJSon(this.tmpFolder + "/" + file.name);
                             //console.log("copiadas: "+rutasCopiadas);
-                            this.rutas.push(this.loadJSon(this.tmpFolder + "/" + file.name));
+                            this.rutas.push(this.loadJSon(this.tmpFolder + "/" + file.name, fallo));
                             let eliminado = await this.sfc.deleteFile(this.tmpFolder + "/" + file.name);
-                            if(eliminado) {
+                            if (eliminado) {
                                 rutasCargadas++;
-                              //  console.log("cargadas: "+rutasCargadas);
+                                //  console.log("cargadas: "+rutasCargadas);
                             }
                             if (totalRutas === rutasCargadas) {
                                 this.sfc.deleteFolder(this.tmpFolder);
@@ -52,13 +52,13 @@ class bajarRutas {
                             }
                         }
                     }
-                });                
+                });
                 if (hayRutas) {
                     NotificationManager.success("", mientras, 3000);
                 } else {
                     NotificationManager.error("", noruta, 3000);
                 }
-            }            
+            }
             catch (error) {
                 NotificationManager.error("", fallo, 3000);
             }
@@ -66,13 +66,18 @@ class bajarRutas {
     }
 
     // Metodo auxiliar para obtener el objeto json
-    loadJSon(url) {
+    loadJSon(url, fallo) {
+        try{
         var Httpreq = new XMLHttpRequest(); // Solicitud
         Httpreq.open("GET", url, false);
         Httpreq.send(null);
         var jsonRuta = JSON.parse(Httpreq.responseText);
         console.log(jsonRuta);
         return jsonRuta;
+        }
+        catch(e){
+            NotificationManager.error("", fallo, 3000);
+        }
     }
 }
 

@@ -21,6 +21,7 @@ class AddFriend {
                 } else {
                     await user.knows.add(data[id]); //añadimos el amigo
                     ret = 1;
+                    
                 }
             } else {
                 NotificationManager.error("", empty, 3000);
@@ -51,8 +52,11 @@ class AddFriend {
     async checkID(id) {
         const fc = new FC(auth);
         let session = await auth.currentSession();
-        if (!session)
+        console.log(session);
+        if (!session) {
             session = await auth.login();
+            console.log(session);
+        }
         try {
             let op = async client => await client.itemExists(id);
             return await op(fc);

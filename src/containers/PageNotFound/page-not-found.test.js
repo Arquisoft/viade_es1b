@@ -8,7 +8,7 @@ beforeEach(() => act(() => {
     <PageNotFound />
   );
   wrapper = container;
-  debug();
+  //debug();
 }
 ));
 

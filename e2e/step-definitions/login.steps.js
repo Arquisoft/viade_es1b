@@ -1,43 +1,55 @@
-const {defineFeature, loadFeature}=require('jest-cucumber');
+const { defineFeature, loadFeature } = require('jest-cucumber');
 const feature = loadFeature('./e2e/features/login.feature');
+const puppeteer = require('puppeteer');
+let browser = null;
+let page = null;
 
-defineFeature(feature, test => {
-  
-  beforeEach(async () => {
-    await page.goto('http://localhost:3000');
-    if(await expect(page).toMatchElement('a', { href: '#/map' })){
-        await expect(page).toClick('button', {text: 'Log out'});
-    }
-    
-  })
 
-  test('The user has to log in the site', ({given,when,then}) => {
-    
+defineFeature((feature), (test) => {
 
-    given('The Log in page', async () => {
-        await expect(page).toMatchElement('h1', { id: 'login-title' });
+  beforeAll(async () => {
+    //Create page
+    browser = await puppeteer.launch({
+      headless: false,
+      defaultViewport: null
     });
-
-    when('I press the LogIn button', async () => {
-        const newPagePromise = new Promise(x => browser.once('targetcreated', target => x(target.page())));	
-        await expect(page).toClick('button', { text: 'Log In' });
-        popup = await newPagePromise;
-      
-        console.log(popup.url());
-    });
-
-    then('I expect to see a popup to log in', () => {
-        expect(popup.title()).resolves.toMatch('Select your Identity Provider');
-      
-        expect(popup).toMatch("Solid Community", { timeout: 1000 });
-        expect(popup).toMatch("Inrupt", { timeout: 1000 });
-        expect(popup).toMatch("solid.github.io", { timeout: 1000 });
-    });
-
-    // and('After entering my credentials, log in the app', async()=>{
-
-    // });
+    page = await browser.newPage();
   });
 
+  afterAll(() => {
+    browser.close();
+  });
+
+  /**
+   * Most of the test has been created by group es1c
+   */
+  test("The user wants to login into Viade", ({ given, when, then }) => {
+    let popup;
+
+    given("The login page", async () => {
+      await page.goto("http://localhost:3000/#/", { waitUntil: "load", timeout: 0 });
+
+    });
+
+    when("The user press Log In button and enter his personal data", async () => {
+
+      const newPagePromise = new Promise((x) => browser.once(("targetcreated"), (target) => x(target.page())));
+      await expect(page).toClick("button", { className: "btn btn-primary a-solid button-login" });
+      popup = await newPagePromise;
+
+      expect(popup).toClick("button", { text: "Solid Community", timeout: 0 });
+      await popup.waitForNavigation({ waitUntil: "load", timeout: 0 });
+
+      await popup.type("[name='username']", "aswes1b", { visible: true });
+      await popup.type("[name='password']", "Viade_es1b", { visible: true });
+      await expect(popup).toClick("button", { text: "Log In" });
+    });
+
+    then("The user expects to be on the Welcome page of ViaDe", async () => {
+      await page.waitForSelector('img');
+      await expect(page.$eval('#welcome-image', el => el ? true : false)).toBeTruthy();
+    });
+
+  });
 
 });
