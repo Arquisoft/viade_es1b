@@ -3,14 +3,14 @@ import { toast } from "react-toastify";
 import { Toaster } from "../components/Utils";
 
 export const errorToaster = (content: String, title: String = null, link: Object) =>
-  toast(<Toaster {...{ content, title, type: 'error', link }} />, {
+  toast(<Toaster {...{ content, title, type: "error", link }} />, {
     autoClose: false,
-    className: 'solid-toaster toaster-error',
-    type: 'error'
+    className: "solid-toaster toaster-error",
+    type: "error"
   });
 
 export const successToaster = (content: String, title: String = null, link: Object) =>
-  toast(<Toaster {...{ content, title, type: 'success', link }} />, {
-    className: 'solid-toaster toaster-success',
-    type: 'success'
+  toast(<Toaster {...{ content, title, type: "success", link }} />, {
+    className: "solid-toaster toaster-success",
+    type: "success"
   });
