@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { GradientBackground, Panel } from '../../components/Utils';
+import styled from "styled-components";
+import { GradientBackground, Panel } from "../../components/Utils";
 
 export const LoginWrapper = styled(GradientBackground)`
   h1 {
@@ -9,19 +9,20 @@ export const LoginWrapper = styled(GradientBackground)`
 
 export const LoginPanel = styled(Panel)`
   height: 60%;
-  `;
+`;
 
 export const H1Style = styled.h1`
-color: black;
-text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black
-  `;
+  color: black;
+  text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black,
+    0 -1px 1px black;
+`;
 
 export const PanelBody = styled.div`
   display: grid;
   flex-direction: column;
 
   .provider-login-component {
-    div[role='option'] {
+    div[role="option"] {
       text-align: left !important;
       padding-left: 20px;
     }
@@ -47,7 +48,7 @@ export const LoginTitle = styled.span`
   &::before,
   &::after {
     width: 32%;
-    content: '';
+    content: "";
     background: #656e75;
     height: 1px;
     box-sizing: border-box;

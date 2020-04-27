@@ -1,9 +1,9 @@
 /* eslint-disable constructor-super */
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { LoginButton } from '@solid/react';
-import { LoginWrapper, LoginPanel, PanelBody, H1Style } from './login.style';
-import { CenterContainer } from '../../components/Utils';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { LoginButton } from "@solid/react";
+import { LoginWrapper, LoginPanel, PanelBody, H1Style } from "./login.style";
+import { CenterContainer } from "../../components/Utils";
 // import { Redirect } from 'react-router-dom';
 
 const LoginComponent = () => {
@@ -12,10 +12,15 @@ const LoginComponent = () => {
     <LoginWrapper data-testid="login-wrapper">
       {/* <LoggedOut> */}
       <CenterContainer>
-        <H1Style id="login-title" data-testid="login-title">{t('login.title')}</H1Style>
+        <H1Style id="login-title" data-testid="login-title">
+          {t("login.title")}
+        </H1Style>
         <LoginPanel className="login-panel">
           <PanelBody className="panel-body">
-            <LoginButton data-testid="login-button" popup="https://solid.github.io/solid-auth-client/dist/popup.html">
+            <LoginButton
+              data-testid="login-button"
+              popup="https://solid.github.io/solid-auth-client/dist/popup.html"
+            >
               {t("login.formButtonText")}
             </LoginButton>
             <a
@@ -24,7 +29,7 @@ const LoginComponent = () => {
               target="_blank"
               className="link"
             >
-              {t('login.solidHelp')}
+              {t("login.solidHelp")}
             </a>
           </PanelBody>
         </LoginPanel>

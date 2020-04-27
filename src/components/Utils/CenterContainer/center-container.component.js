@@ -1,13 +1,16 @@
-import React from 'react';
-import { CenterContainerWrapper } from './center-container.style';
+import React from "react";
+import { CenterContainerWrapper } from "./center-container.style";
 
 type Props = {
   children: React.Node,
-  className: String
+  className: String,
 };
 
 const CenterContainer = ({ children, className }: Props) => (
-  <CenterContainerWrapper data-testid="centerContainer-wrapper" className={className}>
+  <CenterContainerWrapper
+    data-testid="centerContainer-wrapper"
+    className={className}
+  >
     <div className="wrapper">{children}</div>
   </CenterContainerWrapper>
 );

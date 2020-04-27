@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import { PanelWrapper } from './panel.style';
+import { PanelWrapper } from "./panel.style";
 
 type Props = {
   children: React.Node,
-  className: String
+  className: String,
 };
 
 const Panel = ({ children, className }: Props) => (

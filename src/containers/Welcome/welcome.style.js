@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-import { media } from '../../utils';
-
+import styled from "styled-components";
+import { media } from "../../utils";
 
 export const WelcomeCard = styled.div`
   background-color: #fff;
@@ -29,7 +28,7 @@ export const WelcomeCard = styled.div`
 export const WelcomeLogo = styled.div`
   width: 50%;
   height: 100%;
-  
+
   img {
     width: 60%;
     display: block;
@@ -41,7 +40,7 @@ export const WelcomeProfile = styled.div`
   height: 100%;
   text-align: center;
   position: relative;
-  
+
   img {
     width: 120px;
     height: 120px;
@@ -80,7 +79,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  background-image: ${({ image }) => (image ? `url(${image})` : '#cccccc')};
+  background-image: ${({ image }) => (image ? `url(${image})` : "#cccccc")};
   background-size: cover;
   border-radius: 50%;
   width: 128px;

@@ -1,53 +1,54 @@
-import ruta1 from './route1.json';
-import Ruta from './ruta.js';
-import bajarRutas from '../../services/bajarRutas';
+import ruta1 from "./route1.json";
+import Ruta from "./ruta.js";
+import bajarRutas from "../../services/bajarRutas";
 
 class Rutas {
+  constructor() {
+    this.rutas = [new Ruta(ruta1)];
+    this.hayRuta = false;
+  }
 
-    constructor() {
-        this.rutas = [new Ruta(ruta1)];
-        this.hayRuta = false;
+  actualizarRutasConPod() {
+    if (bajarRutas.rutas.length > 0) {
+      if (!this.hayRuta) {
+        this.rutas.pop();
+        this.hayRuta = true;
+      }
+
+      while (bajarRutas.rutas.length !== 0) {
+        this.rutas.push(new Ruta(bajarRutas.rutas.pop()));
+      }
+      // Esta funcion elimina duplicados por nombre
+      this.rutas = this.rutas.filter(
+        (ruta, index, self) =>
+          index ===
+          self.findIndex((t) => t.place === ruta.place && t.name === ruta.name)
+      );
+      //console.log(this.rutas);
     }
+  }
 
-    actualizarRutasConPod() {
-        if (bajarRutas.rutas.length > 0) {
+  getNames() {
+    let rutasName = [];
+    this.rutas.map((r) => rutasName.push(r.name));
+    return rutasName;
+  }
 
-            if(!this.hayRuta) {
-            this.rutas.pop();
-            this.hayRuta = true;
+  getRutaByName(newName) {
+    var exit;
+    this.getRutaByPosition(
+      this.rutas.forEach((r) => {
+        if (r.name === newName) {
+          exit = r;
         }
-     
-            while (bajarRutas.rutas.length !== 0) {
-                this.rutas.push(new Ruta(bajarRutas.rutas.pop()));                
-            }
-            // Esta funcion elimina duplicados por nombre
-            this.rutas = this.rutas.filter((ruta, index, self) =>
-            index === self.findIndex((t) => (
-                t.place === ruta.place && t.name === ruta.name
-            ))
-            )
-            //console.log(this.rutas);
-        }
-    }
+      })
+    );
+    return exit;
+  }
 
-    getNames() {
-        let rutasName = [];
-        this.rutas.map(r => rutasName.push(r.name));
-        return rutasName;
-    }
-
-    getRutaByName(newName) {
-        var exit;
-        this.getRutaByPosition(this.rutas.forEach((r) => { if (r.name === newName) { exit = r } }));
-        return exit;
-
-    }
-
-    getRutaByPosition(p) {
-        return this.rutas[p];
-    }
-
+  getRutaByPosition(p) {
+    return this.rutas[p];
+  }
 }
-
 
 export default Rutas = new Rutas();

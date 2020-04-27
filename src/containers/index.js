@@ -1,9 +1,9 @@
-import Login from './Login';
-import Welcome from './Welcome';
-import Map from './Map';
-import CreateRoute from './CreateRoute';
-import PageNotFound from './PageNotFound';
-import Friends from './Friends';
+import Login from "./Login";
+import Welcome from "./Welcome";
+import Map from "./Map";
+import CreateRoute from "./CreateRoute";
+import PageNotFound from "./PageNotFound";
+import Friends from "./Friends";
 import NotificationsList from "./Notifications";
 export {
   Login,
@@ -12,5 +12,5 @@ export {
   CreateRoute,
   PageNotFound,
   Friends,
-  NotificationsList
+  NotificationsList,
 };

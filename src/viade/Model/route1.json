@@ -1,33 +1,37 @@
 {
-    "@context": "http://schema.org",
-    "@type": "Trip",
-    "name": "Ruta",
-    "itinerary": {
-        "@type": "ItemList",
-        "numberOfItems": 4,
-        "itemListOrder": "http://schema.org/ItemListOrderDescending",
-        "itemListElement": [
-            {
-                "@type": "GeoCoordinates",
-                "latitude": 43.3547082,
-                "longitude": -5.8507937
-            },
-            {
-                "@type": "GeoCoordinates",
-                "latitude": 43.3545444,
-                "longitude": -5.8494473
-            },
-            {
-                "@type": "GeoCoordinates",
-                "latitude": 43.3546653,
-                "longitude": -5.8490288
-            },
-            {
-                "@type": "GeoCoordinates",
-                "latitude": 43.354872,
-                "longitude": -5.8487445
-            }
-        ],
-        "media":[{"@id":"https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg"}]
-    }
+  "@context": "http://schema.org",
+  "@type": "Trip",
+  "name": "Ruta",
+  "itinerary": {
+    "@type": "ItemList",
+    "numberOfItems": 4,
+    "itemListOrder": "http://schema.org/ItemListOrderDescending",
+    "itemListElement": [
+      {
+        "@type": "GeoCoordinates",
+        "latitude": 43.3547082,
+        "longitude": -5.8507937
+      },
+      {
+        "@type": "GeoCoordinates",
+        "latitude": 43.3545444,
+        "longitude": -5.8494473
+      },
+      {
+        "@type": "GeoCoordinates",
+        "latitude": 43.3546653,
+        "longitude": -5.8490288
+      },
+      {
+        "@type": "GeoCoordinates",
+        "latitude": 43.354872,
+        "longitude": -5.8487445
+      }
+    ],
+    "media": [
+      {
+        "@id": "https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg"
+      }
+    ]
+  }
 }

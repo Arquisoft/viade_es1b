@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 type Props = {
   title: String,
   content: String,
-  link: { href: string, label: string }
+  link: { href: string, label: string },
 };
 
 const Toastr = styled.div`
