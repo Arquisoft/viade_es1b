@@ -21,56 +21,61 @@ image::ScopeAndContext.png[]
 
 image::Level1.png[]
 
-In the first level we can divide our app in three blocks:
+Contained blackboxes:
 
 |===
 |Name|Responsability
-|Actor|It is the user who uses our application. It can be a hiker, a cyclist, ..
-|Coomponents| They are the components that are seen in the application and makes them work.
-|Services|They are the services that make us connect with the POD's, log in and use the app's utilities
-|Model|It is the set of all the entities that make up the application, including the parsers
+|<<Map>>|It is in charge of handling the entire issue of viewing the map, showing routes downloaded from the POD and uploading routes to your POD. That is why it communicates with Leaflet, outside of our application. It also communicates with Notifications with which it can send notifications. Lastly, it communicates with the POD to be able to upload or download the routes.
+|<<Notifications>>| It is in charge of sending messages to the user. Receive the message of why this notification is sent and from the friends to whom it should be sent and leave it lodged in it. Then he can read them from there.
+|<<Friends>>|The friends are in charge of receiving and sending the friendships of the POD. Also friends who are erased. Communicates with notifications only when you add a friend to let them know.
 |===
 
 **Level 2**
 
-image::Level2.png[]
+=== Map
 
-In the second level we focus on the components block, because we believe that it is the most important, to differentiate between the five big parts of the web application in the part of Components :
+image::Level2Map.png[]
 
-|===
-|Name|Responsability
-|Map|It is where the routes are shown, where they are created, ...
-|Profile| The profile is where you can configure your profile in this application, see your routes, ...
-|Settings|The Settings can be changed by different details of the application
-|Friends|Here you can see your friends, their routes, the shared routes,...
-|===
-
-
-In the services part, the following should be highlighted (there are more services):
+Contained blackboxes:
 
 |===
 |Name|Responsability
-|UploadRoutes|This service is responsible for uploading your routes to your pod
-|CreateRoute|This service is responsible for converting the map points into a JSON format path
-|DownloadRoute|This service is responsible for downloading the routes in the form of JSON and displays them in map format with points
-|ShareRoute|This service is responsible for sharing the routes with your friends
+|MapView|It is the view of the map and its utilities. Receive the map components and display them
+|MapComponents| It is all you need to show all window utilities in the right places. It also gives the possibility to create your route
+|Friends|Here the friends are shown to later share a route. You need the friendsManager to be able to show them
+|ShareRoutes|Use the friends and the route that is drawn on the map to send it to the POD of the selected friend
+|UploadRoutes|Take the route created in the MapView and adding a name and optionally, photos and videos, the service takes care of uploading it to your POD
+|DownloadRoutes|When requesting this service, access your POD, and from which it shows them on the map
 |===
 
-For example here there are many more services such as the login or the pod but we wanted to highlight the main functions of the app
+=== Notifications
 
-Each of these parts is divided into many little components but it would be going into many details and the documentation would be very extensive and without important information 
+image::Level2Notifications.png[]
 
-=== Whitebox Overall System
-
-We divided the code in three big blocks to separate the presentation from the logic and the domain (MVC).
-
-image::WhiteboxOverallSystem.png[]
+Contained blackboxes:
 
 |===
-| Block          | Description 
-| Components    | In this block we find the presentation of the web. It is also divided into five blocks that covers the whole application: Profile, Map, Friends, Login and Settings. All the elements that form these blocks have a css, js and html files  
-| Services | This block manages the logic of the application and the communication between the presentation and the model
-| Model   | The model covers all the entities that are managed by the application. The routes have attributes such as longitude, latitude and height
+|NotificationsView|It is the notifications tab. Receive the components to be seen and receive all the notifications from the POD
+|NotificationsComponents|It is all you need to show all window utilities in the right places
+|NotificationManager|Manages the flow of when you have to show or send notifications. When they load the notifications tab, send the receiver to act and pass the notifications to them to be painted. When you have to send them, you only need the message and the friend you want to send it to. Connects to the POD to send as to receive
+|Sender|The sender is called from the manager. This receives the message and the friend's ID and connects with the POD to leave the message in their inbox
+|Reader|It is sent by the manager every time the page is reloaded and connects to the POD and the POD brings back all the messages in the inbox
+|POD|You have an inbox folder which is where you store the messages
+|===
+
+=== Friends
+
+image::Level2Friends.png[]
+
+Contained blackboxes:
+
+|===
+|Friends|It is the component where everything related to friends is drawn
+|AddFriend|It is a service that is responsible for adding a friend by their webID
+|DeleteFriend|It is a service that is responsible for removing a friend from the friends list
+|getFriends|It is responsible for listing the friends of the POD. Changes to add and delete friends are also transmitted
+|CheckID|Auxiliary method that checks if the id is correct
+|FriendAlreadyExit|Auxiliary method that verify if you are already a friend of the friend you want to add
 |===
 
 ////
