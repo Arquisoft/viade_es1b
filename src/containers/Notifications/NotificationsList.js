@@ -36,11 +36,9 @@ const NotificationList = docId => {
         }
     }
 
-    var notificationR = new NotificationClass();
-
     (async () => {
         var notifications = [];
-        notifications = await notificationR.notificationA
+        notifications = await new NotificationClass().notificationA
         var str = '<List>'
         notifications.forEach(function (notification) {
             str += '<li><a>' + notification + '</a></li>';

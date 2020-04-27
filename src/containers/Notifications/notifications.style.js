@@ -24,6 +24,11 @@ export const DivStyle2 = styled.div`
     border-radius: .25rem .25rem .25rem .25rem;
 `;
 
+export const ButtonStyle3 = styled.button`
+    width: 5%;
+    border: 1px solid grey;
+`;
+
 export const DivStyle = styled.div`
     position: relative;
     opacity: 0.8;

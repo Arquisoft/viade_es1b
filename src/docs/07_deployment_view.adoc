@@ -41,7 +41,7 @@ when your infrastructure is more complex.
 [role="arc42help"]
 Users must have a device with an Internet connection and a web browser, preferably Firefox or Chrome, which are the web browsers with which we have developed the Viade application. It is also more recommended computer than mobile device since it is not optimized for the latter. The Viade application is hosted and working on GitHubPages. In order to access the web application it is necessary to have acquired a Solid POD, it can be obtained from the Solid Inrupt page or from the Solid Community. The POD will be on a Solid server.
 
-image::07_deployment-view.png[]
+image::07_DeploymentDiagram.png[]
 
 Motivation::
 

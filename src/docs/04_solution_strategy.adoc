@@ -42,7 +42,5 @@ Solid pods are the way in which users will store their information in order to s
 Github +
 It is a repository in which we upload the code with the documentation
 
-Github +
-It is a repository in which we upload the code with the documentation
 
 
