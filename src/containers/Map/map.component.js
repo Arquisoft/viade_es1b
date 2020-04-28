@@ -109,7 +109,7 @@ const Mapac = (props) => {
             try {
               document.getElementById("listMedia").innerHTML = str;
             } catch (e) {
-              var str = "<List>";
+              str = "<List>";
             }
           })();
         }
