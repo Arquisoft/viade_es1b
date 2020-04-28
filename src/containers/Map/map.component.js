@@ -97,7 +97,7 @@ const Mapac = (props) => {
               var archivoURL = archivoURLFull.replace(" ", "%20");
               var nombreArchivo = archivoURL
                 .split("/")
-                [archivoURLFull.split("/").length - 1].replace("%20", " ");
+              [archivoURLFull.split("/").length - 1].replace("%20", " ");
               str +=
                 '<p><a target="_blank" rel="noopener noreferrer" href=' +
                 archivoURL +
@@ -108,7 +108,9 @@ const Mapac = (props) => {
             str += "</List>";
             try {
               document.getElementById("listMedia").innerHTML = str;
-            } catch (e) {}
+            } catch (e) {
+              var str = "<List>";
+            }
           })();
         }
       } else {
