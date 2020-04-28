@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 export const Select = (props) => {
-  const { options, defaultValue, onChange, ...rest } = props;
+  const { options, defaultValue, onChange, ...rest } = props
   return (
     <div className="">
       <select value={defaultValue} onChange={onChange} {...rest}>
@@ -13,5 +13,5 @@ export const Select = (props) => {
           ))}
       </select>
     </div>
-  );
-};
+  )
+}

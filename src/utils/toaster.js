@@ -1,6 +1,6 @@
-import React from "react";
-import { toast } from "react-toastify";
-import { Toaster } from "../components/Utils";
+import React from "react"
+import { toast } from "react-toastify"
+import { Toaster } from "../components/Utils"
 
 export const errorToaster = (
   content: String,
@@ -11,7 +11,7 @@ export const errorToaster = (
     autoClose: false,
     className: "solid-toaster toaster-error",
     type: "error",
-  });
+  })
 
 export const successToaster = (
   content: String,
@@ -21,4 +21,4 @@ export const successToaster = (
   toast(<Toaster {...{ content, title, type: "success", link }} />, {
     className: "solid-toaster toaster-success",
     type: "success",
-  });
+  })

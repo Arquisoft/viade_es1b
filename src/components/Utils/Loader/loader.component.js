@@ -1,24 +1,24 @@
-import React, { Component } from "react";
-import { LoaderWrapper, CubeGrid, Cube } from "./loader.style";
+import React, { Component } from "react"
+import { LoaderWrapper, CubeGrid, Cube } from "./loader.style"
 
 type Props = {
   delay?: Number,
   absolute?: Boolean,
-};
+}
 
 class Loader extends Component<Props> {
-  state = { show: false };
+  state = { show: false }
 
   componentDidMount() {
-    const { delay } = this.props;
-    this.delayTimer = setTimeout(this.show, delay);
+    const { delay } = this.props
+    this.delayTimer = setTimeout(this.show, delay)
   }
 
   componentWillUnmount() {
-    clearTimeout(this.delayTimer);
+    clearTimeout(this.delayTimer)
   }
 
-  show = () => this.setState({ show: true });
+  show = () => this.setState({ show: true })
 
   render() {
     const cubes = [
@@ -31,9 +31,9 @@ class Loader extends Component<Props> {
       { id: "6", value: 0 },
       { id: "7", value: 0.1 },
       { id: "8", value: 0.2 },
-    ];
-    const { show } = this.state;
-    const { absolute } = this.props;
+    ]
+    const { show } = this.state
+    const { absolute } = this.props
     return (
       show && (
         <LoaderWrapper absolute={absolute}>
@@ -44,13 +44,13 @@ class Loader extends Component<Props> {
           </CubeGrid>
         </LoaderWrapper>
       )
-    );
+    )
   }
 }
 
 Loader.defaultProps = {
   delay: 300,
   absolute: false,
-};
+}
 
-export default Loader;
+export default Loader

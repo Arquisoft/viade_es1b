@@ -13,7 +13,7 @@ defineFeature((feature), (test) => {
             defaultViewport: null
         });
         page = await browser.newPage();
-        
+
         await page.goto("http://localhost:3000/", { waitUntil: "load", timeout: 0 });
 
         const newPagePromise = new Promise((x) => browser.once(("targetcreated"), (target) => x(target.page())));
@@ -36,17 +36,16 @@ defineFeature((feature), (test) => {
     test("The user has routes in his POD but not loaded", ({ given, when, then, and }) => {
 
         given("the map page", async () => {
-            await page.goto("http://localhost:3000/#/map",{waitUntil: "load", timeout: 0}); 
+            await page.goto("http://localhost:3000/#/map", { waitUntil: "load", timeout: 0 });
         });
 
         when("the user types the folder with routes", async () => {
             await page.waitForSelector('input');
-            await page.type("[id='download-input']", "viade/routes", { visible: true }); 
-            await new Promise(res => setTimeout(() => {
-                console.log("Simulates user writing")
+            await page.type("[id='download-input']", "viade/routes", { visible: true });
+            await new Promise((res) => setTimeout(() => {
                 expect(true).toBe(true)
                 res()
-              }, 2000));  
+            }, 2000));
         });
 
         and("press the download button", async () => {
@@ -55,7 +54,7 @@ defineFeature((feature), (test) => {
         });
 
         then("the user expects to watch them in the list", async () => {
-            await page.waitForSelector('h4', {class:"title", timeout: 0});
+            await page.waitForSelector('h4', { class: "title", timeout: 0 });
             const refreshButton = await page.$('[id="refresh-button"]');
             await refreshButton.click();
             await expect(page).toMatch("test", { waitUntil: "load", timeout: 0 });
@@ -78,7 +77,7 @@ defineFeature((feature), (test) => {
         then("the user expects to watch it drown in the map", async () => {
             const markerPanel = await page.$('[class="leaflet-pane leaflet-marker-pane"]');
             await expect(markerPanel).not.toBeNull();
-            await new Promise(res => setTimeout(res, 6000));
+            await new Promise((res) => setTimeout(res, 6000));
         });
 
     });

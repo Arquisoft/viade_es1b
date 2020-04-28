@@ -4,7 +4,7 @@ type ProviderEntity = {
   value: String,
   registerLink: String,
   description: String,
-};
+}
 
 export default class Provider {
   /*
@@ -28,6 +28,6 @@ export default class Provider {
         registerLink: "https://solid.community/register",
         description: "Lorem ipsum dolor sit non consectetur",
       },
-    ];
+    ]
   }
 }

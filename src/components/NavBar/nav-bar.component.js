@@ -1,5 +1,5 @@
-import React from "react";
-import { useWebId } from "@solid/react";
+import React from "react"
+import { useWebId } from "@solid/react"
 import {
   DivStyle,
   NavStyle,
@@ -8,14 +8,14 @@ import {
   DivStyle2,
   DivStyle3,
   DivStyle1,
-} from "./nav-bar.style";
-import { DropdownButton, DropdownItem } from "react-bootstrap";
-import { useTranslation } from "react-i18next";
-import i18n from "i18next";
+} from "./nav-bar.style"
+import { DropdownButton, DropdownItem } from "react-bootstrap"
+import { useTranslation } from "react-i18next"
+import i18n from "i18next"
 
 const NavBar = (props) => {
-  const name = useWebId();
-  const { t } = useTranslation();
+  const name = useWebId()
+  const { t } = useTranslation()
   return (
     <NavStyle id="navBar">
       <a href="#/">
@@ -116,6 +116,6 @@ const NavBar = (props) => {
         </ButtonStyle>
       </DivStyle2>
     </NavStyle>
-  );
-};
-export default NavBar;
+  )
+}
+export default NavBar

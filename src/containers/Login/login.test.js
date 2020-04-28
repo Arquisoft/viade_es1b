@@ -1,38 +1,38 @@
-import React from "react";
+import React from "react"
 import {
   cleanup,
   render,
   queryByTestId,
   queryByText,
   act,
-} from "@testing-library/react";
-import Login from "./login.component";
+} from "@testing-library/react"
+import Login from "./login.component"
 
-let wrapper;
+let wrapper
 beforeEach(() =>
   act(() => {
-    const { container, debug } = render(<Login />);
-    wrapper = container;
+    const { container, debug } = render(<Login />)
+    wrapper = container
     //debug();
   })
-);
+)
 
 describe("Login", () => {
-  afterAll(cleanup);
+  afterAll(cleanup)
 
   test("renders without crashing", () => {
-    expect(wrapper).toBeTruthy();
-  });
+    expect(wrapper).toBeTruthy()
+  })
 
   test("renders with styled components", () => {
-    expect(document.querySelector(".login-panel")).toBeTruthy();
-    expect(document.querySelector(".panel-body")).toBeTruthy();
-  });
+    expect(document.querySelector(".login-panel")).toBeTruthy()
+    expect(document.querySelector(".panel-body")).toBeTruthy()
+  })
   test("renders title properly", () => {
-    expect(queryByTestId(wrapper, "login-title")).not.toBeNull();
-  });
+    expect(queryByTestId(wrapper, "login-title")).not.toBeNull()
+  })
 
   test("renders login button properly ", () => {
-    expect(queryByText(wrapper, "login.formButtonText")).toBeTruthy();
-  });
-});
+    expect(queryByText(wrapper, "login.formButtonText")).toBeTruthy()
+  })
+})

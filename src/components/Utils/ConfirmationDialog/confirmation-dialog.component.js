@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
-import ReactModal from "react-modal";
+import React, { useState, useEffect } from "react"
+import ReactModal from "react-modal"
 import {
   Content,
   Actions,
   AcceptBtn,
   DeclineBtn,
-} from "./confirmation-dialog.style";
+} from "./confirmation-dialog.style"
 
 type Props = {
   onAccept: Function,
   onDecline: Function,
   options: Object,
   parentSelector?: String,
-};
+}
 
 /**
  * Check if we are running test to avoid issue with React Modal
  */
-if (process.env.NODE_ENV !== "test") ReactModal.setAppElement("#root");
+if (process.env.NODE_ENV !== "test") ReactModal.setAppElement("#root")
 
 const ConfirmationDialog = ({
   onAccept,
@@ -25,30 +25,30 @@ const ConfirmationDialog = ({
   options,
   parentSelector,
 }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const {
     message,
     messageComponent: MessageComponent,
     acceptText,
     declineText,
-  } = options;
+  } = options
 
   const Accept = async () => {
-    await onAccept();
-    setIsOpen(false);
-  };
+    await onAccept()
+    setIsOpen(false)
+  }
 
   const Decline = async () => {
-    await onDecline();
-    setIsOpen(false);
-  };
+    await onDecline()
+    setIsOpen(false)
+  }
 
-  const getParent = () => document.querySelector(parentSelector);
+  const getParent = () => document.querySelector(parentSelector)
 
   useEffect(() => {
-    setIsOpen(true);
-  }, []);
+    setIsOpen(true)
+  }, [])
 
   return (
     <ReactModal
@@ -74,11 +74,11 @@ const ConfirmationDialog = ({
         </Actions>
       </Content>
     </ReactModal>
-  );
-};
+  )
+}
 
 ConfirmationDialog.defaultProps = {
   parentSelector: "#root",
-};
+}
 
-export default ConfirmationDialog;
+export default ConfirmationDialog

@@ -1,4 +1,4 @@
-import NavBar from "./NavBar";
-import * as Utils from "./Utils";
+import NavBar from "./NavBar"
+import * as Utils from "./Utils"
 
-export { NavBar, Utils };
+export { NavBar, Utils }

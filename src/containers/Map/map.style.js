@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Map } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import styled from "styled-components"
+import { Map } from "react-leaflet"
+import "leaflet/dist/leaflet.css"
 
 export const MapStyle = styled(Map)`
   position: relative;
@@ -8,7 +8,7 @@ export const MapStyle = styled(Map)`
   height: 100%;
   z-index: 1;
   border-radius: 0 0.25rem 0.25rem 0;
-`;
+`
 
 export const DivStyle = styled.div`
   position: relative;
@@ -21,7 +21,7 @@ export const DivStyle = styled.div`
   z-index: 99;
   overflow: auto;
   border-radius: 0.25rem 0 0 0.25rem;
-`;
+`
 
 export const DivStyle1 = styled.div`
   position: absolute;
@@ -32,7 +32,7 @@ export const DivStyle1 = styled.div`
   background-repeat: repeat;
   padding: 40px;
   overflow: hidden;
-`;
+`
 
 export const DivStyle3 = styled.div`
   border: 1px solid gray;
@@ -43,11 +43,11 @@ export const DivStyle3 = styled.div`
   margin: 10px 0px 0px 0px;
   border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
   margin-bottom: 10px;
-`;
+`
 
 export const ButtonStyle = styled.button`
   margin: 5px;
-`;
+`
 
 export const DivStyle4 = styled.div`
   background-image: linear-gradient(white, white);
@@ -59,7 +59,7 @@ export const DivStyle4 = styled.div`
     border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
   }
   border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
-`;
+`
 
 export const AmigosDiv = styled.div`
   height: auto;
@@ -68,7 +68,7 @@ export const AmigosDiv = styled.div`
   overflow: auto;
   padding: 5px;
   border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
-`;
+`
 
 export const LiStyle = styled.li`
   list-style: none;
@@ -78,12 +78,12 @@ export const LiStyle = styled.li`
   text-align: left;
   padding: 5px;
   border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
-`;
+`
 
 export const H3Style = styled.h3`
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-`;
+`
 
 export const LiStyle2 = styled.div`
   overflow: auto;
@@ -92,12 +92,12 @@ export const LiStyle2 = styled.div`
   text-align: center;
   padding: 5px;
   border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
-`;
+`
 
 export const InputStyle = styled.input`
   width: auto;
   height: auto;
-`;
+`
 
 export const MediaDiv = styled.div`
   height: 10%;
@@ -106,4 +106,4 @@ export const MediaDiv = styled.div`
   padding: 5px;
   overflow: auto;
   border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
-`;
+`

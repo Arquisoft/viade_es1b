@@ -1,13 +1,13 @@
 /* eslint-disable constructor-super */
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { LoginButton } from "@solid/react";
-import { LoginWrapper, LoginPanel, PanelBody, H1Style } from "./login.style";
-import { CenterContainer } from "../../components/Utils";
+import React from "react"
+import { useTranslation } from "react-i18next"
+import { LoginButton } from "@solid/react"
+import { LoginWrapper, LoginPanel, PanelBody, H1Style } from "./login.style"
+import { CenterContainer } from "../../components/Utils"
 // import { Redirect } from 'react-router-dom';
 
 const LoginComponent = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <LoginWrapper data-testid="login-wrapper">
       {/* <LoggedOut> */}
@@ -39,7 +39,7 @@ const LoginComponent = () => {
         <Redirect to="/welcome"></Redirect>
       </LoggedIn> */}
     </LoginWrapper>
-  );
-};
+  )
+}
 
-export default LoginComponent;
+export default LoginComponent

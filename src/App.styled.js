@@ -1,5 +1,5 @@
-import { ToastContainer } from "react-toastify";
-import styled from "styled-components";
+import { ToastContainer } from "react-toastify"
+import styled from "styled-components"
 
 export const Toaster = styled(ToastContainer)`
   &.solid-toaster-container {
@@ -37,4 +37,4 @@ export const Toaster = styled(ToastContainer)`
       opacity: 0.8;
     }
   }
-`;
+`

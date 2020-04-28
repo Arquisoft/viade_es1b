@@ -1,7 +1,7 @@
-import auth from "solid-auth-client";
-import data from "@solid/query-ldflex";
-import FC from "solid-file-client";
-import { NotificationManager } from "react-notifications";
+import auth from "solid-auth-client"
+import data from "@solid/query-ldflex"
+import FC from "solid-file-client"
+import { NotificationManager } from "react-notifications"
 
 class AddFriend {
   constructor() {
@@ -39,7 +39,7 @@ class AddFriend {
       var selectedOption = document.querySelector("input[name = food]:checked")
         .value; //sacamos el amigo seleccionado
       event.preventDefault();
-      const user = data[webId]; //sacamos nuestra informacion
+      const user = data[webId] //sacamos nuestra informacion
       if (selectedOption.localeCompare("") !== 0) {
         await user.knows.delete(data[selectedOption]); //eliminamos el amigo
         NotificationManager.error("", eliminado, 3000);
@@ -52,27 +52,27 @@ class AddFriend {
   async checkID(id) {
     const fc = new FC(auth);
     let session = await auth.currentSession();
-    console.log(session);
     if (!session) {
       session = await auth.login();
-      console.log(session);
     }
     try {
       let op = async (client) => await client.itemExists(id);
       return await op(fc);
-    } catch (e) {}
+    } catch (e) {
+      session = await auth.currentSession();
+    }
   }
 
   async friendAlreadyAdded(id, webId) {
     const user = data[webId];
     for await (const friend of user.friends)
       if (String(friend).localeCompare(String(id)) === 0) return true;
-    return false;
+    return false
   }
 
   async getFriends() {
     const friends = [];
-    let session = await auth.currentSession();
+    let session = await auth.currentSession()
     if (session) {
       var id = `${session.webId}`;
       const user = data[id];

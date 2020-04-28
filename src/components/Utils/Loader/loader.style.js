@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components"
 
 const cubeGridScaleDelay = keyframes`
 	0%,
@@ -10,7 +10,7 @@ const cubeGridScaleDelay = keyframes`
 	35% {
 		transform: scale3D(0, 0, 1);
 	}
-`;
+`
 
 export const LoaderWrapper = styled.div`
   position: ${({ absolute }) => (absolute ? "absolute" : "fixed")};
@@ -23,7 +23,7 @@ export const LoaderWrapper = styled.div`
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.6);
-`;
+`
 
 export const CubeGrid = styled.div`
   width: 80px;
@@ -32,10 +32,10 @@ export const CubeGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-`;
+`
 
 export const Cube = styled.span`
   background-color: #7c4dff;
   animation: ${cubeGridScaleDelay} 1.3s infinite ease-in-out;
   animation-delay: ${({ delay }) => delay || 0}s;
-`;
+`

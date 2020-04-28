@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
 type Props = {
   title: String,
   content: String,
   link: { href: string, label: string },
-};
+}
 
 const Toastr = styled.div`
   display: flex;
@@ -29,10 +29,10 @@ const Toastr = styled.div`
     display: block;
     margin: 5px 0;
   }
-`;
+`
 
 const Toaster = (props: Props) => {
-  const { title, content, link } = props;
+  const { title, content, link } = props
   return (
     <Toastr>
       <span>{title}</span>
@@ -43,7 +43,7 @@ const Toaster = (props: Props) => {
         </a>
       )}
     </Toastr>
-  );
-};
+  )
+}
 
-export default Toaster;
+export default Toaster

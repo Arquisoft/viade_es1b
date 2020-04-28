@@ -1,8 +1,8 @@
-import React from "react";
-import { render, cleanup } from "@testing-library/react";
-import ConfirmationDialog from "./confirmation-dialog.component";
+import React from "react"
+import { render, cleanup } from "@testing-library/react"
+import ConfirmationDialog from "./confirmation-dialog.component"
 
-afterAll(cleanup);
+afterAll(cleanup)
 
 describe.only("ConfirmationDialog", () => {
   const { container } = render(
@@ -12,9 +12,9 @@ describe.only("ConfirmationDialog", () => {
         parentSelector="#test"
       />
     </div>
-  );
+  )
 
   test("renders without crashing", () => {
-    expect(container).toBeTruthy();
-  });
-});
+    expect(container).toBeTruthy()
+  })
+})

@@ -47,7 +47,7 @@ defineFeature((feature), (test) => {
 
     then("The user expects to be on the Welcome page of ViaDe", async () => {
       await page.waitForSelector('img');
-      await expect(page.$eval('#welcome-image', el => el ? true : false)).toBeTruthy();
+      await expect(page.$eval('#welcome-image', (el) => el ? true : false)).toBeTruthy();
     });
 
   });

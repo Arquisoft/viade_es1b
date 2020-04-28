@@ -1,12 +1,12 @@
-import React from "react";
-import { useWebId } from "@solid/react";
-import { Trans, useTranslation } from "react-i18next";
+import React from "react"
+import { useWebId } from "@solid/react"
+import { Trans, useTranslation } from "react-i18next"
 import {
   WelcomeCard,
   WelcomeLogo,
   WelcomeProfile,
   WelcomeDetail,
-} from "./welcome.style";
+} from "./welcome.style"
 
 /**
  * Welcome Page UI component, containing the styled components for the Welcome Page
@@ -14,8 +14,8 @@ import {
  * @param props
  */
 export const WelcomePageContent = (props) => {
-  const { t } = useTranslation();
-  const name = useWebId();
+  const { t } = useTranslation()
+  const name = useWebId()
 
   const style = {
     position: "absolute",
@@ -25,7 +25,7 @@ export const WelcomePageContent = (props) => {
     backgroundSize: "cover",
     backgroundRepeat: "repeat",
     padding: "50px 0",
-  };
+  }
 
   return (
     <section data-testid="welcome-wrapper" style={style}>
@@ -61,5 +61,5 @@ export const WelcomePageContent = (props) => {
         </WelcomeDetail>
       </WelcomeCard>
     </section>
-  );
-};
+  )
+}

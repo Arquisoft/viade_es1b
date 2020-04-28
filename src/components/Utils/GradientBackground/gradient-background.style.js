@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Gradient = styled.div`
   background-image: url("img/fondo.jpg");
@@ -18,4 +18,4 @@ export const Gradient = styled.div`
     background-image: url("/img/background-pattern.svg");
     filter: opacity(30%);
   }
-`;
+`

@@ -1,17 +1,17 @@
 /* eslint-disable constructor-super */
-import React from "react";
-import { useTranslation } from "react-i18next";
+import React from "react"
+import { useTranslation } from "react-i18next"
 import {
   PageNotFoundWrapper,
   PageNotFoundContent,
-} from "./page-not-found.style";
+} from "./page-not-found.style"
 
 /**
  * A React component page that is displayed when there's no valid route. Users can click the button
  * to get back to the home/welcome page.
  */
 const PageNotFound = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <PageNotFoundWrapper data-testid="page-not-found-container">
       <PageNotFoundContent>
@@ -30,7 +30,7 @@ const PageNotFound = () => {
         </div>
       </PageNotFoundContent>
     </PageNotFoundWrapper>
-  );
-};
+  )
+}
 
-export default PageNotFound;
+export default PageNotFound

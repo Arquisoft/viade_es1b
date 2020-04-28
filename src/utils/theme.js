@@ -7,6 +7,6 @@ const theme = {
     created: "#039c40",
     finished: "#8200a6",
   },
-};
+}
 
-export default theme;
+export default theme

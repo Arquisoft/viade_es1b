@@ -1,3 +1,3 @@
-import RadioButton from "./radio.component";
+import RadioButton from "./radio.component"
 
-export default RadioButton;
+export default RadioButton

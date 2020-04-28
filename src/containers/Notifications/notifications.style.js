@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const DivStyle1 = styled.div`
   position: absolute;
@@ -9,7 +9,7 @@ export const DivStyle1 = styled.div`
   background-repeat: repeat;
   padding: 40px;
   overflow: hidden;
-`;
+`
 
 export const DivStyle2 = styled.div`
   position: relative;
@@ -22,12 +22,12 @@ export const DivStyle2 = styled.div`
   overflow: auto;
   border: 1px solid gray;
   border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
-`;
+`
 
 export const ButtonStyle3 = styled.button`
   width: 5%;
   border: 1px solid grey;
-`;
+`
 
 export const DivStyle = styled.div`
   position: relative;
@@ -41,11 +41,11 @@ export const DivStyle = styled.div`
   z-index: 99;
   overflow: auto;
   border-radius: 0.25rem;
-`;
+`
 
 export const H3Style = styled.h3`
   position: relative;
   height: 5%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-`;
+`

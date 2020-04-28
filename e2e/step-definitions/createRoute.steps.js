@@ -5,12 +5,12 @@ let browser = null;
 let page = null;
 let mapPage = null;
 
-const delay = time => new Promise(res => setTimeout(res, 500));
+const delay = (time) => new Promise(res => setTimeout(res, 500));
 
 async function mouseClick(page, x, y) {
     await delay();
     await page.mouse.click(x, y);
- }
+}
 
 defineFeature((feature), (test) => {
 
@@ -21,7 +21,7 @@ defineFeature((feature), (test) => {
             defaultViewport: null
         });
         page = await browser.newPage();
-        
+
         await page.goto("http://localhost:3000/", { waitUntil: "load", timeout: 0 });
 
         const newPagePromise = new Promise((x) => browser.once(("targetcreated"), (target) => x(target.page())));
@@ -49,13 +49,13 @@ defineFeature((feature), (test) => {
         });
 
         when("the user clicks in some points of the map", async () => {
-            await new Promise(res => setTimeout(res,3000));
+            await new Promise(res => setTimeout(res, 3000));
 
             await mouseClick(page, 500, 500);
             await mouseClick(page, 500, 600);
 
 
-            await new Promise(res => setTimeout(res,5000));
+            await new Promise(res => setTimeout(res, 5000));
 
         });
 
@@ -64,7 +64,7 @@ defineFeature((feature), (test) => {
             await page.type("[id='name']", "testCreate", { visible: true });
             const uploadButton = await page.$('[id="upload-button"]');
             await uploadButton.click();
-            await page.waitForSelector('h4', {class:"title", timeout: 0});
+            await page.waitForSelector('h4', { class: "title", timeout: 0 });
         });
 
         then("a new route should be created and saved in his POD", async () => {
@@ -75,8 +75,7 @@ defineFeature((feature), (test) => {
             //Type folder of routes
             await mapPage.waitForSelector('input');
             await mapPage.type("[id='download-input']", "viade/routes", { visible: true });
-            await new Promise(res => setTimeout(() => {
-                console.log("Simulates user writing")
+            await new Promise((res) => setTimeout(() => {
                 expect(true).toBe(true)
                 res()
             }, 2000));
@@ -86,7 +85,7 @@ defineFeature((feature), (test) => {
             await downloadButton.click();
 
             //Refresh
-            await mapPage.waitForSelector('h4', {class:"title", timeout: 0});
+            await mapPage.waitForSelector('h4', { class: "title", timeout: 0 });
             const refreshButton = await mapPage.$('[id="refresh-button"]');
             await refreshButton.click();
 
@@ -108,19 +107,19 @@ defineFeature((feature), (test) => {
         });
 
         when("the user clicks in some points of the map", async () => {
-            
-            await new Promise(res => setTimeout(res,3000));
+
+            await new Promise((res) => setTimeout(res, 3000));
 
             await mouseClick(page, 500, 500);
             await mouseClick(page, 500, 600);
 
-            await new Promise(res => setTimeout(res,5000));
+            await new Promise((res) => setTimeout(res, 5000));
 
         });
 
         and("does not write a name for the route", async () => {
             await page.waitForSelector('input');
-            
+
         });
 
         and("press upload button", async () => {
@@ -129,7 +128,7 @@ defineFeature((feature), (test) => {
         });
 
         then("an error message should appear", async () => {
-            await page.waitForSelector('h4', {class:"title", timeout: 0});
+            await page.waitForSelector('h4', { class: "title", timeout: 0 });
         });
 
     });
@@ -161,11 +160,11 @@ defineFeature((feature), (test) => {
         });
 
         then("an error message should appear", async () => {
-            await page.waitForSelector('h4', {class:"title", timeout: 0});
+            await page.waitForSelector('h4', { class: "title", timeout: 0 });
         });
 
     });
 
-    
+
 
 });
