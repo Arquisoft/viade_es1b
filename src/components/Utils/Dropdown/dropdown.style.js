@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-import { media } from "../../../utils"
+import { media } from "../../../utils";
 
 export const DropdownContainer = styled.div`
   position: relative;
@@ -14,7 +14,7 @@ export const DropdownContainer = styled.div`
     color: #7c4dff;
     ${media.desktop`display: none; path { display: none }`}
   }
-`
+`;
 
 export const DropdownMain = styled.button`
   position: relative;
@@ -30,7 +30,7 @@ export const DropdownMain = styled.button`
     outline: none;
   }
   ${media.desktop`height: 100%;`}
-`
+`;
 
 export const DropdownItemContainer = styled.div`
   position: absolute;
@@ -52,7 +52,7 @@ export const DropdownItemContainer = styled.div`
     position: relative;
     top: 0;
   }
-`
+`;
 
 export const Item = styled.li`
   border-left: none;
@@ -84,4 +84,4 @@ export const Item = styled.li`
   .flag-icon {
     margin-right: 10px;
   }
-`
+`;

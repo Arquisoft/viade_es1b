@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import { useWebId } from "@solid/react"
-import { useTranslation } from "react-i18next"
+import React, { useState } from "react";
+import { useWebId } from "@solid/react";
+import { useTranslation } from "react-i18next";
 import {
   ListaDiv,
   InputStyle,
@@ -10,26 +10,29 @@ import {
   ButtonStyle2,
   ButtonStyle3,
   H3Style,
-} from "./friends.style"
-import { useNotification } from "@inrupt/solid-react-components"
-import AddFriend from "../../viade/Friends/addFriend"
-import { NotificationContainer, NotificationManager } from "react-notifications"
+} from "./friends.style";
+import { useNotification } from "@inrupt/solid-react-components";
+import AddFriend from "../../viade/Friends/addFriend";
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
 
 const Friends = (props) => {
-  const { t } = useTranslation()
-  const name = useWebId()
+  const { t } = useTranslation();
+  const name = useWebId();
 
-  var [amigos, setAmigos] = useState([])
-  const { createNotification, discoverInbox } = useNotification(name)
+  var [amigos, setAmigos] = useState([]);
+  const { createNotification, discoverInbox } = useNotification(name);
 
   const sendNotification = async (titles, friendId, summary) => {
-    var names = name.split(".")
-    var shortName = names[0]
-    shortName = shortName.replace("https://", "")
+    var names = name.split(".");
+    var shortName = names[0];
+    shortName = shortName.replace("https://", "");
     try {
-      const inbox = await discoverInbox(friendId)
+      const inbox = await discoverInbox(friendId);
       if (!inbox)
-        NotificationManager.error("", t("notifications.inboxFail"), 3000)
+        NotificationManager.error("", t("notifications.inboxFail"), 3000);
       createNotification(
         {
           title: titles,
@@ -37,11 +40,11 @@ const Friends = (props) => {
           actor: name,
         },
         inbox
-      )
+      );
     } catch (error) {
-      NotificationManager.error("", t("notifications.error"), 3000)
+      NotificationManager.error("", t("notifications.error"), 3000);
     }
-  }
+  };
 
   function addFriendS() {
     AddFriend.addFriend(
@@ -56,25 +59,25 @@ const Friends = (props) => {
           t("notifications.titleAdd"),
           document.getElementById("input-webid").value,
           t("notifications.summaryAdd")
-        )
-        NotificationManager.error("", t("friends.addeds"), 3000)
+        );
+        NotificationManager.error("", t("friends.addeds"), 3000);
       }
-    })
+    });
   }
 
   const refresh = async () => {
-    var friends = []
-    friends = await AddFriend.getFriends()
+    var friends = [];
+    friends = await AddFriend.getFriends();
     friends.forEach(function (friend) {
       if (amigos.includes(friend.toString()) === false)
-        setAmigos((amigos) => [...amigos, friend])
-    })
-    setAmigos(friends)
-  }
+        setAmigos((amigos) => [...amigos, friend]);
+    });
+    setAmigos(friends);
+  };
 
   const style = {
     listStyleType: "none",
-  }
+  };
 
   return (
     <DivStyle1>
@@ -156,7 +159,7 @@ const Friends = (props) => {
         </ButtonStyle>
       </ListaDiv>
     </DivStyle1>
-  )
-}
+  );
+};
 
-export default Friends
+export default Friends;

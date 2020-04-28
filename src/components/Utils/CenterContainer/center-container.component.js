@@ -1,10 +1,10 @@
-import React from "react"
-import { CenterContainerWrapper } from "./center-container.style"
+import React from "react";
+import { CenterContainerWrapper } from "./center-container.style";
 
 type Props = {
   children: React.Node,
   className: String,
-}
+};
 
 const CenterContainer = ({ children, className }: Props) => (
   <CenterContainerWrapper
@@ -13,6 +13,6 @@ const CenterContainer = ({ children, className }: Props) => (
   >
     <div className="wrapper">{children}</div>
   </CenterContainerWrapper>
-)
+);
 
-export default CenterContainer
+export default CenterContainer;

@@ -1,6 +1,6 @@
-import React from "react"
-import { HashRouter, Switch, Route, Redirect } from "react-router-dom"
-import { LoggedIn, LoggedOut } from "@solid/react"
+import React from "react";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import { LoggedIn, LoggedOut } from "@solid/react";
 
 import {
   Login,
@@ -10,8 +10,8 @@ import {
   PageNotFound,
   Friends,
   NotificationsList,
-} from "./containers"
-import NavBar from "./components/NavBar"
+} from "./containers";
+import NavBar from "./components/NavBar";
 
 const Routes = () => (
   <HashRouter>
@@ -38,6 +38,6 @@ const Routes = () => (
       </LoggedOut>
     </div>
   </HashRouter>
-)
+);
 
-export default Routes
+export default Routes;

@@ -1,7 +1,7 @@
-import React from "react"
-import L from "leaflet"
-import { useTranslation } from "react-i18next"
-import { TileLayer, Marker, Polyline } from "react-leaflet"
+import React from "react";
+import L from "leaflet";
+import { useTranslation } from "react-i18next";
+import { TileLayer, Marker, Polyline } from "react-leaflet";
 import {
   MapStyle,
   DivStyle,
@@ -10,23 +10,26 @@ import {
   ButtonStyle2,
   ChooseButton,
   DivStyle1,
-} from "./createRoute.style"
-import CreateRouteService from "../../services/CreateRouteService"
-import { NotificationManager, NotificationContainer } from "react-notifications"
+} from "./createRoute.style";
+import CreateRouteService from "../../services/CreateRouteService";
+import {
+  NotificationManager,
+  NotificationContainer,
+} from "react-notifications";
 
-delete L.Icon.Default.prototype._getIconUrl
+delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
   iconUrl: require("leaflet/dist/images/marker-icon.png"),
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-})
+});
 
 const Createc = (props) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   class CreateRoute extends React.Component {
     constructor() {
-      super()
+      super();
       this.state = {
         markers: [],
         name: "",
@@ -36,39 +39,39 @@ const Createc = (props) => {
           lat: 43.3551061,
           lng: -5.8512792,
         },
-      }
+      };
     }
 
     mapClick = (e) => {
-      const { markers } = this.state
-      markers.push({ lat: e.latlng.lat, lng: e.latlng.lng })
-      this.setState({ markers })
-      this.draw()
-    }
+      const { markers } = this.state;
+      markers.push({ lat: e.latlng.lat, lng: e.latlng.lng });
+      this.setState({ markers });
+      this.draw();
+    };
 
     draw() {
-      let points = []
+      let points = [];
       for (let i = 0; i < this.state.markers.length; i++)
         points.push({
           lat: this.state.markers[i].lat,
           lng: this.state.markers[i].lng,
-        })
-      return points
+        });
+      return points;
     }
 
     updateValue = (n) => {
-      var { name } = this.state
-      name = document.getElementById("name").value
-      this.setState({ name })
-    }
+      var { name } = this.state;
+      name = document.getElementById("name").value;
+      this.setState({ name });
+    };
 
     sendData = () => {
-      var { name } = this.state
-      const { markers } = this.state
+      var { name } = this.state;
+      const { markers } = this.state;
       if (name.length === 0)
-        NotificationManager.error("", t("map.lenght"), 3000)
+        NotificationManager.error("", t("map.lenght"), 3000);
       if (markers.length <= 1)
-        NotificationManager.error("", t("map.twopoints"), 3000)
+        NotificationManager.error("", t("map.twopoints"), 3000);
       if (name.length !== 0 && markers.length > 1) {
         CreateRouteService.createRoute(
           name,
@@ -81,22 +84,22 @@ const Createc = (props) => {
           t("map.video_fail"),
           t("map.logged"),
           t("map.success_upload")
-        )
+        );
       }
-    }
+    };
 
     clear() {
-      window.location.reload()
+      window.location.reload();
     }
 
     addImage(imageList) {
       for (let i = 0; i < imageList.length; i++)
-        this.state.images.push(imageList[i])
+        this.state.images.push(imageList[i]);
     }
 
     addVideo(videoList) {
       for (let i = 0; i < videoList.length; i++)
-        this.state.videos.push(videoList[i])
+        this.state.videos.push(videoList[i]);
     }
 
     render() {
@@ -187,11 +190,11 @@ const Createc = (props) => {
             <Polyline positions={this.draw()} />
           </MapStyle>
         </DivStyle1>
-      )
+      );
     }
   }
 
-  return <CreateRoute />
-}
+  return <CreateRoute />;
+};
 
-export default Createc
+export default Createc;

@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import styled from "styled-components"
+import React, { useState } from "react";
+import styled from "styled-components";
 
 const Labeled = ({
   label,
@@ -7,7 +7,7 @@ const Labeled = ({
   component: Component = "button",
   ...rest
 }) => {
-  const [hover, setHover] = useState(false)
+  const [hover, setHover] = useState(false);
 
   const LComponent = styled(Component)`
     position: relative;
@@ -19,7 +19,7 @@ const Labeled = ({
       width: 100%;
       text-align: center;
     }
-  `
+  `;
 
   return (
     <LComponent
@@ -30,7 +30,7 @@ const Labeled = ({
       {children}
       <span className="label">{hover && label ? label : ""}</span>
     </LComponent>
-  )
-}
+  );
+};
 
-export default Labeled
+export default Labeled;

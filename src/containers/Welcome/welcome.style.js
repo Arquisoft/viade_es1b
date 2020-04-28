@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { media } from "../../utils"
+import styled from "styled-components";
+import { media } from "../../utils";
 
 export const WelcomeCard = styled.div`
   background-color: #fff;
@@ -23,7 +23,7 @@ export const WelcomeCard = styled.div`
   button {
     margin-left: 8px;
   }
-`
+`;
 
 export const WelcomeLogo = styled.div`
   width: 50%;
@@ -34,7 +34,7 @@ export const WelcomeLogo = styled.div`
     display: block;
     margin: 0 auto;
   }
-`
+`;
 
 export const WelcomeProfile = styled.div`
   height: 100%;
@@ -66,7 +66,7 @@ export const WelcomeProfile = styled.div`
       top:0;
     }
   `}
-`
+`;
 
 export const ImageWrapper = styled.div`
   display: flex;
@@ -76,7 +76,7 @@ export const ImageWrapper = styled.div`
   button {
     margin-left: 0px;
   }
-`
+`;
 
 export const ImageContainer = styled.div`
   background-image: ${({ image }) => (image ? `url(${image})` : "#cccccc")};
@@ -84,7 +84,7 @@ export const ImageContainer = styled.div`
   border-radius: 50%;
   width: 128px;
   height: 128px;
-`
+`;
 
 export const WelcomeDetail = styled.div`
   padding: 1rem 3.5rem;
@@ -98,9 +98,9 @@ export const WelcomeDetail = styled.div`
     list-style: disc;
     margin: 0 18px;
   }
-`
+`;
 
 export const WelcomeName = styled.span`
   overflow-wrap: break-word;
   word-break: break-word;
-`
+`;

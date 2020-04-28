@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 /**
  * A styled-component for the 404 Page layout
@@ -17,7 +17,7 @@ export const PageNotFoundWrapper = styled.section`
     background-position: left -80px bottom -10px;
     background-size: 70%;
   }
-`
+`;
 
 /**
  * A styled-component for the 404 Page content section
@@ -37,4 +37,4 @@ export const PageNotFoundContent = styled.div`
       width: 100%;
     }
   }
-`
+`;

@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import { Map } from "react-leaflet"
-import "leaflet/dist/leaflet.css"
+import styled from "styled-components";
+import { Map } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 export const MapStyle = styled(Map)`
   position: relative;
@@ -8,7 +8,7 @@ export const MapStyle = styled(Map)`
   height: 90%;
   z-index: 1;
   border-radius: 0 0 0.25rem 0.25rem;
-`
+`;
 
 export const ButtonStyle = styled.button`
   position: relative;
@@ -18,7 +18,7 @@ export const ButtonStyle = styled.button`
   background-color: #ffffff;
   border: 1px solid lightgray;
   padding: 10px;
-`
+`;
 export const ButtonStyle2 = styled.button`
   position: relative;
   float: left;
@@ -29,7 +29,7 @@ export const ButtonStyle2 = styled.button`
   border: 1px solid lightgray;
   padding: 10px;
   border-radius: 0 0.25rem 0.25rem 0;
-`
+`;
 
 export const DivStyle1 = styled.div`
   position: absolute;
@@ -40,7 +40,7 @@ export const DivStyle1 = styled.div`
   background-repeat: repeat;
   padding: 40px;
   overflow: hidden;
-`
+`;
 
 export const InputStyle = styled.input`
   float: left;
@@ -52,7 +52,7 @@ export const InputStyle = styled.input`
   height: auto;
   z-index: 99;
   border-radius: 0.25rem 0 0 0.25rem;
-`
+`;
 
 export const DivStyle = styled.div`
   position: relative;
@@ -65,7 +65,7 @@ export const DivStyle = styled.div`
   background-image: linear-gradient(lightgrey, lightgrey);
   z-index: 99;
   border-radius: 0.25rem 0.25rem 0 0;
-`
+`;
 
 export const ChooseButton = styled.div`
   float: left;
@@ -89,4 +89,4 @@ export const ChooseButton = styled.div`
     width: fit-content;
     text-align: center;
   }
-`
+`;

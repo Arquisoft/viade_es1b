@@ -1,11 +1,11 @@
-import React from "react"
-import { render, cleanup } from "@testing-library/react"
-import Loader from "./loader.component"
+import React from "react";
+import { render, cleanup } from "@testing-library/react";
+import Loader from "./loader.component";
 
-afterAll(cleanup)
+afterAll(cleanup);
 
 it("renders without crashing", () => {
-  const { container } = render(<Loader />)
+  const { container } = render(<Loader />);
 
-  expect(container).toBeTruthy()
-})
+  expect(container).toBeTruthy();
+});

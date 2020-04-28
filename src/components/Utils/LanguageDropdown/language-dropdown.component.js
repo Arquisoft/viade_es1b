@@ -1,6 +1,6 @@
-import React, { Component } from "react"
-import { Dropdown } from "../../Utils"
-import { toast } from "react-toastify"
+import React, { Component } from "react";
+import { Dropdown } from "../../Utils";
+import { toast } from "react-toastify";
 
 const languages = {
   en: {
@@ -15,33 +15,33 @@ const languages = {
     id: "en-US",
     icon: "us",
   },
-}
+};
 
 type Props = {
   i18n: Object,
   t: Function,
-}
+};
 
 class LanguageDropdown extends Component<Props> {
   constructor() {
-    super()
-    this.state = { language: this.getLanguage() }
+    super();
+    this.state = { language: this.getLanguage() };
   }
 
-  getLanguage = () => localStorage.getItem("i18nextLng") || "en"
+  getLanguage = () => localStorage.getItem("i18nextLng") || "en";
 
   onLanguageSelect = (nextLanguage) => {
-    const { i18n } = this.props
-    toast.dismiss()
-    i18n.changeLanguage(nextLanguage)
+    const { i18n } = this.props;
+    toast.dismiss();
+    i18n.changeLanguage(nextLanguage);
     this.setState({
       language: this.getLanguage(),
-    })
-  }
+    });
+  };
 
   render() {
-    const { t } = this.props
-    const { language } = this.state
+    const { t } = this.props;
+    const { language } = this.state;
     const profileOpts = [
       {
         label: t("navBar.languages.en"),
@@ -55,7 +55,7 @@ class LanguageDropdown extends Component<Props> {
         icon: "es",
         customIcon: true,
       },
-    ]
+    ];
     return (
       <Dropdown actions={profileOpts} hover>
         <div
@@ -64,8 +64,8 @@ class LanguageDropdown extends Component<Props> {
           }`}
         />
       </Dropdown>
-    )
+    );
   }
 }
 
-export default LanguageDropdown
+export default LanguageDropdown;

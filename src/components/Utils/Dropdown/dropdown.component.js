@@ -1,12 +1,12 @@
-import React, { Component } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import enhanceWithClickOutside from "react-click-outside"
+import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import enhanceWithClickOutside from "react-click-outside";
 import {
   DropdownContainer,
   DropdownMain,
   DropdownItemContainer,
   Item,
-} from "./dropdown.style"
+} from "./dropdown.style";
 
 type Props = {
   actions: Array<Object>,
@@ -14,23 +14,23 @@ type Props = {
   className: String,
   open: boolean,
   hover?: Boolean,
-}
+};
 
-type State = { open: Boolean }
+type State = { open: Boolean };
 
 class Dropdown extends Component<Props, State> {
   constructor(props) {
-    super(props)
-    this.state = { open: false }
+    super(props);
+    this.state = { open: false };
   }
 
   toggleOpen = () => {
-    const { open } = this.props
-    if (!open) this.setState((prevProps) => ({ open: !prevProps.open }))
-  }
+    const { open } = this.props;
+    if (!open) this.setState((prevProps) => ({ open: !prevProps.open }));
+  };
 
   handleClickOutside() {
-    this.setState({ open: false })
+    this.setState({ open: false });
   }
 
   renderIcon = (action: Object) =>
@@ -38,11 +38,11 @@ class Dropdown extends Component<Props, State> {
       <div className={`flag-icon flag-icon-${action.icon}`} />
     ) : (
       <FontAwesomeIcon icon={action.icon} className="checked icon" />
-    )
+    );
 
   render() {
-    const { actions, children, className, hover, open: openProp } = this.props
-    const { open } = this.state
+    const { actions, children, className, hover, open: openProp } = this.props;
+    const { open } = this.state;
 
     return (
       <DropdownContainer
@@ -71,12 +71,12 @@ class Dropdown extends Component<Props, State> {
           </DropdownItemContainer>
         )}
       </DropdownContainer>
-    )
+    );
   }
 }
 
 Dropdown.defaultProps = {
   hover: false,
-}
+};
 
-export default enhanceWithClickOutside(Dropdown)
+export default enhanceWithClickOutside(Dropdown);

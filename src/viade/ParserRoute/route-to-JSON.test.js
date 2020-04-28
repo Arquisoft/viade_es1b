@@ -1,14 +1,14 @@
-import React from "react"
-import { cleanup, screen } from "@testing-library/react"
-import createJson from "./route-to-JSON"
-import "@testing-library/jest-dom"
+import React from "react";
+import { cleanup, screen } from "@testing-library/react";
+import createJson from "./route-to-JSON";
+import "@testing-library/jest-dom";
 
 describe.only("Parser from rote to JSON file", () => {
-  afterAll(cleanup)
+  afterAll(cleanup);
 
   it("object created correctly", () => {
     expect(createJson).toBeTruthy();
-  })
+  });
 
   it("given a correct route, it generates a file", async () => {
     let name = "testRoute";
@@ -32,5 +32,5 @@ describe.only("Parser from rote to JSON file", () => {
     let webId = "test";
 
     await createJson.createJson(name, markers, images, videos, webId);
-  })
-})
+  });
+});

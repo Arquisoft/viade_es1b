@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 type Props = {
   label: String,
@@ -7,10 +7,10 @@ type Props = {
   id: String,
   onChange: Function,
   value: String,
-}
+};
 
 const RadioButton = (props: Props) => {
-  const { label, onChange, name, id, checked, value } = props
+  const { label, onChange, name, id, checked, value } = props;
   return (
     <label className="radio" htmlFor={id}>
       <input
@@ -23,7 +23,7 @@ const RadioButton = (props: Props) => {
       />
       {label}
     </label>
-  )
-}
+  );
+};
 
-export default RadioButton
+export default RadioButton;
