@@ -5,7 +5,7 @@ let browser = null;
 let page = null;
 let mapPage = null;
 
-const delay = (time) => new Promise(res => setTimeout(res, 500));
+const delay = (time) => new Promise((res) => setTimeout(res, 500));
 
 async function mouseClick(page, x, y) {
     await delay();
@@ -49,13 +49,13 @@ defineFeature((feature), (test) => {
         });
 
         when("the user clicks in some points of the map", async () => {
-            await new Promise(res => setTimeout(res, 3000));
+            await new Promise((res) => setTimeout(res, 3000));
 
             await mouseClick(page, 500, 500);
             await mouseClick(page, 500, 600);
 
 
-            await new Promise(res => setTimeout(res, 5000));
+            await new Promise((res) => setTimeout(res, 5000));
 
         });
 

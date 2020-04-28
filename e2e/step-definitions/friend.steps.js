@@ -47,7 +47,7 @@ defineFeature((feature), (test) => {
       await page.type("[id='input-webid']", "https://mariomiguel.inrupt.net/profile/card#me", { visible: true });
 
       //-------------------------------
-      await new Promise(res => setTimeout(res, 3000));
+      await new Promise((res) => setTimeout(res, 3000));
       //-------------------------------
 
       const sendButton = await page.$('[id="add-friend-button"]');
@@ -83,7 +83,7 @@ defineFeature((feature), (test) => {
       await page.type("[id='input-webid']", "https://__--!!/profile/card#me", { visible: true });
 
       //-------------------------------
-      await new Promise(res => setTimeout(res, 3000));
+      await new Promise((res) => setTimeout(res, 3000));
       //-------------------------------
 
       const sendButton = await page.$('[id="add-friend-button"]');
