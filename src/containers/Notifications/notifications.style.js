@@ -14,7 +14,7 @@ export const DivStyle1 = styled.div`
 export const DivStyle2 = styled.div`
   position: relative;
   width: 100%;
-  height: 93%;
+  height: 90%;
   background-image: linear-gradient(white, white);
   background-size: cover;
   background-repeat: repeat;
@@ -22,11 +22,6 @@ export const DivStyle2 = styled.div`
   overflow: auto;
   border: 1px solid gray;
   border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
-`;
-
-export const ButtonStyle3 = styled.button`
-  width: 5%;
-  border: 1px solid grey;
 `;
 
 export const DivStyle = styled.div`
@@ -43,9 +38,17 @@ export const DivStyle = styled.div`
   border-radius: 0.25rem;
 `;
 
-export const H3Style = styled.h3`
+export const H4Style = styled.h4`
   position: relative;
-  height: 5%;
+  height: auto;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 `;
+
+export const H6Style = styled.h6`
+  position: relative;
+  height: auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+`;
+
