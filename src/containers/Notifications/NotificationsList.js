@@ -23,9 +23,7 @@ var NotificationList = (docId) => {
       await fetchNotification(inboxes);
       if (notification.notifications.length > 0) {
         for (let i = 0; i < notification.notifications.length; i++) {
-          if (notification.notifications[i].read !== "true") {
             notificationArray.push(notification.notifications[i].summary);
-          }
         }
       }
     }
