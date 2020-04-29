@@ -100,7 +100,8 @@
     "summaryShare":" ha compartido una ruta contigo",
     "inboxFail":"Este usuario no tiene un inbox configurado",
     "error":"Ha habido un error",
-    "information":"Notificaciones"
+    "information":"Notificaciones",
+    "information2":"Las notificaciones más recientes se muestran al principio de la lista"
    },
   "welcome": {
     "welcome": "Bienvenido",
