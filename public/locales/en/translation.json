@@ -101,7 +101,7 @@
     "inboxFail":"This user doesn't have a configured inbox",
     "error":"Something has failed",
     "information":"Notifications",
-    "information2":"Lastlest notifications are shown on top of the list"
+    "information2":"Latest notifications are shown on top of the list"
    },
   "welcome": {
     "welcome": "Welcome",
