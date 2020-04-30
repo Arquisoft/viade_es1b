@@ -33,6 +33,9 @@ class Rutas {
   }
 
   getNames() {
+    if(this.rutas.length === 0) {
+      this.rutas.push(new Ruta(ruta1));
+    }
     let rutasName = [];    
     this.rutas.map((r) => rutasName.push(r.name));
     return rutasName;
