@@ -220,8 +220,26 @@ const Mapac = (props) => {
       }
     }
 
+    async obtenerRutasPOD(direccion) {
+      let session = await auth.currentSession();
+      var id = `${session.webId}`;
+      id = id.replace("/profile/card#me", direccion);      
+      if (session) {
+        Rutas.vaciarRutas();
+        this.setState({ direccion: id });
+        bajarRutas.bajarRutasDePod(
+          this.state.direccion,
+          t("map.success_message"),
+          t("map.failed_message"),
+          t("map.empty_string_message"),
+          t("map.empty_message")
+        )
+      }      
+    }
+
     getLista = (docId) => {
       this.setState({ requirementKey: Math.random() });
+      Rutas.actualizarRutasConPod();
     };
 
     render() {
@@ -245,7 +263,7 @@ const Mapac = (props) => {
           friends = [];
         }
       })();
-      Rutas.actualizarRutasConPod();
+      
       const position = this.puntos[0];
       return (
         <DivStyle1>
@@ -273,10 +291,36 @@ const Mapac = (props) => {
                   t("map.empty_message")
                 )
               }
-            >
+            >              
               {t("map.download")}{" "}
               <img
                 src={process.env.PUBLIC_URL + "/img/icon/download.svg"}
+                width="25"
+                height="20"
+                alt=""
+              />{" "}
+            </button>
+            <button
+              data-testid="download-pod-button"
+              id="download-button"
+              onClick={() => this.obtenerRutasPOD("/viade/routes")}
+            >
+              {t("map.downloadPOD")}{" "}
+              <img
+                src={process.env.PUBLIC_URL + "/img/icon/download.svg"}
+                width="25"
+                height="20"
+                alt=""
+              />{" "}
+            </button>
+            <button
+              data-testid="download-shared-button"
+              id="download-button"
+              onClick={() => this.obtenerRutasPOD("/viade/shared")}
+            >
+              {t("map.downloadShared")}{" "}
+              <img
+                src={process.env.PUBLIC_URL + "/img/icon/share.svg"}
                 width="25"
                 height="20"
                 alt=""
@@ -292,6 +336,7 @@ const Mapac = (props) => {
               />
               {t("map.refresh")}{" "}
             </button>
+
             <Lista />
             <H3Style>{t("friends.share")}</H3Style>
             <AmigosDiv>

@@ -91,7 +91,9 @@
     "shareError":"Ha ocurrido un error compartiendo la ruta",
     "shareSuccess":"La ruta ha sido compartida con éxito",
     "friend":"Selecciona un amigo",
-    "double":"Esta ruta ya ha sido compartida"
+    "double":"Esta ruta ya ha sido compartida",
+    "downloadPOD" : "Bajar rutas desde POD",
+    "downloadShared" : "Bajar rutas compartidas"
   },
   "notifications": {
     "titleAdd":"Nuevo amigo",

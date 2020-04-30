@@ -28,8 +28,12 @@ class Rutas {
     }
   }
 
+  vaciarRutas() {
+    this.rutas = [];
+  }
+
   getNames() {
-    let rutasName = [];
+    let rutasName = [];    
     this.rutas.map((r) => rutasName.push(r.name));
     return rutasName;
   }

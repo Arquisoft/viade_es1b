@@ -91,7 +91,9 @@
     "shareError":"An error occurred while sharing the route",
     "shareSuccess":"Route shared successfully",
     "friend":"Select a friend",
-    "double":"This route has already been shared"
+    "double":"This route has already been shared",
+    "downloadPOD" : "Download from POD",
+    "downloadShared" : "Download shared routes"
   },
   "notifications": {
     "titleAdd":"New friend",
