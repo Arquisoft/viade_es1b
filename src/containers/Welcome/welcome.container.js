@@ -1,9 +1,6 @@
 import React from "react";
 import data from "@solid/query-ldflex";
-import { namedNode } from "@rdfjs/data-model";
 import { WelcomePageContent } from "./welcome.component";
-import { successToaster, errorToaster } from "./../../utils";
-
 const defaultProfilePhoto = "/img/icon/empty-profile.svg";
 
 /**
@@ -75,30 +72,13 @@ export class WelcomeComponent extends React.Component<Props> {
     this.setState({ name, image, isLoading: false, hasImage });
   };
 
-  /**
-   * updatedPhoto will update the photo url on vcard file
-   * this function will check if user has image or hasPhoto node if not
-   * will just update it, the idea is use image instead of hasPhoto
-   * @params{String} uri photo url
-   */
-  updatePhoto = async (uri: String, message, title = "") => {
-    const { hasImage } = this.state;
-    try {
-      const { user } = data;
-      if (hasImage) await user.vcard_hasPhoto.set(namedNode(uri));
-      else await user.vcard_hasPhoto.add(namedNode(uri));
-      successToaster(message, title);
-    } catch (error) {
-      errorToaster(error.message, "Error");
-    }
-  };
 
   render() {
     const { name, image, isLoading } = this.state;
     const { webId } = this.props;
     return (
       <WelcomePageContent
-        {...{ name, image, isLoading, webId, updatePhoto: this.updatePhoto }}
+        {...{ name, image, isLoading, webId}}
       />
     );
   }

@@ -4,6 +4,7 @@ import {
   render,
   queryByTestId,
   queryByText,
+  querySelector,
   act,
 } from "@testing-library/react";
 import Createc from "./createRoute.container";
@@ -11,7 +12,7 @@ import Createc from "./createRoute.container";
 let wrapper;
 beforeEach(() =>
   act(() => {
-    const { container, debug } = render(<CreateRoute />);
+    const { container, debug } = render(<Createc />);
     wrapper = container;
     //debug();
   })
