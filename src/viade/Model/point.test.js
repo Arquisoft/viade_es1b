@@ -1,5 +1,4 @@
-import React from "react";
-import { cleanup, screen } from "@testing-library/react";
+import { cleanup } from "@testing-library/react";
 import Point from "./point";
 import "@testing-library/jest-dom";
 
