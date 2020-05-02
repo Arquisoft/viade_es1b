@@ -1,6 +1,6 @@
 import ruta1 from "./route1.json";
 import Ruta from "./ruta.js";
-import bajarRutas from "../../services/bajarRutas";
+import bajarRutas from "../Routes/bajarRutas";
 
 class Rutas {
   constructor() {
@@ -24,7 +24,6 @@ class Rutas {
           index ===
           self.findIndex((t) => t.place === ruta.place && t.name === ruta.name)
       );
-      //console.log(this.rutas);
     }
   }
 

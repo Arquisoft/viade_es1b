@@ -21,13 +21,13 @@ import {
 } from "./map.style";
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
-import bajarRutas from "../../services/bajarRutas";
+import bajarRutas from "../../viade/Routes/bajarRutas";
 import addFriend from "../../viade/Friends/addFriend";
 import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
-import { sharing } from "../../services/shareRoutes";
+import { sharing } from "../../viade/Routes/shareRoutes";
 import { useNotification } from "@inrupt/solid-react-components";
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -53,14 +53,13 @@ const Mapac = (props) => {
     var names = webID.split(".");
     var shortName = names[0];
     shortName = shortName.replace("https://", "");
-    alert(shortName);
     try {
       const inbox = await discoverInbox(friendId);
       if (!inbox) NotificationManager.error("", inboxFail, 3000);
       createNotification(
         {
           title: titles,
-          summary: shortName + summary + ": " + name,
+          summary: shortName + " " + summary + ": " + name,
           actor: webID,
         },
         inbox
@@ -316,7 +315,7 @@ const Mapac = (props) => {
             <button
               data-testid="download-shared-button"
               id="download-button"
-              onClick={() => this.obtenerRutasPOD("/viade/shared")}
+              onClick={() => this.obtenerRutasPOD("/viade/share")}
             >
               {t("map.downloadShared")}{" "}
               <img

@@ -11,7 +11,7 @@ import {
   ChooseButton,
   DivStyle1,
 } from "./createRoute.style";
-import CreateRouteService from "../../services/CreateRouteService";
+import CreateRouteService from "../../viade/Routes/CreateRouteService";
 import {
   NotificationManager,
   NotificationContainer,
@@ -32,6 +32,7 @@ const Createc = (props) => {
       super();
       this.state = {
         markers: [],
+        polylines:[],
         name: "",
         images: [],
         videos: [],
@@ -47,6 +48,9 @@ const Createc = (props) => {
       markers.push({ lat: e.latlng.lat, lng: e.latlng.lng });
       this.setState({ markers });
       this.draw();
+      const{ polylines } = this.state;
+      polylines.push(this.draw());
+      
     };
 
     draw() {
@@ -187,7 +191,10 @@ const Createc = (props) => {
             {this.state.markers.map((position, idx) => (
               <Marker key={`marker-${idx}`} position={position}></Marker>
             ))}
-            <Polyline positions={this.draw()} />
+            {this.state.polylines.map((positions, idx) =>
+              <Polyline key={`polyline-${idx}`} positions={this.draw()} />
+            )}
+            
           </MapStyle>
         </DivStyle1>
       );
