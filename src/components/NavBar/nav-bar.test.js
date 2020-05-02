@@ -28,5 +28,7 @@ describe.only("Nav Bar", () => {
     expect(queryByTestId(wrapper, "nav-bar-notifications")).not.toBeNull();
     expect(queryByTestId(wrapper, "nav-bar-language")).not.toBeNull();
     expect(queryByTestId(wrapper, "nav-bar-logout")).not.toBeNull();
+    expect(queryByTestId(wrapper, "nav-bar-lenguage-es")).toBeNull();
+    expect(queryByTestId(wrapper, "nav-bar-lenguage-en")).toBeNull();
   });
 });
