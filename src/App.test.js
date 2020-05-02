@@ -12,10 +12,10 @@ beforeEach(() =>
   })
 );
 
-describe("App test", ()=>{
+describe("App test", ()=> {
     afterAll(cleanup);
 
-    test("renders without crashing",()=>{
+    test("renders without crashing",()=> {
         expect(queryByTestId(wrapper, "login-title")).not.toBeNull();
     });
 });
