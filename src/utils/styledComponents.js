@@ -14,6 +14,5 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
       ${css(...args)}
     }
   `;
-
   return acc;
 }, {});
