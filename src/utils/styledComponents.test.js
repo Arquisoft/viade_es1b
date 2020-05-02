@@ -1,12 +1,11 @@
 import { cleanup } from "@testing-library/react";
-import AddFriend from "./addFriend";
-
+import {media} from "./styledComponents";
 import "@testing-library/jest-dom";
 
-describe.only("Add friends", () => {
-
+describe.only("Testing const", () => {
   afterAll(cleanup);
+
   it("object created correctly", () => {
-    expect(AddFriend).toBeTruthy();
+    expect(media).toBeTruthy();
   });
 });
