@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdd0ee4a-ae6a-4ead-a7f7-88d3629f6b9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Friends/friends.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Friends/friends.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viade/Friends/addGroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/viade/Friends/addGroups.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,6 +12,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -27,12 +34,52 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SDI" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/containers/Friends" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Xurde\WebstormProjects\Viade_ASW\src\containers\Friends" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/App.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.App.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -45,10 +92,43 @@
       <option name="presentableId" value="Default" />
       <updated>1587808319758</updated>
       <workItem from="1587808364573" duration="273000" />
+      <workItem from="1588033375801" duration="6566000" />
+      <workItem from="1588362356293" duration="2290000" />
+      <workItem from="1588365311138" duration="17859000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1588036917068">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588036917068" />
+    <state width="945" height="190" key="GridCell.Tab.0.bottom" timestamp="1588365296943">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="945" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588365296943" />
+    <state width="945" height="190" key="GridCell.Tab.0.center" timestamp="1588365296943">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="945" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588365296943" />
+    <state width="945" height="190" key="GridCell.Tab.0.left" timestamp="1588365296942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="945" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588365296942" />
+    <state width="945" height="190" key="GridCell.Tab.0.right" timestamp="1588365296943">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="945" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588365296943" />
+    <state x="277" y="54" key="SettingsEditor" timestamp="1588390155606">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588390155606" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1588366810452">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588366810452" />
   </component>
 </project>

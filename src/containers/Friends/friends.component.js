@@ -6,7 +6,7 @@ import { ListaDiv, InputStyle, AmigosDiv, ButtonStyle, DivStyle1, ButtonStyle2, 
 import { useNotification } from "@inrupt/solid-react-components";
 import addFriend from '../../viade/Friends/addFriend';
 import { NotificationContainer, NotificationManager } from "react-notifications";
-import { initalize } from '../../viade/Friends/addGroups';
+import { initalize, addGroup,obtenerGrupos,obtenerParticipantes,modifyGroupAdd,modifyGroupRemove } from '../../viade/Friends/addGroups';
 
 const Friends = props => {
     const { t } = useTranslation();
@@ -93,7 +93,31 @@ const Friends = props => {
                     </ButtonStyle>
                     <ButtonStyle onClick={initalize}>
                         <img src={process.env.PUBLIC_URL + "/img/icon/mas.svg"} width="35" height="35" alt="" />
-                        {t('friends.addG')}
+                        {t('INICIALIZAR')}
+                    </ButtonStyle>
+                    <ButtonStyle onClick={addGroup}>
+                        <img src={process.env.PUBLIC_URL + "/img/icon/mas.svg"} width="35" height="35" alt="" />
+                        {t('Habemus Ejecucion')}
+                    </ButtonStyle>
+                    <ButtonStyle onClick={obtenerGrupos()}>
+                        <img src={process.env.PUBLIC_URL + "/img/icon/mas.svg"} width="35" height="35" alt="" />
+                        {t('Obtener grupos')}
+                    </ButtonStyle>
+                    <ButtonStyle onClick={(event) => obtenerParticipantes(0)}>
+                        <img src={process.env.PUBLIC_URL + "/img/icon/mas.svg"} width="35" height="35" alt="" />
+                        {t('Obtener participantes grupo 1')}
+                    </ButtonStyle>
+                    <ButtonStyle onClick={(event) => addGroup('El grupo del trabajo')}>
+                        <img src={process.env.PUBLIC_URL + "/img/icon/mas.svg"} width="35" height="35" alt="" />
+                        {t('Añadir grupo')}
+                    </ButtonStyle>
+                    <ButtonStyle onClick={(event) => modifyGroupAdd(0,"Marcial")}>
+                        <img src={process.env.PUBLIC_URL + "/img/icon/mas.svg"} width="35" height="35" alt="" />
+                        {t('Añadir participante')}
+                    </ButtonStyle>
+                    <ButtonStyle onClick={(event) => modifyGroupRemove(0,0)}>
+                        <img src={process.env.PUBLIC_URL + "/img/icon/mas.svg"} width="35" height="35" alt="" />
+                        {t('Eliminar participante')}
                     </ButtonStyle>
                 </ListaDiv>
             </LoggedIn>
