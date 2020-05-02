@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bdd0ee4a-ae6a-4ead-a7f7-88d3629f6b9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Friends/friends.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Friends/friends.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viade/Friends/addGroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/viade/Friends/addGroups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +18,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -47,9 +48,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Xurde\WebstormProjects\Viade_ASW" />
+      <recent name="C:\Users\Xurde\WebstormProjects\Viade_ASW\sample" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Xurde\WebstormProjects\Viade_ASW\src\containers\Friends" />
     </key>
@@ -94,14 +99,40 @@
       <workItem from="1587808364573" duration="273000" />
       <workItem from="1588033375801" duration="6566000" />
       <workItem from="1588362356293" duration="2290000" />
-      <workItem from="1588365311138" duration="17859000" />
+      <workItem from="1588365311138" duration="18612000" />
+      <workItem from="1588435976976" duration="1858000" />
+      <workItem from="1588437855986" duration="1511000" />
     </task>
+    <task id="LOCAL-00001" summary="Toda la funcionalidad de grupos ampliada">
+      <created>1588414692720</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588414692720</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Toda la funcionalidad de grupos ampliada" />
+    <option name="LAST_COMMIT_MESSAGE" value="Toda la funcionalidad de grupos ampliada" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="516" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588436387712">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="516" y="202" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1588436387712" />
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1588439976715">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588439976715" />
+    <state x="147" y="64" key="DiffContextDialog" timestamp="1588414678136">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="64" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1588414678136" />
     <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1588036917068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -122,10 +153,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="945" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588365296943" />
-    <state x="277" y="54" key="SettingsEditor" timestamp="1588390155606">
+    <state x="277" y="54" key="SettingsEditor" timestamp="1588439931947">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588390155606" />
+    <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588439931947" />
+    <state x="361" y="126" key="Vcs.Push.Dialog.v2" timestamp="1588414695889">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="126" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588414695889" />
+    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588439925623">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588439925623" />
+    <state x="536" y="43" key="git4idea.branch.GitSmartOperationDialog" timestamp="1588439999128">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="536" y="43" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1588439999128" />
+    <state x="501" y="185" key="git4idea.merge.GitPullDialog" timestamp="1588438743982">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="501" y="185" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1588438743982" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1588366810452">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
