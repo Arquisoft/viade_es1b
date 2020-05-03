@@ -68,23 +68,6 @@ export const WelcomeProfile = styled.div`
   `}
 `;
 
-export const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  button {
-    margin-left: 0px;
-  }
-`;
-
-export const ImageContainer = styled.div`
-  background-image: ${({ image }) => (image ? `url(${image})` : "#cccccc")};
-  background-size: cover;
-  border-radius: 50%;
-  width: 128px;
-  height: 128px;
-`;
 
 export const WelcomeDetail = styled.div`
   padding: 1rem 3.5rem;
@@ -98,9 +81,4 @@ export const WelcomeDetail = styled.div`
     list-style: disc;
     margin: 0 18px;
   }
-`;
-
-export const WelcomeName = styled.span`
-  overflow-wrap: break-word;
-  word-break: break-word;
 `;

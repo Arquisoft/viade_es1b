@@ -6,8 +6,11 @@ import {
   queryByText,
   act,
 } from "@testing-library/react";
+import { configure } from "enzyme";
+import { shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 import Friends from "./friends.component";
-
+configure({ adapter: new Adapter() });
 let wrapper;
 beforeEach(() =>
   act(() => {
@@ -37,5 +40,10 @@ describe("Login", () => {
   test("renders group list properly", () => {
     expect(wrapper.querySelector("#groups")).not.toBeNull();
     expect(queryByTestId(wrapper, "friend-group-button")).not.toBeNull();
+  });
+
+  test("renders with default props", () => {
+    const wrappers = shallow(<Friends />);
+    expect(wrappers).toMatchSnapshot();
   });
 });

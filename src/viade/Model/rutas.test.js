@@ -24,8 +24,19 @@ describe.only("Create route", () => {
   });
 
   it("checking method vaciarRutas() ", () => {
-    var expected = [] ;
+    var expected = [];
     expect(Rutas.vaciarRutas.length).toEqual(expected.length);
+  });
+
+  it("checking method actualizarRutasConPod", () => {
+    expect(Rutas.actualizarRutasConPod()).toBeVisible;
+  });
+
+  it("checking method checker ", () => {
+    var expected = false;
+    var array1 = [1, 2, 3];
+    var array2 = [1, 2, 3];
+    expect(Rutas.checker(array1, expected, array2)).toBeVisible;
   });
 
 });
