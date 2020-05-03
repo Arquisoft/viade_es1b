@@ -40,7 +40,7 @@ perhaps to simplify the world in which they are working
 |Flexible Web Interface| Implementation of a web interface flexible enough to be used in a variety of devices
 |Tests	   | The need of implementing a variety of tests in order to maintain the funcionality of the application and find possible bugs
 |Version Control| The use of a GitHub repository in order to keep the development of the project in check and always available
-|Geo file standard| The need of searching and choosing a file format to store the routes
+|Geo file standard| The need of searching and choosing a file format to store the routes (https://github.com/Arquisoft/viadeSpec[viadeSpec])
 |Time schedule| We have limited time to deliver a final version in May/June
 |Code coverage| The use of certain tools in order to evaluate the quality of the code itself.
 |===
