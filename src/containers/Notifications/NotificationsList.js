@@ -61,7 +61,7 @@ var NotificationList = (docId) => {
     <DivStyle1>
       <DivStyle>
         <H4Style data-testid="notifications-title">
-          {t("notifications.information")}
+          <a href={inbox}>{t("notifications.information")}</a>
         </H4Style>
         <H6Style>{t("notifications.information2")}</H6Style>
         <DivStyle2 id="lis" data-testid="notifications-list">
