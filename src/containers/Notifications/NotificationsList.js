@@ -12,23 +12,20 @@ var NotificationList = (docId) => {
   const { t } = useTranslation();
   const { notification, fetchNotification } = useNotification(myWebId);
   var notificationArray = [];
-  var ret = [];
-  var str = "";
   const handleNotifications = async () => {
     if (myWebId !== undefined && myWebId !== null) {
       let inbox = myWebId.replace("/profile/card#me", "/inbox/");
-      const inboxes = [
+      await fetchNotification([
         { path: inbox, inboxName: "Global Inbox", shape: "default" },
-      ];
-      await fetchNotification(inboxes);
+      ]);
       if (notification.notifications.length > 0) {
         for (let i = 0; i < notification.notifications.length; i++) {
-            notificationArray.push(notification.notifications[i].summary);
+          notificationArray.push(notification.notifications[i].summary);
         }
       }
     }
-    ret = await Promise.all(notificationArray);
-    str = "<List>";
+    var ret = await Promise.all(notificationArray);
+    var str = "<List>";
     ret.forEach(function (notification) {
       str += "<li key= " + notification + "><a>" + notification + "</a></li>";
     });
@@ -42,10 +39,14 @@ var NotificationList = (docId) => {
   }
 
   if (i < 5) {
+    if (i === 1) {
+      //////
+    }
     handleNotifications();
     i++;
   } else {
-    str = "<List>";
+
+    var str = "<List>";
     notifs.forEach(function (notification) {
       str += "<li key= " + notification + "><a>" + notification + "</a></li>";
     });
@@ -53,7 +54,7 @@ var NotificationList = (docId) => {
     try {
       document.getElementById("lis").innerHTML = str;
     } catch (e) {
-      ret = [];
+      str = [];
     }
   }
 
@@ -65,9 +66,6 @@ var NotificationList = (docId) => {
         </H4Style>
         <H6Style>{t("notifications.information2")}</H6Style>
         <DivStyle2 id="lis" data-testid="notifications-list">
-          <ul>
-            <li>Cargando</li>
-          </ul>
         </DivStyle2>
       </DivStyle>
     </DivStyle1 >
