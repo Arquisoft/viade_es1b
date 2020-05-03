@@ -194,7 +194,6 @@ const Createc = (props) => {
             {this.state.polylines.map((positions, idx) =>
               <Polyline key={`polyline-${idx}`} positions={this.draw()} />
             )}
-
           </MapStyle>
         </DivStyle1>
       );
