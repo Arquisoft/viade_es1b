@@ -29,9 +29,7 @@ Two types of testing are currently in place:
 The building of the project, considering that it is an React application, is done via the Node.js package manages, npm. It is expected to be built using the docker platform, in order to avoid dependencies and enviorment issues.
 
 === Security ===
-The application will use secure communication channels. We will use the protocol https://introbay.com/es/blog/2016/07/05/https-que-es-y-para-que-sirve[HTTPS] and the https://dvcs.w3.org/hg/WebID/raw-file/tip/spec/tls-respec.html[WebID-TLS]. With them we ensure te authenticity and integrity of the data sended and received from the pods.
-
-All files uploaded will also be checked as a security measure. It should be noted that all data will be saved in persistence with RDF
+The application will use secure communication channels. We will use the protocol https://introbay.com/es/blog/2016/07/05/https-que-es-y-para-que-sirve[HTTPS]. With them we ensure te authenticity and integrity of the data sended and received from the pods.
 
 === Internacionalization ===
 The application will be internationalized to the two most spoken languages ​​in the world, Spanish and English. We believe it is a good way to reach a higher number of users.
