@@ -197,3 +197,51 @@ legend
 endlegend
 ----
 
+=== Notifications in add friend
+* The user goes to the Friends tag. Click the add friend button
+* The service will try to add the friend to the POD profile. It also posts a message in the POD inbox
+
+** If all goes well, you are added as a friend. If you don't send a message that something went wrong
+
+*When the friend looks at their notifications, they will see a notification that the user has added
+
+This is sequence to generate the uml:
+
+[plantuml, "Notifications in add friends", png]
+
+----
+title Notifications of Add friend
+
+actor USER #red
+participant UI #yellow
+control DataService #green
+database POD #pink
+participant FRIEND_UI #yellow
+database FRIEND_POD #pink
+
+USER -> UI: Friend
+UI -> DataService: addFriend(friend)
+DataService -> POD: Adding friend in perfil
+DataService -> FRIEND_POD: Send message notification
+
+alt successful
+	POD -> DataService: Friend added
+   DataService --> UI: Successful notification
+
+else failure
+	POD -> DataService: Friend not added
+	DataService --> UI: Failure notification
+	end
+
+FRIEND_POD->FRIEND_UI: GetNotifications()
+
+legend
+|= Object |= Explain |= Color |
+|HIKER | Is the users who will use the application.\nThe color that identifies the hikers is red |<back:#FF0000>    </back> |
+|UIAplication | They are the GUIs\n with which hikers can interact. All GUIs are yellow |<back:yellow>     </back> |
+|Data service | It's a service that allows you to add friend.The color that identifies the services is green. |<back:green>    </back> |
+|SOLID|Pink color identify your personal\n server (pink)|<back:pink>    </back> |
+endlegend
+
+
+----
