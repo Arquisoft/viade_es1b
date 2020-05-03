@@ -11,7 +11,6 @@ beforeEach(() =>
   act(() => {
     const { container, debug } = render(<NotificationList />);
     wrapper = container;
-    //debug();
   })
 );
 

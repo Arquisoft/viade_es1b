@@ -35,7 +35,7 @@ describe("Login", () => {
     expect(queryByTestId(wrapper, "clear-button")).not.toBeNull();
   });
 
-  test("renders add a route", () => {
+  test("renders individual components", () => {
     expect(queryByTestId(wrapper, "name-input")).not.toBeNull();
     expect(queryByTestId(wrapper, "upload-videos-button")).not.toBeNull();
     expect(queryByTestId(wrapper, "upload-images-button")).not.toBeNull();

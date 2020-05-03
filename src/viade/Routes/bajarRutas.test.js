@@ -10,6 +10,16 @@ describe.only("Create point", () => {
         expect(bajarRutas).toBeTruthy();
     });
 
+    it("object created correctly", () => {
+        expect(bajarRutas.loadJSon("", "")).toBeVisible;
+    });
 
+    it("object created correctly", async () => {
+        var array = [1, 2, 3];
+        expect(bajarRutas.ifCopied(array, "", "d", "d")).toBeVisible;
+    });
 
+    it("object created correctly", () => {
+        expect(bajarRutas.aux([], 0)).toBeVisible;
+    });
 });

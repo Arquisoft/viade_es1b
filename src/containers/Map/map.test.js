@@ -16,8 +16,8 @@ beforeEach(() => {
 describe("Map Page Render", () => {
   test("renders without crashing", () => {
     expect(wrapper).toBeTruthy();
-  });
-
+  })
+    ;
   test("renders all components", () => {
     expect(queryByTestId(wrapper, "map-title")).not.toBeNull();
     expect(queryByTestId(wrapper, "map-routes-list")).not.toBeNull();

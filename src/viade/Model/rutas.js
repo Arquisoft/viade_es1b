@@ -9,20 +9,25 @@ class Rutas {
   }
 
   actualizarRutasConPod() {
-    if (bajarRutas.rutas.length > 0) {
-      if (!this.hayRuta) {
-        this.rutas.pop();
-        this.hayRuta = true;
+    //nuevo metodo
+    this.checker(bajarRutas.rutas, this.hayRuta, this.rutas);
+  }
+
+  checker(bRutas, hay, rutas) {
+    if (bRutas.length > 0) {
+      if (!hay) {
+        rutas.pop();
+        hay = true;
       }
 
-      while (bajarRutas.rutas.length !== 0) {
-        this.rutas.push(new Ruta(bajarRutas.rutas.pop()));
+      while (bRutas.length !== 0) {
+        rutas.push(new Ruta(bRutas.pop()));
       }
       // Esta funcion elimina duplicados por nombre
-      this.rutas = this.rutas.filter(
-        (ruta, index, self) =>
+      rutas = rutas.filter(
+        (rutaf, index, self) =>
           index ===
-          self.findIndex((t) => t.place === ruta.place && t.name === ruta.name)
+          self.findIndex((t) => t.place === rutaf.place && t.name === rutaf.name)
       );
     }
   }
@@ -32,10 +37,10 @@ class Rutas {
   }
 
   getNames() {
-    if(this.rutas.length === 0) {
+    if (this.rutas.length === 0) {
       this.rutas.push(new Ruta(ruta1));
     }
-    let rutasName = [];    
+    let rutasName = [];
     this.rutas.map((r) => rutasName.push(r.name));
     return rutasName;
   }

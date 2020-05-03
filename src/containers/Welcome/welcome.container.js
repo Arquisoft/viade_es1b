@@ -17,11 +17,6 @@ export class WelcomeComponent extends React.Component<Props> {
     };
   }
 
-  componentDidMount() {
-    const { webId } = this.props;
-    if (webId) this.getProfileData();
-  }
-
   render() {
     const { webId } = this.props;
     return (

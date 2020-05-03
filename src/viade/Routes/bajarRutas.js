@@ -27,9 +27,9 @@ class bajarRutas {
         const files = folder.files;
         var hayRutas = false;
         // Para cada fichero que sea json (o el formato que vaya a ser), lo recoge
-        files.forEach((file) => {
-          if (file.type === "application/json") totalRutas++;
-        });
+        //metodo
+        totalRutas = this.aux(files, totalRutas);
+        //metodo
         files.forEach(async (file) => {
           if (file.type === "application/json") {
             hayRutas = true;
@@ -38,17 +38,9 @@ class bajarRutas {
               this.tmpFolder + "/" + file.name
             );
             if (copiado) {
-              //this.loadJSon(this.tmpFolder + "/" + file.name);
-              //console.log("copiadas: "+rutasCopiadas);
-              this.rutas.push(
-                this.loadJSon(this.tmpFolder + "/" + file.name, fallo)
-              );
-              let eliminado = await this.sfc.deleteFile(
-                this.tmpFolder + "/" + file.name
-              );
+              let eliminado = await this.ifCopied(this.rutas, this.tmpFolder, file.name, fallo);
               if (eliminado) {
                 rutasCargadas++;
-                //  console.log("cargadas: "+rutasCargadas);
               }
               if (totalRutas === rutasCargadas) {
                 this.sfc.deleteFolder(this.tmpFolder);
@@ -70,6 +62,24 @@ class bajarRutas {
         return 1;
       }
     }
+  }
+
+  aux(files, total) {
+    files.forEach((file) => {
+      if (file.type === "application/json") total++;
+    });
+    return total;
+  }
+
+  async ifCopied(rutas, tmpFolder, name, fallo) {
+
+    rutas.push(
+      this.loadJSon(this.tmpFolder + "/" + name, fallo)
+    );
+    let eliminado = await this.sfc.deleteFile(
+      tmpFolder + "/" + name
+    );
+    return eliminado;
   }
 
   // Metodo auxiliar para obtener el objeto json

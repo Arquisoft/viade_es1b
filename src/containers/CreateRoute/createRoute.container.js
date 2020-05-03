@@ -32,7 +32,7 @@ const Createc = (props) => {
       super();
       this.state = {
         markers: [],
-        polylines:[],
+        polylines: [],
         name: "",
         images: [],
         videos: [],
@@ -48,9 +48,9 @@ const Createc = (props) => {
       markers.push({ lat: e.latlng.lat, lng: e.latlng.lng });
       this.setState({ markers });
       this.draw();
-      const{ polylines } = this.state;
+      const { polylines } = this.state;
       polylines.push(this.draw());
-      
+
     };
 
     draw() {
@@ -194,7 +194,7 @@ const Createc = (props) => {
             {this.state.polylines.map((positions, idx) =>
               <Polyline key={`polyline-${idx}`} positions={this.draw()} />
             )}
-            
+
           </MapStyle>
         </DivStyle1>
       );

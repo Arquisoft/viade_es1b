@@ -6,7 +6,6 @@ const fc = new SolidFileClient(auth, { enableLogging: true });
 
 class CreateRouteService {
   constructor() {
-    //super();
     this.state = {
       fileName: "",
     };
@@ -33,27 +32,9 @@ class CreateRouteService {
     if (session) {
       var webId = `${session.webId}`;
       let id = webId.replace("/profile/card#me", "/viade/");
-
-      for (let i = 0; i < images.length; i++) {
-        let imageRoute = id + "resources/" + images[i].name;
-        if (fc.createFile(imageRoute, images[i], images[i].type)) {
-          this.imagesRoutes.push(imageRoute);
-          NotificationManager.success("", photoS + images[i].name, 4000);
-        } else {
-          NotificationManager.error("", photoF + images[i].name, 4000);
-        }
-      }
-
-      for (let i = 0; i < videos.length; i++) {
-        let videoRoute = id + "resources/" + videos[i].name;
-        if (fc.createFile(videoRoute, videos[i], videos[i].type)) {
-          this.videosRoutes.push(videoRoute);
-          NotificationManager.success("", videoS + videos[i].name, 4000);
-        } else {
-          NotificationManager.error("", videoF + videos[i].name, 4000);
-        }
-      }
-
+      //nuevo metodo
+      this.parseArray(images, this.imagesRoutes, photoS, photoF, id);
+      this.parseArray(videos, this.videosRoutes, videoS, videoF, id);
       this.fileName = name;
       var date = new Date();
       var n = Math.round(date.getTime() / 1000);
@@ -67,11 +48,22 @@ class CreateRouteService {
       );
       this.routeJson = JSON.parse(createJson.fileToUpload);
       this.routeJson = JSON.stringify(this.routeJson);
-
       id = webId.replace("/profile/card#me", "/viade/routes/");
       this.subirFicheroAPod(name, this.routeJson, id, success);
     } else {
       NotificationManager.error("", logged, 4000);
+    }
+  }
+
+  parseArray(array1, array2, msg1, msg2, id) {
+    for (let i = 0; i < array1.length; i++) {
+      let imageRoute = id + "resources/" + array1[i].name;
+      if (fc.createFile(imageRoute, array1[i], array1[i].type)) {
+        array2.push(imageRoute);
+        NotificationManager.success("", msg1 + array1[i].name, 4000);
+      } else {
+        NotificationManager.error("", msg2 + array1[i].name, 4000);
+      }
     }
   }
 
