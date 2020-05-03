@@ -17,6 +17,10 @@ export const WelcomePageContent = (props) => {
   const { t } = useTranslation();
   const name = useWebId();
 
+  var names = name.split(".");
+  var shortName = names[0];
+  shortName = shortName.replace("https://", "");
+
   const style = {
     position: "absolute",
     width: "100%",
@@ -39,7 +43,7 @@ export const WelcomePageContent = (props) => {
         </WelcomeLogo>
         <WelcomeProfile data-testid="welcome-profile">
           <h3>
-            {t("welcome.welcome")}, <a href={name}>{name}</a>
+            {t("welcome.welcome")}, <a href={name}>{shortName}</a>
           </h3>
         </WelcomeProfile>
       </WelcomeCard>
