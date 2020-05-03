@@ -9,11 +9,12 @@
     "@inrupt/solid-react-components": "^0.5.1",
     "@solid/query-ldflex": "^2.10.0",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
     "browserfs": "^1.4.3",
     "browserify-fs": "^1.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "file-system": "^2.2.2",
     "i18next": "^19.3.3",
     "i18next-browser-languagedetector": "^4.0.2",
@@ -34,6 +35,7 @@
     "react-native-fs": "^2.16.6",
     "react-notifications": "^1.6.0",
     "react-scripts": "^3.4.0",
+    "react-testing-library": "^8.0.1",
     "react-toastify": "^5.5.0",
     "solid-acl-utils": "github:otto-aa/solid-acl-utils",
     "solid-file-client": "^1.0.2",
@@ -64,12 +66,12 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^9.5.0",
     "cucumber": "^6.0.5",
     "jest": "^25.2.7",
     "jest-cucumber": "^2.0.11",
     "jest-puppeteer": "^4.4.0",
     "puppeteer": "^2.1.1",
-    "@testing-library/react": "^9.5.0",
     "shx": "^0.3.2"
   }
 }

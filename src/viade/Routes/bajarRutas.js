@@ -53,17 +53,21 @@ class bajarRutas {
               if (totalRutas === rutasCargadas) {
                 this.sfc.deleteFolder(this.tmpFolder);
                 NotificationManager.success("", exito, 3000);
+                return 1;
               }
             }
           }
         });
         if (hayRutas) {
           NotificationManager.success("", mientras, 3000);
+          return -1;
         } else {
           NotificationManager.error("", noruta, 3000);
+          return -1;
         }
       } catch (error) {
         NotificationManager.error("", fallo, 3000);
+        return 1;
       }
     }
   }

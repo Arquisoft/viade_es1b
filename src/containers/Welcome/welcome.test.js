@@ -1,6 +1,10 @@
 import React from "react";
 import { render, queryByTestId, act } from "@testing-library/react";
 import Welcome from "../Welcome";
+import { configure } from "enzyme";
+import { shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+configure({ adapter: new Adapter() });
 
 let wrapper;
 beforeEach(() =>
@@ -20,5 +24,10 @@ describe("Welcome Page Render", () => {
     expect(queryByTestId(wrapper, "welcome-logo")).not.toBeNull();
     expect(queryByTestId(wrapper, "welcome-wrapper")).not.toBeNull();
     expect(queryByTestId(wrapper, "welcome-profile")).not.toBeNull();
+  });
+
+  test("renders with default props", () => {
+    const wrappers = shallow(<Welcome />);
+    expect(wrappers).toMatchSnapshot();
   });
 });
