@@ -1,3 +1,0 @@
-INSERT DATA {
-  <https://aswes1b.solid.community/profile/card#me> <http://xmlns.com/foaf/0.1/knows> <https://marshall.solid.community/profile/card#me>.
-}
