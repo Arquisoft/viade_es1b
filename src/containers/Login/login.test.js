@@ -6,7 +6,11 @@ import {
   queryByText,
   act,
 } from "@testing-library/react";
+import { configure } from "enzyme";
+import { shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 import Login from "./login.component";
+configure({ adapter: new Adapter() });
 
 let wrapper;
 beforeEach(() =>
@@ -34,5 +38,10 @@ describe("Login", () => {
 
   test("renders login button properly ", () => {
     expect(queryByText(wrapper, "login.formButtonText")).toBeTruthy();
+  });
+
+  test("renders with default props", () => {
+    const wrappers = shallow(<Login />);
+    expect(wrappers).toMatchSnapshot();
   });
 });
