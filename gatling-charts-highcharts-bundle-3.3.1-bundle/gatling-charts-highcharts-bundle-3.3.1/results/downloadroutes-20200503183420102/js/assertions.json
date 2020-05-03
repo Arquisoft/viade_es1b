@@ -1,0 +1,10 @@
+{
+  "simulation": "aswes1b.downloadRoutes",
+  "simulationId": "downloadroutes",
+  "start": 1588530860102,
+  "description": "",
+  "scenarios": ["downloadRoutes"],
+  "assertions": [
+
+  ]
+}

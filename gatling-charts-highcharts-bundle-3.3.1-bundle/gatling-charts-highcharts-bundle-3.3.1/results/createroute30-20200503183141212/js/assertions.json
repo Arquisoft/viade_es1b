@@ -1,0 +1,10 @@
+{
+  "simulation": "aswes1b.createRoute30",
+  "simulationId": "createroute30",
+  "start": 1588530701212,
+  "description": "",
+  "scenarios": ["createRoute"],
+  "assertions": [
+
+  ]
+}
