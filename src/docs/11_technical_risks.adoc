@@ -32,6 +32,10 @@ The main risks we have identified in the implmentation of this application are t
 
 |Interoperability|The folder structure to save routes is granted but there are no parsers to obtain other routes. It is another reference to the previous row.
 
+|Group functionality|We decided to give more priority to other functionalities, since this functionality was complicated since we have a one-way prototype only. But we believe that this solution is of sufficient quality to be put into production
+
 |Sharing routes with groups of friends| We have not been able to implement the sharing of routes with a group since as we saved the groups it gave an error when sending the route to several friends
+
+
 
 |===
