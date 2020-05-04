@@ -12,7 +12,6 @@ export const MapStyle = styled(Map)`
 
 export const DivStyle = styled.div`
   position: relative;
-  opacity: 0.93;
   float: left;
   background-image: linear-gradient(white, white);
   padding: 20px;

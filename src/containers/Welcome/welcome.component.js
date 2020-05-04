@@ -1,6 +1,7 @@
 import React from "react";
 import { useWebId } from "@solid/react";
 import { Trans, useTranslation } from "react-i18next";
+import { useWebId, Value } from "@solid/react";
 import {
   WelcomeCard,
   WelcomeLogo,
@@ -40,7 +41,7 @@ export const WelcomePageContent = (props) => {
         </WelcomeLogo>
         <WelcomeProfile data-testid="welcome-profile">
           <h3>
-            {t("welcome.welcome")}, <a href={name}>{name}</a>
+            {t("welcome.welcome")}, <a href={name}><Value src="user.name" /></a>
           </h3>
         </WelcomeProfile>
       </WelcomeCard>

@@ -12,7 +12,6 @@ export const DivStyle1 = styled.div`
 `;
 
 export const ListaDiv = styled.div`
-  opacity: 0.87;
   float: left;
   width: 48%;
   height: 100%;
@@ -36,7 +35,6 @@ export const AmigosDiv = styled.div`
 `;
 
 export const MisAmigosDiv = styled.div`
-  opacity: 0.85;
   float: left;
   width: 40%;
   height: auto;
