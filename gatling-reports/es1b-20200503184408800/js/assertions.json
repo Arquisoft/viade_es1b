@@ -1,0 +1,10 @@
+{
+  "simulation": "aswes1b.es1b",
+  "simulationId": "es1b",
+  "start": 1588531448800,
+  "description": "",
+  "scenarios": ["es1b"],
+  "assertions": [
+
+  ]
+}
