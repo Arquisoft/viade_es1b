@@ -106,3 +106,6 @@ export const MediaDiv = styled.div`
   overflow: auto;
   border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
 `;
+export const DivStyle5 = styled.div`
+  display: none;
+`;

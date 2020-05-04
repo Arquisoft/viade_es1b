@@ -1,11 +1,11 @@
 
 class createJson {
 
-  async createJson(name, markers, imagesRoutes, videosRoutes) {
+  async createJson(name, fullName, markers, imagesRoutes, videosRoutes) {
     var tot =
       '{ "@context": "http://schema.org",  "@type": "Trip", "name":"' +
       name +
-      '", "itinerary": { "@type": "ItemList", "numberOfItems":' +
+      '","fullName":"' + fullName + '", "itinerary": { "@type": "ItemList", "numberOfItems":' +
       markers.length +
       ', "itemListOrder": "http://schema.org/ItemListOrderDescending","itemListElement": [';
     for (let i = 0; i < markers.length; i++) {

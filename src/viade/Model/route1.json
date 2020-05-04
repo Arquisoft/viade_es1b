@@ -2,6 +2,7 @@
   "@context": "http://schema.org",
   "@type": "Trip",
   "name": "Ruta",
+  "fullName": "1111_ruta",
   "itinerary": {
     "@type": "ItemList",
     "numberOfItems": 4,

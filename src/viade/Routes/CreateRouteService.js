@@ -44,6 +44,7 @@ class CreateRouteService extends React.Component {
       name = n + "_" + name;
       createJson.createJson(
         namef,
+        name,
         markers,
         this.imagesRoutes,
         this.videosRoutes,

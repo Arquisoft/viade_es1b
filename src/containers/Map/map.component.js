@@ -18,6 +18,7 @@ import {
   ButtonStyle,
   MediaDiv,
   DivStyle1,
+  DivStyle5
 } from "./map.style";
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
@@ -117,6 +118,7 @@ const Mapac = (props) => {
         document.getElementById("listMedia").innerHTML = str;
       }
       document.getElementById("name").textContent = newRuta.name;
+      document.getElementById("fullName").textContent = newRuta.fullName;
       this.puntos = newRuta.point;
       const position = this.puntos[0];
       var update = (
@@ -174,8 +176,8 @@ const Mapac = (props) => {
     }
 
     shareRoute = (docId) => {
-      var routeName = document.getElementById("name").textContent;
-      if (routeName === "Ruta") {
+      var routeName = document.getElementById("fullName").textContent;
+      if (routeName === "1111_ruta") {
         NotificationManager.success("", t("map.demo"), 3000);
       } else {
         try {
@@ -222,7 +224,7 @@ const Mapac = (props) => {
     async obtenerRutasPOD(direccion) {
       let session = await auth.currentSession();
       var id = `${session.webId}`;
-      id = id.replace("/profile/card#me", direccion);      
+      id = id.replace("/profile/card#me", direccion);
       if (session) {
         Rutas.vaciarRutas();
         this.setState({ direccion: id });
@@ -233,7 +235,7 @@ const Mapac = (props) => {
           t("map.empty_string_message"),
           t("map.empty_message")
         )
-      }      
+      }
     }
 
     getLista = (docId) => {
@@ -262,7 +264,7 @@ const Mapac = (props) => {
           friends = [];
         }
       })();
-      
+
       const position = this.puntos[0];
       return (
         <DivStyle1>
@@ -290,7 +292,7 @@ const Mapac = (props) => {
                   t("map.empty_message")
                 )
               }
-            >              
+            >
               {t("map.download")}{" "}
               <img
                 src={process.env.PUBLIC_URL + "/img/icon/download.svg"}
@@ -359,6 +361,7 @@ const Mapac = (props) => {
           <MapStyle id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           </MapStyle>
+          <DivStyle5 id="fullName"></DivStyle5>
         </DivStyle1>
       );
     }

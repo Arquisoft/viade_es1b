@@ -11,6 +11,7 @@ export default class Ruta {
       this.point = [];
       this.points.map((p) => this.point.push([p.latitude, p.longitude]));
       this.name = file.name;
+      this.fullName = file.fullName;
       this.media = file.media;
     } catch (error) {
       this.notShow = true;
