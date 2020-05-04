@@ -5,7 +5,7 @@
 
 # VIADE ES1B
 
-This repository contains a skeleton of the VIADE project.
+This repository contains the web application Viade ES1B. This app is based on the Solid architecture the React Framework and its function is to allow users to create and share routes with their friends. This app uses Solid POD's to store user's data.
 
 This project is an assignment for the [Software Architecture course](https://arquisoft.github.io/) following [these requirements](https://labra.solid.community/public/SoftwareArchitecture/AssignmentDescription/).
 
