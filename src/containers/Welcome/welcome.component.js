@@ -1,5 +1,4 @@
 import React from "react";
-import { useWebId } from "@solid/react";
 import { Trans, useTranslation } from "react-i18next";
 import { useWebId, Value } from "@solid/react";
 import {
