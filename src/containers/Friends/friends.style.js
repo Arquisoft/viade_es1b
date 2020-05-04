@@ -58,16 +58,19 @@ export const ButtonStyle = styled.button`
   border: 1px solid grey;
   border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
   width: 100%;
+  background-image: linear-gradient(to right, white, white);
 `;
 
 export const ButtonStyle2 = styled.button`
   width: 5%;
   border: 1px solid grey;
   border-radius: 0 0.25rem 0.25rem 0;
+  
 `;
 export const ButtonStyle3 = styled.button`
   width: 5%;
   border: 1px solid grey;
+ 
 `;
 
 export const H3Style = styled.h3`
