@@ -69,7 +69,6 @@ class AddFriend {
       if (String(friend).localeCompare(String(id)) === 0) return true;
     return false;
   }
-
   async getFriends() {
     const friends = [];
     let session = await auth.currentSession();

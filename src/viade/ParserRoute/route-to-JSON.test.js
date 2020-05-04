@@ -12,6 +12,7 @@ describe.only("Parser from rote to JSON file", () => {
 
   it("given a correct route, it generates a file 1 video 1 photo", async () => {
     let name = "testRoute";
+    let fullName = "111_test";
     let markers = [
       {
         lat: 43.36543771939589,
@@ -31,11 +32,12 @@ describe.only("Parser from rote to JSON file", () => {
     let videos = ["https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg"];
     let webId = "test";
 
-    await createJson.createJson(name, markers, images, videos, webId);
+    await createJson.createJson(name, fullName, markers, images, videos, webId);
   });
 
   it("given a correct route, it generates a file 1 video", async () => {
     let name = "testRoute";
+    let fullName = "111_test";
     let markers = [
       {
         lat: 43.36543771939589,
@@ -55,11 +57,12 @@ describe.only("Parser from rote to JSON file", () => {
     let videos = ["https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg", "https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg"];
     let webId = "test";
 
-    await createJson.createJson(name, markers, images, videos, webId);
+    await createJson.createJson(name, fullName, markers, images, videos, webId);
   });
 
   it("given a correct route, it generates a file 1 photo", async () => {
     let name = "testRoute";
+    let fullName = "111_test";
     let markers = [
       {
         lat: 43.36543771939589,
@@ -75,10 +78,10 @@ describe.only("Parser from rote to JSON file", () => {
       },
     ];
 
-    let images = ["https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg" ,"https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg"];
-    let videos = ["https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg" ,"https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg"];
+    let images = ["https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg", "https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg"];
+    let videos = ["https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg", "https://marshall6399.solid.community/viade/resources/20140920_092712934_iOS.jpg"];
     let webId = "test";
 
-    await createJson.createJson(name, markers, images, videos, webId);
+    await createJson.createJson(name, fullName, markers, images, videos, webId);
   });
 });
