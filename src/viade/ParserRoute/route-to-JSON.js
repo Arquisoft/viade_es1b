@@ -42,7 +42,6 @@ class createJson {
     }
 
     tot += "] } ";
-    console.log(tot);
     var sdict = JSON.parse(tot);
     var save = JSON.stringify(sdict);
     this.fileToUpload = save;
