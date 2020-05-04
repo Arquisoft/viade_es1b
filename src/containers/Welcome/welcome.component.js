@@ -34,7 +34,7 @@ export const WelcomePageContent = (props) => {
         <WelcomeLogo data-testid="welcome-logo">
           <img
             id="welcome-img"
-            src={process.env.PUBLIC_URL + "/img/inrupt.svg"}
+            src={process.env.PUBLIC_URL + "/img/Logo.svg"}
             alt="Inrupt"
           />
         </WelcomeLogo>

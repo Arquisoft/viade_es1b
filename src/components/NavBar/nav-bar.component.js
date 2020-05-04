@@ -21,7 +21,7 @@ const NavBar = (props) => {
       <a href="#/">
         <img
           data-testid="nav-bar-home"
-          src={process.env.PUBLIC_URL + "/img/inrupt.svg"}
+          src={process.env.PUBLIC_URL + "/img/Logo_reducido.svg"}
           width="225"
           height="75"
           alt=""
