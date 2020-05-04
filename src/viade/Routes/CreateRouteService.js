@@ -1,11 +1,13 @@
 import createJson from "../ParserRoute/route-to-JSON";
+import React from "react";
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 import { NotificationManager } from "react-notifications";
 const fc = new SolidFileClient(auth, { enableLogging: true });
 
-class CreateRouteService {
+class CreateRouteService extends React.Component {
   constructor() {
+    super();
     this.state = {
       fileName: "",
     };
@@ -38,9 +40,10 @@ class CreateRouteService {
       this.fileName = name;
       var date = new Date();
       var n = Math.round(date.getTime() / 1000);
+      var namef = name;
       name = n + "_" + name;
       createJson.createJson(
-        name,
+        namef,
         markers,
         this.imagesRoutes,
         this.videosRoutes,

@@ -62,7 +62,7 @@ export const DivStyle = styled.div`
   width: auto;
   height: 10%;
   opacity: 0.94;
-  background-image: linear-gradient(lightgrey, lightgrey);
+  background-image: linear-gradient(white, white);
   z-index: 99;
   border-radius: 0.25rem 0.25rem 0 0;
 `;
