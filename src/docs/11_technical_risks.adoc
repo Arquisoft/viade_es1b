@@ -28,6 +28,10 @@ The main risks we have identified in the implmentation of this application are t
 |We have very little time to develop the first version of our application (3 weeks) and if we don't organize well it can be a disaster.
 
 |Support more route file formats
-|In the absence of a decision to allow interoperability. The decision was to format one of the most widely used in the world for data transfer, JSON. We leave as a possibility to expand some parsers to allow more types of files
+|In the absence of a decision to allow interoperability. The decision was to format one of the most widely used in the world for data transfer, JSON. We leave as a possibility to expand some parsers to allow more types of files. Addapt to https://github.com/Arquisoft/viadeSpec[viadeSpec]
+
+|Interoperability|The folder structure to save routes is granted but there are no parsers to obtain other routes. It is another reference to the previous row.
+
+|Sharing routes with groups of friends| We have not been able to implement the sharing of routes with a group since as we saved the groups it gave an error when sending the route to several friends
 
 |===

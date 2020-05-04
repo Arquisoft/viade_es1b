@@ -46,6 +46,12 @@ See <<04_solution_strategy.adoc>>. Here are some of the most important:
 |Most used language and persistence
 |Just support one
 
+|Friends
+|query-LDflex
+|28-04-2020
+|Solid ecosystem
+|A little limited in several ways
+
 |===
 
 ////
