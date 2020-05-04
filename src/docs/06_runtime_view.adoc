@@ -246,7 +246,7 @@ endlegend
 
 ----
 
-=== Add a friend in a group
+=== Add a friend to a group
 
 * The user who wants to add a friend in a group has to go to the Friends tab
 * In order to add a friend to a group you have to have friends. When you have selected a friend and a group also selected, click the add to group button
@@ -254,7 +254,7 @@ endlegend
 ** If it works, the graphical interface is updated
 ** If it doesn't work, a message is sent with an error
 
-[plantuml, "Add a friend in a group",png]
+[plantuml, "Add a friend to a group",png]
 
 ----
 title Add a friend in a group
