@@ -4,7 +4,7 @@ export const DivStyle1 = styled.div`
   position: absolute;
   width: 100%;
   height: 90%;
-  background-image: url("img/fondo2.jpg");
+  background-image: url("img/fondo2.png");
   background-size: cover;
   background-repeat: repeat;
   padding: 40px;

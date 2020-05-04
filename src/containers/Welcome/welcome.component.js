@@ -21,7 +21,7 @@ export const WelcomePageContent = (props) => {
     position: "absolute",
     width: "100%",
     height: "90%",
-    backgroundImage: 'url("img/fondo2.jpg")',
+    backgroundImage: 'url("img/fondo2.png")',
     backgroundPosition: 'center center',
     backgroundSize: "cover",
     backgroundRepeat: "repeat",
