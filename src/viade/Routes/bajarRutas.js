@@ -6,7 +6,6 @@ class bajarRutas {
   constructor() {
     this.sfc = new SolidFileClient(auth);
     this.rutas = [];
-    this.session = null;
     this.tmpFolder = "";
   }
 

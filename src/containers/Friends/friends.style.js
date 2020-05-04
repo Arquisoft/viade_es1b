@@ -16,7 +16,7 @@ export const ListaDiv = styled.div`
   float: left;
   width: 48%;
   height: 100%;
-  background-image: linear-gradient(to right, lightgrey, lightgrey);
+  background-image: linear-gradient(to right, white, white);
   margin-left: 1%;
   margin-right: 1%;
   border-radius: 0.25rem;
@@ -42,7 +42,7 @@ export const MisAmigosDiv = styled.div`
   height: auto;
   border: 1px solid grey;
   border-radius: 0.25rem;
-  background-image: linear-gradient(to right, lightgrey, lightgrey);
+  background-image: linear-gradient(to right, white, white);
   margin: 10px;
   padding: 10px;
 `;

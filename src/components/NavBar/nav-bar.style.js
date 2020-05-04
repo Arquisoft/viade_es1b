@@ -10,7 +10,6 @@ export const DivStyle = styled.div`
   padding: 10px;
   width: auto;
   height: 5%;
-  opacity: 0.8;
   border-radius: 0 0 0 0;
 `;
 
@@ -31,7 +30,6 @@ export const DivStyle1 = styled.div`
   padding: 10px;
   width: auto;
   height: 5%;
-  opacity: 0.8;
   border-radius: 0.25rem 0 0 0.25rem;
 `;
 
@@ -45,7 +43,7 @@ export const DivStyle3 = styled.div`
 `;
 
 export const NavStyle = styled(Navbar)`
-  background-image: linear-gradient(black, blue);
+  background-image: linear-gradient(to right, white, lightblue);
   padding: 10px;
   align-items: center;
 `;

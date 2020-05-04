@@ -28,7 +28,7 @@ export const DivStyle = styled.div`
   position: relative;
   opacity: 0.8;
   float: left;
-  background-image: linear-gradient(lightgrey, lightgrey);
+  background-image: linear-gradient(white, white);
   padding: 20px;
   width: 50%;
   height: 100%;

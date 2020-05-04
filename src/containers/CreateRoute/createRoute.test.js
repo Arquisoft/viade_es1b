@@ -30,6 +30,7 @@ describe("Login", () => {
     expect(wrapper).toBeTruthy();
   });
 
+
   test("render the page", () => {
     expect(wrapper.querySelector("#upload-button")).not.toBeNull();
     expect(queryByTestId(wrapper, "clear-button")).not.toBeNull();
