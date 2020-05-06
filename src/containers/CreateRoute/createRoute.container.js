@@ -1,5 +1,6 @@
 import React from "react";
 import L from "leaflet";
+import ReactDOM from "react-dom";
 import { useTranslation } from "react-i18next";
 import { TileLayer, Marker, Polyline } from "react-leaflet";
 import {
@@ -50,7 +51,6 @@ const Createc = (props) => {
       this.draw();
       const { polylines } = this.state;
       polylines.push(this.draw());
-
     };
 
     draw() {
@@ -92,8 +92,24 @@ const Createc = (props) => {
       }
     };
 
-    clear() {
-      window.location.reload();
+    clear = () => {
+      // eslint-disable-next-line
+      this.state.markers = [];
+      // eslint-disable-next-line
+      this.state.polylines = [];
+      var update = (
+        <div id="points">
+          {this.state.polylines.map((positions, idx) =>
+            <Polyline key={`polyline-${idx}`} positions={this.draw()} />
+          )}
+        </div>);
+      ReactDOM.render(update, document.getElementById("points"));
+      const { markers } = this.state;
+      this.setState({ markers });
+      this.draw();
+      const { polylines } = this.state;
+      polylines.push(this.draw());
+
     }
 
     addImage(imageList) {
@@ -177,6 +193,7 @@ const Createc = (props) => {
                 height="20"
                 alt=""
               />{" "}
+              {t("map.clearRoute")}
             </ButtonStyle2>
             <NotificationContainer />
           </DivStyle>
@@ -187,13 +204,14 @@ const Createc = (props) => {
             onClick={this.mapClick}
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {this.state.markers.map((position, idx) => (
               <Marker key={`marker-${idx}`} position={position}></Marker>
             ))}
-            {this.state.polylines.map((positions, idx) =>
-              <Polyline key={`polyline-${idx}`} positions={this.draw()} />
-            )}
+            <div id="points">
+              {this.state.polylines.map((positions, idx) =>
+                <Polyline id="points" key={`polyline-${idx}`} positions={this.draw()} />
+              )}
+            </div>
           </MapStyle>
         </DivStyle1>
       );

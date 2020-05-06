@@ -145,19 +145,6 @@ const Friends = (props) => {
         </ButtonStyle>
         <NotificationContainer />
       </ListaDiv>
-      <ListaDiv>
-        <H3Style>{t("friends.group")}</H3Style>
-        <AmigosDiv id="groups"></AmigosDiv>
-        <ButtonStyle data-testid="friend-group-button">
-          <img
-            src={process.env.PUBLIC_URL + "/img/icon/network.svg"}
-            width="35"
-            height="35"
-            alt=""
-          />
-          {t("friends.add")}
-        </ButtonStyle>
-      </ListaDiv>
     </DivStyle1>
   );
 };

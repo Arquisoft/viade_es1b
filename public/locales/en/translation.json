@@ -93,7 +93,8 @@
     "friend":"Select a friend",
     "double":"This route has already been shared",
     "downloadPOD" : "My routes",
-    "downloadShared" : "Shared routes"
+    "downloadShared" : "Shared routes",
+    "clearRoute": "Clear route"
   },
   "notifications": {
     "titleAdd":"New friend",
