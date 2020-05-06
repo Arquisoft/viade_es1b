@@ -65,9 +65,9 @@
     "redirectButton": "Llevarme a la página principal"
   },
   "map": {
-    "upload": "Subir",
+    "upload": "Subir ruta",
     "download": "Descargar",
-    "refresh": "Actualizar",
+    "refresh": "Actualizar lista de rutas",
     "photos": "Añadir fotos",
     "videos": "Añadir videos",
     "placeholder1": "Ejemplo: public/routes...",
@@ -86,14 +86,14 @@
     "lenght":"La ruta tiene que tener un nombre",
     "twopoints":"La ruta tiene que tener al menos dos puntos",
     "listMedia":"Archivos de la ruta",
-    "shareB":"Compartir",
+    "shareB":"Compartir ruta con amigo",
     "demo":"No puedes compartir la ruta de demostración",
     "shareError":"Ha ocurrido un error compartiendo la ruta",
     "shareSuccess":"La ruta ha sido compartida con éxito",
     "friend":"Selecciona un amigo",
     "double":"Esta ruta ya ha sido compartida",
-    "downloadPOD" : "Bajar rutas desde POD",
-    "downloadShared" : "Bajar rutas compartidas"
+    "downloadPOD" : "Mis rutas",
+    "downloadShared" : "Rutas compartidas"
   },
   "notifications": {
     "titleAdd":"Nuevo amigo",
