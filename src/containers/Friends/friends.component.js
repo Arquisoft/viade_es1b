@@ -96,7 +96,7 @@ const Friends = (props) => {
             width="25"
             height="20"
             alt=""
-          />
+          />{t("map.refreshf")}
         </ButtonStyle3>
         <ButtonStyle2
           onClick={addFriendS}
@@ -112,6 +112,7 @@ const Friends = (props) => {
               alt=""
             />
           </span>
+          {t("friend.addFriend")}
         </ButtonStyle2>
 
         <H3Style>{t("friends.myFriends")}</H3Style>

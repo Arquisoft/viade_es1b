@@ -68,6 +68,7 @@
     "upload": "Upload route",
     "download": "Download",
     "refresh": "Refresh route's list",
+    "refreshf": "Refresh friends's list",
     "photos": "Add photos",
     "videos": "Add videos",
     "placeholder1": "Example: public/routes...",

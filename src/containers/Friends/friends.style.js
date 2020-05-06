@@ -45,7 +45,7 @@ export const MisAmigosDiv = styled.div`
   padding: 10px;
 `;
 export const InputStyle = styled.input`
-  width: 90%;
+  width: 80%;
   border: 1px solid grey;
   border-radius: 0.25rem 0 0 0.25rem;
   margin-bottom: 10px;
@@ -60,13 +60,13 @@ export const ButtonStyle = styled.button`
 `;
 
 export const ButtonStyle2 = styled.button`
-  width: 5%;
+  width: 10%;
   border: 1px solid grey;
   border-radius: 0 0.25rem 0.25rem 0;
   
 `;
 export const ButtonStyle3 = styled.button`
-  width: 5%;
+  width: 10%;
   border: 1px solid grey;
  
 `;

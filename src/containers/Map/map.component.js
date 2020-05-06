@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import L from "leaflet";
 import { TileLayer, Marker, Polyline, Popup } from "react-leaflet";
 import { Rutas } from "../../viade/Model";
@@ -22,13 +22,13 @@ import {
 import auth from "solid-auth-client";
 import SolidFileClient from "solid-file-client";
 import bajarRutas from "../../viade/Routes/bajarRutas";
-import addFriend from "../../viade/Friends/addFriend";
 import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
 import { sharing } from "../../viade/Routes/shareRoutes";
 import { useNotification } from "@inrupt/solid-react-components";
+import AddFriend from "../../viade/Friends/addFriend";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -156,6 +156,21 @@ const Mapac = (props) => {
     }
   }
 
+  var [amigos, setAmigos] = useState([]);
+  const refresh = async () => {
+    var friends = [];
+    friends = await AddFriend.getFriends();
+    friends.forEach(function (friend) {
+      if (amigos.includes(friend.toString()) === false)
+        setAmigos((amigos) => [...amigos, friend]);
+    });
+    setAmigos(friends);
+  };
+
+  const style = {
+    listStyleType: "none",
+  };
+
   class Map extends React.Component {
     constructor() {
       super();
@@ -242,31 +257,12 @@ const Mapac = (props) => {
       Rutas.actualizarRutasConPod();
     };
 
+
+
     render() {
-      var friends = [];
-      (async () => {
-        try {
-          friends = await addFriend.friends;
-          var str = "<List>";
-          friends.forEach(function (friend) {
-            str +=
-              '<li style="list-style-type: none;"><input name="food" type="radio" value=' +
-              friend +
-              ' id = "radio">' +
-              friend +
-              "</li>";
-          });
-          str += "</List>";
-
-          document.getElementById("listaMap").innerHTML = str;
-        } catch (e) {
-          friends = [];
-        }
-      })();
-
       const position = this.puntos[0];
       return (
-        <DivStyle1>
+        <DivStyle1 >
           <DivStyle>
             <NotificationContainer />
             <H3Style data-testid="map-title" id="name">
@@ -311,8 +307,13 @@ const Mapac = (props) => {
 
             <Lista />
             <H3Style>{t("friends.share")}</H3Style>
-            <AmigosDiv>
-              <DivStyle4 id="listaMap"></DivStyle4>
+            <AmigosDiv id="lista" >
+              {amigos.map((item) => (
+                <li style={style}>
+                  <input name="food" type="radio" value={item} id="radio"></input>
+                  {item}
+                </li>
+              ))}
             </AmigosDiv>
             <ButtonStyle onClick={this.shareRoute}>
               {" "}
@@ -324,6 +325,19 @@ const Mapac = (props) => {
               />
               {t("map.shareB")}{" "}
             </ButtonStyle>
+            <button
+              data-testid="download-shared-button"
+              id="download-button"
+              onClick={refresh}
+            >
+              {t("map.refreshf")}{" "}
+              <img
+                src={process.env.PUBLIC_URL + "/img/icon/refresh.svg"}
+                width="25"
+                height="20"
+                alt=""
+              />{" "}
+            </button>
             <H3Style>{t("map.listMedia")}</H3Style>
             <MediaDiv>
               <DivStyle4 id="listMedia"></DivStyle4>

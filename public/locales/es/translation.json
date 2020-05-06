@@ -68,6 +68,7 @@
     "upload": "Subir ruta",
     "download": "Descargar",
     "refresh": "Actualizar lista de rutas",
+    "refreshf": "Actualizar lista de amigos",
     "photos": "Añadir fotos",
     "videos": "Añadir videos",
     "placeholder1": "Ejemplo: public/routes...",
