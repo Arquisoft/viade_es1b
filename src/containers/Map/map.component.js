@@ -5,6 +5,7 @@ import { Rutas } from "../../viade/Model";
 import { useWebId } from "@solid/react";
 import ReactDOM from "react-dom";
 import { useTranslation } from "react-i18next";
+import FullscreenControl from 'react-leaflet-fullscreen';
 import {
   MapStyle,
   DivStyle,
@@ -345,6 +346,7 @@ const Mapac = (props) => {
           </DivStyle>
           <MapStyle id="map" center={position} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <FullscreenControl position="topright" />
           </MapStyle>
           <DivStyle5 id="fullName"></DivStyle5>
         </DivStyle1>

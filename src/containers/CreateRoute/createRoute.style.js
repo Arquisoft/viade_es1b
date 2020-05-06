@@ -38,7 +38,6 @@ export const DivStyle1 = styled.div`
   background-image: url("img/fondo2.png");
   background-size: cover;
   background-repeat: repeat;
-  padding: 40px;
   overflow: hidden;
 `;
 

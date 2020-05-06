@@ -13,6 +13,7 @@ import {
   DivStyle1,
 } from "./createRoute.style";
 import CreateRouteService from "../../viade/Routes/CreateRouteService";
+import FullscreenControl from 'react-leaflet-fullscreen';
 import {
   NotificationManager,
   NotificationContainer,
@@ -204,6 +205,7 @@ const Createc = (props) => {
             onClick={this.mapClick}
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <FullscreenControl position="topright" />
             {this.state.markers.map((position, idx) => (
               <Marker key={`marker-${idx}`} position={position}></Marker>
             ))}
