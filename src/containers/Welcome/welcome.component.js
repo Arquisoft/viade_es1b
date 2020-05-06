@@ -22,7 +22,6 @@ export const WelcomePageContent = (props) => {
     width: "100%",
     height: "90%",
     backgroundImage: 'url("img/fondo2.png")',
-    backgroundPosition: 'center center',
     backgroundSize: "cover",
     backgroundRepeat: "repeat",
     padding: "50px 0",

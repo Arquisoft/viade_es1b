@@ -4,7 +4,6 @@ import { media } from "../../utils";
 export const WelcomeCard = styled.div`
   background-color: #fff;
   margin: 30px auto;
-  opacity: 0.8;
   //Overriding the style guide card flexbox settings
   max-width: 80% !important;
   flex-direction: row !important;
