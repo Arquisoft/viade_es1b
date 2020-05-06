@@ -37,11 +37,6 @@ describe("Login", () => {
     expect(queryByTestId(wrapper, "add-friend-button")).not.toBeNull();
   });
 
-  test("renders group list properly", () => {
-    expect(wrapper.querySelector("#groups")).not.toBeNull();
-    expect(queryByTestId(wrapper, "friend-group-button")).not.toBeNull();
-  });
-
   test("renders with default props", () => {
     const wrappers = shallow(<Friends />);
     expect(wrappers).toMatchSnapshot();
