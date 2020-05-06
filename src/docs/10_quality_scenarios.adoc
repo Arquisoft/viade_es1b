@@ -36,9 +36,9 @@ In this section we take a deeper look at some of the quality requirements mentio
 |=======================
 |Type|Explanation
 |Responsiveness| The application should use the minimum amount of system resources in order to work smoothly in most current devices
-|Response Time| The notifications, storage, share features and POD management should take the least amount of time as possible (It depends on the internet speed, the amount of notifications you have and the routes and their images and videos.).
+|Response Time| The notifications, storage, share features and POD management in less than 15 seconds (It depends on the internet speed, the amount of notifications you have and the routes and their images and videos.).
 |Error Handling| Lighter errors should take no next to no hit on system performance and fatal errors must be notified in detail to the user
-|Multi-device support| The application must work across a wide range of devices with different sizes and different platforms 
+|Multi-device support| The application must work across a wide range of devices with different sizes and different platforms (mobiles, tablets, PC, ...)
 |Data portability| Routes are stored in a format that allows the use of said files in other  route-oriented applications 
 |Share Features| Users are the only entities capable of allow sharing of their routes to other users
 |Permissions| The application must ask permission to the user in order to gain access to funcionality of the device such as GPS signal, wireless communication and such others
