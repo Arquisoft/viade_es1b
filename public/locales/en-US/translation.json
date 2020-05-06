@@ -65,9 +65,9 @@
     "redirectButton": "Take me back to the welcome page"
   },
   "map": {
-    "upload": "Upload",
+    "upload": "Upload route",
     "download": "Download",
-    "refresh": "Refresh",
+    "refresh": "Refresh route's list",
     "photos": "Add photos",
     "videos": "Add videos",
     "placeholder1": "Example: public/routes...",
@@ -86,14 +86,14 @@
     "lenght":"The route must have a name",
     "twopoints":"The route must have at least two points",
     "listMedia":"Route files",
-    "shareB":"Share",
+    "shareB":"Share route with friend",
     "demo":"You cannot share the demo route",
     "shareError":"An error occurred while sharing the route",
     "shareSuccess":"Route shared successfully",
     "friend":"Select a friend",
     "double":"This route has already been shared",
-    "downloadPOD" : "Download from POD",
-    "downloadShared" : "Download shared routes"
+    "downloadPOD" : "My routes",
+    "downloadShared" : "Shared routes"
   },
   "notifications": {
     "titleAdd":"New friend",

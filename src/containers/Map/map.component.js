@@ -11,7 +11,6 @@ import {
   LiStyle,
   H3Style,
   LiStyle2,
-  InputStyle,
   AmigosDiv,
   DivStyle3,
   DivStyle4,
@@ -273,34 +272,6 @@ const Mapac = (props) => {
             <H3Style data-testid="map-title" id="name">
               {this.name}
             </H3Style>
-            <InputStyle
-              data-testid="download-input"
-              id="download-input"
-              type="text"
-              onChange={this.obtenerCarpetaPod}
-              placeholder={t("map.placeholder1")}
-            />
-            <button
-              data-testid="download-button"
-              id="download-button"
-              onClick={() =>
-                bajarRutas.bajarRutasDePod(
-                  this.state.direccion,
-                  t("map.success_message"),
-                  t("map.failed_message"),
-                  t("map.empty_string_message"),
-                  t("map.empty_message")
-                )
-              }
-            >
-              {t("map.download")}{" "}
-              <img
-                src={process.env.PUBLIC_URL + "/img/icon/download.svg"}
-                width="25"
-                height="20"
-                alt=""
-              />{" "}
-            </button>
             <button
               data-testid="download-pod-button"
               id="download-button"
