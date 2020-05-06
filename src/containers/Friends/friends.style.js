@@ -13,7 +13,7 @@ export const DivStyle1 = styled.div`
 
 export const ListaDiv = styled.div`
   float: left;
-  width: 48%;
+  width: 100%;
   height: 100%;
   background-image: linear-gradient(to right, white, white);
   margin-left: 1%;

@@ -39,13 +39,9 @@ var NotificationList = (docId) => {
   }
 
   if (i < 5) {
-    if (i === 1) {
-      //////
-    }
     handleNotifications();
     i++;
   } else {
-
     var str = "<List>";
     notifs.forEach(function (notification) {
       str += "<li key= " + notification + "><a>" + notification + "</a></li>";

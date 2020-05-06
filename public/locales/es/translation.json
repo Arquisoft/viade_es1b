@@ -93,7 +93,8 @@
     "friend":"Selecciona un amigo",
     "double":"Esta ruta ya ha sido compartida",
     "downloadPOD" : "Mis rutas",
-    "downloadShared" : "Rutas compartidas"
+    "downloadShared" : "Rutas compartidas",
+    "clearRoute": "Limpiar ruta"
   },
   "notifications": {
     "titleAdd":"Nuevo amigo",
