@@ -104,15 +104,13 @@ const Friends = (props) => {
           id="add-friend-button"
           className="send"
         >
-          <span className="icon">
-            <img
-              src={process.env.PUBLIC_URL + "/img/icon/arrow.svg"}
-              width="25"
-              height="20"
-              alt=""
-            />
-          </span>
-          {t("friend.addFriend")}
+          <img
+            src={process.env.PUBLIC_URL + "/img/icon/arrow.svg"}
+            width="25"
+            height="20"
+            alt=""
+          />
+          {t("friends.addFriend")}
         </ButtonStyle2>
 
         <H3Style>{t("friends.myFriends")}</H3Style>
