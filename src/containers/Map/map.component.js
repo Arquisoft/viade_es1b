@@ -124,6 +124,7 @@ const Mapac = (props) => {
       var update = (
         <MapStyle id="map" center={position} zoom={15}>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          <FullscreenControl position="topright" />
           <Polyline color={"red"} positions={this.puntos}></Polyline>
           <Marker position={this.puntos[0]}>
             <Popup>Inicio</Popup>
